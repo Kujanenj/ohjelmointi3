@@ -2,7 +2,7 @@
 #include "ui_mapwindow.h"
 
 #include "graphics/simplemapitem.h"
-
+#include "test_features.h"
 #include <math.h>
 
 MapWindow::MapWindow(QWidget *parent,
@@ -17,6 +17,8 @@ MapWindow::MapWindow(QWidget *parent,
     Course::SimpleGameScene* sgs_rawptr = m_simplescene.get();
 
     m_ui->graphicsView->setScene(dynamic_cast<QGraphicsScene*>(sgs_rawptr));
+     std::shared_ptr<Course::Forest> test_forest = get_test_tile();
+
 }
 
 MapWindow::~MapWindow()
