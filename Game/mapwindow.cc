@@ -28,15 +28,7 @@ MapWindow::MapWindow(QWidget *parent,
 
     //TEST
 }
-template<typename T>
-void WorldGenerator::addConstructor(unsigned int weight)
-{
-    TileConstructorPointer ctor = std::make_shared<T, Coordinate,
-            std::shared_ptr<iGameEventHandler>,
-            std::shared_ptr<iObjectManager> >;
-    m_ctors.insert(std::make_pair(weight, ctor));
 
-}
 MapWindow::~MapWindow()
 {
     delete m_ui;

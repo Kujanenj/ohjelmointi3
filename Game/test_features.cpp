@@ -15,16 +15,21 @@ std::vector<std::shared_ptr<TileBase>> make_test_wgenerator()
     WorldGenerator& test_generator = WorldGenerator::getInstance();
     test_generator.addConstructor<Forest>(10);
     test_generator.generateMap(10,10,10,tilemanager,defaultmanager);
+
+
+
     Coordinate to_sub(-5,-5);
-    Coordinate to_change(0,0);
+
     std::shared_ptr<Coordinate> ptr(new Coordinate(0, 0));
     std::vector<std::shared_ptr<TileBase>> to_draw;
+
+
     to_draw=tilemanager->returntesttiles();
-    for(auto &it : to_draw){
+    /*for(auto &it : to_draw){
         it->setCoordinate(it->getCoordinate()+to_sub);
 
     }
-
+    */
     return to_draw;
 
 
@@ -36,14 +41,8 @@ std::vector<std::shared_ptr<TileBase>> make_test_wgenerator()
 
 
 
-template<typename T>
-void WorldGenerator::addConstructor(unsigned int weight)
-{
-    TileConstructorPointer ctor = std::make_shared<T, Coordinate,
-            std::shared_ptr<iGameEventHandler>,
-            std::shared_ptr<iObjectManager> >;
-    m_ctors.insert(std::make_pair(weight, ctor));
-}
+
+
  std::shared_ptr<Course::Forest> get_test_tile()
 {
     Course::Coordinate test_coordinate = Course::Coordinate(0, 0);
