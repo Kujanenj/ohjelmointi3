@@ -8,11 +8,15 @@ CONFIG += c++14
 SOURCES += \
     main.cpp \
     mapwindow.cc \
-    test_features.cpp
+    test_features.cpp \
+    testtilemanager.cpp \
+    uselesseventhandler.cpp
 
 HEADERS += \
     mapwindow.hh \
-    test_features.h
+    test_features.h \
+    testtilemanager.h \
+    uselesseventhandler.h
 
 win32:CONFIG(release, debug|release): LIBS += \
     -L$$OUT_PWD/../Course/CourseLib/release/ -lCourseLib

@@ -17,7 +17,9 @@ MapWindow::MapWindow(QWidget *parent,
     Course::SimpleGameScene* sgs_rawptr = m_simplescene.get();
 
     m_ui->graphicsView->setScene(dynamic_cast<QGraphicsScene*>(sgs_rawptr));
-     std::shared_ptr<Course::Forest> test_forest = get_test_tile();
+    drawItem(get_test_tile());
+
+
 
 }
 

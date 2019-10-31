@@ -7,8 +7,9 @@
 #include "core/worldgenerator.h"
 #include "interfaces/igameeventhandler.h"
 #include "interfaces/iobjectmanager.h"
-#include "interfaces/test_tile_manager.h"
-
+#include "testtilemanager.h"
+#include "tiles/tilebase.h"
+#include "uselesseventhandler.h"
 using namespace Course;
 
  std::shared_ptr<Course::Forest> get_test_tile();
