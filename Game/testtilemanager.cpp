@@ -1,8 +1,8 @@
 #include "testtilemanager.h"
-
+#include <QDebug>
 testTileManager::testTileManager()
 {
-
+ qDebug()<<"TEST TILE MANAGER";
 }
 void testTileManager::addTiles(const std::vector<std::shared_ptr<TileBase> > &tiles){
     test_vector=tiles;
@@ -22,5 +22,6 @@ std::vector<std::shared_ptr<TileBase> > testTileManager::getTiles(const std::vec
 {
     return test_vector;
 }
-
-
+std::vector<std::shared_ptr<TileBase> > testTileManager::returntesttiles(){
+    return test_vector;
+}

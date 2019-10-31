@@ -16,6 +16,7 @@ public:
 
     std::vector<std::shared_ptr<TileBase> > getTiles(const std::vector<Coordinate> &coordinates) override;
 
+    std::vector<std::shared_ptr<TileBase> > returntesttiles();
 
 private:
     std::vector<std::shared_ptr<TileBase> > test_vector;

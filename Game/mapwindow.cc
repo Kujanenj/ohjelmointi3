@@ -17,12 +17,26 @@ MapWindow::MapWindow(QWidget *parent,
     Course::SimpleGameScene* sgs_rawptr = m_simplescene.get();
 
     m_ui->graphicsView->setScene(dynamic_cast<QGraphicsScene*>(sgs_rawptr));
-    drawItem(get_test_tile());
 
+    std::vector<std::shared_ptr<TileBase>> to_draw;
+    qDebug()<<to_draw.size();
+    to_draw=make_test_wgenerator();
+    qDebug()<<to_draw.size();
+    for(auto it: to_draw){
+        drawItem(it);
+    }
 
+    //TEST
+}
+template<typename T>
+void WorldGenerator::addConstructor(unsigned int weight)
+{
+    TileConstructorPointer ctor = std::make_shared<T, Coordinate,
+            std::shared_ptr<iGameEventHandler>,
+            std::shared_ptr<iObjectManager> >;
+    m_ctors.insert(std::make_pair(weight, ctor));
 
 }
-
 MapWindow::~MapWindow()
 {
     delete m_ui;

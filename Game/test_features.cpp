@@ -4,7 +4,7 @@
 using namespace Course;
 
 
-void make_test_wgenerator()
+std::vector<std::shared_ptr<TileBase>> make_test_wgenerator()
 {
 
     std::shared_ptr<testTileManager> tilemanager=std::make_shared<testTileManager>();
@@ -13,13 +13,19 @@ void make_test_wgenerator()
 
 
     WorldGenerator& test_generator = WorldGenerator::getInstance();
-    test_generator.addConstructor<Forest>(1);
-    test_generator.generateMap(5,5,5,tilemanager,defaultmanager);
+    test_generator.addConstructor<Forest>(10);
+    test_generator.generateMap(10,10,10,tilemanager,defaultmanager);
+    Coordinate to_sub(-5,-5);
+    Coordinate to_change(0,0);
+    std::shared_ptr<Coordinate> ptr(new Coordinate(0, 0));
+    std::vector<std::shared_ptr<TileBase>> to_draw;
+    to_draw=tilemanager->returntesttiles();
+    for(auto &it : to_draw){
+        it->setCoordinate(it->getCoordinate()+to_sub);
 
-    //std::vector<std::shared_ptr<TileBase>> to_draw;
-    //to_draw=tilemanager->getTestVector();
-   // qDebug()<<to_draw.size();
-    return;
+    }
+
+    return to_draw;
 
 
 
