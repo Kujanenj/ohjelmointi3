@@ -1,14 +1,14 @@
-#ifndef USELESSEVENTHANDLER_H
-#define USELESSEVENTHANDLER_H
+#ifndef gameEventHandler_H
+#define gameEventHandler_H
 #include "interfaces/igameeventhandler.h"
 
 using namespace Course;
-class uselessEventHandler : public iGameEventHandler
+class gameEventHandler : public iGameEventHandler
 {
 public:
-    uselessEventHandler();
+    gameEventHandler();
     bool modifyResources(std::shared_ptr<PlayerBase> player, ResourceMap resources) override;
     bool modifyResource(std::shared_ptr<PlayerBase> player, BasicResource resource, int amount) override;
 };
 
-#endif // USELESSEVENTHANDLER_H
+#endif // gameEventHandler_H

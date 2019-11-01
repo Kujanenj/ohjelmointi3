@@ -4,11 +4,13 @@
 #include "../Game/mapwindow.hh"
 #include <vector>
 using namespace Course;
-class testTileManager : public iObjectManager
+class gameManager : public iObjectManager
 
 {
 public:
-    testTileManager();
+    gameManager();
+
+
     void addTiles(const std::vector<std::shared_ptr<TileBase> > &tiles) override;
     std::shared_ptr<TileBase> getTile(const ObjectId &id) override;
 
@@ -16,10 +18,10 @@ public:
 
     std::vector<std::shared_ptr<TileBase> > getTiles(const std::vector<Coordinate> &coordinates) override;
 
-    std::vector<std::shared_ptr<TileBase> > returntesttiles();
+    std::vector<std::shared_ptr<TileBase> > returntilevector();
 
 private:
-    std::vector<std::shared_ptr<TileBase> > test_vector;
+    std::vector<std::shared_ptr<TileBase> > alltiles_;
 };
 
 #endif // TESTTILEMANAGER_H

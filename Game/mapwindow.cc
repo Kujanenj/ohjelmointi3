@@ -2,7 +2,7 @@
 #include "ui_mapwindow.h"
 
 #include "graphics/simplemapitem.h"
-#include "test_features.h"
+#include "functions.h"
 #include <math.h>
 
 MapWindow::MapWindow(QWidget *parent,
@@ -17,16 +17,13 @@ MapWindow::MapWindow(QWidget *parent,
     Course::SimpleGameScene* sgs_rawptr = m_simplescene.get();
 
     m_ui->graphicsView->setScene(dynamic_cast<QGraphicsScene*>(sgs_rawptr));
+    startdialog dialog;
+    connect(&dialog, SIGNAL(size(int, int)),this,SLOT(setMapSize(int,int)));
 
-    std::vector<std::shared_ptr<TileBase>> to_draw;
-    qDebug()<<to_draw.size();
-    to_draw=make_test_wgenerator();
-    qDebug()<<to_draw.size();
-    for(auto it: to_draw){
-        drawItem(it);
-    }
+    dialog.exec();
 
-    //TEST
+
+
 }
 
 MapWindow::~MapWindow()
@@ -58,6 +55,16 @@ void MapWindow::resize()
 void MapWindow::updateItem(std::shared_ptr<Course::GameObject> obj)
 {
     m_simplescene->updateItem(obj);
+}
+
+void MapWindow::setMapSize(int x, int y)
+{
+    qDebug()<<"X,y in mainwindow"<<x<<y;
+    setSize(x,y);
+    std::shared_ptr<gameEventHandler> ghandler =  std::make_shared<gameEventHandler>();
+    std::shared_ptr<gameManager> gmanager =  std::make_shared<gameManager>();
+    makeWorldGenerator(x,y,10,ghandler,gmanager);
+
 }
 
 void MapWindow::removeItem(std::shared_ptr<Course::GameObject> obj)

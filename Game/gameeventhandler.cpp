@@ -1,16 +1,16 @@
-#include "uselesseventhandler.h"
+#include "gameeventhandler.h"
 
-uselessEventHandler::uselessEventHandler()
+gameEventHandler::gameEventHandler()
 {
 
 }
 
-bool uselessEventHandler::modifyResources(std::shared_ptr<PlayerBase> player, ResourceMap resources)
+bool gameEventHandler::modifyResources(std::shared_ptr<PlayerBase> player, ResourceMap resources)
 {
     return true;
 }
 
-bool uselessEventHandler::modifyResource(std::shared_ptr<PlayerBase> player, BasicResource resource, int amount)
+bool gameEventHandler::modifyResource(std::shared_ptr<PlayerBase> player, BasicResource resource, int amount)
 {
     return true;
 }

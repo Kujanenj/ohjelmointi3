@@ -14,9 +14,18 @@ class startdialog : public QDialog
 public:
     explicit startdialog(QWidget *parent = nullptr);
     ~startdialog();
+signals:
+    void size(int, int);
+private slots:
+
+    void on_mapsizeslider_sliderMoved(int position);
+
+    void on_buttonBox_accepted();
 
 private:
     Ui::startdialog *ui;
+    int x_;
+    int y_;
 };
 
 #endif // STARTDIALOG_H

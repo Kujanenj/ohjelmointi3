@@ -1,27 +1,34 @@
-#include "testtilemanager.h"
+#include "gamemanager.h"
+#include "tiles/forest.h"
+#include "tiles/grassland.h"
+#include "core/worldgenerator.h"
 #include <QDebug>
-testTileManager::testTileManager()
+gameManager::gameManager()
 {
  qDebug()<<"TEST TILE MANAGER";
 }
-void testTileManager::addTiles(const std::vector<std::shared_ptr<TileBase> > &tiles){
-    test_vector=tiles;
+
+
+void gameManager::addTiles(const std::vector<std::shared_ptr<TileBase> > &tiles){
+    alltiles_=tiles;
 }
 
-std::shared_ptr<TileBase> testTileManager::getTile(const ObjectId &id)
+std::shared_ptr<TileBase> gameManager::getTile(const ObjectId &id)
 {
-    return(test_vector.at(0));
+    return(alltiles_.at(0));
 }
 
-std::shared_ptr<TileBase> testTileManager::getTile(const Coordinate &coordinate)
+std::shared_ptr<TileBase> gameManager::getTile(const Coordinate &coordinate)
 {
-    return(test_vector.at(0));
+    return(alltiles_.at(0));
 }
 
-std::vector<std::shared_ptr<TileBase> > testTileManager::getTiles(const std::vector<Coordinate> &coordinates)
+std::vector<std::shared_ptr<TileBase> > gameManager::getTiles(const std::vector<Coordinate> &coordinates)
 {
-    return test_vector;
+    return alltiles_;
 }
-std::vector<std::shared_ptr<TileBase> > testTileManager::returntesttiles(){
-    return test_vector;
+std::vector<std::shared_ptr<TileBase> > gameManager::returntilevector(){
+    return alltiles_;
 }
+
+
