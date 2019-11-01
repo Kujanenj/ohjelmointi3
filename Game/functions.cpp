@@ -20,11 +20,4 @@ void startGame(int mapsize_x, int mapsize_y, int seed){
     makeWorldGenerator(mapsize_x,mapsize_y, seed, handler, manager);
 
 }
-template<typename T>
-void WorldGenerator::addConstructor(unsigned int weight)
-{
-    TileConstructorPointer ctor = std::make_shared<T, Coordinate,
-            std::shared_ptr<iGameEventHandler>,
-            std::shared_ptr<iObjectManager> >;
-    m_ctors.insert(std::make_pair(weight, ctor));
-}
+

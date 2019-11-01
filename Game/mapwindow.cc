@@ -18,7 +18,7 @@ MapWindow::MapWindow(QWidget *parent,
 
     m_ui->graphicsView->setScene(dynamic_cast<QGraphicsScene*>(sgs_rawptr));
     startdialog dialog;
-    connect(&dialog, SIGNAL(size(int, int)),this,SLOT(setMapSize(int,int)));
+    connect(&dialog, SIGNAL(size(int, int)),this,SLOT(initMap(int,int)));
 
     dialog.exec();
 
@@ -57,13 +57,22 @@ void MapWindow::updateItem(std::shared_ptr<Course::GameObject> obj)
     m_simplescene->updateItem(obj);
 }
 
-void MapWindow::setMapSize(int x, int y)
+void MapWindow::initMap(int x, int y)
 {
-    qDebug()<<"X,y in mainwindow"<<x<<y;
+
     setSize(x,y);
     std::shared_ptr<gameEventHandler> ghandler =  std::make_shared<gameEventHandler>();
     std::shared_ptr<gameManager> gmanager =  std::make_shared<gameManager>();
+
+    setGEHandler(ghandler); //TEST
+
     makeWorldGenerator(x,y,10,ghandler,gmanager);
+    Coordinate offset=Coordinate(x/2,y/2);
+
+    for(auto it:gmanager->returntilevector()){
+        it->setCoordinate(it->getCoordinate()-offset);
+        drawItem(it);
+    }
 
 }
 

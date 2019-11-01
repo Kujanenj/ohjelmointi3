@@ -38,7 +38,14 @@ public:
     void updateItem( std::shared_ptr<Course::GameObject> obj);
 
 public slots:
-    void setMapSize(int x, int y);
+    /*!
+     * \brief initMap
+     * Generates the world, accoring to the size of x,y. (ADD MORE PARATMETRES LATER ON?!=!=!!?!!?)
+     *
+     * \param x
+     * \param y
+     */
+    void initMap(int x, int y);
 private:
     Ui::MapWindow* m_ui;
     std::shared_ptr<Course::iGameEventHandler> m_GEHandler = nullptr;

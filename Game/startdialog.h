@@ -24,8 +24,8 @@ private slots:
 
 private:
     Ui::startdialog *ui;
-    int x_;
-    int y_;
+    int x_=10;
+    int y_=10;
 };
 
 #endif // STARTDIALOG_H
