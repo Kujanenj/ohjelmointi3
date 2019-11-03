@@ -6,17 +6,19 @@ QT += core gui widgets
 CONFIG += c++14
 
 SOURCES += \
-    functions.cpp \
-    gameeventhandler.cpp \
-    gamemanager.cpp \
+    functions/functions.cpp \
+    handlerandmanager/gameeventhandler.cpp \
+    handlerandmanager/gamemanager.cpp \
+    gamescene.cpp \
     main.cpp \
     mapwindow.cc \
     startdialog.cpp
 
 HEADERS += \
-    functions.h \
-    gameeventhandler.h \
-    gamemanager.h \
+    functions/functions.h \
+    handlerandmanager/gameeventhandler.h \
+    handlerandmanager/gamemanager.h \
+    gamescene.h \
     mapwindow.hh \
     startdialog.h
 

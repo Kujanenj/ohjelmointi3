@@ -14,3 +14,6 @@ bool gameEventHandler::modifyResource(std::shared_ptr<PlayerBase> player, BasicR
 {
     return true;
 }
+
+
+

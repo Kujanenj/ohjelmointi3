@@ -2,19 +2,19 @@
 #include "ui_mapwindow.h"
 
 #include "graphics/simplemapitem.h"
-#include "functions.h"
+#include "functions/functions.h"
 #include <math.h>
 
 MapWindow::MapWindow(QWidget *parent,
-                     std::shared_ptr<Course::iGameEventHandler> handler):
+                     std::shared_ptr<gameEventHandler> handler):
     QMainWindow(parent),
     m_ui(new Ui::MapWindow),
     m_GEHandler(handler),
-    m_simplescene(new Course::SimpleGameScene(this))
+    m_gamescene(new Course::GameScene(this))
 {
     m_ui->setupUi(this);
 
-    Course::SimpleGameScene* sgs_rawptr = m_simplescene.get();
+    Course::GameScene* sgs_rawptr =m_gamescene.get();
 
     m_ui->graphicsView->setScene(dynamic_cast<QGraphicsScene*>(sgs_rawptr));
     startdialog dialog;
@@ -32,29 +32,29 @@ MapWindow::~MapWindow()
 }
 
 void MapWindow::setGEHandler(
-        std::shared_ptr<Course::iGameEventHandler> nHandler)
+        std::shared_ptr<gameEventHandler> nHandler)
 {
     m_GEHandler = nHandler;
 }
 
 void MapWindow::setSize(int width, int height)
 {
-    m_simplescene->setSize(width, height);
+   m_gamescene->setSize(width, height);
 }
 
 void MapWindow::setScale(int scale)
 {
-    m_simplescene->setScale(scale);
+    m_gamescene->setScale(scale);
 }
 
 void MapWindow::resize()
 {
-    m_simplescene->resize();
+    m_gamescene->resize();
 }
 
 void MapWindow::updateItem(std::shared_ptr<Course::GameObject> obj)
 {
-    m_simplescene->updateItem(obj);
+    m_gamescene->updateItem(obj);
 }
 
 void MapWindow::initMap(int x, int y)
@@ -70,7 +70,8 @@ void MapWindow::initMap(int x, int y)
     Coordinate offset=Coordinate(x/2,y/2);
 
     for(auto it:gmanager->returntilevector()){
-        it->setCoordinate(it->getCoordinate()-offset);
+        it->setCoordinate(it->getCoordinate()-offset); //tiles start counting from the middle, while they should start from
+                                                       //the upper left corner... Thanks RITO
         drawItem(it);
     }
 
@@ -78,10 +79,15 @@ void MapWindow::initMap(int x, int y)
 
 void MapWindow::removeItem(std::shared_ptr<Course::GameObject> obj)
 {
-    m_simplescene->removeItem(obj);
+    m_gamescene->removeItem(obj);
 }
 
 void MapWindow::drawItem( std::shared_ptr<Course::GameObject> obj)
 {
-    m_simplescene->drawItem(obj);
+    m_gamescene->drawItem(obj);
+}
+
+void MapWindow::mousePressEvent(QMouseEvent *event){
+   return; //INCOMPLETE
+
 }

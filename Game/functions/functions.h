@@ -9,9 +9,9 @@
 #include "core/worldgenerator.h"
 #include "interfaces/igameeventhandler.h"
 #include "interfaces/iobjectmanager.h"
-#include "gamemanager.h"
+#include "handlerandmanager/gameeventhandler.h"
 #include "tiles/tilebase.h"
-#include "gameeventhandler.h"
+#include "handlerandmanager/gamemanager.h"
 using namespace Course;
 
 /*!

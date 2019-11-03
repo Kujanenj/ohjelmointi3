@@ -10,24 +10,27 @@
 
 #include <map>
 #include "startdialog.h"
+#include "handlerandmanager/gameeventhandler.h"
+#include "handlerandmanager/gamemanager.h"
 #include "interfaces/igameeventhandler.h"
-#include "graphics/simplegamescene.h"
+#include "gamescene.h"
 
 namespace Ui {
 class MapWindow;
 }
 
+using namespace Course;
 class MapWindow : public QMainWindow
 {
     Q_OBJECT
 
 public:
     explicit MapWindow(QWidget *parent = 0,
-                       std::shared_ptr<Course::iGameEventHandler> GEHandler = {}
+                       std::shared_ptr<gameEventHandler> GEHandler = {}
                        );
     ~MapWindow();
 
-    void setGEHandler(std::shared_ptr<Course::iGameEventHandler> nHandler);
+    void setGEHandler(std::shared_ptr<gameEventHandler> nHandler);
 
     void setSize(int width, int height);
     void setScale(int scale);
@@ -36,6 +39,9 @@ public:
     void drawItem( std::shared_ptr<Course::GameObject> obj);
     void removeItem( std::shared_ptr<Course::GameObject> obj);
     void updateItem( std::shared_ptr<Course::GameObject> obj);
+
+    virtual void mousePressEvent(QMouseEvent *event);
+
 
 public slots:
     /*!
@@ -46,10 +52,12 @@ public slots:
      * \param y
      */
     void initMap(int x, int y);
+
 private:
+
     Ui::MapWindow* m_ui;
-    std::shared_ptr<Course::iGameEventHandler> m_GEHandler = nullptr;
-    std::shared_ptr<Course::SimpleGameScene> m_simplescene = nullptr;
+    std::shared_ptr<gameEventHandler> m_GEHandler = nullptr;
+    std::shared_ptr<Course::GameScene> m_gamescene = nullptr;
 
 };
 

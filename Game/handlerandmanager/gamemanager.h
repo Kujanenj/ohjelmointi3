@@ -3,6 +3,7 @@
 #include "interfaces/iobjectmanager.h"
 #include "../Game/mapwindow.hh"
 #include <vector>
+
 using namespace Course;
 class gameManager : public iObjectManager
 
