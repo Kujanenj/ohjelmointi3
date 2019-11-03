@@ -9,7 +9,7 @@
 #include <QDebug>
 
 #include <map>
-
+#include "startdialog.h"
 #include "interfaces/igameeventhandler.h"
 #include "graphics/simplegamescene.h"
 
@@ -37,7 +37,15 @@ public:
     void removeItem( std::shared_ptr<Course::GameObject> obj);
     void updateItem( std::shared_ptr<Course::GameObject> obj);
 
-
+public slots:
+    /*!
+     * \brief initMap
+     * Generates the world, accoring to the size of x,y. (ADD MORE PARATMETRES LATER ON?!=!=!!?!!?)
+     *
+     * \param x
+     * \param y
+     */
+    void initMap(int x, int y);
 private:
     Ui::MapWindow* m_ui;
     std::shared_ptr<Course::iGameEventHandler> m_GEHandler = nullptr;
