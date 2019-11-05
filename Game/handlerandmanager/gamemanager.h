@@ -4,25 +4,25 @@
 #include "../Game/mapwindow.hh"
 #include <vector>
 
-using namespace Course;
-class gameManager : public iObjectManager
+
+class gameManager : public Course::iObjectManager
 
 {
 public:
     gameManager();
 
 
-    void addTiles(const std::vector<std::shared_ptr<TileBase> > &tiles) override;
-    std::shared_ptr<TileBase> getTile(const ObjectId &id) override;
+    void addTiles(const std::vector<std::shared_ptr<Course::TileBase> > &tiles) override;
+    std::shared_ptr<Course::TileBase> getTile(const Course::ObjectId &id) override;
 
-    std::shared_ptr<TileBase> getTile(const Coordinate &coordinate) override;
+    std::shared_ptr<Course::TileBase> getTile(const Course::Coordinate &coordinate) override;
 
-    std::vector<std::shared_ptr<TileBase> > getTiles(const std::vector<Coordinate> &coordinates) override;
+    std::vector<std::shared_ptr<Course::TileBase> > getTiles(const std::vector<Course::Coordinate> &coordinates) override;
 
-    std::vector<std::shared_ptr<TileBase> > returntilevector();
+    std::vector<std::shared_ptr<Course::TileBase> > returntilevector();
 
 private:
-    std::vector<std::shared_ptr<TileBase> > alltiles_;
+    std::vector<std::shared_ptr<Course::TileBase> > alltiles_;
 };
 
 #endif // TESTTILEMANAGER_H

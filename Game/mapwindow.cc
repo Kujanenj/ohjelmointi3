@@ -10,11 +10,11 @@ MapWindow::MapWindow(QWidget *parent,
     QMainWindow(parent),
     m_ui(new Ui::MapWindow),
     m_GEHandler(handler),
-    m_gamescene(new Course::GameScene(this))
+    m_gamescene(new GameScene(this))
 {
     m_ui->setupUi(this);
 
-    Course::GameScene* sgs_rawptr =m_gamescene.get();
+    GameScene* sgs_rawptr =m_gamescene.get();
 
     m_ui->graphicsView->setScene(dynamic_cast<QGraphicsScene*>(sgs_rawptr));
     startdialog dialog;
@@ -67,7 +67,7 @@ void MapWindow::initMap(int x, int y)
     setGEHandler(ghandler); //TEST
 
     makeWorldGenerator(x,y,10,ghandler,gmanager);
-    Coordinate offset=Coordinate(x/2,y/2);
+    Course::Coordinate offset=Course::Coordinate(x/2,y/2);
 
     for(auto it:gmanager->returntilevector()){
         it->setCoordinate(it->getCoordinate()-offset); //tiles start counting from the middle, while they should start from

@@ -12,7 +12,7 @@
 #include "handlerandmanager/gameeventhandler.h"
 #include "tiles/tilebase.h"
 #include "handlerandmanager/gamemanager.h"
-using namespace Course;
+
 
 /*!
  * \brief makeWorldGenerator

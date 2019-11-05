@@ -6,7 +6,7 @@
 #include <QMouseEvent>
 #include <math.h>
 
-namespace Course {
+
 
 
 GameScene::GameScene(QWidget* parent,
@@ -80,7 +80,7 @@ void GameScene::updateItem(std::shared_ptr<Course::GameObject> obj)
         qDebug() << "Nothing to update.";
     } else {
         for ( auto item : items_list ){
-            SimpleMapItem* mapItem = static_cast<SimpleMapItem*>(item);
+            Course::SimpleMapItem* mapItem = static_cast<Course::SimpleMapItem*>(item);
             if (mapItem->isSameObj(obj)){
                 mapItem->updateLoc();
             }
@@ -133,7 +133,7 @@ void GameScene::removeItem(std::shared_ptr<Course::GameObject> obj)
         qDebug() << "Nothing to be removed at the location pointed by given obj.";
     } else {
         for ( auto item : items_list ){
-            SimpleMapItem* mapitem = static_cast<SimpleMapItem*>(item);
+            Course::SimpleMapItem* mapitem = static_cast<Course::SimpleMapItem*>(item);
             if ( mapitem->isSameObj(obj) ){
                 delete mapitem;
             }
@@ -143,8 +143,8 @@ void GameScene::removeItem(std::shared_ptr<Course::GameObject> obj)
 
 void GameScene::drawItem( std::shared_ptr<Course::GameObject> obj)
 {
-    SimpleMapItem* nItem = new SimpleMapItem(obj, m_scale);
+    Course::SimpleMapItem* nItem = new Course::SimpleMapItem(obj, m_scale);
     addItem(nItem);
 }
 
-}
+

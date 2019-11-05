@@ -19,7 +19,7 @@ namespace Ui {
 class MapWindow;
 }
 
-using namespace Course;
+
 class MapWindow : public QMainWindow
 {
     Q_OBJECT
@@ -57,7 +57,7 @@ private:
 
     Ui::MapWindow* m_ui;
     std::shared_ptr<gameEventHandler> m_GEHandler = nullptr;
-    std::shared_ptr<Course::GameScene> m_gamescene = nullptr;
+    std::shared_ptr<GameScene> m_gamescene = nullptr;
 
 };
 

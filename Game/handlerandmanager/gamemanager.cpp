@@ -9,25 +9,25 @@ gameManager::gameManager()
 }
 
 
-void gameManager::addTiles(const std::vector<std::shared_ptr<TileBase> > &tiles){
+void gameManager::addTiles(const std::vector<std::shared_ptr<Course::TileBase> > &tiles){
     alltiles_=tiles;
 }
 
-std::shared_ptr<TileBase> gameManager::getTile(const ObjectId &id)
+std::shared_ptr<Course::TileBase> gameManager::getTile(const Course::ObjectId &id)
 {
     return(alltiles_.at(0));
 }
 
-std::shared_ptr<TileBase> gameManager::getTile(const Coordinate &coordinate)
+std::shared_ptr<Course::TileBase> gameManager::getTile(const Course::Coordinate &coordinate)
 {
     return(alltiles_.at(0));
 }
 
-std::vector<std::shared_ptr<TileBase> > gameManager::getTiles(const std::vector<Coordinate> &coordinates)
+std::vector<std::shared_ptr<Course::TileBase> > gameManager::getTiles(const std::vector<Course::Coordinate> &coordinates)
 {
     return alltiles_;
 }
-std::vector<std::shared_ptr<TileBase> > gameManager::returntilevector(){
+std::vector<std::shared_ptr<Course::TileBase> > gameManager::returntilevector(){
     return alltiles_;
 }
 

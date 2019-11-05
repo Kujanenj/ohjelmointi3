@@ -12,7 +12,6 @@
 #include "core/gameobject.h"
 
 
-namespace Course {
 
 const std::pair<int, int> SCENE_WIDTH_LIMITS = {1, 100};
 const std::pair<int, int> SCENE_HEIGHT_LIMITS = {1, 100};
@@ -129,6 +128,6 @@ private:
     int m_scale;
     unsigned int lastObjectID=0;
 };
-}
+
 
 #endif // GAMESCENE_H

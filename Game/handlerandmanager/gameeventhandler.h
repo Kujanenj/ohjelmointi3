@@ -4,13 +4,13 @@
 
 #include <QDebug>
 
-using namespace Course;
-class gameEventHandler : public iGameEventHandler
+
+class gameEventHandler : public Course::iGameEventHandler
 {
 public:
     gameEventHandler();
-    bool modifyResources(std::shared_ptr<PlayerBase> player, ResourceMap resources) override;
-    bool modifyResource(std::shared_ptr<PlayerBase> player, BasicResource resource, int amount) override;
+    bool modifyResources(std::shared_ptr<Course::PlayerBase> player, Course::ResourceMap resources) override;
+    bool modifyResource(std::shared_ptr<Course::PlayerBase> player, Course::BasicResource resource, int amount) override;
 
 };
 
