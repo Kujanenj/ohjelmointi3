@@ -1,4 +1,5 @@
 #include "gamemanager.h"
+
 #include "tiles/forest.h"
 #include "tiles/grassland.h"
 #include "core/worldgenerator.h"
@@ -15,7 +16,13 @@ void gameManager::addTiles(const std::vector<std::shared_ptr<Course::TileBase> >
 
 std::shared_ptr<Course::TileBase> gameManager::getTile(const Course::ObjectId &id)
 {
-    return(alltiles_.at(0));
+    for(auto it :alltiles_){
+        if(it->ID==id){
+            qDebug()<<"Current actice tile has ID"<<it->ID;
+            return it;
+        }
+    }
+    return nullptr;
 }
 
 std::shared_ptr<Course::TileBase> gameManager::getTile(const Course::Coordinate &coordinate)

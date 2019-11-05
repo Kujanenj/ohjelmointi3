@@ -12,8 +12,8 @@
 #include "startdialog.h"
 #include "handlerandmanager/gameeventhandler.h"
 #include "handlerandmanager/gamemanager.h"
-#include "interfaces/igameeventhandler.h"
-#include "gamescene.h"
+#include "interfaces/iobjectmanager.h"
+
 
 namespace Ui {
 class MapWindow;
@@ -27,10 +27,12 @@ class MapWindow : public QMainWindow
 public:
     explicit MapWindow(QWidget *parent = 0,
                        std::shared_ptr<gameEventHandler> GEHandler = {}
+
                        );
     ~MapWindow();
 
     void setGEHandler(std::shared_ptr<gameEventHandler> nHandler);
+    void setGManager(std::shared_ptr<gameManager> manager);
 
     void setSize(int width, int height);
     void setScale(int scale);
@@ -40,7 +42,7 @@ public:
     void removeItem( std::shared_ptr<Course::GameObject> obj);
     void updateItem( std::shared_ptr<Course::GameObject> obj);
 
-    virtual void mousePressEvent(QMouseEvent *event);
+    virtual void mousePressEvent(QMouseEvent *event );
 
 
 public slots:
@@ -57,8 +59,10 @@ private:
 
     Ui::MapWindow* m_ui;
     std::shared_ptr<gameEventHandler> m_GEHandler = nullptr;
-    std::shared_ptr<GameScene> m_gamescene = nullptr;
 
+
+    std::shared_ptr<gameManager> m_GManager =nullptr;
+    std::shared_ptr<GameScene> m_gamescene = nullptr;
 };
 
 #endif // MapWINDOW_HH

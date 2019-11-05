@@ -118,7 +118,7 @@ public:
      */
     virtual bool event(QEvent* event) override;
 
-
+    int getLastID();
 
 
 private:
@@ -126,7 +126,7 @@ private:
     int m_width;
     int m_height;
     int m_scale;
-    unsigned int lastObjectID=0;
+    int lastObjectID=-1;
 };
 
 

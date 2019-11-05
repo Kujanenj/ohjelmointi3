@@ -37,6 +37,12 @@ void MapWindow::setGEHandler(
     m_GEHandler = nHandler;
 }
 
+void MapWindow::setGManager(std::shared_ptr<gameManager> manager)
+{
+    m_GManager=manager;
+}
+
+
 void MapWindow::setSize(int width, int height)
 {
    m_gamescene->setSize(width, height);
@@ -62,14 +68,17 @@ void MapWindow::initMap(int x, int y)
 
     setSize(x,y);
     std::shared_ptr<gameEventHandler> ghandler =  std::make_shared<gameEventHandler>();
+
     std::shared_ptr<gameManager> gmanager =  std::make_shared<gameManager>();
 
+
     setGEHandler(ghandler); //TEST
+    setGManager(gmanager);
 
     makeWorldGenerator(x,y,10,ghandler,gmanager);
     Course::Coordinate offset=Course::Coordinate(x/2,y/2);
 
-    for(auto it:gmanager->returntilevector()){
+    for(auto it:m_GManager->returntilevector()){
         it->setCoordinate(it->getCoordinate()-offset); //tiles start counting from the middle, while they should start from
                                                        //the upper left corner... Thanks RITO
         drawItem(it);
@@ -88,6 +97,6 @@ void MapWindow::drawItem( std::shared_ptr<Course::GameObject> obj)
 }
 
 void MapWindow::mousePressEvent(QMouseEvent *event){
-   return; //INCOMPLETE
+  m_GEHandler->handleMwindowClick(m_gamescene, m_GManager);
 
 }

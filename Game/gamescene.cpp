@@ -117,11 +117,13 @@ bool GameScene::event(QEvent *event)
 
         }
     }
-
+    lastObjectID=-1;
     return false;
 }
 
-
+int GameScene::getLastID(){
+    return lastObjectID;
+}
 
 
 

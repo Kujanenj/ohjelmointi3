@@ -1,7 +1,7 @@
 #ifndef TESTTILEMANAGER_H
 #define TESTTILEMANAGER_H
 #include "interfaces/iobjectmanager.h"
-#include "../Game/mapwindow.hh"
+
 #include <vector>
 
 
