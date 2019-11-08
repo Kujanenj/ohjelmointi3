@@ -102,13 +102,17 @@ void MapWindow::mousePressEvent(QMouseEvent *event){
 }
 
 void MapWindow::addTestBuilding(){
-
-    std::shared_ptr<Course::Farm>  testFarm =  std::make_shared<Course::Farm>(m_GEHandler, m_GManager, testPlayer);
+    qDebug()<<"";
+    qDebug()<<"Add building clicked";
+    qDebug()<<"";
+    std::shared_ptr<Course::BuildingBase>  testFarm =  spawnBuilding(m_GEHandler, m_GManager, testPlayer);
     std::shared_ptr<Course::TileBase> testTile = m_GEHandler->getActiveTile();
     if(testTile==nullptr){
+
         qDebug()<<"ERROR";
     }
     else{
+        QString::fromStdString(testTile->getType());
         testTile->addBuilding(testFarm);
 
     }

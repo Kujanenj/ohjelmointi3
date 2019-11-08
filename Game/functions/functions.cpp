@@ -1,4 +1,6 @@
 #include "functions.h"
+
+#include "buildings/farm.h"
 #include <vector>
 #include <QDebug>
 
@@ -21,3 +23,13 @@ void startGame(int mapsize_x, int mapsize_y, int seed){
 
 }
 
+
+
+std::shared_ptr<Course::BuildingBase> spawnBuilding(std::shared_ptr<gameEventHandler> handler, std::shared_ptr<gameManager> manager, std::shared_ptr<Course::PlayerBase> player)
+{
+    qDebug()<<"Trying to spawn a building pointer in functions";
+    std::shared_ptr<Course::BuildingBase> testBuilding = std::make_shared<Course::Farm>(handler,manager,player);
+
+    qDebug() << QString::fromStdString(testBuilding->getType());
+    return testBuilding;
+}

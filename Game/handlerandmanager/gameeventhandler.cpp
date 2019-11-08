@@ -26,4 +26,5 @@ void gameEventHandler::handleMwindowClick(std::shared_ptr<GameScene> scene, std:
 
 std::shared_ptr<Course::TileBase> gameEventHandler::getActiveTile(){
     return activeTile;
+
 }

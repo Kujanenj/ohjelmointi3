@@ -7,8 +7,7 @@
 #include "tiles/grassland.h"
 #include "core/coordinate.h"
 #include "core/worldgenerator.h"
-#include "interfaces/igameeventhandler.h"
-#include "interfaces/iobjectmanager.h"
+
 #include "handlerandmanager/gameeventhandler.h"
 #include "tiles/tilebase.h"
 #include "handlerandmanager/gamemanager.h"
@@ -31,6 +30,8 @@ void makeWorldGenerator(int mapsize_x, int mapsize_y, int seed,
 
 void startGame();
 
-
+std::shared_ptr<Course::BuildingBase> spawnBuilding(std::shared_ptr<gameEventHandler> handler,
+                                                    std::shared_ptr<gameManager> manager,
+                                                    std::shared_ptr<Course::PlayerBase> player);
 #endif // TEST_FEATURES_H
 
