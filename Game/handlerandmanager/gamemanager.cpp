@@ -4,6 +4,7 @@
 #include "tiles/grassland.h"
 #include "core/worldgenerator.h"
 #include <QDebug>
+#include <QString>
 gameManager::gameManager()
 {
  qDebug()<<"TEST TILE MANAGER";
@@ -19,6 +20,8 @@ std::shared_ptr<Course::TileBase> gameManager::getTile(const Course::ObjectId &i
     for(auto it :alltiles_){
         if(it->ID==id){
             qDebug()<<"Current actice tile has ID"<<it->ID;
+            qDebug()<<"It has"<<it->getBuildingCount()<<"buildings";
+
             return it;
         }
     }
@@ -37,5 +40,6 @@ std::vector<std::shared_ptr<Course::TileBase> > gameManager::getTiles(const std:
 std::vector<std::shared_ptr<Course::TileBase> > gameManager::returntilevector(){
     return alltiles_;
 }
+
 
 

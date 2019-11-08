@@ -18,9 +18,12 @@ bool gameEventHandler::modifyResource(std::shared_ptr<Course::PlayerBase> player
 void gameEventHandler::handleMwindowClick(std::shared_ptr<GameScene> scene, std::shared_ptr<gameManager> manager){
     if(scene->getLastID()!=-1){
 
-            qDebug()<<scene->getLastID();
 
-        manager->getTile(scene->getLastID());
+
+        activeTile= manager->getTile(scene->getLastID());
     }
 }
 
+std::shared_ptr<Course::TileBase> gameEventHandler::getActiveTile(){
+    return activeTile;
+}

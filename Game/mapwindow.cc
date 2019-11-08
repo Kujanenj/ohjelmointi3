@@ -21,7 +21,7 @@ MapWindow::MapWindow(QWidget *parent,
     connect(&dialog, SIGNAL(size(int, int)),this,SLOT(initMap(int,int)));
 
     dialog.exec();
-
+    testPlayer=std::make_shared<Course::PlayerBase>("Player 1");
 
 
 }
@@ -99,4 +99,22 @@ void MapWindow::drawItem( std::shared_ptr<Course::GameObject> obj)
 void MapWindow::mousePressEvent(QMouseEvent *event){
   m_GEHandler->handleMwindowClick(m_gamescene, m_GManager);
 
+}
+
+void MapWindow::addTestBuilding(){
+
+    std::shared_ptr<Course::Farm>  testFarm =  std::make_shared<Course::Farm>(m_GEHandler, m_GManager, testPlayer);
+    std::shared_ptr<Course::TileBase> testTile = m_GEHandler->getActiveTile();
+    if(testTile==nullptr){
+        qDebug()<<"ERROR";
+    }
+    else{
+        testTile->addBuilding(testFarm);
+
+    }
+}
+
+void MapWindow::on_addButton_clicked()
+{
+    addTestBuilding();
 }

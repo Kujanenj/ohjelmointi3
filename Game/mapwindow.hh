@@ -13,7 +13,8 @@
 #include "handlerandmanager/gameeventhandler.h"
 #include "handlerandmanager/gamemanager.h"
 #include "interfaces/iobjectmanager.h"
-
+#include "buildings/farm.h"
+#include "core/playerbase.h"
 
 namespace Ui {
 class MapWindow;
@@ -44,6 +45,8 @@ public:
 
     virtual void mousePressEvent(QMouseEvent *event );
 
+    void addTestBuilding();
+
 
 public slots:
     /*!
@@ -55,6 +58,9 @@ public slots:
      */
     void initMap(int x, int y);
 
+private slots:
+    void on_addButton_clicked();
+
 private:
 
     Ui::MapWindow* m_ui;
@@ -63,6 +69,7 @@ private:
 
     std::shared_ptr<gameManager> m_GManager =nullptr;
     std::shared_ptr<GameScene> m_gamescene = nullptr;
+    std::shared_ptr<Course::PlayerBase> testPlayer =nullptr;
 };
 
 #endif // MapWINDOW_HH

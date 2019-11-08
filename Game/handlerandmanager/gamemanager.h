@@ -21,6 +21,7 @@ public:
 
     std::vector<std::shared_ptr<Course::TileBase> > returntilevector();
 
+
 private:
     std::vector<std::shared_ptr<Course::TileBase> > alltiles_;
 };
