@@ -12,7 +12,9 @@ SOURCES += \
     gamescene.cpp \
     main.cpp \
     mapwindow.cc \
+    minion/minion.cpp \
     startdialog.cpp
+
 
 HEADERS += \
     functions/functions.h \
@@ -20,6 +22,7 @@ HEADERS += \
     handlerandmanager/gamemanager.h \
     gamescene.h \
     mapwindow.hh \
+    minion/minion.h \
     startdialog.h
 
 win32:CONFIG(release, debug|release): LIBS += \

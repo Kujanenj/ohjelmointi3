@@ -16,6 +16,15 @@ public:
     bool modifyResource(std::shared_ptr<Course::PlayerBase> player, Course::BasicResource resource, int amount) override;
     void handleMwindowClick(std::shared_ptr<GameScene> scene, std::shared_ptr<gameManager> manager);
     std::shared_ptr<Course::TileBase> getActiveTile();
+    /*!
+     * \brief adds a building to the current active tile, and also sends the building to
+     * gameManager
+     * \param building
+     * \param manager
+     * \return false if no active tile, true otherwise. // THIS IS TEMPORARY
+     */
+    bool spawnBuilding(std::shared_ptr<Course::BuildingBase> building,
+                       std::shared_ptr<gameManager> manager);
 private:
     std::shared_ptr<Course::TileBase> activeTile = nullptr;
 

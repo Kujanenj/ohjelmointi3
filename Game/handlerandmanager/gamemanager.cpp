@@ -1,8 +1,6 @@
 #include "gamemanager.h"
 
-#include "tiles/forest.h"
-#include "tiles/grassland.h"
-#include "core/worldgenerator.h"
+
 #include <QDebug>
 #include <QString>
 gameManager::gameManager()
@@ -39,6 +37,12 @@ std::vector<std::shared_ptr<Course::TileBase> > gameManager::getTiles(const std:
 }
 std::vector<std::shared_ptr<Course::TileBase> > gameManager::returntilevector(){
     return alltiles_;
+}
+
+bool gameManager::addBuilding(std::shared_ptr<Course::BuildingBase>& Building)
+{
+    allbuildings_.push_back(Building);
+    return true;
 }
 
 

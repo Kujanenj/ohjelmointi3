@@ -28,3 +28,17 @@ std::shared_ptr<Course::TileBase> gameEventHandler::getActiveTile(){
     return activeTile;
 
 }
+
+bool gameEventHandler::spawnBuilding(std::shared_ptr<Course::BuildingBase> building,
+                                     std::shared_ptr<gameManager> manager)
+{
+    if(activeTile==nullptr){
+        qDebug()<<"error, active tile is a nullptr";
+        return false;
+    }
+    activeTile->addBuilding(building);
+    activeTile->getBuildings();
+    manager->addBuilding(building);
+
+    return true;
+}

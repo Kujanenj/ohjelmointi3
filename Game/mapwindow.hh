@@ -45,13 +45,14 @@ public:
 
     virtual void mousePressEvent(QMouseEvent *event );
 
-    void addTestBuilding();
+
 
 
 public slots:
     /*!
      * \brief initMap
-     * Generates the world, accoring to the size of x,y. (ADD MORE PARATMETRES LATER ON?!=!=!!?!!?)
+     * Generates the world, accoring to the size of x,y.
+     *  (ADD MORE PARATMETRES LATER ON?!=!=!!?!!?)
      *
      * \param x
      * \param y
@@ -59,6 +60,7 @@ public slots:
     void initMap(int x, int y);
 
 private slots:
+    //just a test to add a test farm
     void on_addButton_clicked();
 
 private:

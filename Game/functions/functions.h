@@ -1,5 +1,5 @@
-#ifndef TEST_FEATURES_H
-#define TEST_FEATURES_H
+#ifndef FUNCTIONS_H
+#define FUNCTIONS_H
 
 #include "core/gameobject.h"
 #include "mapwindow.hh"
@@ -28,10 +28,17 @@ void makeWorldGenerator(int mapsize_x, int mapsize_y, int seed,
                         std::shared_ptr<gameManager> manager);
 
 
-void startGame();
 
+/*!
+ * \brief spawnBuilding
+ * spanws and returns a building object. TODO: add a type specifier somehow
+ * \param handler
+ * \param manager
+ * \param player
+ * \return
+ */
 std::shared_ptr<Course::BuildingBase> spawnBuilding(std::shared_ptr<gameEventHandler> handler,
                                                     std::shared_ptr<gameManager> manager,
                                                     std::shared_ptr<Course::PlayerBase> player);
-#endif // TEST_FEATURES_H
+#endif // FUNCTIONS_H
 
