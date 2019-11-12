@@ -59,4 +59,4 @@ DISTFILES += \
     graphics/forest_pic.png
 
 RESOURCES += \
-    test.qrc
+    graphicResourcses.qrc
