@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/graphics" lang="XML">
+        <file>graphics/forest_pic.png</file>
+    </qresource>
+</RCC>

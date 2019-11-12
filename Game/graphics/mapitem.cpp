@@ -68,7 +68,7 @@ void SimpleMapItem::addNewColor(std::string type)
         std::size_t hash = std::hash<std::string>{}(type);
         c_mapcolors.insert({type, QColor((hash & 0xFF0000) >> 16, (hash & 0x00FF00 ) >> 8, (hash & 0x0000FF))});
         if (type == "Forest") {
-            QImage forest_pic = QImage("C:/Users/Safwane/Desktop/prog3_project/whiskas/Game/graphics/forest_pic.png");
+            QImage forest_pic = QImage(":graphics/graphics/forest_pic.png");
             c_mapicons.insert({type, forest_pic});
         }
 

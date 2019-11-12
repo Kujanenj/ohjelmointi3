@@ -57,3 +57,6 @@ FORMS += \
 
 DISTFILES += \
     graphics/forest_pic.png
+
+RESOURCES += \
+    test.qrc
