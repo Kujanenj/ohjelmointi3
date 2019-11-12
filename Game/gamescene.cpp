@@ -1,5 +1,5 @@
 #include "gamescene.h"
-#include "graphics/simplemapitem.h"
+#include "graphics/mapitem.h"
 
 #include <QEvent>
 #include <QGraphicsSceneMouseEvent>
@@ -80,7 +80,7 @@ void GameScene::updateItem(std::shared_ptr<Course::GameObject> obj)
         qDebug() << "Nothing to update.";
     } else {
         for ( auto item : items_list ){
-            Course::SimpleMapItem* mapItem = static_cast<Course::SimpleMapItem*>(item);
+            Whiskas::SimpleMapItem* mapItem = static_cast<Whiskas::SimpleMapItem*>(item);
             if (mapItem->isSameObj(obj)){
                 mapItem->updateLoc();
             }
@@ -107,7 +107,7 @@ bool GameScene::event(QEvent *event)
             if ( pressed == m_mapBoundRect ){
                 qDebug() << "Click on map area.";
             }else{
-                lastObjectID=static_cast<Course::SimpleMapItem*>(pressed)
+                lastObjectID=static_cast<Whiskas::SimpleMapItem*>(pressed)
                         ->getBoundObject()->ID;
                 qDebug() << "ObjID: " <<
                             lastObjectID;
@@ -135,7 +135,7 @@ void GameScene::removeItem(std::shared_ptr<Course::GameObject> obj)
         qDebug() << "Nothing to be removed at the location pointed by given obj.";
     } else {
         for ( auto item : items_list ){
-            Course::SimpleMapItem* mapitem = static_cast<Course::SimpleMapItem*>(item);
+            Whiskas::SimpleMapItem* mapitem = static_cast<Whiskas::SimpleMapItem*>(item);
             if ( mapitem->isSameObj(obj) ){
                 delete mapitem;
             }
@@ -145,7 +145,7 @@ void GameScene::removeItem(std::shared_ptr<Course::GameObject> obj)
 
 void GameScene::drawItem( std::shared_ptr<Course::GameObject> obj)
 {
-    Course::SimpleMapItem* nItem = new Course::SimpleMapItem(obj, m_scale);
+    Whiskas::SimpleMapItem* nItem = new Whiskas::SimpleMapItem(obj, m_scale);
     addItem(nItem);
 }
 

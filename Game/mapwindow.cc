@@ -1,7 +1,7 @@
 #include "mapwindow.hh"
 #include "ui_mapwindow.h"
 
-#include "graphics/simplemapitem.h"
+#include "graphics/mapitem.h"
 #include "functions/functions.h"
 #include <math.h>
 

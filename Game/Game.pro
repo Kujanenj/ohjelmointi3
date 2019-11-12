@@ -7,6 +7,7 @@ CONFIG += c++14
 
 SOURCES += \
     functions/functions.cpp \
+    graphics/mapitem.cpp \
     handlerandmanager/gameeventhandler.cpp \
     handlerandmanager/gamemanager.cpp \
     gamescene.cpp \
@@ -18,6 +19,7 @@ SOURCES += \
 
 HEADERS += \
     functions/functions.h \
+    graphics/mapitem.h \
     handlerandmanager/gameeventhandler.h \
     handlerandmanager/gamemanager.h \
     gamescene.h \
@@ -52,3 +54,6 @@ else:unix: PRE_TARGETDEPS += \
 FORMS += \
     mapwindow.ui \
     startdialog.ui
+
+DISTFILES += \
+    graphics/forest_pic.png
