@@ -67,6 +67,19 @@
          <string>removeBuilding</string>
         </property>
        </widget>
+       <widget class="QPushButton" name="minionbutton">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>100</y>
+          <width>80</width>
+          <height>25</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Muh minions</string>
+        </property>
+       </widget>
       </widget>
       <widget class="QWidget" name="tab_2">
        <attribute name="title">

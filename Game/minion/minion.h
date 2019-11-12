@@ -6,15 +6,19 @@
 #include "handlerandmanager/gamemanager.h"
 #include "core/playerbase.h"
 #include "core/coordinate.h"
+
+class gameManager;
+class gameEventHandler;
 class minion : public Course::PlaceableGameObject
 {
 public:
     minion()=delete;
     minion(const std::shared_ptr<gameEventHandler>& handler,
            const std::shared_ptr<gameManager>& manager,
-           const std::shared_ptr<Course::PlayerBase>& owner,
-           const std::shared_ptr<Course::Coordinate>& coordinate);
+           const std::shared_ptr<Course::PlayerBase>& owner);
     virtual ~minion() = default;
+private:
+    std::weak_ptr<Course::TileBase> currentTile_;
 };
 
 #endif // MINION_H

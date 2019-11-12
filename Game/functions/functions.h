@@ -2,7 +2,7 @@
 #define FUNCTIONS_H
 
 #include "core/gameobject.h"
-#include "mapwindow.hh"
+
 #include "tiles/forest.h"
 #include "tiles/grassland.h"
 #include "core/coordinate.h"

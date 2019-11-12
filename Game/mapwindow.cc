@@ -105,12 +105,20 @@ void MapWindow::mousePressEvent(QMouseEvent *event){
 
 void MapWindow::on_addButton_clicked()
 {
-    qDebug()<<"";
-    qDebug()<<"Add building clicked";
-    qDebug()<<"";
+
     std::shared_ptr<Course::BuildingBase>  testFarm =  spawnBuilding(m_GEHandler, m_GManager, testPlayer);
     m_GEHandler->spawnBuilding(testFarm, m_GManager);
 
 
 
+
+
+}
+
+
+void MapWindow::on_minionbutton_clicked()
+{
+    qDebug()<<"spawn minion click";
+    qDebug()<<"";
+    m_GManager->spawnMinion(m_GEHandler, m_GManager, testPlayer, m_GEHandler->getActiveTile());
 }

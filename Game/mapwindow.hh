@@ -63,6 +63,10 @@ private slots:
     //just a test to add a test farm
     void on_addButton_clicked();
 
+
+
+    void on_minionbutton_clicked();
+
 private:
 
     Ui::MapWindow* m_ui;
