@@ -4,6 +4,8 @@
 #include <vector>
 #include <QDebug>
 
+#include "handlerandmanager/gamemanager.h"
+
 
 
 void makeWorldGenerator(int mapsize_x, int mapsize_y, int seed,

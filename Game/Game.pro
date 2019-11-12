@@ -6,6 +6,7 @@ QT += core gui widgets
 CONFIG += c++14
 
 SOURCES += \
+    buildings/nexus.cpp \
     functions/functions.cpp \
     graphics/mapitem.cpp \
     handlerandmanager/gameeventhandler.cpp \
@@ -18,6 +19,7 @@ SOURCES += \
 
 
 HEADERS += \
+    buildings/nexus.h \
     functions/functions.h \
     graphics/mapitem.h \
     handlerandmanager/gameeventhandler.h \

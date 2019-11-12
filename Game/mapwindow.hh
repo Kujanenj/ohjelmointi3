@@ -16,6 +16,8 @@
 #include "buildings/farm.h"
 #include "core/playerbase.h"
 
+#include "buildings/nexus.h"
+
 namespace Ui {
 class MapWindow;
 }
