@@ -3,6 +3,7 @@
 
 #include "graphics/mapitem.h"
 #include "functions/functions.h"
+#include "buildings/headquarters.h"
 #include <math.h>
 
 MapWindow::MapWindow(QWidget *parent,
@@ -108,7 +109,7 @@ void MapWindow::mousePressEvent(QMouseEvent *event){
 void MapWindow::on_addButton_clicked()
 {
 
-    std::shared_ptr<Course::BuildingBase>  testFarm =  spawnBuilding(m_GEHandler, m_GManager, testPlayer);
+    std::shared_ptr<Course::BuildingBase>  testFarm =  spawnBuilding<Course::HeadQuarters>(m_GEHandler, m_GManager, testPlayer);
     m_GEHandler->spawnBuilding(testFarm, m_GManager);
 
 

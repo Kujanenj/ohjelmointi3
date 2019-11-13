@@ -49,10 +49,14 @@ void gameEventHandler::handleLeftClick(std::shared_ptr<GameScene> scene, std::sh
 void gameEventHandler::handleRightClick(std::shared_ptr<gameManager> manager, std::shared_ptr<GameScene> scene)
 {
     std::shared_ptr<Course::TileBase> targetTile=manager->getTile(scene->getLastID());
-    if(activeMinion_!=nullptr){
+    if(activeMinion_!=nullptr && targetTile->getWorkerCount()==0){
         activeMinion_->currentLocationTile()->removeWorker(activeMinion_);
         activeMinion_->setLocationTile(targetTile);
         activeMinion_->currentLocationTile()->addWorker(activeMinion_);
+
+    }
+    else{
+        qDebug()<<"Active minion was null ptr or target tile contains a minion";
 
     }
 }

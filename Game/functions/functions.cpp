@@ -21,12 +21,13 @@ void makeWorldGenerator(int mapsize_x, int mapsize_y, int seed,
 
 
 
-
+/*template <typename buildingType>
 std::shared_ptr<Course::BuildingBase> spawnBuilding(std::shared_ptr<gameEventHandler> handler, std::shared_ptr<gameManager> manager, std::shared_ptr<Course::PlayerBase> player)
 {
     qDebug()<<"Trying to spawn a building pointer in functions";
-    std::shared_ptr<Course::BuildingBase> testBuilding = std::make_shared<Course::Farm>(handler,manager,player);
+    std::shared_ptr<Course::BuildingBase> testBuilding = std::make_shared<buildingType>(handler,manager,player);
 
     qDebug() << QString::fromStdString(testBuilding->getType());
     return testBuilding;
 }
+*/

@@ -6,28 +6,30 @@ QT += core gui widgets
 CONFIG += c++14
 
 SOURCES += \
+    dialogs/buildingdialog.cpp \
     buildings/nexus.cpp \
     functions/functions.cpp \
     graphics/mapitem.cpp \
     handlerandmanager/gameeventhandler.cpp \
     handlerandmanager/gamemanager.cpp \
-    gamescene.cpp \
+    graphics/gamescene.cpp \
     main.cpp \
     mapwindow.cc \
     minion/minion.cpp \
-    startdialog.cpp
+    dialogs/startdialog.cpp
 
 
 HEADERS += \
+    dialogs/buildingdialog.h \
     buildings/nexus.h \
     functions/functions.h \
     graphics/mapitem.h \
     handlerandmanager/gameeventhandler.h \
     handlerandmanager/gamemanager.h \
-    gamescene.h \
+    graphics/gamescene.h \
     mapwindow.hh \
     minion/minion.h \
-    startdialog.h
+    dialogs/startdialog.h
 
 win32:CONFIG(release, debug|release): LIBS += \
     -L$$OUT_PWD/../Course/CourseLib/release/ -lCourseLib
@@ -54,8 +56,9 @@ else:unix: PRE_TARGETDEPS += \
     $$OUT_PWD/../Course/CourseLib/libCourseLib.a
 
 FORMS += \
+    dialogs/buildingdialog.ui \
     mapwindow.ui \
-    startdialog.ui
+    dialogs/startdialog.ui
 
 DISTFILES += \
     graphics/forest_pic.png

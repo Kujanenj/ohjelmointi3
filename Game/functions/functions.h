@@ -31,14 +31,24 @@ void makeWorldGenerator(int mapsize_x, int mapsize_y, int seed,
 
 /*!
  * \brief spawnBuilding
- * spanws and returns a building object. TODO: add a type specifier somehow
+ * spanws and returns a building object. Type of bulding is passed by template.
  * \param handler
  * \param manager
  * \param player
  * \return
  */
+template<typename buildingType>
 std::shared_ptr<Course::BuildingBase> spawnBuilding(std::shared_ptr<gameEventHandler> handler,
                                                     std::shared_ptr<gameManager> manager,
-                                                    std::shared_ptr<Course::PlayerBase> player);
+                                                    std::shared_ptr<Course::PlayerBase> player){
+    {
+        qDebug()<<"Trying to spawn a building pointer in functions";
+        std::shared_ptr<Course::BuildingBase> testBuilding = std::make_shared<buildingType>(handler,manager,player);
+
+        qDebug() << QString::fromStdString(testBuilding->getType());
+        return testBuilding;
+    }
+
+}
 #endif // FUNCTIONS_H
 
