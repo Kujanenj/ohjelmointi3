@@ -84,6 +84,8 @@ void MapWindow::initMap(int x, int y)
         drawItem(it);
     }
 
+    // Nexus genesis
+    m_GManager->spawnNexus(m_GEHandler, m_GManager, testPlayer, m_GManager->getTile(0));
 }
 
 void MapWindow::removeItem(std::shared_ptr<Course::GameObject> obj)

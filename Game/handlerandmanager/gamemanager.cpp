@@ -72,5 +72,13 @@ void gameManager::spawnMinion(std::shared_ptr<gameEventHandler> handler,
 
 }
 
+void gameManager::spawnNexus(std::shared_ptr<gameEventHandler> handler, std::shared_ptr<gameManager> manager, std::shared_ptr<Course::PlayerBase> owner, std::shared_ptr<Course::TileBase> location)
+{
+    std::shared_ptr<Nexus> testNexus = std::make_shared<Nexus>(handler, manager, owner);
+    location->addBuilding(testNexus);
+    allbuildings_.push_back(testNexus);
+    qDebug()<<location->ID<<"has a nexus now";
+}
+
 
 
