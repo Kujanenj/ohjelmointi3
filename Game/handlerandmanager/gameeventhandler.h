@@ -5,6 +5,7 @@
 #include "gamemanager.h"
 #include "minion/minion.h"
 #include <QDebug>
+#include <QMouseEvent>
 
 class minion;
 class gameManager;
@@ -14,7 +15,10 @@ public:
     gameEventHandler();
     bool modifyResources(std::shared_ptr<Course::PlayerBase> player, Course::ResourceMap resources) override;
     bool modifyResource(std::shared_ptr<Course::PlayerBase> player, Course::BasicResource resource, int amount) override;
-    void handleMwindowClick(std::shared_ptr<GameScene> scene, std::shared_ptr<gameManager> manager);
+    void handleMwindowClick(std::shared_ptr<GameScene> scene, std::shared_ptr<gameManager> manager, QMouseEvent event);
+    void handleLeftClick(std::shared_ptr<GameScene> scene, std::shared_ptr<gameManager> manager);
+
+    void handleRightClick(std::shared_ptr<gameManager> manager, std::shared_ptr<GameScene> scene);
     std::shared_ptr<Course::TileBase> getActiveTile();
 
     /*!

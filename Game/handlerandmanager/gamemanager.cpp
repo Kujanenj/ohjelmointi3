@@ -63,6 +63,7 @@ void gameManager::spawnMinion(std::shared_ptr<gameEventHandler> handler,
 {
     std::shared_ptr<minion> testMinion = std::make_shared<minion>(handler, manager, owner);
     testMinion->setLocationTile(location);
+    location->addWorker(testMinion);
     qDebug()<<"adding minion to gamemanager vector";
     addMinion(testMinion);
 

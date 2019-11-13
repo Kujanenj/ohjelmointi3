@@ -9,13 +9,15 @@
 
 class gameManager;
 class gameEventHandler;
-class minion : public Course::PlaceableGameObject
+class minion : public Course::WorkerBase
 {
 public:
     minion()=delete;
     minion(const std::shared_ptr<gameEventHandler>& handler,
            const std::shared_ptr<gameManager>& manager,
            const std::shared_ptr<Course::PlayerBase>& owner);
+
+    void doSpecialAction() override;
     virtual ~minion() = default;
 private:
     std::weak_ptr<Course::TileBase> currentTile_;

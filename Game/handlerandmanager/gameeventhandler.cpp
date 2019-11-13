@@ -15,29 +15,45 @@ bool gameEventHandler::modifyResource(std::shared_ptr<Course::PlayerBase> player
     return true;
 }
 
-void gameEventHandler::handleMwindowClick(std::shared_ptr<GameScene> scene, std::shared_ptr<gameManager> manager){
+void gameEventHandler::handleMwindowClick(std::shared_ptr<GameScene> scene, std::shared_ptr<gameManager> manager, QMouseEvent event)
+{
+    if(event.button()==Qt::LeftButton){
+        handleLeftClick(scene,manager);
+    }
+    if(event.button()==Qt::RightButton){
+        handleRightClick(manager, scene);
+    }
+}
+
+void gameEventHandler::handleLeftClick(std::shared_ptr<GameScene> scene, std::shared_ptr<gameManager> manager){
     qDebug()<<"handling mwindow click";
     if(scene->getLastID()!=-1){
 
 
         activeTile_= manager->getTile(scene->getLastID());
 
-        if (manager->getMinionVector().size()!=0){
-
+        if (activeTile_->getWorkers().size()!=0){
             for(auto it: manager->getMinionVector()){
-             qDebug()<<it->ID<<"minion ID";
-             qDebug()<<it->currentLocationTile()->ID<<"minion tile";
-             qDebug()<<activeTile_->ID<<"Comparing to this";
-                if(it->currentLocationTile()==activeTile_){
-                    activeMinion_=it;
-                    qDebug()<<"match found";
-                    break;
 
+                if(activeTile_->getWorkers().front()==it){
+                    activeMinion_=it;
+                    qDebug()<<"We got it";
                 }
-                qDebug()<<"none of the minions are on this tile";
+
             }
         }
-        qDebug()<<"activeminion is nullptr";
+
+
+    }
+}
+void gameEventHandler::handleRightClick(std::shared_ptr<gameManager> manager, std::shared_ptr<GameScene> scene)
+{
+    std::shared_ptr<Course::TileBase> targetTile=manager->getTile(scene->getLastID());
+    if(activeMinion_!=nullptr){
+        activeMinion_->currentLocationTile()->removeWorker(activeMinion_);
+        activeMinion_->setLocationTile(targetTile);
+        activeMinion_->currentLocationTile()->addWorker(activeMinion_);
+
     }
 }
 
