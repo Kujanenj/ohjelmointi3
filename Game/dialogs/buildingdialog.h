@@ -17,7 +17,7 @@ public:
     ~buildingDialog();
 
 signals:
-    void buildingType(int);
+    void buildingType(std::string);
 private slots:
     void on_farmButton_clicked();
 

@@ -61,6 +61,13 @@ public:
                                         std::shared_ptr<gameManager> manager,
                                         std::shared_ptr<Course::PlayerBase> owner,
                                         std::shared_ptr<Course::TileBase> location);
+
+
+    template<typename buildingType>
+    bool spawnBuilding(std::shared_ptr<gameEventHandler> handler,
+                       std::shared_ptr<gameManager> manager,
+                       std::shared_ptr<Course::PlayerBase> player);
+
 private:
     std::vector<std::shared_ptr<Course::TileBase> > alltiles_;
     //Contains a pointer too all building in all tiles. This keeps the weak ptrs in tilebase

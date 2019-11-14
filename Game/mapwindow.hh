@@ -1,3 +1,4 @@
+
 #ifndef MAPWINDOW_HH
 #define MAPWINDOW_HH
 
@@ -69,7 +70,7 @@ public slots:
      * \param y
      */
     void initMap(int x, int y);
-    void selectBuilding(int); //TODO
+    void selectBuilding(std::string); //TODO
 
 private slots:
     //just a test to add a test farm
@@ -96,7 +97,6 @@ private:
     QMediaPlayer* testSoundPlayer; //TEST MEDIA PLAYER
     QMediaPlaylist* testPlayList; //test playlist
     buildingDialog buildingdialog;
-    enum buildingTypes{Farm, HeadQuarters}; //TODO
 };
 
 #endif // MapWINDOW_HH
