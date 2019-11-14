@@ -1,7 +1,7 @@
 #ifndef gameEventHandler_H
 #define gameEventHandler_H
 #include "interfaces/igameeventhandler.h"
-#include "gamescene.h"
+#include "graphics/gamescene.h"
 #include "gamemanager.h"
 #include "minion/minion.h"
 #include <QDebug>

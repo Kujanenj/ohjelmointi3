@@ -9,7 +9,7 @@
 #include <QDebug>
 
 #include <map>
-#include "startdialog.h"
+#include "dialogs/startdialog.h"
 #include "handlerandmanager/gameeventhandler.h"
 #include "handlerandmanager/gamemanager.h"
 #include "interfaces/iobjectmanager.h"

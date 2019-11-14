@@ -24,7 +24,7 @@ void SimpleMapItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *opt
     Q_UNUSED( option ); Q_UNUSED( widget );
     painter->setBrush(QBrush(c_mapcolors.at(m_gameobject->getType())));
     if ( m_gameobject->getType() == "Forest" ){
-        QRectF source(0.0, 0.0, 50.0, 50.0);
+        QRectF source(0.0, 0.0, 500.0, 500.0);
         painter->drawImage(boundingRect(), c_mapicons.at(m_gameobject->getType()), source);
     } else {
     painter->drawRect(boundingRect()); }
@@ -68,7 +68,7 @@ void SimpleMapItem::addNewColor(std::string type)
         std::size_t hash = std::hash<std::string>{}(type);
         c_mapcolors.insert({type, QColor((hash & 0xFF0000) >> 16, (hash & 0x00FF00 ) >> 8, (hash & 0x0000FF))});
         if (type == "Forest") {
-            QImage forest_pic = QImage(":/graphics/forest_pic.png");
+            QImage forest_pic = QImage(":/graphics/pi.png");
             c_mapicons.insert({type, forest_pic});
         }
 

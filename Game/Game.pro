@@ -61,7 +61,9 @@ FORMS += \
     dialogs/startdialog.ui
 
 DISTFILES += \
-    graphics/forest_pic.png
+    ../../pi.png \
+    graphics/forest_pic.png \
+    graphics/pi.png
 
 RESOURCES += \
     graphicResourcses.qrc
