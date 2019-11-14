@@ -6,7 +6,7 @@
 #include "handlerandmanager/gamemanager.h"
 #include "core/playerbase.h"
 #include "core/coordinate.h"
-
+#include "core/playerbase.h"
 class gameManager;
 class gameEventHandler;
 class minion : public Course::WorkerBase
@@ -19,8 +19,15 @@ public:
 
     void doSpecialAction() override;
     virtual ~minion() = default;
+    int getMoveValue();
+    void setMoved(bool hasMoved);
+    bool getMoved();
+
 private:
     std::weak_ptr<Course::TileBase> currentTile_;
+private:
+    int movement_=1;
+    bool hasMoved_=false;
 };
 
 #endif // MINION_H

@@ -72,7 +72,10 @@ void gameManager::spawnMinion(std::shared_ptr<gameEventHandler> handler,
 
 }
 
-void gameManager::spawnNexus(std::shared_ptr<gameEventHandler> handler, std::shared_ptr<gameManager> manager, std::shared_ptr<Course::PlayerBase> owner, std::shared_ptr<Course::TileBase> location)
+void gameManager::spawnNexus(std::shared_ptr<gameEventHandler> handler,
+                             std::shared_ptr<gameManager> manager,
+                             std::shared_ptr<Course::PlayerBase> owner,
+                             std::shared_ptr<Course::TileBase> location)
 {
     std::shared_ptr<Nexus> testNexus = std::make_shared<Nexus>(handler, manager, owner);
     location->addBuilding(testNexus);
@@ -80,4 +83,27 @@ void gameManager::spawnNexus(std::shared_ptr<gameEventHandler> handler, std::sha
     qDebug()<<location->ID<<"has a nexus now";
 }
 
+void gameManager::move(std::shared_ptr<minion> minionToMove, std::shared_ptr<Course::TileBase> targetTile)
+{
+    if(targetTile->getWorkerCount()==0){ //ADD OR STATEMENT FOR ENEMIEEEES
 
+       Course::Coordinate deltaC=minionToMove->getCoordinate()-
+               targetTile->getCoordinate();
+       qDebug()<<abs(deltaC.x())+abs(deltaC.y());
+       if(abs(deltaC.x())+abs(deltaC.y())<=minionToMove->getMoveValue()){
+            minionToMove->currentLocationTile()->removeWorker(minionToMove);
+            minionToMove->setLocationTile(targetTile);
+            minionToMove->currentLocationTile()->addWorker(minionToMove);
+            qDebug()<<"WE MOVED";
+           }
+
+       else{
+           qDebug()<<"TOO FAR";
+           return;
+       }
+
+       }
+    else{
+    qDebug()<<"there were minions";
+}
+}

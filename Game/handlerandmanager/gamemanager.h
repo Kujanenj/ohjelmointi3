@@ -68,6 +68,7 @@ public:
                        std::shared_ptr<gameManager> manager,
                        std::shared_ptr<Course::PlayerBase> player);
 
+    void move(std::shared_ptr<minion> minionToMove, std::shared_ptr<Course::TileBase> targetTile);
 private:
     std::vector<std::shared_ptr<Course::TileBase> > alltiles_;
     //Contains a pointer too all building in all tiles. This keeps the weak ptrs in tilebase
