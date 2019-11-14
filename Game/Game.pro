@@ -1,7 +1,8 @@
 TEMPLATE = app
 TARGET = TheGame
 
-QT += core gui widgets
+QT += core gui widgets \
+    multimedia
 
 CONFIG += c++14
 
@@ -66,4 +67,4 @@ DISTFILES += \
     graphics/pi.png
 
 RESOURCES += \
-    graphicResourcses.qrc
+    res.qrc

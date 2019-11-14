@@ -19,11 +19,22 @@ MapWindow::MapWindow(QWidget *parent,
 
     m_ui->graphicsView->setScene(dynamic_cast<QGraphicsScene*>(sgs_rawptr));
     startdialog dialog;
-    connect(&dialog, SIGNAL(size(int, int)),this,SLOT(initMap(int,int)));
-
+    connect(&dialog,         SIGNAL(size(int, int)),   this,SLOT(initMap(int,int)));
+    connect(&buildingdialog, SIGNAL(buildingType(int)),this,SLOT(selectBuilding(int)));
     dialog.exec();
     testPlayer=std::make_shared<Course::PlayerBase>("Player 1");
 
+    //TEST SOUND EFFECT
+    testSoundPlayer=new QMediaPlayer();
+    //testSoundPlayer->setMedia(QUrl("qrc:/sounds/sounds/testSound.mp3"));
+    testPlayList = new QMediaPlaylist();
+    testPlayList->addMedia(QUrl("qrc:/sounds/sounds/testSound.mp3"));
+    testPlayList->addMedia(QUrl("qrc:/sounds/sounds/backgroundMusic.mp3"));
+    testPlayList->setPlaybackMode(QMediaPlaylist::Loop);
+    testSoundPlayer->setPlaylist(testPlayList);
+    testSoundPlayer->play();
+    //testSoundPlayer->play();
+   //IT WORKS
 
 }
 
@@ -88,7 +99,9 @@ void MapWindow::initMap(int x, int y)
     // Nexus genesis
     m_GManager->spawnNexus(m_GEHandler, m_GManager, testPlayer, m_GManager->getTile(0));
 }
-
+void MapWindow::selectBuilding(int buildingType){ // TODO
+    return;
+}
 void MapWindow::removeItem(std::shared_ptr<Course::GameObject> obj)
 {
     m_gamescene->removeItem(obj);
@@ -108,9 +121,10 @@ void MapWindow::mousePressEvent(QMouseEvent *event){
 
 void MapWindow::on_addButton_clicked()
 {
+    buildingdialog.show();
+    spawnBuilding<Course::HeadQuarters>(m_GEHandler, m_GManager, testPlayer);
 
-    std::shared_ptr<Course::BuildingBase>  testFarm =  spawnBuilding<Course::HeadQuarters>(m_GEHandler, m_GManager, testPlayer);
-    m_GEHandler->spawnBuilding(testFarm, m_GManager);
+
 
 
 
@@ -124,4 +138,10 @@ void MapWindow::on_minionbutton_clicked()
     qDebug()<<"spawn minion click";
     qDebug()<<"";
     m_GManager->spawnMinion(m_GEHandler, m_GManager, testPlayer, m_GEHandler->getActiveTile());
+}
+
+void MapWindow::on_MusicButton_clicked()
+{
+
+    testSoundPlayer->setMuted(!testSoundPlayer->isMuted());
 }
