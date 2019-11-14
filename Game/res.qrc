@@ -1,0 +1,10 @@
+<RCC>
+    <qresource lang="XML" prefix="/images">
+        <file>graphics/forest_pic.png</file>
+    </qresource>
+    <qresource prefix="/sounds">
+        <file>sounds/testSound.mp3</file>
+        <file>sounds/testSound2.mp3</file>
+        <file>sounds/backgroundMusic.mp3</file>
+    </qresource>
+</RCC>

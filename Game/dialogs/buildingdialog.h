@@ -16,9 +16,17 @@ public:
     explicit buildingDialog(QWidget *parent = nullptr);
     ~buildingDialog();
 
+signals:
+    void buildingType(int);
+private slots:
+    void on_farmButton_clicked();
+
+    void on_headQuartersButton_clicked();
+
 private:
     Ui::buildingDialog *ui;
     QGraphicsScene* scene;
+    enum buildingtypes{farm, headquarters};
 };
 
 #endif // BUILDINGDIALOG_H

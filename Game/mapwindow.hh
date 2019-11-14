@@ -8,8 +8,12 @@
 #include <QGraphicsSceneMouseEvent>
 #include <QDebug>
 
+#include <QMediaPlayer>
+#include <QMediaPlaylist>
+
 #include <map>
-#include "startdialog.h"
+#include "dialogs/startdialog.h"
+#include "dialogs/buildingdialog.h"
 #include "handlerandmanager/gameeventhandler.h"
 #include "handlerandmanager/gamemanager.h"
 #include "interfaces/iobjectmanager.h"
@@ -17,6 +21,7 @@
 #include "core/playerbase.h"
 
 #include "buildings/nexus.h"
+
 
 namespace Ui {
 class MapWindow;
@@ -47,6 +52,10 @@ public:
 
     virtual void mousePressEvent(QMouseEvent *event );
 
+    void openBuildingDialog(std::shared_ptr<gameManager> manager,
+                            std::shared_ptr<gameEventHandler> handler,
+                            std::shared_ptr<Course::PlayerBase> owner
+                            );
 
 
 
@@ -60,6 +69,7 @@ public slots:
      * \param y
      */
     void initMap(int x, int y);
+    void selectBuilding(int); //TODO
 
 private slots:
     //just a test to add a test farm
@@ -68,6 +78,9 @@ private slots:
 
 
     void on_minionbutton_clicked();
+
+    void on_MusicButton_clicked();
+
 
 private:
 
@@ -78,6 +91,12 @@ private:
     std::shared_ptr<gameManager> m_GManager =nullptr;
     std::shared_ptr<GameScene> m_gamescene = nullptr;
     std::shared_ptr<Course::PlayerBase> testPlayer =nullptr;
+
+
+    QMediaPlayer* testSoundPlayer; //TEST MEDIA PLAYER
+    QMediaPlaylist* testPlayList; //test playlist
+    buildingDialog buildingdialog;
+    enum buildingTypes{Farm, HeadQuarters}; //TODO
 };
 
 #endif // MapWINDOW_HH

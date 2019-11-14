@@ -12,3 +12,15 @@ buildingDialog::~buildingDialog()
 {
     delete ui;
 }
+
+void buildingDialog::on_farmButton_clicked()
+{
+    emit buildingType(farm);
+    accept();
+}
+
+void buildingDialog::on_headQuartersButton_clicked()
+{
+   emit buildingType(headquarters);
+    accept();
+}

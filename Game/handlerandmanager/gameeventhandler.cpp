@@ -17,17 +17,21 @@ bool gameEventHandler::modifyResource(std::shared_ptr<Course::PlayerBase> player
 
 void gameEventHandler::handleMwindowClick(std::shared_ptr<GameScene> scene, std::shared_ptr<gameManager> manager, QMouseEvent event)
 {
+   if(scene->getLastID()!=-1){
     if(event.button()==Qt::LeftButton){
         handleLeftClick(scene,manager);
     }
     if(event.button()==Qt::RightButton){
         handleRightClick(manager, scene);
     }
+    return;
+   }
+   qDebug()<<"Click outside gameArea";
 }
 
 void gameEventHandler::handleLeftClick(std::shared_ptr<GameScene> scene, std::shared_ptr<gameManager> manager){
     qDebug()<<"handling mwindow click";
-    if(scene->getLastID()!=-1){
+
 
 
         activeTile_= manager->getTile(scene->getLastID());
@@ -44,7 +48,7 @@ void gameEventHandler::handleLeftClick(std::shared_ptr<GameScene> scene, std::sh
         }
 
 
-    }
+
 }
 void gameEventHandler::handleRightClick(std::shared_ptr<gameManager> manager, std::shared_ptr<GameScene> scene)
 {
@@ -68,16 +72,3 @@ std::shared_ptr<Course::TileBase> gameEventHandler::getActiveTile(){
 
 
 
-bool gameEventHandler::spawnBuilding(std::shared_ptr<Course::BuildingBase> building,
-                                     std::shared_ptr<gameManager> manager)
-{
-    if(activeTile_==nullptr){
-        qDebug()<<"error, active tile is a nullptr";
-        return false;
-    }
-    activeTile_->addBuilding(building);
-
-    manager->addBuilding(building);
-
-    return true;
-}

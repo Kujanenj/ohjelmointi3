@@ -15,8 +15,8 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="0" column="1">
-     <widget class="QTextBrowser" name="textBrowser">
+    <item row="0" column="0">
+     <widget class="QGraphicsView" name="graphicsView">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
         <horstretch>0</horstretch>
@@ -25,8 +25,8 @@
       </property>
      </widget>
     </item>
-    <item row="0" column="0">
-     <widget class="QGraphicsView" name="graphicsView">
+    <item row="0" column="1">
+     <widget class="QTextBrowser" name="textBrowser">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
         <horstretch>0</horstretch>
@@ -41,44 +41,38 @@
        <attribute name="title">
         <string>Tab 1</string>
        </attribute>
-       <widget class="QPushButton" name="addButton">
+       <widget class="QWidget" name="gridLayoutWidget">
         <property name="geometry">
          <rect>
-          <x>40</x>
-          <y>60</y>
-          <width>80</width>
-          <height>25</height>
+          <x>9</x>
+          <y>9</y>
+          <width>168</width>
+          <height>151</height>
          </rect>
         </property>
-        <property name="text">
-         <string>AddBuilding</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="removeButton">
-        <property name="geometry">
-         <rect>
-          <x>200</x>
-          <y>60</y>
-          <width>80</width>
-          <height>25</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>removeBuilding</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="minionbutton">
-        <property name="geometry">
-         <rect>
-          <x>40</x>
-          <y>100</y>
-          <width>80</width>
-          <height>25</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Muh minions</string>
-        </property>
+        <layout class="QGridLayout" name="gridLayout_2">
+         <item row="1" column="0">
+          <widget class="QPushButton" name="minionbutton">
+           <property name="text">
+            <string>Muh minions</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QPushButton" name="addButton">
+           <property name="text">
+            <string>AddBuilding</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QPushButton" name="MusicButton">
+           <property name="text">
+            <string>Toggle music</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </widget>
       </widget>
       <widget class="QWidget" name="tab_2">
@@ -96,7 +90,7 @@
      <x>0</x>
      <y>0</y>
      <width>1019</width>
-     <height>25</height>
+     <height>20</height>
     </rect>
    </property>
   </widget>
