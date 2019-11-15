@@ -83,6 +83,8 @@ private slots:
     void on_MusicButton_clicked();
 
 
+    void on_enemyMinions_clicked();
+
 private:
 
     Ui::MapWindow* m_ui;
@@ -92,6 +94,7 @@ private:
     std::shared_ptr<gameManager> m_GManager =nullptr;
     std::shared_ptr<GameScene> m_gamescene = nullptr;
     std::shared_ptr<Course::PlayerBase> testPlayer =nullptr;
+    std::shared_ptr<Course::PlayerBase> enemyTestPlayer =nullptr;
 
 
     QMediaPlayer* testSoundPlayer; //TEST MEDIA PLAYER

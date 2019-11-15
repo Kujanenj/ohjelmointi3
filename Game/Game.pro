@@ -7,6 +7,7 @@ QT += core gui widgets \
 CONFIG += c++14
 
 SOURCES += \
+    attackable.cpp \
     dialogs/buildingdialog.cpp \
     buildings/nexus.cpp \
     functions/functions.cpp \
@@ -16,11 +17,14 @@ SOURCES += \
     graphics/gamescene.cpp \
     main.cpp \
     mapwindow.cc \
+    meleechampion.cpp \
     minion/minion.cpp \
-    dialogs/startdialog.cpp
+    dialogs/startdialog.cpp \
+    unit.cpp
 
 
 HEADERS += \
+    attackable.h \
     dialogs/buildingdialog.h \
     buildings/nexus.h \
     functions/functions.h \
@@ -29,8 +33,10 @@ HEADERS += \
     handlerandmanager/gamemanager.h \
     graphics/gamescene.h \
     mapwindow.hh \
+    meleechampion.h \
     minion/minion.h \
-    dialogs/startdialog.h
+    dialogs/startdialog.h \
+    unit.h
 
 win32:CONFIG(release, debug|release): LIBS += \
     -L$$OUT_PWD/../Course/CourseLib/release/ -lCourseLib

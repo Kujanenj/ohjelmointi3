@@ -61,7 +61,9 @@ void gameManager::spawnMinion(std::shared_ptr<gameEventHandler> handler,
                                                  std::shared_ptr<Course::PlayerBase> owner,
                                                  std::shared_ptr<Course::TileBase> location)
 {
-    std::shared_ptr<minion> testMinion = std::make_shared<minion>(handler, manager, owner);
+    std::shared_ptr<minion> testMinion = std::make_shared<minion>(handler,
+                                                                  manager,
+                                                                  owner);
     testMinion->setLocationTile(location);
     location->addWorker(testMinion);
     qDebug()<<"adding minion to gamemanager vector";
@@ -85,16 +87,26 @@ void gameManager::spawnNexus(std::shared_ptr<gameEventHandler> handler,
 
 void gameManager::move(std::shared_ptr<minion> minionToMove, std::shared_ptr<Course::TileBase> targetTile)
 {
-    if(targetTile->getWorkerCount()==0){ //ADD OR STATEMENT FOR ENEMIEEEES
-
+    if(targetTile->getWorkerCount()==0 ||
+            checkForEnemies(minionToMove,
+                            targetTile)){ //ADD OR STATEMENT FOR ENEMIEEEES
+        qDebug()<<"no minions, or there are enemies present, so we shall proceed";
        Course::Coordinate deltaC=minionToMove->getCoordinate()-
                targetTile->getCoordinate();
-       qDebug()<<abs(deltaC.x())+abs(deltaC.y());
+       qDebug()<<abs(deltaC.x())+abs(deltaC.y())<<"Distance to move";
        if(abs(deltaC.x())+abs(deltaC.y())<=minionToMove->getMoveValue()){
+            if(checkForEnemies(minionToMove,targetTile)){
+                qDebug()<<"trying to attack in move command";
+                attack(minionToMove,selectAttackTarget(targetTile));
+                qDebug()<<"WE ATTACKED";
+                return;
+            }
+
             minionToMove->currentLocationTile()->removeWorker(minionToMove);
             minionToMove->setLocationTile(targetTile);
             minionToMove->currentLocationTile()->addWorker(minionToMove);
             qDebug()<<"WE MOVED";
+
            }
 
        else{
@@ -105,5 +117,55 @@ void gameManager::move(std::shared_ptr<minion> minionToMove, std::shared_ptr<Cou
        }
     else{
     qDebug()<<"there were minions";
+    }
 }
+
+void gameManager::attack(std::shared_ptr<minion> minionToMove,
+                         std::shared_ptr<attackable> toAttack)
+{
+    if(toAttack==nullptr){
+        qDebug()<<"Target was nullptr, we shant attack nothing";
+        return;
+    }
+    qDebug()<<"commencing attack";
+    qDebug()<<minionToMove->getAttack()<<"attack value";
+    qDebug()<<toAttack->getHealth()<<"health value";
+    toAttack->modifyHealth(-minionToMove->getAttack());
+    qDebug()<<toAttack->getHealth()<<"new health value";
+}
+
+bool gameManager::checkForEnemies(std::shared_ptr<minion> minionTomove,
+                                  std::shared_ptr<Course::TileBase> targetTile)
+{
+    qDebug()<<"starting to check for enemies";
+    for(auto it: targetTile->getWorkers()){
+        if(!(minionTomove->hasSameOwnerAs(it))){
+            qDebug()<<"Found enemy minion";
+            return true;
+
+        }
+    }
+    for(auto it: targetTile->getBuildings()){
+        if(!(minionTomove->hasSameOwnerAs(it))){
+            qDebug()<<"Found enemy building";
+            return true;
+        }
+    }
+    return false;
+}
+
+std::shared_ptr<attackable> gameManager::selectAttackTarget(
+        std::shared_ptr<Course::TileBase> targetTile)
+{
+    if(targetTile->getWorkerCount()!=0){
+        qDebug()<<"getting the target!";
+        for(auto it: getMinionVector()){
+            if(it==targetTile->getWorkers().at(0)){
+                qDebug()<<"target found, trying to do stdmove";
+                 return std::move(it);
+            }
+        }
+    }
+    qDebug()<<"returning nullptr, not good";
+    return nullptr;
 }

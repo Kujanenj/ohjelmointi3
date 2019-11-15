@@ -23,6 +23,7 @@ MapWindow::MapWindow(QWidget *parent,
     connect(&buildingdialog, SIGNAL(buildingType(std::string)),this,SLOT(selectBuilding(std::string)));
     dialog.exec();
     testPlayer=std::make_shared<Course::PlayerBase>("Player 1");
+    enemyTestPlayer=std::make_shared<Course::PlayerBase>("Player 2");
 
     //TEST SOUND EFFECT
     testSoundPlayer=new QMediaPlayer();
@@ -33,7 +34,7 @@ MapWindow::MapWindow(QWidget *parent,
     testPlayList->setPlaybackMode(QMediaPlaylist::Loop);
     testSoundPlayer->setPlaylist(testPlayList);
 
-    //testSoundPlayer->play();
+    testSoundPlayer->play();
    //IT WORKS
 
 }
@@ -137,12 +138,19 @@ void MapWindow::on_addButton_clicked()
 void MapWindow::on_minionbutton_clicked()
 {
     qDebug()<<"spawn minion click";
-    qDebug()<<"";
+    qDebug()<<" ";
     m_GManager->spawnMinion(m_GEHandler, m_GManager, testPlayer, m_GEHandler->getActiveTile());
 }
 
 void MapWindow::on_MusicButton_clicked()
 {
 
-    //testSoundPlayer->setMuted(!testSoundPlayer->isMuted());
+    testSoundPlayer->setMuted(!testSoundPlayer->isMuted());
+}
+
+void MapWindow::on_enemyMinions_clicked()
+{
+    qDebug()<<"spawn enemy minion click";
+    qDebug()<<" ";
+m_GManager->spawnMinion(m_GEHandler, m_GManager, enemyTestPlayer, m_GEHandler->getActiveTile());
 }

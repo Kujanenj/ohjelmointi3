@@ -7,27 +7,28 @@
 #include "core/playerbase.h"
 #include "core/coordinate.h"
 #include "core/playerbase.h"
+#include "unit.h"
+#include "attackable.h"
 class gameManager;
 class gameEventHandler;
-class minion : public Course::WorkerBase
+class minion : public Course::WorkerBase, public unit, public attackable
 {
 public:
     minion()=delete;
     minion(const std::shared_ptr<gameEventHandler>& handler,
            const std::shared_ptr<gameManager>& manager,
-           const std::shared_ptr<Course::PlayerBase>& owner);
+           const std::shared_ptr<Course::PlayerBase>& owner,
+           int movement=1,
+           int health=3,
+           int attack=1);
 
     void doSpecialAction() override;
     virtual ~minion() = default;
-    int getMoveValue();
-    void setMoved(bool hasMoved);
-    bool getMoved();
 
 private:
     std::weak_ptr<Course::TileBase> currentTile_;
-private:
-    int movement_=1;
-    bool hasMoved_=false;
+
+
 };
 
 #endif // MINION_H
