@@ -109,15 +109,20 @@ bool GameScene::event(QEvent *event)
             }else{
                 lastObjectID=static_cast<Whiskas::SimpleMapItem*>(pressed)
                         ->getBoundObject()->ID;
+                Course::Coordinate last_coordinate = static_cast<Whiskas::SimpleMapItem*>(pressed)->getBoundObject()->getCoordinate();
                 qDebug() << "ObjID: " <<
                             lastObjectID;
+                qDebug() << "Coordinate X: " << last_coordinate.x() << ", Y: " << last_coordinate.y();
 
                 return true;
             }
 
         }
     }
-    lastObjectID=-1;
+    /*lastObjectID=-1;*/
+    qDebug() << "ObjID: " <<
+                lastObjectID;
+
     return false;
 }
 

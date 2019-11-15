@@ -81,7 +81,7 @@ void MapWindow::initMap(int x, int y)
     setSize(x,y);
     std::shared_ptr<gameEventHandler> ghandler =  std::make_shared<gameEventHandler>();
 
-    std::shared_ptr<gameManager> gmanager =  std::make_shared<gameManager>();
+    std::shared_ptr<gameManager> gmanager =  std::make_shared<gameManager>(m_gamescene);
 
 
     setGEHandler(ghandler); //TEST
@@ -114,7 +114,7 @@ void MapWindow::drawItem( std::shared_ptr<Course::GameObject> obj)
 
 void MapWindow::mousePressEvent(QMouseEvent *event){
   m_GEHandler->handleMwindowClick(m_gamescene, m_GManager, *event);
-
+  //m_ui->graphicsView->viewport()->update();
 }
 
 
@@ -125,11 +125,6 @@ void MapWindow::on_addButton_clicked()
     spawnBuilding<Course::HeadQuarters>(m_GEHandler, m_GManager, testPlayer);
 
 
-
-
-
-
-
 }
 
 
@@ -138,6 +133,7 @@ void MapWindow::on_minionbutton_clicked()
     qDebug()<<"spawn minion click";
     qDebug()<<"";
     m_GManager->spawnMinion(m_GEHandler, m_GManager, testPlayer, m_GEHandler->getActiveTile());
+    m_ui->graphicsView->viewport()->update();
 }
 
 void MapWindow::on_MusicButton_clicked()

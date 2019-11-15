@@ -26,6 +26,13 @@ void SimpleMapItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *opt
     if ( m_gameobject->getType() == "Forest" ){
         QRectF source(0.0, 0.0, 500.0, 500.0);
         painter->drawImage(boundingRect(), c_mapicons.at(m_gameobject->getType()), source);
+    } else if (m_gameobject->getType() == "Nexus" ){
+        QRectF source(0.0, 0.0, 500.0, 500.0);
+        painter->drawImage(boundingRect(), c_mapicons.at(m_gameobject->getType()), source);
+    } else if (m_gameobject->getType() == "Minion" ){
+        QRectF source(0.0, 0.0, 500.0, 500.0);
+        qDebug()<<"will draw minion now";
+        painter->drawImage(boundingRect(), c_mapicons.at(m_gameobject->getType()), source);
     } else {
     painter->drawRect(boundingRect()); }
 }
@@ -68,8 +75,14 @@ void SimpleMapItem::addNewColor(std::string type)
         std::size_t hash = std::hash<std::string>{}(type);
         c_mapcolors.insert({type, QColor((hash & 0xFF0000) >> 16, (hash & 0x00FF00 ) >> 8, (hash & 0x0000FF))});
         if (type == "Forest") {
-            QImage forest_pic = QImage(":/graphics/pi.png");
+            QImage forest_pic = QImage(":/images/graphics/pi.png");
             c_mapicons.insert({type, forest_pic});
+        } else if (type == "Nexus") {
+            QImage nexus_pic = QImage(":/images/graphics/nexus_purple.png");
+            c_mapicons.insert({type, nexus_pic});
+        } else if (type == "Minion") {
+            QImage minion_pic = QImage(":/images/graphics/minion.png");
+            c_mapicons.insert({type, minion_pic});
         }
 
     }

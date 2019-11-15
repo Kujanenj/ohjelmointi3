@@ -22,6 +22,7 @@
 #include "core/playerbase.h"
 
 #include "buildings/nexus.h"
+#include "minion/minion.h"
 
 
 namespace Ui {

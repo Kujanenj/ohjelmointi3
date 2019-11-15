@@ -10,6 +10,7 @@
 #include <vector>
 
 #include "buildings/nexus.h"
+#include "graphics/mapitem.h"
 
 class minion;
 class gameEventHandler;
@@ -17,7 +18,7 @@ class gameManager : public Course::iObjectManager
 
 {
 public:
-    gameManager();
+    explicit gameManager(std::shared_ptr<GameScene>& m_gamescene);
 
 
     void addTiles(const std::vector<std::shared_ptr<Course::TileBase> > &tiles) override;
@@ -67,6 +68,8 @@ private:
     //alive....This is just a workaround.
     std::vector<std::shared_ptr<Course::BuildingBase>> allbuildings_;
     std::vector<std::shared_ptr<minion>> allminions_;
+
+    std::shared_ptr<GameScene> manager_gamescene;
 };
 
 #endif // TESTTILEMANAGER_H

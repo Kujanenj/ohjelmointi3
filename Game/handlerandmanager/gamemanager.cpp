@@ -3,8 +3,9 @@
 
 #include <QDebug>
 #include <QString>
-gameManager::gameManager()
+gameManager::gameManager(std::shared_ptr<GameScene>& m_gamescene)
 {
+ manager_gamescene = m_gamescene;
  qDebug()<<"TEST TILE MANAGER";
 }
 
@@ -62,13 +63,18 @@ void gameManager::spawnMinion(std::shared_ptr<gameEventHandler> handler,
                                                  std::shared_ptr<Course::TileBase> location)
 {
     std::shared_ptr<minion> testMinion = std::make_shared<minion>(handler, manager, owner);
-    testMinion->setLocationTile(location);
+    //testMinion->setLocationTile(location);
     location->addWorker(testMinion);
     qDebug()<<"adding minion to gamemanager vector";
-    addMinion(testMinion);
+    //addMinion(testMinion);
 
     qDebug()<<"gamemanager minion vector has size of";
     qDebug()<<allminions_.size();
+
+    manager_gamescene->drawItem(testMinion);
+    manager_gamescene->update();
+
+    qDebug()<<location->ID<<"has a drawn"<< QString::fromStdString(testMinion->getType());
 
 }
 
@@ -76,8 +82,10 @@ void gameManager::spawnNexus(std::shared_ptr<gameEventHandler> handler, std::sha
 {
     std::shared_ptr<Nexus> testNexus = std::make_shared<Nexus>(handler, manager, owner);
     location->addBuilding(testNexus);
+    manager_gamescene->drawItem(testNexus);
     allbuildings_.push_back(testNexus);
     qDebug()<<location->ID<<"has a nexus now";
+
 }
 
 

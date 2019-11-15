@@ -19,6 +19,9 @@ public:
 
     void doSpecialAction() override;
     virtual ~minion() = default;
+
+    virtual std::string getType() const override;
+
 private:
     std::weak_ptr<Course::TileBase> currentTile_;
 };

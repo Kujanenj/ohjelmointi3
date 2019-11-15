@@ -35,10 +35,10 @@ void gameEventHandler::handleLeftClick(std::shared_ptr<GameScene> scene, std::sh
 
 
         activeTile_= manager->getTile(scene->getLastID());
-
+        qDebug()<< "handling mwindow click phase2";
+        qDebug()<< "the type is"<< scene->getLastID();
         if (activeTile_->getWorkers().size()!=0){
             for(auto it: manager->getMinionVector()){
-
                 if(activeTile_->getWorkers().front()==it){
                     activeMinion_=it;
                     qDebug()<<"We got it";
