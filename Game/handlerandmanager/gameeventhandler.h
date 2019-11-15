@@ -38,7 +38,7 @@ public:
 
     std::shared_ptr<Course::TileBase> getActiveTile();
 
-
+    void sendMessage();
 
 private:
     std::shared_ptr<Course::TileBase> activeTile_ = nullptr;

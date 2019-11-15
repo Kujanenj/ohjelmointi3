@@ -22,3 +22,38 @@ void makeWorldGenerator(int mapsize_x, int mapsize_y, int seed,
 
 
 
+
+void selectBuildingTypef(std::string type,
+                        std::shared_ptr<gameEventHandler> handler,
+                        std::shared_ptr<gameManager> manager,
+                        std::shared_ptr<Course::PlayerBase> player)
+{
+
+    if(type=="farm"){
+        manager->spawnBuilding<Course::Farm>(handler,manager,player);
+
+    }
+    if(type=="headquarters"){
+        manager->spawnBuilding<Course::HeadQuarters>(handler,manager,player);
+    }
+}
+template<typename buildingType>
+
+bool gameManager::spawnBuilding(std::shared_ptr<gameEventHandler> handler,
+                   std::shared_ptr<gameManager> manager,
+                   std::shared_ptr<Course::PlayerBase> player){
+    {
+        if(handler->getActiveTile()==nullptr){
+            qDebug()<<"error, active tile is a nullptr";
+            return false;
+        }
+        qDebug()<<"Trying to spawn a building pointer in functions";
+        std::shared_ptr<Course::BuildingBase> testBuilding = std::make_shared<buildingType>(handler,manager,player);
+
+        qDebug() << QString::fromStdString(testBuilding->getType());
+        handler->getActiveTile()->addBuilding(testBuilding);
+        manager->addBuilding(testBuilding);
+        return true;
+    }
+
+}

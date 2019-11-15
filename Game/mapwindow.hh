@@ -1,3 +1,4 @@
+
 #ifndef MAPWINDOW_HH
 #define MAPWINDOW_HH
 
@@ -71,7 +72,7 @@ public slots:
      * \param y
      */
     void initMap(int x, int y);
-    void selectBuilding(int); //TODO
+    void selectBuilding(std::string); //TODO
 
 private slots:
     //just a test to add a test farm
@@ -84,6 +85,8 @@ private slots:
     void on_MusicButton_clicked();
 
 
+    void on_enemyMinions_clicked();
+
 private:
 
     Ui::MapWindow* m_ui;
@@ -93,12 +96,12 @@ private:
     std::shared_ptr<gameManager> m_GManager =nullptr;
     std::shared_ptr<GameScene> m_gamescene = nullptr;
     std::shared_ptr<Course::PlayerBase> testPlayer =nullptr;
+    std::shared_ptr<Course::PlayerBase> enemyTestPlayer =nullptr;
 
 
     QMediaPlayer* testSoundPlayer; //TEST MEDIA PLAYER
     QMediaPlaylist* testPlayList; //test playlist
     buildingDialog buildingdialog;
-    enum buildingTypes{Farm, HeadQuarters}; //TODO
 };
 
 #endif // MapWINDOW_HH

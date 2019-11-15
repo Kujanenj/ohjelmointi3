@@ -3,7 +3,7 @@
 
 #include "graphics/mapitem.h"
 #include "functions/functions.h"
-#include "buildings/headquarters.h"
+
 #include <math.h>
 
 MapWindow::MapWindow(QWidget *parent,
@@ -20,9 +20,10 @@ MapWindow::MapWindow(QWidget *parent,
     m_ui->graphicsView->setScene(dynamic_cast<QGraphicsScene*>(sgs_rawptr));
     startdialog dialog;
     connect(&dialog,         SIGNAL(size(int, int)),   this,SLOT(initMap(int,int)));
-    connect(&buildingdialog, SIGNAL(buildingType(int)),this,SLOT(selectBuilding(int)));
+    connect(&buildingdialog, SIGNAL(buildingType(std::string)),this,SLOT(selectBuilding(std::string)));
     dialog.exec();
     testPlayer=std::make_shared<Course::PlayerBase>("Player 1");
+    enemyTestPlayer=std::make_shared<Course::PlayerBase>("Player 2");
 
     //TEST SOUND EFFECT
     testSoundPlayer=new QMediaPlayer();
@@ -32,8 +33,8 @@ MapWindow::MapWindow(QWidget *parent,
     testPlayList->addMedia(QUrl("qrc:/sounds/sounds/backgroundMusic.mp3"));
     testPlayList->setPlaybackMode(QMediaPlaylist::Loop);
     testSoundPlayer->setPlaylist(testPlayList);
+
     testSoundPlayer->play();
-    //testSoundPlayer->play();
    //IT WORKS
 
 }
@@ -99,9 +100,10 @@ void MapWindow::initMap(int x, int y)
     // Nexus genesis
     m_GManager->spawnNexus(m_GEHandler, m_GManager, testPlayer, m_GManager->getTile(0));
 }
-void MapWindow::selectBuilding(int buildingType){ // TODO
-    return;
+void MapWindow::selectBuilding(std::string buildingType){ // TODO
+    selectBuildingTypef(buildingType,m_GEHandler,m_GManager,testPlayer);
 }
+
 void MapWindow::removeItem(std::shared_ptr<Course::GameObject> obj)
 {
     m_gamescene->removeItem(obj);
@@ -122,7 +124,7 @@ void MapWindow::mousePressEvent(QMouseEvent *event){
 void MapWindow::on_addButton_clicked()
 {
     buildingdialog.show();
-    spawnBuilding<Course::HeadQuarters>(m_GEHandler, m_GManager, testPlayer);
+
 
 
 }
@@ -131,7 +133,7 @@ void MapWindow::on_addButton_clicked()
 void MapWindow::on_minionbutton_clicked()
 {
     qDebug()<<"spawn minion click";
-    qDebug()<<"";
+    qDebug()<<" ";
     m_GManager->spawnMinion(m_GEHandler, m_GManager, testPlayer, m_GEHandler->getActiveTile());
     m_ui->graphicsView->viewport()->update();
 }
@@ -140,4 +142,12 @@ void MapWindow::on_MusicButton_clicked()
 {
 
     testSoundPlayer->setMuted(!testSoundPlayer->isMuted());
+}
+
+void MapWindow::on_enemyMinions_clicked()
+{
+    qDebug()<<" ";
+    qDebug()<<"spawn enemy minion click";
+
+m_GManager->spawnMinion(m_GEHandler, m_GManager, enemyTestPlayer, m_GEHandler->getActiveTile());
 }

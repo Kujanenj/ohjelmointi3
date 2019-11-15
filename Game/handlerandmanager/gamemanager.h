@@ -12,6 +12,7 @@
 #include "buildings/nexus.h"
 #include "graphics/mapitem.h"
 
+class attackable;
 class minion;
 class gameEventHandler;
 class gameManager : public Course::iObjectManager
@@ -62,6 +63,27 @@ public:
                                         std::shared_ptr<gameManager> manager,
                                         std::shared_ptr<Course::PlayerBase> owner,
                                         std::shared_ptr<Course::TileBase> location);
+
+
+    template<typename buildingType>
+    bool spawnBuilding(std::shared_ptr<gameEventHandler> handler,
+                       std::shared_ptr<gameManager> manager,
+                       std::shared_ptr<Course::PlayerBase> player);
+    /*!
+     * \brief Takes a minion object, and tries to move it to the target tile. Checks for other objects. (CURRENTLY ONLY MINIONS!)
+     * \param minionToMove
+     * \param targetTile
+     */
+    void move(std::shared_ptr<minion> minionToMove,
+              std::shared_ptr<Course::TileBase> targetTile);
+
+    void attack(std::shared_ptr<minion> minionToMove,
+                std::shared_ptr<minion> toAttack);
+    bool checkForEnemies(std::shared_ptr<minion>minionTomove,
+                         std::shared_ptr<Course::TileBase>targetTile);
+    std::shared_ptr<minion> selectAttackTarget(std::shared_ptr<Course::TileBase> targetTile);
+
+    void destroyMinion(std::shared_ptr<minion> minionToDestroy);
 private:
     std::vector<std::shared_ptr<Course::TileBase> > alltiles_;
     //Contains a pointer too all building in all tiles. This keeps the weak ptrs in tilebase
