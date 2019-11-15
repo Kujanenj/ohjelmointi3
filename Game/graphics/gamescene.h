@@ -120,6 +120,8 @@ public:
 
     int getLastID();
 
+    std::shared_ptr<Course::Coordinate> getLastCoordinate();
+
 
 private:
     QGraphicsItem* m_mapBoundRect;
@@ -127,6 +129,7 @@ private:
     int m_height;
     int m_scale;
     int lastObjectID=-1;
+    std::shared_ptr<Course::Coordinate> lastCoordinate;
 };
 
 

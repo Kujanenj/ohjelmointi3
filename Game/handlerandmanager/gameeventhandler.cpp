@@ -37,7 +37,8 @@ void gameEventHandler::handleLeftClick(std::shared_ptr<GameScene> scene, std::sh
 
 
 
-        activeTile_= manager->getTile(scene->getLastID());
+        //activeTile_= manager->getTile(scene->getLastID());
+        activeTile_ = manager->getTile(*scene->getLastCoordinate());
         qDebug()<< "handling mwindow click phase2";
         qDebug()<< "the type is"<< scene->getLastID();
         if (activeTile_->getWorkers().size()!=0){

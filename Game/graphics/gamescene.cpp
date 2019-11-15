@@ -109,10 +109,11 @@ bool GameScene::event(QEvent *event)
             }else{
                 lastObjectID=static_cast<Whiskas::SimpleMapItem*>(pressed)
                         ->getBoundObject()->ID;
-                Course::Coordinate last_coordinate = static_cast<Whiskas::SimpleMapItem*>(pressed)->getBoundObject()->getCoordinate();
+                lastCoordinate = static_cast<Whiskas::SimpleMapItem*>(pressed)->getBoundObject()->getCoordinatePtr();
                 qDebug() << "ObjID: " <<
                             lastObjectID;
-                qDebug() << "Coordinate X: " << last_coordinate.x() << ", Y: " << last_coordinate.y();
+                qDebug() << "Coordinate X: " << lastCoordinate->x() << ", Y: " << lastCoordinate->y();
+
 
                 return true;
             }
@@ -120,8 +121,6 @@ bool GameScene::event(QEvent *event)
         }
     }
     /*lastObjectID=-1;*/
-    qDebug() << "ObjID: " <<
-                lastObjectID;
 
     return false;
 }
@@ -130,6 +129,10 @@ int GameScene::getLastID(){
     return lastObjectID;
 }
 
+std::shared_ptr<Course::Coordinate> GameScene::getLastCoordinate()
+{
+    return lastCoordinate;
+}
 
 
 

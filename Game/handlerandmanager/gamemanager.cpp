@@ -29,7 +29,12 @@ std::shared_ptr<Course::TileBase> gameManager::getTile(const Course::ObjectId &i
 
 std::shared_ptr<Course::TileBase> gameManager::getTile(const Course::Coordinate &coordinate)
 {
-    return(alltiles_.at(0));
+    for(auto it :alltiles_){
+        if(it->getCoordinate() == coordinate){
+            return it;
+        }
+    }
+    return nullptr;
 }
 
 std::vector<std::shared_ptr<Course::TileBase> > gameManager::getTiles(const std::vector<Course::Coordinate> &coordinates)
@@ -62,15 +67,10 @@ void gameManager::spawnMinion(std::shared_ptr<gameEventHandler> handler,
                                                  std::shared_ptr<Course::PlayerBase> owner,
                                                  std::shared_ptr<Course::TileBase> location)
 {
-<<<<<<< HEAD
-    std::shared_ptr<minion> testMinion = std::make_shared<minion>(handler, manager, owner);
-    //testMinion->setLocationTile(location);
-=======
     std::shared_ptr<minion> testMinion = std::make_shared<minion>(handler,
                                                                   manager,
                                                                   owner);
     testMinion->setLocationTile(location);
->>>>>>> jussi
     location->addWorker(testMinion);
     qDebug()<<"adding minion to gamemanager vector";
     //addMinion(testMinion);
