@@ -150,7 +150,8 @@ void MapWindow::on_MusicButton_clicked()
 
 void MapWindow::on_enemyMinions_clicked()
 {
-    qDebug()<<"spawn enemy minion click";
     qDebug()<<" ";
+    qDebug()<<"spawn enemy minion click";
+
 m_GManager->spawnMinion(m_GEHandler, m_GManager, enemyTestPlayer, m_GEHandler->getActiveTile());
 }

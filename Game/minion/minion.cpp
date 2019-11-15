@@ -20,4 +20,8 @@ void minion::doSpecialAction()
     qDebug()<<"nada";
 }
 
+std::string minion::getType() const
+{
+    return "minion";
+}
 

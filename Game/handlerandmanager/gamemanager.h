@@ -76,10 +76,12 @@ public:
               std::shared_ptr<Course::TileBase> targetTile);
 
     void attack(std::shared_ptr<minion> minionToMove,
-                std::shared_ptr<attackable> toAttack);
+                std::shared_ptr<minion> toAttack);
     bool checkForEnemies(std::shared_ptr<minion>minionTomove,
                          std::shared_ptr<Course::TileBase>targetTile);
-    std::shared_ptr<attackable> selectAttackTarget(std::shared_ptr<Course::TileBase> targetTile);
+    std::shared_ptr<minion> selectAttackTarget(std::shared_ptr<Course::TileBase> targetTile);
+
+    void destroyMinion(std::shared_ptr<minion> minionToDestroy);
 private:
     std::vector<std::shared_ptr<Course::TileBase> > alltiles_;
     //Contains a pointer too all building in all tiles. This keeps the weak ptrs in tilebase

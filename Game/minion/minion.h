@@ -23,8 +23,10 @@ public:
            int attack=1);
 
     void doSpecialAction() override;
-    virtual ~minion() = default;
-
+    //virtual ~minion() = default;
+    std::string getType() const override;
+protected:
+    std::shared_ptr<gameManager> manager_;
 private:
     std::weak_ptr<Course::TileBase> currentTile_;
 

@@ -29,3 +29,4 @@ bool attackable::modifyHealth(int hModifier)
     }
     return false;
 }
+

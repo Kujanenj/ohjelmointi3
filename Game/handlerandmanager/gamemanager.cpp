@@ -98,7 +98,7 @@ void gameManager::move(std::shared_ptr<minion> minionToMove, std::shared_ptr<Cou
             if(checkForEnemies(minionToMove,targetTile)){
                 qDebug()<<"trying to attack in move command";
                 attack(minionToMove,selectAttackTarget(targetTile));
-                qDebug()<<"WE ATTACKED";
+                qDebug()<<"we attacked";
                 return;
             }
 
@@ -121,7 +121,7 @@ void gameManager::move(std::shared_ptr<minion> minionToMove, std::shared_ptr<Cou
 }
 
 void gameManager::attack(std::shared_ptr<minion> minionToMove,
-                         std::shared_ptr<attackable> toAttack)
+                         std::shared_ptr<minion> toAttack)
 {
     if(toAttack==nullptr){
         qDebug()<<"Target was nullptr, we shant attack nothing";
@@ -130,8 +130,12 @@ void gameManager::attack(std::shared_ptr<minion> minionToMove,
     qDebug()<<"commencing attack";
     qDebug()<<minionToMove->getAttack()<<"attack value";
     qDebug()<<toAttack->getHealth()<<"health value";
-    toAttack->modifyHealth(-minionToMove->getAttack());
-    qDebug()<<toAttack->getHealth()<<"new health value";
+    if(toAttack->modifyHealth(-minionToMove->getAttack())){
+
+
+        destroyMinion(toAttack);
+    }
+
 }
 
 bool gameManager::checkForEnemies(std::shared_ptr<minion> minionTomove,
@@ -154,7 +158,7 @@ bool gameManager::checkForEnemies(std::shared_ptr<minion> minionTomove,
     return false;
 }
 
-std::shared_ptr<attackable> gameManager::selectAttackTarget(
+std::shared_ptr<minion> gameManager::selectAttackTarget(
         std::shared_ptr<Course::TileBase> targetTile)
 {
     if(targetTile->getWorkerCount()!=0){
@@ -168,4 +172,30 @@ std::shared_ptr<attackable> gameManager::selectAttackTarget(
     }
     qDebug()<<"returning nullptr, not good";
     return nullptr;
+}
+
+void gameManager::destroyMinion(std::shared_ptr<minion> minionToDestroy)
+{
+    qDebug()<<"starting the minion destruction apocalypse";
+
+
+    unsigned int index=0;
+    bool targetFound=false;
+     for(unsigned int i=0; i<allminions_.size();i++){
+         qDebug()<<i<<"indexses";
+        if(minionToDestroy==allminions_.at(i)){
+            qDebug()<<"target found, with index of"<<i;
+            index=i;
+            targetFound=true;
+            break;
+        }
+    }
+     if(targetFound){
+         qDebug()<<"removing minion from tile";
+         minionToDestroy->currentLocationTile()->removeWorker(minionToDestroy);
+         qDebug()<<allminions_.size()<<"allminions size before erease";
+         qDebug()<<"trying to erease minion";
+         allminions_.erase(allminions_.begin()+index);
+         qDebug()<<allminions_.size()<<"afther erease";
+     }
 }

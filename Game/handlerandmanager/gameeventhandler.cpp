@@ -30,6 +30,9 @@ void gameEventHandler::handleMwindowClick(std::shared_ptr<GameScene> scene, std:
 }
 
 void gameEventHandler::handleLeftClick(std::shared_ptr<GameScene> scene, std::shared_ptr<gameManager> manager){
+    qDebug()<<"";
+    qDebug()<<"";
+    qDebug()<<"";
     qDebug()<<"handling mwindow click";
 
 
@@ -41,7 +44,8 @@ void gameEventHandler::handleLeftClick(std::shared_ptr<GameScene> scene, std::sh
 
                 if(activeTile_->getWorkers().front()==it){
                     activeMinion_=it;
-                    qDebug()<<"We got it";
+                    qDebug()<<"active minion type is"<<QString::fromStdString(it->getType())
+                           <<"and its owner is"<<QString::fromStdString(it->getOwner()->getName());
                 }
 
             }
@@ -54,6 +58,9 @@ void gameEventHandler::handleRightClick(std::shared_ptr<gameManager> manager, st
 {
     std::shared_ptr<Course::TileBase> targetTile=manager->getTile(scene->getLastID());
     if(activeMinion_!=nullptr){
+        qDebug()<<" ";
+        qDebug()<<" ";
+        qDebug()<<" ";
         qDebug()<<"trying to move";
         manager->move(activeMinion_,targetTile);
 
