@@ -73,13 +73,13 @@ void gameManager::spawnMinion(std::shared_ptr<gameEventHandler> handler,
     testMinion->setLocationTile(location);
     location->addWorker(testMinion);
     qDebug()<<"adding minion to gamemanager vector";
-    //addMinion(testMinion);
+    addMinion(testMinion);
 
     qDebug()<<"gamemanager minion vector has size of";
     qDebug()<<allminions_.size();
 
     manager_gamescene->drawItem(testMinion);
-    manager_gamescene->update();
+    //manager_gamescene->update();
 
     qDebug()<<location->ID<<"has a drawn"<< QString::fromStdString(testMinion->getType());
 
@@ -118,6 +118,7 @@ void gameManager::move(std::shared_ptr<minion> minionToMove, std::shared_ptr<Cou
             minionToMove->currentLocationTile()->removeWorker(minionToMove);
             minionToMove->setLocationTile(targetTile);
             minionToMove->currentLocationTile()->addWorker(minionToMove);
+            manager_gamescene->updateItem(minionToMove);
             qDebug()<<"WE MOVED";
 
            }

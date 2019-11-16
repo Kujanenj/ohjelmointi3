@@ -112,7 +112,7 @@ bool GameScene::event(QEvent *event)
                 lastCoordinate = static_cast<Whiskas::SimpleMapItem*>(pressed)->getBoundObject()->getCoordinatePtr();
                 qDebug() << "ObjID: " <<
                             lastObjectID;
-                qDebug() << "Coordinate X: " << lastCoordinate->x() << ", Y: " << lastCoordinate->y();
+                //qDebug() << "Coordinate X: " << lastCoordinate->x() << ", Y: " << lastCoordinate->y();
 
 
                 return true;

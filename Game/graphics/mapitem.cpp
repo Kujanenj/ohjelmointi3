@@ -31,7 +31,7 @@ void SimpleMapItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *opt
         painter->drawImage(boundingRect(), c_mapicons.at(m_gameobject->getType()), source);
     } else if (m_gameobject->getType() == "Minion" ){
         QRectF source(0.0, 0.0, 500.0, 500.0);
-        qDebug()<<"will draw minion now";
+        //qDebug()<<"will draw minion now";
         painter->drawImage(boundingRect(), c_mapicons.at(m_gameobject->getType()), source);
     } else {
     painter->drawRect(boundingRect()); }
