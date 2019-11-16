@@ -110,7 +110,7 @@ bool GameScene::event(QEvent *event)
                 lastObjectID=static_cast<Whiskas::SimpleMapItem*>(pressed)
                         ->getBoundObject()->ID;
                 lastCoordinate = static_cast<Whiskas::SimpleMapItem*>(pressed)->getBoundObject()->getCoordinatePtr();
-                qDebug() << "ObjID: " <<
+                qDebug() << "ObjID: inside scene" <<
                             lastObjectID;
                 //qDebug() << "Coordinate X: " << lastCoordinate->x() << ", Y: " << lastCoordinate->y();
 
@@ -143,9 +143,18 @@ void GameScene::removeItem(std::shared_ptr<Course::GameObject> obj)
     if ( items_list.size() == 1 ){
         qDebug() << "Nothing to be removed at the location pointed by given obj.";
     } else {
+
+        qDebug()<<items(obj->getCoordinate().asQpoint());
+        qDebug()<<items_list.size();
         for ( auto item : items_list ){
+
+            qDebug()<<"looping items";
+
             Whiskas::SimpleMapItem* mapitem = static_cast<Whiskas::SimpleMapItem*>(item);
+            qDebug()<<mapitem->getBoundObject()->ID;
+
             if ( mapitem->isSameObj(obj) ){
+                qDebug()<<"deleting";
                 delete mapitem;
             }
         }
@@ -155,6 +164,7 @@ void GameScene::removeItem(std::shared_ptr<Course::GameObject> obj)
 void GameScene::drawItem( std::shared_ptr<Course::GameObject> obj)
 {
     Whiskas::SimpleMapItem* nItem = new Whiskas::SimpleMapItem(obj, m_scale);
+    qDebug()<<"Added item"<<obj->ID<<QString::fromStdString(obj->getType());
     addItem(nItem);
 }
 

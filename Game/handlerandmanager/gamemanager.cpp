@@ -53,6 +53,7 @@ std::vector<std::shared_ptr<minion> > gameManager::getMinionVector()
 bool gameManager::addBuilding(std::shared_ptr<Course::BuildingBase>& Building)
 {
     allbuildings_.push_back(Building);
+    qDebug()<<allbuildings_.size()<<"allbuildings.size";
     return true;
 }
 
@@ -80,8 +81,9 @@ void gameManager::spawnMinion(std::shared_ptr<gameEventHandler> handler,
 
     manager_gamescene->drawItem(testMinion);
     //manager_gamescene->update();
-
-    qDebug()<<location->ID<<"has a drawn"<< QString::fromStdString(testMinion->getType());
+    qDebug()<<"trying to instant remove minion";
+    manager_gamescene->removeItem(testMinion);
+    //qDebug()<<location->ID<<"has a drawn"<< QString::fromStdString(testMinion->getType());
 
 }
 
@@ -197,12 +199,12 @@ void gameManager::destroyMinion(std::shared_ptr<minion> minionToDestroy)
     }
      if(targetFound){
          manager_gamescene->removeItem(minionToDestroy);
-         qDebug()<<"removing minion from tile";
+        /* qDebug()<<"removing minion from tile";
          minionToDestroy->currentLocationTile()->removeWorker(minionToDestroy);
          qDebug()<<allminions_.size()<<"allminions size before erease";
          qDebug()<<"trying to erease minion";
          allminions_.erase(allminions_.begin()+index);
-         qDebug()<<allminions_.size()<<"afther erease";
+         qDebug()<<allminions_.size()<<"afther erease"; */
 
      }
 }

@@ -34,7 +34,7 @@ MapWindow::MapWindow(QWidget *parent,
     testPlayList->setPlaybackMode(QMediaPlaylist::Loop);
     testSoundPlayer->setPlaylist(testPlayList);
 
-    testSoundPlayer->play();
+   // testSoundPlayer->play();
    //IT WORKS
 
 }
