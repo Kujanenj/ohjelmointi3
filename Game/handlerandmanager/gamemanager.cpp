@@ -85,25 +85,11 @@ void gameManager::spawnMinion(std::shared_ptr<gameEventHandler> handler,
 
 }
 
-<<<<<<< HEAD
-void gameManager::spawnNexus(std::shared_ptr<gameEventHandler> handler,
-                             std::shared_ptr<gameManager> manager,
-                             std::shared_ptr<Course::PlayerBase> owner,
-                             std::shared_ptr<Course::TileBase> location)
-{
-    std::shared_ptr<Nexus> testNexus = std::make_shared<Nexus>(handler, manager, owner);
-    location->addBuilding(testNexus);
-    manager_gamescene->drawItem(testNexus);
-    allbuildings_.push_back(testNexus);
-    qDebug()<<location->ID<<"has a nexus now";
 
-}
-=======
-
->>>>>>> jussi
 
 void gameManager::move(std::shared_ptr<minion> minionToMove, std::shared_ptr<Course::TileBase> targetTile)
 {
+
     if(targetTile->getWorkerCount()==0 ||
             checkForEnemies(minionToMove,
                             targetTile)){ //ADD OR STATEMENT FOR ENEMIEEEES
@@ -210,11 +196,13 @@ void gameManager::destroyMinion(std::shared_ptr<minion> minionToDestroy)
         }
     }
      if(targetFound){
+         manager_gamescene->removeItem(minionToDestroy);
          qDebug()<<"removing minion from tile";
          minionToDestroy->currentLocationTile()->removeWorker(minionToDestroy);
          qDebug()<<allminions_.size()<<"allminions size before erease";
          qDebug()<<"trying to erease minion";
          allminions_.erase(allminions_.begin()+index);
          qDebug()<<allminions_.size()<<"afther erease";
+
      }
 }

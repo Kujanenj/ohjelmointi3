@@ -116,6 +116,7 @@ void MapWindow::drawItem( std::shared_ptr<Course::GameObject> obj)
 
 void MapWindow::mousePressEvent(QMouseEvent *event){
   m_GEHandler->handleMwindowClick(m_gamescene, m_GManager, *event);
+  qDebug()<<"updating mwindow view";
   m_ui->graphicsView->viewport()->update();
 }
 

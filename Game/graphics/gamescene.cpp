@@ -137,6 +137,7 @@ std::shared_ptr<Course::Coordinate> GameScene::getLastCoordinate()
 
 
 void GameScene::removeItem(std::shared_ptr<Course::GameObject> obj)
+
 {
     QList<QGraphicsItem*> items_list = items(obj->getCoordinate().asQpoint());
     if ( items_list.size() == 1 ){
