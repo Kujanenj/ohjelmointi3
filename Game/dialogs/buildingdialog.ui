@@ -42,6 +42,13 @@
         </property>
        </widget>
       </item>
+      <item row="1" column="0">
+       <widget class="QPushButton" name="nexsusButton">
+        <property name="text">
+         <string>nexsus</string>
+        </property>
+       </widget>
+      </item>
      </layout>
     </item>
    </layout>

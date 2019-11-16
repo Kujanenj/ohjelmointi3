@@ -36,6 +36,9 @@ void selectBuildingTypef(std::string type,
     if(type=="headquarters"){
         manager->spawnBuilding<Course::HeadQuarters>(handler,manager,player);
     }
+    if(type=="nexsus"){
+        manager->spawnBuilding<Nexus>(handler,manager,player);
+    }
 }
 template<typename buildingType>
 

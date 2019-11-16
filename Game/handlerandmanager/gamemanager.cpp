@@ -1,6 +1,6 @@
 #include "gamemanager.h"
 
-
+#include "buildings/farm.h"
 #include <QDebug>
 #include <QString>
 gameManager::gameManager()
@@ -74,16 +74,7 @@ void gameManager::spawnMinion(std::shared_ptr<gameEventHandler> handler,
 
 }
 
-void gameManager::spawnNexus(std::shared_ptr<gameEventHandler> handler,
-                             std::shared_ptr<gameManager> manager,
-                             std::shared_ptr<Course::PlayerBase> owner,
-                             std::shared_ptr<Course::TileBase> location)
-{
-    std::shared_ptr<Nexus> testNexus = std::make_shared<Nexus>(handler, manager, owner);
-    location->addBuilding(testNexus);
-    allbuildings_.push_back(testNexus);
-    qDebug()<<location->ID<<"has a nexus now";
-}
+
 
 void gameManager::move(std::shared_ptr<minion> minionToMove, std::shared_ptr<Course::TileBase> targetTile)
 {
@@ -150,6 +141,7 @@ bool gameManager::checkForEnemies(std::shared_ptr<minion> minionTomove,
         }
     }
     for(auto it: targetTile->getBuildings()){
+        qDebug()<<QString::fromStdString(it->getType());
         if(!(minionTomove->hasSameOwnerAs(it))){
             qDebug()<<"Found enemy building";
             return true;

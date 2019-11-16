@@ -98,7 +98,7 @@ void MapWindow::initMap(int x, int y)
     }
 
     // Nexus genesis
-    m_GManager->spawnNexus(m_GEHandler, m_GManager, testPlayer, m_GManager->getTile(0));
+    selectBuilding("nexsus");
 }
 void MapWindow::selectBuilding(std::string buildingType){ // TODO
     selectBuildingTypef(buildingType,m_GEHandler,m_GManager,testPlayer);

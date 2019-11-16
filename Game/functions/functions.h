@@ -12,6 +12,7 @@
 #include "tiles/tilebase.h"
 #include "handlerandmanager/gamemanager.h"
 #include "buildings/headquarters.h"
+#include "buildings/nexus.h"
 
 
 /*!
