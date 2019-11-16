@@ -24,3 +24,9 @@ void buildingDialog::on_headQuartersButton_clicked()
    emit buildingType("headquarters");
     accept();
 }
+
+void buildingDialog::on_nexsusButton_clicked()
+{
+    emit buildingType("nexsus");
+    accept();
+}

@@ -59,10 +59,7 @@ public:
                                         std::shared_ptr<Course::PlayerBase> owner,
                                         std::shared_ptr<Course::TileBase> location);
 
-    void spawnNexus(std::shared_ptr<gameEventHandler> handler,
-                                        std::shared_ptr<gameManager> manager,
-                                        std::shared_ptr<Course::PlayerBase> owner,
-                                        std::shared_ptr<Course::TileBase> location);
+
 
 
     template<typename buildingType>
