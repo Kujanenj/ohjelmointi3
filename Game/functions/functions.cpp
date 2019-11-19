@@ -36,6 +36,9 @@ void selectBuildingTypef(std::string type,
     if(type=="headquarters"){
         manager->spawnBuilding<Course::HeadQuarters>(handler,manager,player);
     }
+    if(type=="nexsus"){
+        manager->spawnBuilding<Nexus>(handler,manager,player);
+    }
 }
 template<typename buildingType>
 
@@ -53,7 +56,9 @@ bool gameManager::spawnBuilding(std::shared_ptr<gameEventHandler> handler,
         qDebug() << QString::fromStdString(testBuilding->getType());
         handler->getActiveTile()->addBuilding(testBuilding);
         manager->addBuilding(testBuilding);
+        manager_gamescene->drawItem(testBuilding);
         return true;
+
     }
 
 }

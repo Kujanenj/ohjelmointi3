@@ -1,6 +1,6 @@
 #include "gamemanager.h"
 
-
+#include "buildings/farm.h"
 #include <QDebug>
 #include <QString>
 gameManager::gameManager(std::shared_ptr<GameScene>& m_gamescene)
@@ -53,6 +53,7 @@ std::vector<std::shared_ptr<minion> > gameManager::getMinionVector()
 bool gameManager::addBuilding(std::shared_ptr<Course::BuildingBase>& Building)
 {
     allbuildings_.push_back(Building);
+    qDebug()<<allbuildings_.size()<<"allbuildings.size";
     return true;
 }
 
@@ -74,6 +75,7 @@ void gameManager::spawnMinion(std::shared_ptr<gameEventHandler> handler,
     location->addWorker(testMinion);
     qDebug()<<"adding minion to gamemanager vector";
     addMinion(testMinion);
+    allattackablestest_.push_back(testMinion);
 
     qDebug()<<"gamemanager minion vector has size of";
     qDebug()<<allminions_.size();
@@ -81,22 +83,12 @@ void gameManager::spawnMinion(std::shared_ptr<gameEventHandler> handler,
     manager_gamescene->drawItem(testMinion);
     manager_gamescene->update();
 
-    qDebug()<<location->ID<<"has a drawn"<< QString::fromStdString(testMinion->getType());
+
+    //qDebug()<<location->ID<<"has a drawn"<< QString::fromStdString(testMinion->getType());
 
 }
 
-void gameManager::spawnNexus(std::shared_ptr<gameEventHandler> handler,
-                             std::shared_ptr<gameManager> manager,
-                             std::shared_ptr<Course::PlayerBase> owner,
-                             std::shared_ptr<Course::TileBase> location)
-{
-    std::shared_ptr<Nexus> testNexus = std::make_shared<Nexus>(handler, manager, owner);
-    location->addBuilding(testNexus);
-    manager_gamescene->drawItem(testNexus);
-    allbuildings_.push_back(testNexus);
-    qDebug()<<location->ID<<"has a nexus now";
 
-}
 
 template<typename buildingType>
 bool gameManager::spawnBuilding(std::shared_ptr<gameEventHandler> handler,
@@ -120,6 +112,7 @@ bool gameManager::spawnBuilding(std::shared_ptr<gameEventHandler> handler,
 
 void gameManager::move(std::shared_ptr<minion> minionToMove, std::shared_ptr<Course::TileBase> targetTile)
 {
+
     if(targetTile->getWorkerCount()==0 ||
             checkForEnemies(minionToMove,
                             targetTile)){ //ADD OR STATEMENT FOR ENEMIEEEES
@@ -155,8 +148,9 @@ void gameManager::move(std::shared_ptr<minion> minionToMove, std::shared_ptr<Cou
 }
 
 void gameManager::attack(std::shared_ptr<minion> minionToMove,
-                         std::shared_ptr<minion> toAttack)
+                         std::shared_ptr<attackable> toAttack)
 {
+
     if(toAttack==nullptr){
         qDebug()<<"Target was nullptr, we shant attack nothing";
         return;
@@ -184,6 +178,7 @@ bool gameManager::checkForEnemies(std::shared_ptr<minion> minionTomove,
         }
     }
     for(auto it: targetTile->getBuildings()){
+        qDebug()<<QString::fromStdString(it->getType());
         if(!(minionTomove->hasSameOwnerAs(it))){
             qDebug()<<"Found enemy building";
             return true;
@@ -192,15 +187,17 @@ bool gameManager::checkForEnemies(std::shared_ptr<minion> minionTomove,
     return false;
 }
 
-std::shared_ptr<minion> gameManager::selectAttackTarget(
+std::shared_ptr<attackable> gameManager::selectAttackTarget(
         std::shared_ptr<Course::TileBase> targetTile)
 {
+
     if(targetTile->getWorkerCount()!=0){
-        qDebug()<<"getting the target!";
-        for(auto it: getMinionVector()){
-            if(it==targetTile->getWorkers().at(0)){
-                qDebug()<<"target found, trying to do stdmove";
-                 return std::move(it);
+        qDebug()<<"getting the target!"<<"loop all attackble ID,s";
+        for(auto it:allattackablestest_){
+            qDebug()<<it->getBoundID();
+            if(it->getBoundID()==targetTile->getWorkers().at(0)->ID){
+
+                return it;
             }
         }
     }
@@ -208,16 +205,18 @@ std::shared_ptr<minion> gameManager::selectAttackTarget(
     return nullptr;
 }
 
-void gameManager::destroyMinion(std::shared_ptr<minion> minionToDestroy)
+void gameManager::destroyMinion(std::shared_ptr<attackable> objectToDestroy)
 {
     qDebug()<<"starting the minion destruction apocalypse";
 
-
+    std::shared_ptr<minion> tempMinionToRemove=nullptr;
     unsigned int index=0;
     bool targetFound=false;
      for(unsigned int i=0; i<allminions_.size();i++){
          qDebug()<<i<<"indexses";
-        if(minionToDestroy==allminions_.at(i)){
+        if(objectToDestroy==allminions_.at(i)){
+            tempMinionToRemove=allminions_.at(i);
+            qDebug()<<tempMinionToRemove->ID;
             qDebug()<<"target found, with index of"<<i;
             index=i;
             targetFound=true;
@@ -225,11 +224,22 @@ void gameManager::destroyMinion(std::shared_ptr<minion> minionToDestroy)
         }
     }
      if(targetFound){
-         qDebug()<<"removing minion from tile";
-         minionToDestroy->currentLocationTile()->removeWorker(minionToDestroy);
+         qDebug()<<"trying to remove minion from scene";
+         manager_gamescene->removeItem(tempMinionToRemove);
+        qDebug()<<"removing minion from tile";
+         tempMinionToRemove->currentLocationTile()->removeWorker(tempMinionToRemove);
          qDebug()<<allminions_.size()<<"allminions size before erease";
+
+            for(auto it : allminions_){
+                qDebug()<<it->ID<<"minion ID´s";
+            }
          qDebug()<<"trying to erease minion";
          allminions_.erase(allminions_.begin()+index);
          qDebug()<<allminions_.size()<<"afther erease";
+
+         for(auto it : allminions_){
+             qDebug()<<it->ID<<"minion ID´s afther destruction";
+         }
+
      }
 }

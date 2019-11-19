@@ -12,6 +12,7 @@
 #include "tiles/tilebase.h"
 #include "handlerandmanager/gamemanager.h"
 #include "buildings/headquarters.h"
+#include "buildings/nexus.h"
 
 
 /*!
@@ -42,5 +43,8 @@ void makeWorldGenerator(int mapsize_x, int mapsize_y, int seed,
 void selectBuildingTypef(std::string type, std::shared_ptr<gameEventHandler> handler,
                         std::shared_ptr<gameManager> manager,
                         std::shared_ptr<Course::PlayerBase> player);
+
+
+
 #endif // FUNCTIONS_H
 

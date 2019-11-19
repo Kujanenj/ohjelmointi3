@@ -69,7 +69,7 @@ void gameEventHandler::handleLeftClick(std::shared_ptr<GameScene> scene, std::sh
 }
 void gameEventHandler::handleRightClick(std::shared_ptr<gameManager> manager, std::shared_ptr<GameScene> scene)
 {
-    std::shared_ptr<Course::TileBase> targetTile=manager->getTile(scene->getLastID());
+    std::shared_ptr<Course::TileBase> targetTile=manager->getTile(*scene->getLastCoordinate());
     if(activeMinion_!=nullptr){
         qDebug()<<" ";
         qDebug()<<" ";

@@ -34,7 +34,7 @@ MapWindow::MapWindow(QWidget *parent,
     testPlayList->setPlaybackMode(QMediaPlaylist::Loop);
     testSoundPlayer->setPlaylist(testPlayList);
 
-    testSoundPlayer->play();
+   // testSoundPlayer->play();
    //IT WORKS
 
 }
@@ -99,9 +99,6 @@ void MapWindow::initMap(int x, int y)
 
     // Nexus genesis
     //m_GManager->spawnNexus(m_GEHandler, m_GManager, testPlayer, m_GManager->getTile(0));
-
-
-
     //m_GManager->spawnBuilding<Nexus>(m_GEHandler, m_GManager, testPlayer);
 }
 void MapWindow::selectBuilding(std::string buildingType){ // TODO
@@ -120,6 +117,7 @@ void MapWindow::drawItem( std::shared_ptr<Course::GameObject> obj)
 
 void MapWindow::mousePressEvent(QMouseEvent *event){
   m_GEHandler->handleMwindowClick(m_gamescene, m_GManager, *event);
+  qDebug()<<"updating mwindow view";
   m_ui->graphicsView->viewport()->update();
 }
 
@@ -151,7 +149,7 @@ void MapWindow::on_MusicButton_clicked()
 void MapWindow::on_enemyMinions_clicked()
 {
     qDebug()<<" ";
-    qDebug()<<"spawn enemy minion click";   
+    qDebug()<<"spawn enemy minion click";
     m_GManager->spawnMinion(m_GEHandler, m_GManager, enemyTestPlayer, m_GEHandler->getActiveTile());
     m_ui->graphicsView->viewport()->update();
 }

@@ -23,6 +23,8 @@ private slots:
 
     void on_headQuartersButton_clicked();
 
+    void on_nexsusButton_clicked();
+
 private:
     Ui::buildingDialog *ui;
     QGraphicsScene* scene;
