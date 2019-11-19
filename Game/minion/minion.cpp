@@ -10,9 +10,7 @@ minion::minion(const std::shared_ptr<gameEventHandler>& handler,
     unit(movement),
     attackable(health,attack, ID)
 {
-    /*std::string a = getOwner()->getName();
-    QString b = QString::fromStdString(a);
-    qDebug()<<"minion got made"<< "owner:"<<b ;*/
+
 
     lockEventHandler();
     qDebug()<<"minion got made";

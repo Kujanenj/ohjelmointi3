@@ -8,7 +8,7 @@
 #include "handlerandmanager/gamemanager.h"
 
 #include "core/playerbase.h"
-
+#include "attackable.h"
 
 class gameManager;
 class gameEventHandler;
@@ -27,7 +27,7 @@ static const Course::ResourceMap OUTPOST_PRODUCTIONMAP = {
  * Production: -10 money (upkeep)\n
  *
  */
-class Nexus : public Course::BuildingBase
+class Nexus : public Course::BuildingBase, public attackable
 {
 public:
     /**
@@ -52,7 +52,9 @@ public:
             const std::shared_ptr<Course::PlayerBase>& owner,
             const int& tilespaces = 1,
             const Course::ResourceMap& buildcost = Course::ConstResourceMaps::OUTPOST_BUILD_COST,
-            const Course::ResourceMap& production = Course::ConstResourceMaps::OUTPOST_PRODUCTION
+            const Course::ResourceMap& production = Course::ConstResourceMaps::OUTPOST_PRODUCTION,
+            int health=5,
+            int attack=0
             );
 
     /**

@@ -14,14 +14,17 @@ Nexus::Nexus(
         const std::shared_ptr<Course::PlayerBase>& owner,
         const int& tilespaces,
         const Course::ResourceMap& buildcost,
-        const Course::ResourceMap& production
+        const Course::ResourceMap& production,
+        int health,
+        int attack
         ):
     Course::BuildingBase(eventhandler,
                  objectmanager,
                  owner,
                  tilespaces,
                  buildcost,
-                 production)
+                 production),
+    attackable(health,attack, ID)
 {
 }
 

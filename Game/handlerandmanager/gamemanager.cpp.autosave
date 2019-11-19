@@ -54,7 +54,7 @@ bool gameManager::addBuilding(std::shared_ptr<Course::BuildingBase>& Building)
 {
     allbuildings_.push_back(Building);
     qDebug()<<allbuildings_.size()<<"allbuildings.size";
-    allattackablestest_.push_back(Building);
+   
     return true;
 }
 
