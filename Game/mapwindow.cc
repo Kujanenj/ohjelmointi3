@@ -92,13 +92,17 @@ void MapWindow::initMap(int x, int y)
     Course::Coordinate offset=Course::Coordinate(x/2,y/2);
 
     for(auto it:m_GManager->returntilevector()){
-        it->setCoordinate(it->getCoordinate()-offset); //tiles start counting from the middle, while they should start from
+        //it->setCoordinate(it->getCoordinate()-offset); //tiles start counting from the middle, while they should start from
                                                        //the upper left corner... Thanks RITO
         drawItem(it);
     }
 
     // Nexus genesis
-    m_GManager->spawnNexus(m_GEHandler, m_GManager, testPlayer, m_GManager->getTile(0));
+    //m_GManager->spawnNexus(m_GEHandler, m_GManager, testPlayer, m_GManager->getTile(0));
+
+
+
+    //m_GManager->spawnBuilding<Nexus>(m_GEHandler, m_GManager, testPlayer);
 }
 void MapWindow::selectBuilding(std::string buildingType){ // TODO
     selectBuildingTypef(buildingType,m_GEHandler,m_GManager,testPlayer);

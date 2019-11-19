@@ -79,7 +79,7 @@ void gameManager::spawnMinion(std::shared_ptr<gameEventHandler> handler,
     qDebug()<<allminions_.size();
 
     manager_gamescene->drawItem(testMinion);
-    //manager_gamescene->update();
+    manager_gamescene->update();
 
     qDebug()<<location->ID<<"has a drawn"<< QString::fromStdString(testMinion->getType());
 
@@ -95,6 +95,26 @@ void gameManager::spawnNexus(std::shared_ptr<gameEventHandler> handler,
     manager_gamescene->drawItem(testNexus);
     allbuildings_.push_back(testNexus);
     qDebug()<<location->ID<<"has a nexus now";
+
+}
+
+template<typename buildingType>
+bool gameManager::spawnBuilding(std::shared_ptr<gameEventHandler> handler,
+                   std::shared_ptr<gameManager> manager,
+                   std::shared_ptr<Course::PlayerBase> player){
+    {
+        if(handler->getActiveTile()==nullptr){
+            qDebug()<<"error, active tile is a nullptr";
+            return false;
+        }
+        qDebug()<<"Trying to spawn a building pointer in functions";
+        std::shared_ptr<Course::BuildingBase> testBuilding = std::make_shared<buildingType>(handler,manager,player);
+
+        qDebug() << QString::fromStdString(testBuilding->getType());
+        handler->getActiveTile()->addBuilding(testBuilding);
+        manager->addBuilding(testBuilding);
+        return true;
+    }
 
 }
 

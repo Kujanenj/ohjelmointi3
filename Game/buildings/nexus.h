@@ -46,7 +46,7 @@ public:
      * @exception OwnerConflict - if the building conflicts with tile's
      * ownership.
      */
-    Nexus(
+    explicit Nexus(
             const std::shared_ptr<gameEventHandler>& eventhandler,
             const std::shared_ptr<gameManager>& objectmanager,
             const std::shared_ptr<Course::PlayerBase>& owner,
