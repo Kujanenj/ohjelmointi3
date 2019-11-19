@@ -98,7 +98,7 @@ void MapWindow::initMap(int x, int y)
     }
 
     // Nexus genesis
-    selectBuilding("nexsus");
+
 }
 void MapWindow::selectBuilding(std::string buildingType){ // TODO
     selectBuildingTypef(buildingType,m_GEHandler,m_GManager,testPlayer);
@@ -150,5 +150,7 @@ void MapWindow::on_enemyMinions_clicked()
     qDebug()<<" ";
     qDebug()<<"spawn enemy minion click";
 
-m_GManager->spawnMinion(m_GEHandler, m_GManager, enemyTestPlayer, m_GEHandler->getActiveTile());
+
+    m_GManager->spawnMinion(m_GEHandler, m_GManager, enemyTestPlayer, m_GEHandler->getActiveTile());
+    m_ui->graphicsView->viewport()->update();
 }

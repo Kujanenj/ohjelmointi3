@@ -56,7 +56,9 @@ bool gameManager::spawnBuilding(std::shared_ptr<gameEventHandler> handler,
         qDebug() << QString::fromStdString(testBuilding->getType());
         handler->getActiveTile()->addBuilding(testBuilding);
         manager->addBuilding(testBuilding);
+        manager_gamescene->drawItem(testBuilding);
         return true;
+
     }
 
 }

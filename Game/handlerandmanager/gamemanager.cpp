@@ -81,8 +81,8 @@ void gameManager::spawnMinion(std::shared_ptr<gameEventHandler> handler,
 
     manager_gamescene->drawItem(testMinion);
     //manager_gamescene->update();
-    qDebug()<<"trying to instant remove minion";
-    manager_gamescene->removeItem(testMinion);
+
+
     //qDebug()<<location->ID<<"has a drawn"<< QString::fromStdString(testMinion->getType());
 
 }
@@ -198,13 +198,22 @@ void gameManager::destroyMinion(std::shared_ptr<minion> minionToDestroy)
         }
     }
      if(targetFound){
+         qDebug()<<"trying to remove minion from scene";
          manager_gamescene->removeItem(minionToDestroy);
-        /* qDebug()<<"removing minion from tile";
+        qDebug()<<"removing minion from tile";
          minionToDestroy->currentLocationTile()->removeWorker(minionToDestroy);
          qDebug()<<allminions_.size()<<"allminions size before erease";
+
+            for(auto it : allminions_){
+                qDebug()<<it->ID<<"minion ID´s";
+            }
          qDebug()<<"trying to erease minion";
          allminions_.erase(allminions_.begin()+index);
-         qDebug()<<allminions_.size()<<"afther erease"; */
+         qDebug()<<allminions_.size()<<"afther erease";
+
+         for(auto it : allminions_){
+             qDebug()<<it->ID<<"minion ID´s afther destruction";
+         }
 
      }
 }
