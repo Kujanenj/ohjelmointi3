@@ -7,7 +7,7 @@
 #include <math.h>
 
 
-
+namespace Whiskas {
 
 GameScene::GameScene(QWidget* parent,
                                  int width,
@@ -168,6 +168,8 @@ void GameScene::drawItem( std::shared_ptr<Course::GameObject> obj)
     qDebug()<<"Added item"<<obj->ID<<QString::fromStdString(obj->getType())<<obj->getCoordinate().asQpoint();
 
     addItem(nItem);
+}
+
 }
 
 

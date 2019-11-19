@@ -6,7 +6,7 @@
 
 #include "handlerandmanager/gamemanager.h"
 
-
+namespace Whiskas {
 
 void makeWorldGenerator(int mapsize_x, int mapsize_y, int seed,
                         std::shared_ptr<gameEventHandler> handler,
@@ -60,5 +60,7 @@ bool gameManager::spawnBuilding(std::shared_ptr<gameEventHandler> handler,
         return true;
 
     }
+
+}
 
 }

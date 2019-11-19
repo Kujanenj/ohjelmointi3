@@ -9,13 +9,16 @@
 #include "core/playerbase.h"
 #include "unit.h"
 #include "attackable.h"
+
+namespace Whiskas {
+
 class gameManager;
 class gameEventHandler;
-class minion : public Course::WorkerBase, public unit, public attackable
+class Minion : public Course::WorkerBase, public Unit, public Attackable
 {
 public:
-    minion()=delete;
-    minion(const std::shared_ptr<gameEventHandler>& handler,
+    Minion()=delete;
+    Minion(const std::shared_ptr<gameEventHandler>& handler,
            const std::shared_ptr<gameManager>& manager,
            const std::shared_ptr<Course::PlayerBase>& owner,
            int movement=1,
@@ -23,7 +26,7 @@ public:
            int attack=1);
 
     void doSpecialAction() override;
-    virtual ~minion() = default;
+    virtual ~Minion() = default;
 
     virtual std::string getType() const override;
 protected:
@@ -34,4 +37,5 @@ private:
 
 };
 
+}
 #endif // MINION_H

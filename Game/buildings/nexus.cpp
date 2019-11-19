@@ -6,7 +6,7 @@
 
 #include "buildings/buildingbase.h"
 
-
+namespace Whiskas {
 
 Nexus::Nexus(
         const std::shared_ptr<gameEventHandler>& eventhandler,
@@ -52,4 +52,4 @@ Course::ResourceMap Nexus::getProduction()
     return PRODUCTION_EFFECT;
 }
 
- // namespace Whiskas
+} // namespace Whiskas

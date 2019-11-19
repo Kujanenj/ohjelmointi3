@@ -1,5 +1,7 @@
 #include "gameeventhandler.h"
 
+namespace Whiskas {
+
 gameEventHandler::gameEventHandler()
 {
 qDebug()<<"new event handler";
@@ -96,4 +98,4 @@ void gameEventHandler::sendMessage()
 }
 
 
-
+}

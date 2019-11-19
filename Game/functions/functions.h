@@ -14,6 +14,7 @@
 #include "buildings/headquarters.h"
 #include "buildings/nexus.h"
 
+namespace Whiskas {
 
 /*!
  * \brief makeWorldGenerator
@@ -45,6 +46,6 @@ void selectBuildingTypef(std::string type, std::shared_ptr<gameEventHandler> han
                         std::shared_ptr<Course::PlayerBase> player);
 
 
-
+}
 #endif // FUNCTIONS_H
 

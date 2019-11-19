@@ -1,14 +1,16 @@
 #include "minion.h"
 
-minion::minion(const std::shared_ptr<gameEventHandler>& handler,
+namespace Whiskas {
+
+Minion::Minion(const std::shared_ptr<gameEventHandler>& handler,
                const std::shared_ptr<gameManager>& manager,
                const std::shared_ptr<Course::PlayerBase>& owner,
                int movement,
                int health,
                int attack):
     Course::WorkerBase(handler, manager, owner),
-    unit(movement),
-    attackable(health,attack, ID)
+    Unit(movement),
+    Attackable(health,attack, ID)
 {
     /*std::string a = getOwner()->getName();
     QString b = QString::fromStdString(a);
@@ -18,12 +20,14 @@ minion::minion(const std::shared_ptr<gameEventHandler>& handler,
     qDebug()<<"minion got made";
 }
 
-void minion::doSpecialAction()
+void Minion::doSpecialAction()
 {
     qDebug()<<"nada";
 }
 
-std::string minion::getType() const
+std::string Minion::getType() const
 {
     return "Minion";
+}
+
 }

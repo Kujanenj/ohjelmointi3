@@ -7,7 +7,10 @@
 #include <QDebug>
 #include <QMouseEvent>
 
-class minion;
+namespace Whiskas {
+
+
+class Minion;
 class gameManager;
 class gameEventHandler : public Course::iGameEventHandler
 {
@@ -42,8 +45,9 @@ public:
 
 private:
     std::shared_ptr<Course::TileBase> activeTile_ = nullptr;
-    std::shared_ptr<minion> activeMinion_=nullptr;
+    std::shared_ptr<Minion> activeMinion_=nullptr;
 
 };
 
+}
 #endif // gameEventHandler_H

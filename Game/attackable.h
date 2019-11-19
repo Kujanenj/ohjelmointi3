@@ -1,12 +1,13 @@
 #ifndef ATTACKABLE_H
 #define ATTACKABLE_H
 
+namespace Whiskas {
 
-class attackable
+class Attackable
 {
 public:
-    attackable(int health, int attack, int boundID);
-    virtual ~attackable()=default;
+    Attackable(int health, int attack, int boundID);
+    virtual ~Attackable()=default;
     int getHealth();
     int getAttack();
     int getBoundID();
@@ -25,4 +26,5 @@ protected:
     int boundID_;
 };
 
+}
 #endif // ATTACKABLE_H

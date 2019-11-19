@@ -1,6 +1,9 @@
 #include "attackable.h"
 #include <QDebug>
-attackable::attackable(int health, int attack,int boundID)
+
+namespace Whiskas {
+
+Attackable::Attackable(int health, int attack,int boundID)
 {
 healthValue_=health;
 attackValue_=attack;
@@ -8,27 +11,27 @@ boundID_=boundID;
 
 }
 
-int attackable::getHealth()
+int Attackable::getHealth()
 {
     return healthValue_;
 }
 
-int attackable::getAttack()
+int Attackable::getAttack()
 {
-    return  attackValue_;
+    return attackValue_;
 }
 
-int attackable::getBoundID()
+int Attackable::getBoundID()
 {
     return boundID_;
 }
 
-void attackable::modifyAttack(int AModifier)
+void Attackable::modifyAttack(int AModifier)
 {
     attackValue_+=AModifier;
 }
 
-bool attackable::modifyHealth(int hModifier)
+bool Attackable::modifyHealth(int hModifier)
 {
     healthValue_+=hModifier;
     if(healthValue_<=0){
@@ -37,3 +40,4 @@ bool attackable::modifyHealth(int hModifier)
     return false;
 }
 
+}

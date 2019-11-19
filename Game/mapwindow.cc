@@ -7,15 +7,15 @@
 #include <math.h>
 
 MapWindow::MapWindow(QWidget *parent,
-                     std::shared_ptr<gameEventHandler> handler):
+                     std::shared_ptr<Whiskas::gameEventHandler> handler):
     QMainWindow(parent),
     m_ui(new Ui::MapWindow),
     m_GEHandler(handler),
-    m_gamescene(new GameScene(this))
+    m_gamescene(new Whiskas::GameScene(this))
 {
     m_ui->setupUi(this);
 
-    GameScene* sgs_rawptr =m_gamescene.get();
+    Whiskas::GameScene* sgs_rawptr =m_gamescene.get();
 
     m_ui->graphicsView->setScene(dynamic_cast<QGraphicsScene*>(sgs_rawptr));
     startdialog dialog;
@@ -45,12 +45,12 @@ MapWindow::~MapWindow()
 }
 
 void MapWindow::setGEHandler(
-        std::shared_ptr<gameEventHandler> nHandler)
+        std::shared_ptr<Whiskas::gameEventHandler> nHandler)
 {
     m_GEHandler = nHandler;
 }
 
-void MapWindow::setGManager(std::shared_ptr<gameManager> manager)
+void MapWindow::setGManager(std::shared_ptr<Whiskas::gameManager> manager)
 {
     m_GManager=manager;
 }
@@ -80,9 +80,9 @@ void MapWindow::initMap(int x, int y)
 {
 
     setSize(x,y);
-    std::shared_ptr<gameEventHandler> ghandler =  std::make_shared<gameEventHandler>();
+    std::shared_ptr<Whiskas::gameEventHandler> ghandler =  std::make_shared<Whiskas::gameEventHandler>();
 
-    std::shared_ptr<gameManager> gmanager =  std::make_shared<gameManager>(m_gamescene);
+    std::shared_ptr<Whiskas::gameManager> gmanager =  std::make_shared<Whiskas::gameManager>(m_gamescene);
 
 
     setGEHandler(ghandler); //TEST

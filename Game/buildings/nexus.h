@@ -9,6 +9,7 @@
 
 #include "core/playerbase.h"
 
+namespace Whiskas {
 
 class gameManager;
 class gameEventHandler;
@@ -81,7 +82,7 @@ public:
 
 }; // class Outpost
 
- // namespace Course
+} // namespace Course
 
 
 #endif // OUTPOST_H

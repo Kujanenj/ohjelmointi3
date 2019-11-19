@@ -8,6 +8,7 @@ CONFIG += c++14
 
 SOURCES += \
     attackable.cpp \
+    buildings/custombuildingbase.cpp \
     dialogs/buildingdialog.cpp \
     buildings/nexus.cpp \
     functions/functions.cpp \
@@ -25,6 +26,7 @@ SOURCES += \
 
 HEADERS += \
     attackable.h \
+    buildings/custombuildingbase.h \
     dialogs/buildingdialog.h \
     buildings/nexus.h \
     functions/functions.h \
