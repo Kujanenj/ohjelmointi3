@@ -8,7 +8,7 @@ minion::minion(const std::shared_ptr<gameEventHandler>& handler,
                int attack):
     Course::WorkerBase(handler, manager, owner),
     unit(movement),
-    attackable(health,attack)
+    attackable(health,attack, ID)
 {
     /*std::string a = getOwner()->getName();
     QString b = QString::fromStdString(a);

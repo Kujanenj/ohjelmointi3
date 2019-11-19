@@ -5,10 +5,11 @@
 class attackable
 {
 public:
-    attackable(int health, int attack);
+    attackable(int health, int attack, int boundID);
     virtual ~attackable()=default;
     int getHealth();
     int getAttack();
+    int getBoundID();
      void modifyAttack(int AModifier);
     /*!
      * \brief modifyHealth
@@ -17,9 +18,11 @@ public:
      */
     virtual bool modifyHealth(int hModifier);
 
+
 protected:
     int healthValue_;
     int attackValue_;
+    int boundID_;
 };
 
 #endif // ATTACKABLE_H

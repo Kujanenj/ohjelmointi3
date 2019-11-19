@@ -1,9 +1,11 @@
 #include "attackable.h"
-
-attackable::attackable(int health, int attack)
+#include <QDebug>
+attackable::attackable(int health, int attack,int boundID)
 {
 healthValue_=health;
 attackValue_=attack;
+boundID_=boundID;
+
 }
 
 int attackable::getHealth()
@@ -14,6 +16,11 @@ int attackable::getHealth()
 int attackable::getAttack()
 {
     return  attackValue_;
+}
+
+int attackable::getBoundID()
+{
+    return boundID_;
 }
 
 void attackable::modifyAttack(int AModifier)

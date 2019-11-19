@@ -12,6 +12,7 @@
 #include "buildings/nexus.h"
 #include "graphics/mapitem.h"
 
+
 class attackable;
 class minion;
 class gameEventHandler;
@@ -75,18 +76,19 @@ public:
               std::shared_ptr<Course::TileBase> targetTile);
 
     void attack(std::shared_ptr<minion> minionToMove,
-                std::shared_ptr<minion> toAttack);
+                std::shared_ptr<attackable> toAttack);
     bool checkForEnemies(std::shared_ptr<minion>minionTomove,
                          std::shared_ptr<Course::TileBase>targetTile);
-    std::shared_ptr<minion> selectAttackTarget(std::shared_ptr<Course::TileBase> targetTile);
+    std::shared_ptr<attackable> selectAttackTarget(std::shared_ptr<Course::TileBase> targetTile);
 
-    void destroyMinion(std::shared_ptr<minion> minionToDestroy);
+    void destroyMinion(std::shared_ptr<attackable> minionToDestroy);
 private:
     std::vector<std::shared_ptr<Course::TileBase> > alltiles_;
     //Contains a pointer too all building in all tiles. This keeps the weak ptrs in tilebase
     //alive....This is just a workaround.
     std::vector<std::shared_ptr<Course::BuildingBase>> allbuildings_;
     std::vector<std::shared_ptr<minion>> allminions_;
+    std::vector<std::shared_ptr<attackable>> allattackablestest_;
 
     std::shared_ptr<GameScene> manager_gamescene;
 };
