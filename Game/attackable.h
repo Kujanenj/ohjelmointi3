@@ -18,12 +18,14 @@ public:
      * \return true if dead, false if alive
      */
     virtual bool modifyHealth(int hModifier);
-
+     bool getAttacked();
+    virtual void setAttacked(bool setAttacked);
 
 protected:
     int healthValue_;
     int attackValue_;
     int boundID_;
+    bool hasAttacked_=false;
 };
 
 }

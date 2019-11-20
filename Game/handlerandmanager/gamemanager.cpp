@@ -115,10 +115,7 @@ void gameManager::spawnMinion(std::shared_ptr<gameEventHandler> handler,
 
 void gameManager::move(std::shared_ptr<Minion> minionToMove, std::shared_ptr<Course::TileBase> targetTile)
 {
-    if(minionToMove->getMoved()==true){
-        qDebug()<<"UNIT HAS MOVED THIS TURN, GET THE HELL OUT!";
-        return;
-    }
+
     if(targetTile->getWorkerCount()==0 ||
             checkForEnemies(minionToMove,
                             targetTile)){
@@ -128,19 +125,28 @@ void gameManager::move(std::shared_ptr<Minion> minionToMove, std::shared_ptr<Cou
        qDebug()<<abs(deltaC.x())+abs(deltaC.y())<<"Distance to move";
        if(abs(deltaC.x())+abs(deltaC.y())<=minionToMove->getMoveValue()){
             if(checkForEnemies(minionToMove,targetTile)){
+                if(minionToMove->getAttacked()){
+                    qDebug()<<"has attacked";
+                    return;
+                }
                 qDebug()<<"trying to attack in move command";
                 attack(minionToMove,selectAttackTarget(targetTile));
                 qDebug()<<"we attacked";
+                minionToMove->setAttacked(true);
                 minionToMove->setMoved(true);
                 return;
             }
-
+            if(minionToMove->getMoved()==true){
+                qDebug()<<"UNIT HAS MOVED THIS TURN, GET THE HELL OUT!";
+                return;
+            }
             minionToMove->currentLocationTile()->removeWorker(minionToMove);
             minionToMove->setLocationTile(targetTile);
             minionToMove->currentLocationTile()->addWorker(minionToMove);
             manager_gamescene->updateItem(minionToMove);
             qDebug()<<"WE MOVED";
             minionToMove->setMoved(true);
+            minionToMove->setAttacked(true);
 
            }
 

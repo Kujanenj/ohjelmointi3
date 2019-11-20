@@ -40,4 +40,14 @@ bool Attackable::modifyHealth(int hModifier)
     return false;
 }
 
+bool Attackable::getAttacked()
+{
+    return hasAttacked_;
+}
+
+void Attackable::setAttacked(bool setAttacked)
+{
+    hasAttacked_=setAttacked;
+}
+
 }
