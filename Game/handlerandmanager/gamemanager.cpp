@@ -77,21 +77,32 @@ bool gameManager::addPlayer(std::pair<
     return true;
 }
 
-bool gameManager::addMinion(std::shared_ptr<Minion> &minion)
+bool gameManager::addMinion(std::shared_ptr<Minion> minion)
 {
     allminions_.push_back(minion);
      allattackables_.push_back(minion);
     return true;
 }
 
-void gameManager::spawnMinion(std::shared_ptr<gameEventHandler> handler,
-                                                 std::shared_ptr<gameManager> manager,
+void gameManager::spawnMinion(std::shared_ptr<Course::iGameEventHandler> handler,
+                                                 std::shared_ptr<Course::iObjectManager> manager,
                                                  std::shared_ptr<Course::PlayerBase> owner,
-                                                 std::shared_ptr<Course::TileBase> location)
+                                                 std::shared_ptr<Course::TileBase> location,
+                                                 std::string type)
 {
-    std::shared_ptr<Minion> testMinion = std::make_shared<Minion>(handler,
-                                                                  manager,
-                                                                  owner);
+    std::shared_ptr<Minion> testMinion=nullptr;
+    if(type=="minion"){
+        testMinion=std::make_shared<Minion>(handler,
+                                            manager,
+                                            owner);
+    }
+    if(type=="champ"){
+
+
+        testMinion = std::make_shared<MeleeChampion>(handler,
+                                                    manager,
+                                                    owner);
+    }
     testMinion->setLocationTile(location);
     location->addWorker(testMinion);
     qDebug()<<"adding minion to gamemanager vector";
@@ -115,10 +126,7 @@ void gameManager::spawnMinion(std::shared_ptr<gameEventHandler> handler,
 
 void gameManager::move(std::shared_ptr<Minion> minionToMove, std::shared_ptr<Course::TileBase> targetTile)
 {
-    if(minionToMove->getMoved()==true){
-        qDebug()<<"UNIT HAS MOVED THIS TURN, GET THE HELL OUT!";
-        return;
-    }
+
     if(targetTile->getWorkerCount()==0 ||
             checkForEnemies(minionToMove,
                             targetTile)){
@@ -129,9 +137,17 @@ void gameManager::move(std::shared_ptr<Minion> minionToMove, std::shared_ptr<Cou
        if(abs(deltaC.x())+abs(deltaC.y())<=minionToMove->getMoveValue()){
             if(checkForEnemies(minionToMove,targetTile)){
                 qDebug()<<"trying to attack in move command";
+                if(minionToMove->getAttacked()==true){
+                    qDebug()<<"UNIT HAS ATTACKED MAX NUMBER OF TIMES THIS TURN, GET THE HELL OUT!";
+                    return;
+                }
                 attack(minionToMove,selectAttackTarget(targetTile));
                 qDebug()<<"we attacked";
-                minionToMove->setMoved(true);
+                minionToMove->setAttacked(true);
+                return;
+            }
+            if(minionToMove->getMoved()==true){
+                qDebug()<<"UNIT HAS MOVED THIS TURN, GET THE HELL OUT!";
                 return;
             }
 

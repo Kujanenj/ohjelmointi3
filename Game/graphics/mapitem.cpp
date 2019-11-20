@@ -83,6 +83,9 @@ void SimpleMapItem::addNewColor(std::string type)
         } else if (type == "Minion") {
             QImage minion_pic = QImage(":/images/graphics/minion.png");
             c_mapicons.insert({type, minion_pic});
+        } else if (type == "MeleeChampion") {
+            std::size_t hash = std::hash<std::string>{}(type);
+            c_mapcolors.insert({type, QColor((hash & 0xFF0000) >> 16, (hash & 0x00FF00 ) >> 8, (hash & 0x0000FF))});
         }
 
     }

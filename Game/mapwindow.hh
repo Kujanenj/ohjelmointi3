@@ -89,6 +89,8 @@ private slots:
 
     void on_endTurnButton_clicked();
 
+    void on_champButton_clicked();
+
 private:
 
     Ui::MapWindow* m_ui;

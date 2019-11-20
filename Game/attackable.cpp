@@ -3,10 +3,11 @@
 
 namespace Whiskas {
 
-Attackable::Attackable(int health, int attack,int boundID)
+Attackable::Attackable(int health, int attack,int numberOfAttacks,int boundID)
 {
 healthValue_=health;
 attackValue_=attack;
+numberOfAttacks_=numberOfAttacks;
 boundID_=boundID;
 
 }
@@ -31,6 +32,11 @@ void Attackable::modifyAttack(int AModifier)
     attackValue_+=AModifier;
 }
 
+bool Attackable::getAttacked()
+{
+    return HasAttacked_;
+}
+
 bool Attackable::modifyHealth(int hModifier)
 {
     healthValue_+=hModifier;
@@ -38,6 +44,17 @@ bool Attackable::modifyHealth(int hModifier)
         return true;
     }
     return false;
+}
+
+void Attackable::setAttacked(bool hasAttacked)
+{
+    if(hasAttacked==false){
+        numberOfAttacksDone_=0;
+    }
+    numberOfAttacksDone_+=1;
+    if(numberOfAttacksDone_==numberOfAttacks_){
+        HasAttacked_=true;
+    }
 }
 
 }

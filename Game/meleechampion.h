@@ -2,17 +2,28 @@
 #define MELEECHAMPION_H
 
 #include "minion/minion.h"
+#include <QDebug>
+
 namespace Whiskas {
 
 
-class MeleeChampion :public Minion
+class MeleeChampion : public Minion
 {
 public:
     MeleeChampion()=delete;
-    MeleeChampion(const std::shared_ptr<gameEventHandler>& handler,
-                  const std::shared_ptr<gameManager>& manager,
+    MeleeChampion(const std::shared_ptr<Course::iGameEventHandler>& handler,
+                  const std::shared_ptr<Course::iObjectManager>& manager,
                   const std::shared_ptr<Course::PlayerBase>& owner,
-                  int movement=3);
+                  int movement=3,
+                  int health=5,
+                  int attack=2,
+                  int numberOfAttacks=2);
+
+    virtual std::string getType() const override;
+    bool modifyHealth(int hModifier) override;
+private:
+
+
 };
 }
 #endif // MELEECHAMPION_H

@@ -20,7 +20,7 @@ CustomBuildingBase::CustomBuildingBase(
                  tilespaces,
                  buildcost,
                  production),
-    Attackable(health, attack, ID)
+    Attackable(health, attack,0, ID)
 {
 }
 
