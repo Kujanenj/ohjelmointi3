@@ -32,18 +32,14 @@ void makeWorldGenerator(int mapsize_x, int mapsize_y, int seed,
 
 
 
-/*!
- * \brief spawnBuilding
- * spanws and returns a building object. Type of bulding is passed by template.
- * \param handler
- * \param manager
- * \param player
- * \return
- */
+
 
 void selectBuildingTypef(std::string type, std::shared_ptr<gameEventHandler> handler,
                         std::shared_ptr<gameManager> manager,
                         std::shared_ptr<Course::PlayerBase> player);
+
+
+
 
 
 }

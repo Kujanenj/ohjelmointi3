@@ -31,8 +31,10 @@ public:
     virtual std::string getType() const override;
 protected:
     std::shared_ptr<gameManager> manager_;
+
 private:
     std::weak_ptr<Course::TileBase> currentTile_;
+
 
 
 };

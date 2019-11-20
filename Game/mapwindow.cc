@@ -22,8 +22,7 @@ MapWindow::MapWindow(QWidget *parent,
     connect(&dialog,         SIGNAL(size(int, int)),   this,SLOT(initMap(int,int)));
     connect(&buildingdialog, SIGNAL(buildingType(std::string)),this,SLOT(selectBuilding(std::string)));
     dialog.exec();
-    testPlayer=std::make_shared<Course::PlayerBase>("Player 1");
-    enemyTestPlayer=std::make_shared<Course::PlayerBase>("Player 2");
+
 
     //TEST SOUND EFFECT
     testSoundPlayer=new QMediaPlayer();
@@ -80,29 +79,39 @@ void MapWindow::initMap(int x, int y)
 {
 
     setSize(x,y);
-    std::shared_ptr<Whiskas::gameEventHandler> ghandler =  std::make_shared<Whiskas::gameEventHandler>();
+     std::shared_ptr<Whiskas::gameManager> gmanager =  std::make_shared<Whiskas::gameManager>(m_gamescene);
 
-    std::shared_ptr<Whiskas::gameManager> gmanager =  std::make_shared<Whiskas::gameManager>(m_gamescene);
+     std::shared_ptr<Course::PlayerBase> firstPlayer = std::make_shared<Course::PlayerBase>("player 1");
+     std::shared_ptr<Course::PlayerBase> secondPlayer = std::make_shared<Course::PlayerBase>("player 2");
+
+     std::pair<std::shared_ptr<Course::PlayerBase>,
+             std::shared_ptr<Course::PlayerBase>> playerPair(firstPlayer,secondPlayer);
+     setGManager(gmanager);
+
+     m_GManager->addPlayer(playerPair);
+     std::shared_ptr<Whiskas::Turn> turn = std::make_shared<Whiskas::Turn>(gmanager);
+    std::shared_ptr<Whiskas::gameEventHandler> ghandler =  std::make_shared<Whiskas::gameEventHandler>(turn);
+
+
+
 
 
     setGEHandler(ghandler); //TEST
-    setGManager(gmanager);
+
+
 
     makeWorldGenerator(x,y,10,ghandler,gmanager);
-    Course::Coordinate offset=Course::Coordinate(x/2,y/2);
+
 
     for(auto it:m_GManager->returntilevector()){
-        //it->setCoordinate(it->getCoordinate()-offset); //tiles start counting from the middle, while they should start from
-                                                       //the upper left corner... Thanks RITO
+
         drawItem(it);
     }
 
-    // Nexus genesis
-    //m_GManager->spawnNexus(m_GEHandler, m_GManager, testPlayer, m_GManager->getTile(0));
-    //m_GManager->spawnBuilding<Nexus>(m_GEHandler, m_GManager, testPlayer);
+
 }
 void MapWindow::selectBuilding(std::string buildingType){ // TODO
-    selectBuildingTypef(buildingType,m_GEHandler,m_GManager,testPlayer);
+    selectBuildingTypef(buildingType,m_GEHandler,m_GManager,m_GManager->getPlayerPair().first);
 }
 
 void MapWindow::removeItem(std::shared_ptr<Course::GameObject> obj)
@@ -136,7 +145,8 @@ void MapWindow::on_minionbutton_clicked()
 {
     qDebug()<<"spawn minion click";
     qDebug()<<" ";
-    m_GManager->spawnMinion(m_GEHandler, m_GManager, testPlayer, m_GEHandler->getActiveTile());
+
+    m_GManager->spawnMinion(m_GEHandler, m_GManager, m_GManager->getPlayerPair().first, m_GEHandler->getActiveTile());
     m_ui->graphicsView->viewport()->update();
 }
 
@@ -150,6 +160,11 @@ void MapWindow::on_enemyMinions_clicked()
 {
     qDebug()<<" ";
     qDebug()<<"spawn enemy minion click";
-    m_GManager->spawnMinion(m_GEHandler, m_GManager, enemyTestPlayer, m_GEHandler->getActiveTile());
+    m_GManager->spawnMinion(m_GEHandler, m_GManager, m_GManager->getPlayerPair().second, m_GEHandler->getActiveTile());
     m_ui->graphicsView->viewport()->update();
+}
+
+void MapWindow::on_endTurnButton_clicked()
+{
+    m_GEHandler->endTurn();
 }

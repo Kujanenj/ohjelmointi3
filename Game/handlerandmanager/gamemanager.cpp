@@ -53,19 +53,34 @@ std::vector<std::shared_ptr<Minion> > gameManager::getMinionVector()
     return allminions_;
 }
 
+std::pair<std::shared_ptr<Course::PlayerBase>, std::shared_ptr<Course::PlayerBase> > gameManager::getPlayerPair()
+{
+    return players_;
+}
+
 bool gameManager::addBuilding(std::shared_ptr<CustomBuildingBase> &Building)
 {
     allbuildings_.push_back(Building);
     qDebug()<<allbuildings_.size()<<"allbuildings.size";
-    allattackablestest_.push_back(Building);
+    allattackables_.push_back(Building);
 
+    return true;
+}
+
+bool gameManager::addPlayer(std::pair<
+                            std::shared_ptr<Course::PlayerBase>,
+                            std::shared_ptr<Course::PlayerBase>> &players)
+{
+    qDebug()<<"Check this";
+     qDebug()<<QString::fromStdString(players.first->getName());
+    players_=players;
     return true;
 }
 
 bool gameManager::addMinion(std::shared_ptr<Minion> &minion)
 {
     allminions_.push_back(minion);
-     allattackablestest_.push_back(minion);
+     allattackables_.push_back(minion);
     return true;
 }
 
@@ -90,7 +105,7 @@ void gameManager::spawnMinion(std::shared_ptr<gameEventHandler> handler,
     manager_gamescene->update();
 
 
-    //qDebug()<<location->ID<<"has a drawn"<< QString::fromStdString(testMinion->getType());
+
 
 }
 
@@ -100,10 +115,13 @@ void gameManager::spawnMinion(std::shared_ptr<gameEventHandler> handler,
 
 void gameManager::move(std::shared_ptr<Minion> minionToMove, std::shared_ptr<Course::TileBase> targetTile)
 {
-
+    if(minionToMove->getMoved()==true){
+        qDebug()<<"UNIT HAS MOVED THIS TURN, GET THE HELL OUT!";
+        return;
+    }
     if(targetTile->getWorkerCount()==0 ||
             checkForEnemies(minionToMove,
-                            targetTile)){ //ADD OR STATEMENT FOR ENEMIEEEES
+                            targetTile)){
         qDebug()<<"no minions, or there are enemies present, so we shall proceed";
        Course::Coordinate deltaC=minionToMove->getCoordinate()-
                targetTile->getCoordinate();
@@ -113,6 +131,7 @@ void gameManager::move(std::shared_ptr<Minion> minionToMove, std::shared_ptr<Cou
                 qDebug()<<"trying to attack in move command";
                 attack(minionToMove,selectAttackTarget(targetTile));
                 qDebug()<<"we attacked";
+                minionToMove->setMoved(true);
                 return;
             }
 
@@ -121,6 +140,7 @@ void gameManager::move(std::shared_ptr<Minion> minionToMove, std::shared_ptr<Cou
             minionToMove->currentLocationTile()->addWorker(minionToMove);
             manager_gamescene->updateItem(minionToMove);
             qDebug()<<"WE MOVED";
+            minionToMove->setMoved(true);
 
            }
 
@@ -181,7 +201,7 @@ std::shared_ptr<Attackable> gameManager::selectAttackTarget(
 
 
         qDebug()<<"getting the target!"<<"loop all attackble ID,s";
-        for(auto it:allattackablestest_){
+        for(auto it:allattackables_){
             qDebug()<<it->getBoundID()<<"bound id of all objects loop";
             if(targetTile->getWorkerCount()!=0){
                 qDebug()<<"Target tile contains workers of some sort";

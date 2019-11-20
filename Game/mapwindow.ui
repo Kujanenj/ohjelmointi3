@@ -81,6 +81,19 @@
          </item>
         </layout>
        </widget>
+       <widget class="QPushButton" name="endTurnButton">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>230</y>
+          <width>80</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>End turn</string>
+        </property>
+       </widget>
       </widget>
       <widget class="QWidget" name="tab_2">
        <attribute name="title">

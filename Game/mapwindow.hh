@@ -24,7 +24,7 @@
 
 #include "buildings/nexus.h"
 #include "minion/minion.h"
-
+#include "turn.h"
 
 namespace Ui {
 class MapWindow;
@@ -87,6 +87,8 @@ private slots:
 
     void on_enemyMinions_clicked();
 
+    void on_endTurnButton_clicked();
+
 private:
 
     Ui::MapWindow* m_ui;
@@ -95,8 +97,7 @@ private:
 
     std::shared_ptr<Whiskas::gameManager> m_GManager =nullptr;
     std::shared_ptr<Whiskas::GameScene> m_gamescene = nullptr;
-    std::shared_ptr<Course::PlayerBase> testPlayer =nullptr;
-    std::shared_ptr<Course::PlayerBase> enemyTestPlayer =nullptr;
+
 
 
     QMediaPlayer* testSoundPlayer; //TEST MEDIA PLAYER

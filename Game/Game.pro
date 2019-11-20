@@ -22,6 +22,7 @@ SOURCES += \
     meleechampion.cpp \
     minion/minion.cpp \
     dialogs/startdialog.cpp \
+    turn.cpp \
     unit.cpp
 
 
@@ -40,6 +41,7 @@ HEADERS += \
     meleechampion.h \
     minion/minion.h \
     dialogs/startdialog.h \
+    turn.h \
     unit.h
 
 win32:CONFIG(release, debug|release): LIBS += \

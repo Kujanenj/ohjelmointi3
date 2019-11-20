@@ -2,9 +2,10 @@
 
 namespace Whiskas {
 
-gameEventHandler::gameEventHandler()
+gameEventHandler::gameEventHandler(std::shared_ptr<Turn> turn)
 {
 qDebug()<<"new event handler";
+turn_=turn;
 }
 
 bool gameEventHandler::modifyResources(std::shared_ptr<Course::PlayerBase> player, Course::ResourceMap resources)
@@ -54,10 +55,12 @@ void gameEventHandler::handleLeftClick(std::shared_ptr<GameScene> scene, std::sh
                     << "and the owner is"
                     << QString::fromStdString(activeTile_->getBuildings().at(0)->getOwner()->getName());
         }
+
         if (activeTile_->getWorkers().size()!=0){
             for(auto it: manager->getMinionVector()){
-                if(activeTile_->getWorkers().front()==it){
+                if(activeTile_->getWorkers().front()==it && it->getOwner()==turn_->getInTurn()){
                     activeMinion_=it;
+
                     qDebug()<<"active minion type is"<<QString::fromStdString(it->getType())
                            <<"and its owner is"<<QString::fromStdString(it->getOwner()->getName());
                 }
@@ -92,9 +95,10 @@ std::shared_ptr<Course::TileBase> gameEventHandler::getActiveTile(){
 
 }
 
-void gameEventHandler::sendMessage()
+void gameEventHandler::endTurn()
 {
- qDebug()<<"HELEL";
+ turn_->swapTurn();
+ activeMinion_=nullptr;
 }
 
 

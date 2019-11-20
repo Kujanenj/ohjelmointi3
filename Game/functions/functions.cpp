@@ -34,6 +34,8 @@ void selectBuildingTypef(std::string type,
         manager->spawnBuilding<Nexus>(handler,manager,player);
     }
 }
+
+
 template<typename buildingType>
 
 bool gameManager::spawnBuilding(std::shared_ptr<gameEventHandler> handler,
@@ -57,5 +59,6 @@ bool gameManager::spawnBuilding(std::shared_ptr<gameEventHandler> handler,
     }
 
 }
+
 
 }

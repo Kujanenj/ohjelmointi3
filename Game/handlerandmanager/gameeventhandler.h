@@ -4,18 +4,19 @@
 #include "graphics/gamescene.h"
 #include "gamemanager.h"
 #include "minion/minion.h"
+#include "turn.h"
 #include <QDebug>
 #include <QMouseEvent>
 
 namespace Whiskas {
 
-
+class Turn;
 class Minion;
 class gameManager;
 class gameEventHandler : public Course::iGameEventHandler
 {
 public:
-    gameEventHandler();
+    gameEventHandler(std::shared_ptr<Turn> turn);
     bool modifyResources(std::shared_ptr<Course::PlayerBase> player, Course::ResourceMap resources) override;
     bool modifyResource(std::shared_ptr<Course::PlayerBase> player, Course::BasicResource resource, int amount) override;
 
@@ -41,12 +42,12 @@ public:
 
     std::shared_ptr<Course::TileBase> getActiveTile();
 
-    void sendMessage();
+    void endTurn();
 
 private:
     std::shared_ptr<Course::TileBase> activeTile_ = nullptr;
     std::shared_ptr<Minion> activeMinion_=nullptr;
-
+    std::shared_ptr<Turn> turn_=nullptr;
 };
 
 }

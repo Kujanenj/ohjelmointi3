@@ -42,12 +42,18 @@ public:
      * \param Building
      * \return
      */
+    std::pair<std::shared_ptr<Course::PlayerBase>,
+    std::shared_ptr<Course::PlayerBase>> getPlayerPair();
     bool addBuilding(std::shared_ptr<CustomBuildingBase>& building);
     /*!
      * \brief adds a minion to allMinions_ vector
      * \param minion
      * \return
      */
+    bool addPlayer(std::pair<
+                   std::shared_ptr<Course::PlayerBase>,
+                   std::shared_ptr<Course::PlayerBase>>& player);
+
     bool addMinion(std::shared_ptr<Minion>& Minion);
     /*!
      * \brief spawns a new minion object to latest active tile.
@@ -91,8 +97,8 @@ private:
     //alive....This is just a workaround.
     std::vector<std::shared_ptr<CustomBuildingBase>> allbuildings_;
     std::vector<std::shared_ptr<Minion>> allminions_;
-    std::vector<std::shared_ptr<Attackable>> allattackablestest_;
-
+    std::vector<std::shared_ptr<Attackable>> allattackables_;
+    std::pair<std::shared_ptr<Course::PlayerBase>,std::shared_ptr<Course::PlayerBase>> players_;
     std::shared_ptr<GameScene> manager_gamescene;
 };
 
