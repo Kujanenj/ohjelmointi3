@@ -6,7 +6,7 @@
 
 #include "handlerandmanager/gamemanager.h"
 
-
+namespace Whiskas {
 
 void makeWorldGenerator(int mapsize_x, int mapsize_y, int seed,
                         std::shared_ptr<gameEventHandler> handler,
@@ -29,13 +29,7 @@ void selectBuildingTypef(std::string type,
                         std::shared_ptr<Course::PlayerBase> player)
 {
 
-    if(type=="farm"){
-        manager->spawnBuilding<Course::Farm>(handler,manager,player);
 
-    }
-    if(type=="headquarters"){
-        manager->spawnBuilding<Course::HeadQuarters>(handler,manager,player);
-    }
     if(type=="nexsus"){
         manager->spawnBuilding<Nexus>(handler,manager,player);
     }
@@ -51,7 +45,7 @@ bool gameManager::spawnBuilding(std::shared_ptr<gameEventHandler> handler,
             return false;
         }
         qDebug()<<"Trying to spawn a building pointer in functions";
-        std::shared_ptr<Course::BuildingBase> testBuilding = std::make_shared<buildingType>(handler,manager,player);
+        std::shared_ptr<CustomBuildingBase> testBuilding = std::make_shared<buildingType>(handler,manager,player);
 
         qDebug() << QString::fromStdString(testBuilding->getType());
         handler->getActiveTile()->addBuilding(testBuilding);
@@ -61,5 +55,7 @@ bool gameManager::spawnBuilding(std::shared_ptr<gameEventHandler> handler,
         return true;
 
     }
+
+}
 
 }

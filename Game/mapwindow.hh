@@ -37,13 +37,13 @@ class MapWindow : public QMainWindow
 
 public:
     explicit MapWindow(QWidget *parent = 0,
-                       std::shared_ptr<gameEventHandler> GEHandler = {}
+                       std::shared_ptr<Whiskas::gameEventHandler> GEHandler = {}
 
                        );
     ~MapWindow();
 
-    void setGEHandler(std::shared_ptr<gameEventHandler> nHandler);
-    void setGManager(std::shared_ptr<gameManager> manager);
+    void setGEHandler(std::shared_ptr<Whiskas::gameEventHandler> nHandler);
+    void setGManager(std::shared_ptr<Whiskas::gameManager> manager);
 
     void setSize(int width, int height);
     void setScale(int scale);
@@ -55,8 +55,8 @@ public:
 
     virtual void mousePressEvent(QMouseEvent *event );
 
-    void openBuildingDialog(std::shared_ptr<gameManager> manager,
-                            std::shared_ptr<gameEventHandler> handler,
+    void openBuildingDialog(std::shared_ptr<Whiskas::gameManager> manager,
+                            std::shared_ptr<Whiskas::gameEventHandler> handler,
                             std::shared_ptr<Course::PlayerBase> owner
                             );
 
@@ -90,11 +90,11 @@ private slots:
 private:
 
     Ui::MapWindow* m_ui;
-    std::shared_ptr<gameEventHandler> m_GEHandler = nullptr;
+    std::shared_ptr<Whiskas::gameEventHandler> m_GEHandler = nullptr;
 
 
-    std::shared_ptr<gameManager> m_GManager =nullptr;
-    std::shared_ptr<GameScene> m_gamescene = nullptr;
+    std::shared_ptr<Whiskas::gameManager> m_GManager =nullptr;
+    std::shared_ptr<Whiskas::GameScene> m_gamescene = nullptr;
     std::shared_ptr<Course::PlayerBase> testPlayer =nullptr;
     std::shared_ptr<Course::PlayerBase> enemyTestPlayer =nullptr;
 

@@ -1,12 +1,8 @@
-#include "nexus.h"
-#include "handlerandmanager/gameeventhandler.h"
-#include "handlerandmanager/gamemanager.h"
-
-
+#include "test_building.h"
 
 namespace Whiskas {
 
-Nexus::Nexus(
+test_building::test_building(
         const std::shared_ptr<gameEventHandler>& eventhandler,
         const std::shared_ptr<gameManager>& objectmanager,
         const std::shared_ptr<Course::PlayerBase>& owner,
@@ -24,16 +20,15 @@ Nexus::Nexus(
                  production,
                  health,
                  attack)
-
 {
 }
 
-std::string Nexus::getType() const
+std::string test_building::getType() const
 {
     return "Nexus";
 }
 
-void Nexus::onBuildAction()
+void test_building::onBuildAction()
 {
     std::vector< std::shared_ptr<Course::TileBase> > neighbours =
             lockObjectManager()->getTiles(getCoordinatePtr()->neighbours(1));
@@ -48,11 +43,11 @@ void Nexus::onBuildAction()
     }
 }
 
-Course::ResourceMap Nexus::getProduction()
+Course::ResourceMap test_building::getProduction()
 {
     // Outpost has only negative production effect.
     // Ze hold markerz, zey do nothing.
     return PRODUCTION_EFFECT;
 }
 
-} // namespace Whiskas
+}

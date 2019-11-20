@@ -1,21 +1,25 @@
 #include "unit.h"
 
-unit::unit(int movement)
+namespace Whiskas {
+
+Unit::Unit(int movement)
 {
     movement_=movement;
 }
 
-int unit::getMoveValue()
+int Unit::getMoveValue()
 {
     return movement_;
 }
 
-void unit::setMoved(bool moved)
+void Unit::setMoved(bool moved)
 {
     hasMoved_=moved;
 }
 
-bool unit::getMoved()
+bool Unit::getMoved()
 {
     return hasMoved_;
+}
+
 }

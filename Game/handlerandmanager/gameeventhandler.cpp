@@ -1,5 +1,7 @@
 #include "gameeventhandler.h"
 
+namespace Whiskas {
+
 gameEventHandler::gameEventHandler()
 {
 qDebug()<<"new event handler";
@@ -39,11 +41,19 @@ void gameEventHandler::handleLeftClick(std::shared_ptr<GameScene> scene, std::sh
 
         //activeTile_= manager->getTile(scene->getLastID());
         activeTile_ = manager->getTile(*scene->getLastCoordinate());
+        qDebug()<< "================";
+        qDebug()<< "HANDLING MWINDOW CLICK";
         qDebug() << "Coordinate X: " << activeTile_->getCoordinatePtr()->x()
                  << ", Y: " << activeTile_->getCoordinatePtr()->y();
-        qDebug()<< "handling mwindow click phase2";
         qDebug()<< "the ID is"<< scene->getLastID();
         qDebug()<< "Amount of minions is"<< activeTile_->getWorkers().size();
+        qDebug()<< "Amount of buildings is"<< activeTile_->getBuildings().size();
+        if (activeTile_->getBuildings().size()!=0){
+            qDebug()<< "Building is"
+                    << QString::fromStdString(activeTile_->getBuildings().at(0)->getType())
+                    << "and the owner is"
+                    << QString::fromStdString(activeTile_->getBuildings().at(0)->getOwner()->getName());
+        }
         if (activeTile_->getWorkers().size()!=0){
             for(auto it: manager->getMinionVector()){
                 if(activeTile_->getWorkers().front()==it){
@@ -54,6 +64,7 @@ void gameEventHandler::handleLeftClick(std::shared_ptr<GameScene> scene, std::sh
 
             }
         }
+        qDebug()<< "================";
 
 
 
@@ -87,4 +98,4 @@ void gameEventHandler::sendMessage()
 }
 
 
-
+}

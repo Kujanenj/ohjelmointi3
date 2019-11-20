@@ -1,11 +1,12 @@
 #ifndef UNIT_H
 #define UNIT_H
 
+namespace Whiskas {
 
-class unit
+class Unit
 {
 public:
-    unit(int movement);
+    Unit(int movement);
     int getMoveValue();
     void setMoved(bool hasMoved);
     bool getMoved();
@@ -14,4 +15,5 @@ protected:
     bool hasMoved_=false;
 };
 
+}
 #endif // UNIT_H

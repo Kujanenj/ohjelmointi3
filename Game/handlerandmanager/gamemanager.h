@@ -4,17 +4,18 @@
 #include "tiles/forest.h"
 #include "tiles/grassland.h"
 #include "core/worldgenerator.h"
-#include "buildings/buildingbase.h"
+#include "buildings/custombuildingbase.h"
 #include "minion/minion.h"
 #include "gameeventhandler.h"
 #include <vector>
 
-#include "buildings/nexus.h"
 #include "graphics/mapitem.h"
 
+namespace Whiskas {
 
-class attackable;
-class minion;
+class CustomBuildingBase;
+class Attackable;
+class Minion;
 class gameEventHandler;
 class gameManager : public Course::iObjectManager
 
@@ -35,19 +36,19 @@ public:
      * \brief get vector of all the minions in excistance. In every multiverse.
      * \return
      */
-    std::vector<std::shared_ptr<minion>> getMinionVector();
+    std::vector<std::shared_ptr<Minion>> getMinionVector();
     /*!
      * \brief adds the building to the allbuildings_ vector
      * \param Building
      * \return
      */
-    bool addBuilding(std::shared_ptr<Course::BuildingBase>& building);
+    bool addBuilding(std::shared_ptr<CustomBuildingBase>& building);
     /*!
      * \brief adds a minion to allMinions_ vector
      * \param minion
      * \return
      */
-    bool addMinion(std::shared_ptr<minion>& minion);
+    bool addMinion(std::shared_ptr<Minion>& Minion);
     /*!
      * \brief spawns a new minion object to latest active tile.
      * \param handler <-- minions new handler
@@ -72,25 +73,29 @@ public:
      * \param minionToMove
      * \param targetTile
      */
-    void move(std::shared_ptr<minion> minionToMove,
+    void move(std::shared_ptr<Minion> minionToMove,
               std::shared_ptr<Course::TileBase> targetTile);
 
-    void attack(std::shared_ptr<minion> minionToMove,
-                std::shared_ptr<attackable> toAttack);
-    bool checkForEnemies(std::shared_ptr<minion>minionTomove,
+    void attack(std::shared_ptr<Minion> minionToMove,
+                std::shared_ptr<Attackable> toAttack);
+    bool checkForEnemies(std::shared_ptr<Minion>minionTomove,
                          std::shared_ptr<Course::TileBase>targetTile);
-    std::shared_ptr<attackable> selectAttackTarget(std::shared_ptr<Course::TileBase> targetTile);
+    std::shared_ptr<Attackable> selectAttackTarget(std::shared_ptr<Course::TileBase> targetTile);
 
-    void destroyObject(std::shared_ptr<attackable> minionToDestroy);
+
+    void destroyObject(std::shared_ptr<Attackable> minionToDestroy);
+
 private:
     std::vector<std::shared_ptr<Course::TileBase> > alltiles_;
     //Contains a pointer too all building in all tiles. This keeps the weak ptrs in tilebase
     //alive....This is just a workaround.
-    std::vector<std::shared_ptr<Course::BuildingBase>> allbuildings_;
-    std::vector<std::shared_ptr<minion>> allminions_;
-    std::vector<std::shared_ptr<attackable>> allattackablestest_;
+    std::vector<std::shared_ptr<CustomBuildingBase>> allbuildings_;
+    std::vector<std::shared_ptr<Minion>> allminions_;
+    std::vector<std::shared_ptr<Attackable>> allattackablestest_;
 
     std::shared_ptr<GameScene> manager_gamescene;
 };
+
+}
 
 #endif // TESTTILEMANAGER_H

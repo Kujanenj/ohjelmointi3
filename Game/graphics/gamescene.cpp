@@ -7,7 +7,7 @@
 #include <math.h>
 
 
-
+namespace Whiskas {
 
 GameScene::GameScene(QWidget* parent,
                                  int width,
@@ -53,8 +53,9 @@ void GameScene::resize()
 
     // Calculates rect with middle at (0,0).
     // Basically left upper corner coords and then width and height
-    QRect rect = QRect( m_width * m_scale / - 2, m_height * m_scale / -2,
-                        m_width * m_scale - 1, m_height * m_scale - 1 );
+    /*QRect rect = QRect( m_width * m_scale / - 2, m_height * m_scale / -2,
+                        m_width * m_scale - 1, m_height * m_scale - 1 );*/
+    QRect rect = QRect( 0, 0, m_width * m_scale, m_height * m_scale);
 
     addRect(rect, QPen(Qt::black));
     setSceneRect(rect);
@@ -167,6 +168,8 @@ void GameScene::drawItem( std::shared_ptr<Course::GameObject> obj)
     qDebug()<<"Added item"<<obj->ID<<QString::fromStdString(obj->getType())<<obj->getCoordinate().asQpoint();
 
     addItem(nItem);
+}
+
 }
 
 
