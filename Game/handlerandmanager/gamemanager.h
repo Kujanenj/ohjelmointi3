@@ -9,7 +9,6 @@
 #include "gameeventhandler.h"
 #include <vector>
 
-#include "buildings/nexus.h"
 #include "graphics/mapitem.h"
 
 namespace Whiskas {

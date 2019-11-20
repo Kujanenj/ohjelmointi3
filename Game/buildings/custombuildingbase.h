@@ -2,12 +2,11 @@
 #define CUSTOMBUILDINGBASE_H
 
 #include "buildings/buildingbase.h"
-#include "core/resourcemaps.h"
 
 #include "handlerandmanager/gameeventhandler.h"
 #include "handlerandmanager/gamemanager.h"
 
-#include "core/playerbase.h"
+#include "attackable.h"
 
 namespace Whiskas {
 
@@ -23,9 +22,10 @@ public:
             const std::shared_ptr<gameManager>& objectmanager,
             const std::shared_ptr<Course::PlayerBase>& owner,
             const int& tilespaces = 1,
-            const Course::ResourceMap& buildcost = Course::ConstResourceMaps::OUTPOST_BUILD_COST,
-            const Course::ResourceMap& production = Course::ConstResourceMaps::OUTPOST_PRODUCTION,
-            int health=3
+            const Course::ResourceMap& buildcost = {},
+            const Course::ResourceMap& production = {},
+            int health=3,
+            int attack=0
             );
 };
 

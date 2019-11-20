@@ -1,5 +1,5 @@
-#ifndef NEXUS_H
-#define NEXUS_H
+#ifndef TEST_BUILDING_H
+#define TEST_BUILDING_H
 
 #include "buildings/custombuildingbase.h"
 #include "core/resourcemaps.h"
@@ -7,16 +7,12 @@
 namespace Whiskas {
 
 
-static const Course::ResourceMap OUTPOST_PRODUCTIONMAP = {
-  {Course::BasicResource::MONEY, -10}
-};
-
-class Nexus : public CustomBuildingBase
+class test_building : public CustomBuildingBase
 {
 public:
-    Nexus() = delete;
+    test_building() = delete;
 
-    explicit Nexus(
+    explicit test_building(
             const std::shared_ptr<gameEventHandler>& eventhandler,
             const std::shared_ptr<gameManager>& objectmanager,
             const std::shared_ptr<Course::PlayerBase>& owner,
@@ -27,27 +23,11 @@ public:
             int attack = 0
             );
 
-    /**
-     * @brief Default destructor.
-     */
-    virtual ~Nexus() = default;
-
-    /**
-     * @copydoc GameObject::getType()
-     */
+    virtual ~test_building() = default;
     virtual std::string getType() const override;
     virtual void onBuildAction() override;
-
-    /**
-     * @brief getProduction
-     * @return
-     * @post Exception guarantee: Basic
-     */
     virtual Course::ResourceMap getProduction() override;
+};
 
-}; // class Nexus
-
-} // namespace Whiskas
-
-
-#endif // NEXUS_H
+}
+#endif // TEST_BUILDING_H

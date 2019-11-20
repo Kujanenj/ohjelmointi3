@@ -9,6 +9,7 @@ CONFIG += c++14
 SOURCES += \
     attackable.cpp \
     buildings/custombuildingbase.cpp \
+    buildings/test_building.cpp \
     dialogs/buildingdialog.cpp \
     buildings/nexus.cpp \
     functions/functions.cpp \
@@ -27,6 +28,7 @@ SOURCES += \
 HEADERS += \
     attackable.h \
     buildings/custombuildingbase.h \
+    buildings/test_building.h \
     dialogs/buildingdialog.h \
     buildings/nexus.h \
     functions/functions.h \

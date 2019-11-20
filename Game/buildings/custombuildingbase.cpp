@@ -11,7 +11,8 @@ CustomBuildingBase::CustomBuildingBase(
         const int& tilespaces,
         const Course::ResourceMap& buildcost,
         const Course::ResourceMap& production,
-        int health
+        int health,
+        int attack
         ):
     Course::BuildingBase(eventhandler,
                  objectmanager,
@@ -19,7 +20,7 @@ CustomBuildingBase::CustomBuildingBase(
                  tilespaces,
                  buildcost,
                  production),
-    Attackable(health, 0, ID)
+    Attackable(health, attack, ID)
 {
 }
 
