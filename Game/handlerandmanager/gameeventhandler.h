@@ -4,6 +4,7 @@
 #include "graphics/gamescene.h"
 #include "gamemanager.h"
 #include "minion/minion.h"
+#include "meleechampion.h"
 #include <QDebug>
 #include <QMouseEvent>
 

@@ -2,8 +2,8 @@
 
 namespace Whiskas {
 
-MeleeChampion::MeleeChampion(const std::shared_ptr<gameEventHandler>& handler,
-                             const std::shared_ptr<gameManager>& manager,
+MeleeChampion::MeleeChampion(const std::shared_ptr<Course::iGameEventHandler>& handler,
+                             const std::shared_ptr<Course::iObjectManager>& manager,
                              const std::shared_ptr<Course::PlayerBase>& owner,
                              int movement):
               Minion(handler,manager,owner,movement)
@@ -11,6 +11,11 @@ MeleeChampion::MeleeChampion(const std::shared_ptr<gameEventHandler>& handler,
     movement_=movement;
     qDebug()<<"champion says hi";
 
+}
+
+std::string MeleeChampion::getType() const
+{
+    return "MeleeChampion";
 }
 
 }

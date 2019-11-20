@@ -1,8 +1,8 @@
 #ifndef TESTTILEMANAGER_H
 #define TESTTILEMANAGER_H
 #include "interfaces/iobjectmanager.h"
-#include "tiles/forest.h"
-#include "tiles/grassland.h"
+//#include "tiles/forest.h"
+//#include "tiles/grassland.h"
 #include "core/worldgenerator.h"
 #include "buildings/buildingbase.h"
 #include "minion/minion.h"
@@ -15,7 +15,8 @@ namespace Whiskas {
 
 
 class Attackable;
-class Minion;
+//class MeleeChampion;
+//class Minion;
 class gameEventHandler;
 class gameManager : public Course::iObjectManager
 
@@ -48,7 +49,7 @@ public:
      * \param minion
      * \return
      */
-    bool addMinion(std::shared_ptr<Minion>& Minion);
+    bool addMinion(std::shared_ptr<Minion> Minion);
     /*!
      * \brief spawns a new minion object to latest active tile.
      * \param handler <-- minions new handler
@@ -56,8 +57,8 @@ public:
      * \param owner  <-- player who owns the minion
      * \param location <-- tile where the minion spawns
      */
-    void spawnMinion(std::shared_ptr<gameEventHandler> handler,
-                                        std::shared_ptr<gameManager> manager,
+    void spawnMinion(std::shared_ptr<Course::iGameEventHandler> handler,
+                                        std::shared_ptr<Course::iObjectManager> manager,
                                         std::shared_ptr<Course::PlayerBase> owner,
                                         std::shared_ptr<Course::TileBase> location);
 

@@ -2,24 +2,28 @@
 #define MINION_H
 
 #include "core/placeablegameobject.h"
-#include "handlerandmanager/gameeventhandler.h"
-#include "handlerandmanager/gamemanager.h"
+//#include "handlerandmanager/gameeventhandler.h"
+//#include "handlerandmanager/gamemanager.h"
 #include "core/playerbase.h"
 #include "core/coordinate.h"
-#include "core/playerbase.h"
+#include "workers/workerbase.h"
 #include "unit.h"
 #include "attackable.h"
+
+#include <QDebug>
+
 
 namespace Whiskas {
 
 class gameManager;
 class gameEventHandler;
+
 class Minion : public Course::WorkerBase, public Unit, public Attackable
 {
 public:
     Minion()=delete;
-    Minion(const std::shared_ptr<gameEventHandler>& handler,
-           const std::shared_ptr<gameManager>& manager,
+    Minion(const std::shared_ptr<Course::iGameEventHandler>& handler,
+           const std::shared_ptr<Course::iObjectManager>& manager,
            const std::shared_ptr<Course::PlayerBase>& owner,
            int movement=1,
            int health=3,

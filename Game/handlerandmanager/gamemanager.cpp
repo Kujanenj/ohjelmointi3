@@ -60,18 +60,18 @@ bool gameManager::addBuilding(std::shared_ptr<Course::BuildingBase>& Building)
     return true;
 }
 
-bool gameManager::addMinion(std::shared_ptr<Minion> &minion)
+bool gameManager::addMinion(std::shared_ptr<Minion> minion)
 {
     allminions_.push_back(minion);
     return true;
 }
 
-void gameManager::spawnMinion(std::shared_ptr<gameEventHandler> handler,
-                                                 std::shared_ptr<gameManager> manager,
+void gameManager::spawnMinion(std::shared_ptr<Course::iGameEventHandler> handler,
+                                                 std::shared_ptr<Course::iObjectManager> manager,
                                                  std::shared_ptr<Course::PlayerBase> owner,
                                                  std::shared_ptr<Course::TileBase> location)
 {
-    std::shared_ptr<Minion> testMinion = std::make_shared<Minion>(handler,
+    std::shared_ptr<MeleeChampion> testMinion = std::make_shared<MeleeChampion>(handler,
                                                                   manager,
                                                                   owner);
     testMinion->setLocationTile(location);
