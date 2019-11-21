@@ -81,11 +81,12 @@ void MapWindow::initMap(int x, int y)
     setSize(x,y);
      std::shared_ptr<Whiskas::gameManager> gmanager =  std::make_shared<Whiskas::gameManager>(m_gamescene);
 
-     std::shared_ptr<Course::PlayerBase> firstPlayer = std::make_shared<Course::PlayerBase>("player 1");
-     std::shared_ptr<Course::PlayerBase> secondPlayer = std::make_shared<Course::PlayerBase>("player 2");
+     std::shared_ptr<Whiskas::LeaguePlayer> firstPlayer = std::make_shared<Whiskas::LeaguePlayer>("player 1");
+     std::shared_ptr<Whiskas::LeaguePlayer> secondPlayer = std::make_shared<Whiskas::LeaguePlayer>("player 2");
+     firstPlayer->getItems();
 
-     std::pair<std::shared_ptr<Course::PlayerBase>,
-             std::shared_ptr<Course::PlayerBase>> playerPair(firstPlayer,secondPlayer);
+     std::pair<std::shared_ptr<Whiskas::LeaguePlayer>,
+             std::shared_ptr<Whiskas::LeaguePlayer>> playerPair(firstPlayer,secondPlayer);
      setGManager(gmanager);
 
      m_GManager->addPlayer(playerPair);

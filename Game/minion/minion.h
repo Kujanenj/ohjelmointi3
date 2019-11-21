@@ -30,7 +30,7 @@ public:
            int health=3,
            int attack=1,
            int numberOfattacks=1,
-           const TestMap cost=MINION_COST);
+           const AdvancedResourceMap cost=MINION_COST);
 
     void doSpecialAction() override;
     virtual ~Minion() = default;
@@ -41,7 +41,7 @@ public:
 
 protected:
     std::shared_ptr<gameManager> manager_;
-    TestMap testCost_;
+   AdvancedResourceMap testCost_;
 
 private:
     std::weak_ptr<Course::TileBase> currentTile_;

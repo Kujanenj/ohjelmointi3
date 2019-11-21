@@ -53,7 +53,7 @@ std::vector<std::shared_ptr<Minion> > gameManager::getMinionVector()
     return allminions_;
 }
 
-std::pair<std::shared_ptr<Course::PlayerBase>, std::shared_ptr<Course::PlayerBase> > gameManager::getPlayerPair()
+std::pair<std::shared_ptr<Whiskas::LeaguePlayer>, std::shared_ptr<Whiskas::LeaguePlayer> > gameManager::getPlayerPair()
 {
     return players_;
 }
@@ -68,8 +68,8 @@ bool gameManager::addBuilding(std::shared_ptr<CustomBuildingBase> &Building)
 }
 
 bool gameManager::addPlayer(std::pair<
-                            std::shared_ptr<Course::PlayerBase>,
-                            std::shared_ptr<Course::PlayerBase>> &players)
+                            std::shared_ptr<Whiskas::LeaguePlayer>,
+                            std::shared_ptr<Whiskas::LeaguePlayer>> &players)
 {
     qDebug()<<"Check this";
      qDebug()<<QString::fromStdString(players.first->getName());

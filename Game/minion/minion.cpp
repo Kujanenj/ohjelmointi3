@@ -9,14 +9,14 @@ Minion::Minion(const std::shared_ptr<Course::iGameEventHandler>& handler,
                int health,
                int attack,
                int attacks,
-               const TestMap cost):
+               const AdvancedResourceMap cost):
     Course::WorkerBase(handler, manager, owner),
     Unit(movement),
     Attackable(health,attack,attacks, ID)
 {
 
     testCost_=cost;
-    lockEventHandler();
+
     qDebug()<<"minion got made";
 
 }

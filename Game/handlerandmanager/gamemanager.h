@@ -8,7 +8,7 @@
 #include "minion/minion.h"
 #include "gameeventhandler.h"
 #include <vector>
-
+#include "leagueplayer.h"
 #include "graphics/mapitem.h"
 
 namespace Whiskas {
@@ -43,8 +43,8 @@ public:
      * \param Building
      * \return
      */
-    std::pair<std::shared_ptr<Course::PlayerBase>,
-    std::shared_ptr<Course::PlayerBase>> getPlayerPair();
+    std::pair<std::shared_ptr<Whiskas::LeaguePlayer>,
+    std::shared_ptr<Whiskas::LeaguePlayer>> getPlayerPair();
     bool addBuilding(std::shared_ptr<CustomBuildingBase>& building);
     /*!
      * \brief adds a minion to allMinions_ vector
@@ -53,8 +53,8 @@ public:
      */
 
     bool addPlayer(std::pair<
-                   std::shared_ptr<Course::PlayerBase>,
-                   std::shared_ptr<Course::PlayerBase>>& player);
+                   std::shared_ptr<Whiskas::LeaguePlayer>,
+                   std::shared_ptr<Whiskas::LeaguePlayer>>& player);
 
 
     bool addMinion(std::shared_ptr<Minion> Minion);
@@ -103,7 +103,7 @@ private:
     std::vector<std::shared_ptr<CustomBuildingBase>> allbuildings_;
     std::vector<std::shared_ptr<Minion>> allminions_;
     std::vector<std::shared_ptr<Attackable>> allattackables_;
-    std::pair<std::shared_ptr<Course::PlayerBase>,std::shared_ptr<Course::PlayerBase>> players_;
+    std::pair<std::shared_ptr<Whiskas::LeaguePlayer>,std::shared_ptr<Whiskas::LeaguePlayer>> players_;
     std::shared_ptr<GameScene> manager_gamescene;
 };
 

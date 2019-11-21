@@ -1,9 +1,9 @@
 #include "AdvancedResourcses.h"
 
-Whiskas::TestMap Whiskas::mergeAdvancedMaps(const Whiskas::TestMap &left,
-                                            const Whiskas::TestMap &right)
+Whiskas::AdvancedResourceMap Whiskas::mergeAdvancedMaps(const Whiskas::AdvancedResourceMap &left,
+                                            const Whiskas::AdvancedResourceMap &right)
 {
-    TestMap new_map = left;
+    AdvancedResourceMap new_map = left;
 
     for( auto left_it = left.begin(); left_it != left.end(); ++left_it)
     {
