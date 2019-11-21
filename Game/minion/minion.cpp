@@ -8,15 +8,17 @@ Minion::Minion(const std::shared_ptr<Course::iGameEventHandler>& handler,
                int movement,
                int health,
                int attack,
-               int attacks):
+               int attacks,
+               const TestMap cost):
     Course::WorkerBase(handler, manager, owner),
     Unit(movement),
     Attackable(health,attack,attacks, ID)
 {
 
-
+    testCost_=cost;
     lockEventHandler();
     qDebug()<<"minion got made";
+
 }
 
 void Minion::doSpecialAction()
@@ -39,6 +41,14 @@ bool Minion::modifyHealth(int hModifier)
         return true;
     }
     return false;
+}
+
+void Minion::getCosts()
+{
+    std::map<AdvancedResources, int>::iterator it;
+    for(it=testCost_.begin(); it!=testCost_.end(); it++){
+        qDebug()<<it->first<<it->second;
+    }
 }
 
 

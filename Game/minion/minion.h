@@ -12,6 +12,8 @@
 #include <QDebug>
 
 
+
+#include "AdvancedResourcses/AdvancedResourceMaps.h"
 namespace Whiskas {
 
 class gameManager;
@@ -27,16 +29,19 @@ public:
            int movement=1,
            int health=3,
            int attack=1,
-           int numberOfattacks=1);
+           int numberOfattacks=1,
+           const TestMap cost=MINION_COST);
 
     void doSpecialAction() override;
     virtual ~Minion() = default;
 
     virtual std::string getType() const override;
     virtual bool modifyHealth(int hModifier) override;
+    void getCosts();
 
 protected:
     std::shared_ptr<gameManager> manager_;
+    TestMap testCost_;
 
 private:
     std::weak_ptr<Course::TileBase> currentTile_;

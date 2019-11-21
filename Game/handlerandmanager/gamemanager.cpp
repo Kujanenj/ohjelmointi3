@@ -114,6 +114,7 @@ void gameManager::spawnMinion(std::shared_ptr<Course::iGameEventHandler> handler
 
     manager_gamescene->drawItem(testMinion);
     manager_gamescene->update();
+    testMinion->getCosts();
 
 
 

@@ -7,6 +7,7 @@ QT += core gui widgets \
 CONFIG += c++14
 
 SOURCES += \
+    AdvancedResourcses/AdvancedResourcses.cpp \
     attackable.cpp \
     buildings/custombuildingbase.cpp \
     buildings/test_building.cpp \
@@ -17,6 +18,7 @@ SOURCES += \
     handlerandmanager/gameeventhandler.cpp \
     handlerandmanager/gamemanager.cpp \
     graphics/gamescene.cpp \
+    leagueplayer.cpp \
     main.cpp \
     mapwindow.cc \
     meleechampion.cpp \
@@ -27,6 +29,8 @@ SOURCES += \
 
 
 HEADERS += \
+    AdvancedResourcses/AdvancedResourceMaps.h \
+    AdvancedResourcses/AdvancedResourcses.h \
     attackable.h \
     buildings/custombuildingbase.h \
     buildings/test_building.h \
@@ -37,6 +41,7 @@ HEADERS += \
     handlerandmanager/gameeventhandler.h \
     handlerandmanager/gamemanager.h \
     graphics/gamescene.h \
+    leagueplayer.h \
     mapwindow.hh \
     meleechampion.h \
     minion/minion.h \
