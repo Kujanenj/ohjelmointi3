@@ -84,14 +84,20 @@ bool gameManager::addMinion(std::shared_ptr<Minion> minion)
     return true;
 }
 
-void gameManager::spawnMinion(std::shared_ptr<Course::iGameEventHandler> handler,
+void gameManager::spawnMinion(std::shared_ptr<gameEventHandler> handler,
                                                  std::shared_ptr<Course::iObjectManager> manager,
                                                  std::shared_ptr<Course::PlayerBase> owner,
                                                  std::shared_ptr<Course::TileBase> location,
                                                  std::string type)
 {
+
+
     std::shared_ptr<Minion> testMinion=nullptr;
     if(type=="minion"){
+        if(handler->subtractPlayerResources(handler->getTurn()->getInTurn(),MINION_COST)==false){
+            qDebug()<<"you did not have enough moneys";
+            return;
+        }
         testMinion=std::make_shared<Minion>(handler,
                                             manager,
                                             owner);

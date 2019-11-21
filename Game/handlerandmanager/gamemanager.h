@@ -11,6 +11,7 @@
 #include "leagueplayer.h"
 #include "graphics/mapitem.h"
 
+
 namespace Whiskas {
 
 class CustomBuildingBase;
@@ -66,7 +67,7 @@ public:
      * \param owner  <-- player who owns the minion
      * \param location <-- tile where the minion spawns
      */
-    void spawnMinion(std::shared_ptr<Course::iGameEventHandler> handler,
+    void spawnMinion(std::shared_ptr<gameEventHandler> handler,
                                         std::shared_ptr<Course::iObjectManager> manager,
                                         std::shared_ptr<Course::PlayerBase> owner,
                                         std::shared_ptr<Course::TileBase> location,

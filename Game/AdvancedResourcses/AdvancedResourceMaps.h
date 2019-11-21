@@ -4,7 +4,7 @@
 #include "AdvancedResourcses.h"
 namespace Whiskas {
 const AdvancedResourceMap MINION_COST={
-    {PLACEHOLDER_RESOURCE_FIRST, 1},
+    {PLACEHOLDER_RESOURCE_FIRST, 2},
     {PLACEHOLDER_RESOURCE_SECOND, 2}
     };
 

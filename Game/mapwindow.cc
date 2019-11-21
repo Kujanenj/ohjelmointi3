@@ -147,7 +147,7 @@ void MapWindow::on_minionbutton_clicked()
 {
     qDebug()<<"spawn minion click";
     qDebug()<<" ";
-    m_GEHandler->subtractPlayerResources(m_GManager->getPlayerPair().first, Whiskas::MINION_COST);
+
     m_GManager->spawnMinion(m_GEHandler, m_GManager, m_GManager->getPlayerPair().first, m_GEHandler->getActiveTile(), "minion");
     m_ui->graphicsView->viewport()->update();
 }

@@ -21,7 +21,7 @@ public:
     gameEventHandler(std::shared_ptr<Turn> turn);
     bool modifyResources(std::shared_ptr<Course::PlayerBase> player, Course::ResourceMap resources) override;
     bool modifyResource(std::shared_ptr<Course::PlayerBase> player, Course::BasicResource resource, int amount) override;
-    void subtractPlayerResources(std::shared_ptr<LeaguePlayer> test, AdvancedResourceMap costs);
+    bool subtractPlayerResources(std::shared_ptr<LeaguePlayer> test, AdvancedResourceMap costs);
     /*!
      * \brief Handles both the right click and left click ;)
      * \param scene
@@ -43,7 +43,7 @@ public:
     void handleMwindowClick(std::shared_ptr<GameScene> scene, std::shared_ptr<gameManager> manager);
 
     std::shared_ptr<Course::TileBase> getActiveTile();
-
+    std::shared_ptr<Turn> getTurn();
     void endTurn();
 
 private:

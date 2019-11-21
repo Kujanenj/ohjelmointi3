@@ -6,7 +6,7 @@ playerInTurn_=manager->getPlayerPair().first;
 manager_=manager;
 }
 
-std::shared_ptr<Course::PlayerBase> Turn::getInTurn()
+std::shared_ptr<LeaguePlayer> Turn::getInTurn()
 {
     return playerInTurn_;
 }

@@ -7,16 +7,16 @@
 namespace Whiskas {
 
 class gameManager;
-
+class LeaguePlayer;
 class Turn
 {
 public:
     Turn(std::shared_ptr<gameManager> manager);
 
-    std::shared_ptr<Course::PlayerBase> getInTurn();
+    std::shared_ptr<LeaguePlayer> getInTurn();
     void swapTurn();
 private:
-    std::shared_ptr<Course::PlayerBase> playerInTurn_=nullptr;
+    std::shared_ptr<LeaguePlayer> playerInTurn_=nullptr;
     std::shared_ptr<gameManager> manager_=nullptr;
 };
 }
