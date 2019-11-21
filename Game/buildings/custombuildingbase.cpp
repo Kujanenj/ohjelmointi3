@@ -10,18 +10,22 @@ CustomBuildingBase::CustomBuildingBase(
         const std::shared_ptr<Course::PlayerBase>& owner,
         const int& tilespaces,
         const Course::ResourceMap& buildcost,
-        const Course::ResourceMap& production,
+        const AdvancedResourceMap production,
         int health,
         int attack
         ):
     Course::BuildingBase(eventhandler,
                  objectmanager,
                  owner,
-                 tilespaces,
-                 buildcost,
-                 production),
-    Attackable(health, attack,0, ID)
+                 tilespaces),
+    Attackable(health, attack,0, ID),
+    production_(production)
 {
+}
+
+AdvancedResourceMap CustomBuildingBase::getAdvancedProduction()
+{
+    return production_;
 }
 
 }

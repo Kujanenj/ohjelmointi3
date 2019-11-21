@@ -44,7 +44,7 @@ std::vector<std::shared_ptr<Course::TileBase> > gameManager::getTiles(const std:
 {
     return alltiles_;
 }
-std::vector<std::shared_ptr<Course::TileBase> > gameManager::returntilevector(){
+std::vector<std::shared_ptr<Course::TileBase> > gameManager::getTileVector(){
     return alltiles_;
 }
 
@@ -52,7 +52,9 @@ std::vector<std::shared_ptr<Minion> > gameManager::getMinionVector()
 {
     return allminions_;
 }
-
+std::vector<std::shared_ptr<CustomBuildingBase>> gameManager::getBuildingVector(){
+    return allbuildings_;
+}
 std::pair<std::shared_ptr<Whiskas::LeaguePlayer>, std::shared_ptr<Whiskas::LeaguePlayer> > gameManager::getPlayerPair()
 {
     return players_;

@@ -105,7 +105,7 @@ void MapWindow::initMap(int x, int y)
     makeWorldGenerator(x,y,10,ghandler,gmanager);
 
 
-    for(auto it:m_GManager->returntilevector()){
+    for(auto it:m_GManager->getTileVector()){
 
         drawItem(it);
     }

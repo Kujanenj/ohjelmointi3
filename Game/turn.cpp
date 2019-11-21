@@ -16,12 +16,18 @@ void Turn::swapTurn()
 
     for(auto it:manager_->getMinionVector()){
         it->setMoved(false);
+
         it->setAttacked(false);
     }
 
 
 
-
+    for(auto it:manager_->getBuildingVector()){
+        qDebug()<<"buildings about to give you shit";
+        if(it->getOwner()==playerInTurn_){
+        playerInTurn_->setPlayerItems(mergeAdvancedMaps(playerInTurn_->getItems(),
+                                                        it->getAdvancedProduction()));
+    }}
 
     //swawp active player
     if(playerInTurn_==manager_->getPlayerPair().first){

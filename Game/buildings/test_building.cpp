@@ -8,7 +8,7 @@ test_building::test_building(
         const std::shared_ptr<Course::PlayerBase>& owner,
         const int& tilespaces,
         const Course::ResourceMap& buildcost,
-        const Course::ResourceMap& production,
+        const AdvancedResourceMap production,
         int health,
         int attack
         ):

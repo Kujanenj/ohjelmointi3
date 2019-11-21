@@ -33,7 +33,8 @@ public:
 
     std::vector<std::shared_ptr<Course::TileBase> > getTiles(const std::vector<Course::Coordinate> &coordinates) override;
 
-    std::vector<std::shared_ptr<Course::TileBase> > returntilevector();
+    std::vector<std::shared_ptr<Course::TileBase> > getTileVector();
+    std::vector<std::shared_ptr<CustomBuildingBase>>getBuildingVector();
     /*!
      * \brief get vector of all the minions in excistance. In every multiverse.
      * \return

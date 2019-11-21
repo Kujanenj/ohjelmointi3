@@ -13,7 +13,10 @@ const AdvancedResourceMap PLAYER_ITEMS={
     {PLACEHOLDER_RESOURCE_SECOND,10}
     };
 
-
+const AdvancedResourceMap TEST_BUILDING_PRODUCE={
+    {PLACEHOLDER_RESOURCE_FIRST, 5},
+    {PLACEHOLDER_RESOURCE_SECOND, 10}
+};
 
 
 

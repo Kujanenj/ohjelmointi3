@@ -23,6 +23,7 @@ AdvancedResourceMap LeaguePlayer::getItems()
 
 void LeaguePlayer::setPlayerItems(AdvancedResourceMap toSet)
 {
+    qDebug()<<"setting player"<<QString::fromStdString(getName());
     playerItems_=toSet;
     qDebug()<<"afther set";
     std::map<AdvancedResources, int>::iterator it;
