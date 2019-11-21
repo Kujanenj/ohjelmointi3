@@ -13,9 +13,33 @@ bool gameEventHandler::modifyResources(std::shared_ptr<Course::PlayerBase> playe
     return true;
 }
 
+
+
 bool gameEventHandler::modifyResource(std::shared_ptr<Course::PlayerBase> player, Course::BasicResource resource, int amount)
 {
     return true;
+}
+
+void gameEventHandler::subtractPlayerResources(std::shared_ptr<LeaguePlayer> player,AdvancedResourceMap costs)
+{
+    AdvancedResourceMap TempMap=player->getItems();
+    for(auto it=costs.begin(); it!= costs.end(); it++){
+        auto ToModify=TempMap.find(it->first);
+        if(ToModify!=TempMap.end()){
+            if(ToModify->second<it->second){
+                qDebug()<<"Not enough dough";
+                return;
+            }
+            ToModify->second-=it->second;
+        }
+        else{
+            qDebug()<<"Required resource nto found";
+            return;
+        }
+
+    }
+    player->setPlayerItems(TempMap);
+
 }
 
 void gameEventHandler::handleMwindowClick(std::shared_ptr<GameScene> scene, std::shared_ptr<gameManager> manager, QMouseEvent event)

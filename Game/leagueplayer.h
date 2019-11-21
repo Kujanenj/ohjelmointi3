@@ -11,7 +11,8 @@ class LeaguePlayer : public Course::PlayerBase
 public:
     LeaguePlayer(std::string name,
                  AdvancedResourceMap playerItems=PLAYER_ITEMS);
-    void getItems();
+    AdvancedResourceMap getItems();
+    void setPlayerItems(AdvancedResourceMap toSet);
 private:
     AdvancedResourceMap playerItems_;
 };

@@ -9,7 +9,7 @@
 #include "turn.h"
 #include <QDebug>
 #include <QMouseEvent>
-
+#include "leagueplayer.h"
 namespace Whiskas {
 
 class Turn;
@@ -21,7 +21,7 @@ public:
     gameEventHandler(std::shared_ptr<Turn> turn);
     bool modifyResources(std::shared_ptr<Course::PlayerBase> player, Course::ResourceMap resources) override;
     bool modifyResource(std::shared_ptr<Course::PlayerBase> player, Course::BasicResource resource, int amount) override;
-
+    void subtractPlayerResources(std::shared_ptr<LeaguePlayer> test, AdvancedResourceMap costs);
     /*!
      * \brief Handles both the right click and left click ;)
      * \param scene
@@ -50,7 +50,9 @@ private:
     std::shared_ptr<Course::TileBase> activeTile_ = nullptr;
     std::shared_ptr<Minion> activeMinion_=nullptr;
     std::shared_ptr<Turn> turn_=nullptr;
+
 };
+
 
 }
 #endif // gameEventHandler_H

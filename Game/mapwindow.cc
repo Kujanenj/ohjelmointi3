@@ -83,6 +83,7 @@ void MapWindow::initMap(int x, int y)
 
      std::shared_ptr<Whiskas::LeaguePlayer> firstPlayer = std::make_shared<Whiskas::LeaguePlayer>("player 1");
      std::shared_ptr<Whiskas::LeaguePlayer> secondPlayer = std::make_shared<Whiskas::LeaguePlayer>("player 2");
+     qDebug()<<"start of game";
      firstPlayer->getItems();
 
      std::pair<std::shared_ptr<Whiskas::LeaguePlayer>,
@@ -146,7 +147,7 @@ void MapWindow::on_minionbutton_clicked()
 {
     qDebug()<<"spawn minion click";
     qDebug()<<" ";
-
+    m_GEHandler->subtractPlayerResources(m_GManager->getPlayerPair().first, Whiskas::MINION_COST);
     m_GManager->spawnMinion(m_GEHandler, m_GManager, m_GManager->getPlayerPair().first, m_GEHandler->getActiveTile(), "minion");
     m_ui->graphicsView->viewport()->update();
 }

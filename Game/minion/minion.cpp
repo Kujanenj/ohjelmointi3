@@ -45,6 +45,7 @@ bool Minion::modifyHealth(int hModifier)
 
 void Minion::getCosts()
 {
+    qDebug()<<"Minion cost";
     std::map<AdvancedResources, int>::iterator it;
     for(it=testCost_.begin(); it!=testCost_.end(); it++){
         qDebug()<<it->first<<it->second;
