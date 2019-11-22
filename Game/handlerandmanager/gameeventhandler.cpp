@@ -129,9 +129,22 @@ std::shared_ptr<Turn> gameEventHandler::getTurn()
     return turn_;
 }
 
-void gameEventHandler::endTurn()
+void gameEventHandler::endTurn(std::shared_ptr<gameManager> manager, std::shared_ptr<gameEventHandler> handler)
 {
+
  turn_->swapTurn();
+ qDebug()<<turn_->getTurnCounter()<<"TURN COUNTER";
+ if(turn_->getTurnCounter()==2||turn_->getTurnCounter() % 5==0){
+     std::shared_ptr<Course::TileBase> nexsusLoc;
+     nexsusLoc=manager->getNexusLocation(manager->getPlayerPair().first);
+     if(nexsusLoc!=nullptr){
+        manager->spawnMinion(handler,manager,manager->getPlayerPair().first,nexsusLoc,"minion");
+     }
+     nexsusLoc=manager->getNexusLocation(manager->getPlayerPair().second);
+     if(nexsusLoc!=nullptr){
+        manager->spawnMinion(handler,manager,manager->getPlayerPair().second,nexsusLoc,"minion");
+     }
+ }
  activeMinion_=nullptr;
 }
 

@@ -14,6 +14,7 @@ std::shared_ptr<LeaguePlayer> Turn::getInTurn()
 void Turn::swapTurn()
 {
 
+    turnCounter_+=1;
     for(auto it:manager_->getMinionVector()){
         it->setMoved(false);
 
@@ -38,5 +39,10 @@ void Turn::swapTurn()
     }
     qDebug()<<"Active player is now"<<QString::fromStdString(
                   playerInTurn_->getName());
+}
+
+int Turn::getTurnCounter()
+{
+    return turnCounter_;
 }
 }

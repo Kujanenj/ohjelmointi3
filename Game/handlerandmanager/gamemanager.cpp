@@ -338,4 +338,15 @@ void gameManager::destroyObject(std::shared_ptr<Attackable> objectToDestroy)
      qDebug()<<"================== ";
 }
 
+std::shared_ptr<Course::TileBase> gameManager::getNexusLocation(std::shared_ptr<LeaguePlayer> owner)
+{
+    for(auto it : allbuildings_){
+        if(it->getType()=="Nexus" && it->getOwner()==owner){
+            qDebug()<<"nexsus loc found";
+            return it->currentLocationTile();
+        }
+    }
+    return nullptr;
+}
+
 } // NAMESPACE OVER HERE

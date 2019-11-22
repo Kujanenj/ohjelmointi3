@@ -15,9 +15,11 @@ public:
 
     std::shared_ptr<LeaguePlayer> getInTurn();
     void swapTurn();
+    int getTurnCounter();
 private:
     std::shared_ptr<LeaguePlayer> playerInTurn_=nullptr;
     std::shared_ptr<gameManager> manager_=nullptr;
+    int turnCounter_=0;
 };
 }
 #endif // TURN_H

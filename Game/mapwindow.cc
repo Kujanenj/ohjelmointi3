@@ -180,7 +180,7 @@ void MapWindow::on_enemyMinions_clicked()
 
 void MapWindow::on_endTurnButton_clicked()
 {
-    m_GEHandler->endTurn();
+    m_GEHandler->endTurn(m_GManager, m_GEHandler);
 }
 
 void MapWindow::on_champButton_clicked()

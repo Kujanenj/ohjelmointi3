@@ -45,7 +45,7 @@ public:
     std::shared_ptr<Course::TileBase> getActiveTile();
     std::shared_ptr<Minion> getActiveMinion();
     std::shared_ptr<Turn> getTurn();
-    void endTurn();
+    void endTurn(std::shared_ptr<gameManager> manager, std::shared_ptr<gameEventHandler> handler);
 
 private:
     std::shared_ptr<Course::TileBase> activeTile_ = nullptr;

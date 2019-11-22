@@ -15,6 +15,7 @@ public:
     void setPlayerItems(AdvancedResourceMap toSet);
 private:
     AdvancedResourceMap playerItems_;
+
 };
 }
 #endif // LEAGUEPLAYER_H

@@ -97,6 +97,7 @@ public:
 
 
     void destroyObject(std::shared_ptr<Attackable> minionToDestroy);
+    std::shared_ptr<Course::TileBase> getNexusLocation(std::shared_ptr<LeaguePlayer> owner);
 
 private:
     std::vector<std::shared_ptr<Course::TileBase> > alltiles_;
