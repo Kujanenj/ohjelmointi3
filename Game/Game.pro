@@ -22,6 +22,7 @@ SOURCES += \
     main.cpp \
     mapwindow.cc \
     meleechampion.cpp \
+    minion/magicchampion.cpp \
     minion/minion.cpp \
     dialogs/startdialog.cpp \
     minion/rangedchampion.cpp \
@@ -45,6 +46,7 @@ HEADERS += \
     leagueplayer.h \
     mapwindow.hh \
     meleechampion.h \
+    minion/magicchampion.h \
     minion/minion.h \
     dialogs/startdialog.h \
     minion/rangedchampion.h \

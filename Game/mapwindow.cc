@@ -187,3 +187,8 @@ void MapWindow::on_champButton_clicked()
 {
      m_GManager->spawnMinion(m_GEHandler, m_GManager, m_GEHandler->getTurn()->getInTurn(), m_GEHandler->getActiveTile(), "champ");
 }
+
+void MapWindow::on_mageButton_clicked()
+{
+    m_GManager->spawnMinion(m_GEHandler, m_GManager, m_GEHandler->getTurn()->getInTurn(), m_GEHandler->getActiveTile(), "mage");
+}

@@ -89,12 +89,12 @@ public:
     void move(std::shared_ptr<Minion> minionToMove,
               std::shared_ptr<Course::TileBase> targetTile);
 
-    void attack(std::shared_ptr<Minion> minionToMove,
+    void attack(std::shared_ptr<Minion> minionToAttack,
                 std::shared_ptr<Attackable> toAttack);
     bool checkForEnemies(std::shared_ptr<Minion>minionTomove,
                          std::shared_ptr<Course::TileBase>targetTile);
     std::shared_ptr<Attackable> selectAttackTarget(std::shared_ptr<Course::TileBase> targetTile);
-
+    void attackMultiple(std::shared_ptr<Minion> minionToAttack, std::shared_ptr<Course::TileBase> targetTile);
 
     void destroyObject(std::shared_ptr<Attackable> minionToDestroy);
     std::shared_ptr<Course::TileBase> getNexusLocation(std::shared_ptr<LeaguePlayer> owner);

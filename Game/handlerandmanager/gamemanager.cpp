@@ -116,6 +116,11 @@ void gameManager::spawnMinion(std::shared_ptr<gameEventHandler> handler,
                                                     manager,
                                                     owner);
     }
+    if(type=="mage"){
+        testMinion=std::make_shared<MagicChampion>(handler,
+                                                   manager,
+                                                   owner);
+    }
     testMinion->setLocationTile(location);
     location->addWorker(testMinion);
     qDebug()<<"adding minion to gamemanager vector";
@@ -155,7 +160,13 @@ void gameManager::move(std::shared_ptr<Minion> minionToMove, std::shared_ptr<Cou
                     qDebug()<<"UNIT HAS ATTACKED MAX NUMBER OF TIMES THIS TURN, GET THE HELL OUT!";
                     return;
                 }
+                if(minionToMove->getType()=="mage"){
+                    attackMultiple(minionToMove,targetTile);
+                }
+                else{
                 attack(minionToMove,selectAttackTarget(targetTile));
+                }
+
                 qDebug()<<"we attacked";
                 minionToMove->setAttacked(true);
                 return;
@@ -185,21 +196,21 @@ void gameManager::move(std::shared_ptr<Minion> minionToMove, std::shared_ptr<Cou
     }
 }
 
-void gameManager::attack(std::shared_ptr<Minion> minionToMove,
-                         std::shared_ptr<Attackable> toAttack)
+void gameManager::attack(std::shared_ptr<Minion> minionToAttack,
+                         std::shared_ptr<Attackable> target)
 {
 
-    if(toAttack==nullptr){
+    if(target==nullptr){
         qDebug()<<"Target was nullptr, we shant attack nothing";
         return;
     }
     qDebug()<<"commencing attack";
-    qDebug()<<minionToMove->getAttack()<<"attack value";
-    qDebug()<<toAttack->getHealth()<<"health value";
-    if(toAttack->modifyHealth(-minionToMove->getAttack())){
+    qDebug()<<minionToAttack->getAttack()<<"attack value";
+    qDebug()<<target->getHealth()<<"health value";
+    if(target->modifyHealth(-minionToAttack->getAttack())){
 
 
-        destroyObject(toAttack);
+        destroyObject(target);
     }
 
 }
@@ -253,6 +264,43 @@ std::shared_ptr<Attackable> gameManager::selectAttackTarget(
 
     qDebug()<<"returning nullptr, not good";
     return nullptr;
+}
+
+void gameManager::attackMultiple(std::shared_ptr<Minion> minionToAttack, std::shared_ptr<Course::TileBase> targetTile)
+{
+    Course::Coordinate targetCoord = targetTile->getCoordinate();
+    qDebug()<<"Target coord"<<targetCoord.x()<<targetCoord.y();
+    std::vector<Course::Coordinate>neigbours=targetCoord.neighbours();
+    std::shared_ptr<Attackable> targetAttackable=nullptr;
+    int outer=0;
+    int inner=0;
+    for(auto it:neigbours){
+        outer+=1;
+        inner=0;
+        qDebug()<<"looping neighbours";
+        if(getTile(it)!=nullptr){
+            qDebug()<<"OUTER"<<outer;
+            qDebug()<<"current target tile coord"<<getTile(it)->getCoordinate().x()<<getTile(it)->getCoordinate().y();
+            for(auto it_target:allminions_){
+
+                inner+=1;
+                qDebug()<<inner<<"INNER";
+                if(it_target->currentLocationTile()==getTile(it)){
+                    if(it_target==minionToAttack){
+                        qDebug()<<"DONT ATTACK YOURSELF YOU FOOL";
+                        break;
+                    }
+                    qDebug()<<"MULTIPLE ATTACK!";
+                    attack(minionToAttack,it_target);
+                    qDebug()<<"MULTIPLE ATTACK done";
+                    break;
+
+                }
+            }
+        }
+
+
+    }
 }
 
 void gameManager::destroyObject(std::shared_ptr<Attackable> objectToDestroy)

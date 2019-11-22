@@ -16,7 +16,7 @@ public:
                    int health=3,
                    int attack=1,
                    int numberOfAttacks=3);
-    virtual std::string getType() const override;
+     std::string getType() const override;
 };
 }
 #endif // RANGEDCHAMPION_H

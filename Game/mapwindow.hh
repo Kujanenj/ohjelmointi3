@@ -91,6 +91,8 @@ private slots:
 
     void on_champButton_clicked();
 
+    void on_mageButton_clicked();
+
 private:
 
     Ui::MapWindow* m_ui;
