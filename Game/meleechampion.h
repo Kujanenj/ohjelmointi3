@@ -14,7 +14,7 @@ public:
     MeleeChampion(const std::shared_ptr<Course::iGameEventHandler>& handler,
                   const std::shared_ptr<Course::iObjectManager>& manager,
                   const std::shared_ptr<Course::PlayerBase>& owner,
-                  int movement=3,
+                  int movement=1,
                   int health=5,
                   int attack=2,
                   int numberOfAttacks=2);

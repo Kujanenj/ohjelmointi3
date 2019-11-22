@@ -111,6 +111,11 @@ void gameManager::spawnMinion(std::shared_ptr<gameEventHandler> handler,
                                                     manager,
                                                     owner);
     }
+    if(type=="ranged"){
+        testMinion=std::make_shared<RangedChampion>(handler,
+                                                    manager,
+                                                    owner);
+    }
     testMinion->setLocationTile(location);
     location->addWorker(testMinion);
     qDebug()<<"adding minion to gamemanager vector";
@@ -318,9 +323,7 @@ void gameManager::destroyObject(std::shared_ptr<Attackable> objectToDestroy)
          manager_gamescene->removeItem(tempBuildingToRemove);
         qDebug()<<"removing building from tile";
          tempBuildingToRemove->currentLocationTile()->removeBuilding(tempBuildingToRemove);
-         if(tempBuildingToRemove->getType()=="Nexus"){
-             qDebug()<<"THIS IS WWHERE THE GAME ENDS!";
-         }
+
          qDebug()<<allbuildings_.size()<<"building vector size before removal";
 
             for(auto it : allbuildings_){
@@ -332,6 +335,15 @@ void gameManager::destroyObject(std::shared_ptr<Attackable> objectToDestroy)
 
          for(auto it : allbuildings_){
              qDebug()<<it->ID<<"building ID´s afther destruction";
+         }
+         if(tempBuildingToRemove->getType()=="Nexus"){
+          if(tempBuildingToRemove->getOwner()==players_.first){
+              winGame(players_.second);
+
+          }
+          else{
+              winGame(players_.first);
+          }
          }
      }
      qDebug()<<"================== ";
@@ -347,6 +359,11 @@ std::shared_ptr<Course::TileBase> gameManager::getNexusLocation(std::shared_ptr<
         }
     }
     return nullptr;
+}
+
+void gameManager::winGame(std::shared_ptr<LeaguePlayer> winner)
+{
+    qDebug()<<"WINNER"<<QString::fromStdString(winner->getName());
 }
 
 } // NAMESPACE OVER HERE

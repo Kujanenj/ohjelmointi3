@@ -5,6 +5,7 @@
 #include "gamemanager.h"
 #include "minion/minion.h"
 
+#include "minion/rangedchampion.h"
 #include "meleechampion.h"
 #include "turn.h"
 #include <QDebug>

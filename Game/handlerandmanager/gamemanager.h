@@ -108,6 +108,7 @@ private:
     std::vector<std::shared_ptr<Attackable>> allattackables_;
     std::pair<std::shared_ptr<Whiskas::LeaguePlayer>,std::shared_ptr<Whiskas::LeaguePlayer>> players_;
     std::shared_ptr<GameScene> manager_gamescene;
+    void winGame (std::shared_ptr<LeaguePlayer> winner);
 };
 
 }

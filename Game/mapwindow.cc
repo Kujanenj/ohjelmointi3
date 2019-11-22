@@ -160,7 +160,7 @@ void MapWindow::on_minionbutton_clicked()
     qDebug()<<"spawn minion click";
     qDebug()<<" ";
 
-    m_GManager->spawnMinion(m_GEHandler, m_GManager, m_GManager->getPlayerPair().first, m_GEHandler->getActiveTile(), "minion");
+    m_GManager->spawnMinion(m_GEHandler, m_GManager, m_GEHandler->getTurn()->getInTurn(), m_GEHandler->getActiveTile(), "minion");
     m_ui->graphicsView->viewport()->update();
 }
 
@@ -174,7 +174,7 @@ void MapWindow::on_enemyMinions_clicked()
 {
     qDebug()<<" ";
     qDebug()<<"spawn enemy minion click";
-    m_GManager->spawnMinion(m_GEHandler, m_GManager, m_GManager->getPlayerPair().second, m_GEHandler->getActiveTile(),"minion");
+    m_GManager->spawnMinion(m_GEHandler, m_GManager, m_GEHandler->getTurn()->getInTurn(), m_GEHandler->getActiveTile(),"ranged");
     m_ui->graphicsView->viewport()->update();
 }
 
@@ -185,5 +185,5 @@ void MapWindow::on_endTurnButton_clicked()
 
 void MapWindow::on_champButton_clicked()
 {
-     m_GManager->spawnMinion(m_GEHandler, m_GManager, m_GManager->getPlayerPair().first, m_GEHandler->getActiveTile(), "champ");
+     m_GManager->spawnMinion(m_GEHandler, m_GManager, m_GEHandler->getTurn()->getInTurn(), m_GEHandler->getActiveTile(), "champ");
 }

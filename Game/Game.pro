@@ -24,6 +24,7 @@ SOURCES += \
     meleechampion.cpp \
     minion/minion.cpp \
     dialogs/startdialog.cpp \
+    minion/rangedchampion.cpp \
     turn.cpp \
     unit.cpp
 
@@ -46,6 +47,7 @@ HEADERS += \
     meleechampion.h \
     minion/minion.h \
     dialogs/startdialog.h \
+    minion/rangedchampion.h \
     turn.h \
     unit.h
 
