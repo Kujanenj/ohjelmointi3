@@ -43,6 +43,7 @@ public:
     void handleMwindowClick(std::shared_ptr<GameScene> scene, std::shared_ptr<gameManager> manager);
 
     std::shared_ptr<Course::TileBase> getActiveTile();
+    std::shared_ptr<Minion> getActiveMinion();
     std::shared_ptr<Turn> getTurn();
     void endTurn();
 

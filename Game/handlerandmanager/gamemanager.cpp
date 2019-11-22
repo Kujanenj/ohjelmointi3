@@ -318,6 +318,9 @@ void gameManager::destroyObject(std::shared_ptr<Attackable> objectToDestroy)
          manager_gamescene->removeItem(tempBuildingToRemove);
         qDebug()<<"removing building from tile";
          tempBuildingToRemove->currentLocationTile()->removeBuilding(tempBuildingToRemove);
+         if(tempBuildingToRemove->getType()=="Nexus"){
+             qDebug()<<"THIS IS WWHERE THE GAME ENDS!";
+         }
          qDebug()<<allbuildings_.size()<<"building vector size before removal";
 
             for(auto it : allbuildings_){

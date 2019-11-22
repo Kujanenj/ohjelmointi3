@@ -60,7 +60,7 @@ public:
                             std::shared_ptr<Course::PlayerBase> owner
                             );
 
-
+    void updateDisplays();
 
 public slots:
     /*!

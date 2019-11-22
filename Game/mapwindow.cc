@@ -130,6 +130,18 @@ void MapWindow::mousePressEvent(QMouseEvent *event){
   m_GEHandler->handleMwindowClick(m_gamescene, m_GManager, *event);
   qDebug()<<"updating mwindow view";
   m_ui->graphicsView->viewport()->update();
+  if(m_GEHandler->getActiveMinion()!=nullptr){
+      m_ui->DescriptionLabel->setText(QString::fromStdString(m_GEHandler->getActiveMinion()->getDescription("minion")));
+  }
+  else{
+      m_ui->DescriptionLabel->clear();
+  }
+
+}
+
+void MapWindow::updateDisplays()
+{
+    //TODO;
 }
 
 

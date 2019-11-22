@@ -11,19 +11,26 @@ startdialog::startdialog(QWidget *parent) :
 startdialog::~startdialog()
 {
     delete ui;
-    QObject::connect(ui->buttonBox, &QDialogButtonBox::accepted, this,  &QDialog::accept);
-
-}
-
-void startdialog::on_mapsizeslider_sliderMoved(int position)
-{
-    x_=position;
-    y_=position;
 
 
 }
 
-void startdialog::on_buttonBox_accepted()
+
+
+
+
+void startdialog::on_startButton_clicked()
 {
     emit size(x_,y_);
+    accept();
+}
+
+void startdialog::on_mapSizeButton_clicked()
+{
+
+}
+
+void startdialog::on_QuitButton_clicked()
+{
+
 }

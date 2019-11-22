@@ -19,9 +19,13 @@ signals:
     void size(int, int);
 private slots:
 
-    void on_mapsizeslider_sliderMoved(int position);
 
-    void on_buttonBox_accepted();
+
+    void on_startButton_clicked();
+
+    void on_mapSizeButton_clicked();
+
+    void on_QuitButton_clicked();
 
 private:
     Ui::startdialog *ui;

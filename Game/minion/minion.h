@@ -39,6 +39,7 @@ public:
     virtual bool modifyHealth(int hModifier) override;
     void getCosts();
 
+
 protected:
     std::shared_ptr<gameManager> manager_;
    AdvancedResourceMap testCost_;
