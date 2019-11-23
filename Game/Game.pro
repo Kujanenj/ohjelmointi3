@@ -13,6 +13,7 @@ SOURCES += \
     buildings/test_building.cpp \
     dialogs/buildingdialog.cpp \
     buildings/nexus.cpp \
+    dialogs/sizedialog.cpp \
     functions/functions.cpp \
     graphics/mapitem.cpp \
     handlerandmanager/gameeventhandler.cpp \
@@ -38,6 +39,7 @@ HEADERS += \
     buildings/test_building.h \
     dialogs/buildingdialog.h \
     buildings/nexus.h \
+    dialogs/sizedialog.h \
     functions/functions.h \
     graphics/mapitem.h \
     handlerandmanager/gameeventhandler.h \
@@ -79,6 +81,7 @@ else:unix: PRE_TARGETDEPS += \
 
 FORMS += \
     dialogs/buildingdialog.ui \
+    dialogs/sizedialog.ui \
     mapwindow.ui \
     dialogs/startdialog.ui
 

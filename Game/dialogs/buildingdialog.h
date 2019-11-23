@@ -19,11 +19,10 @@ public:
 signals:
     void buildingType(std::string);
 private slots:
-    void on_farmButton_clicked();
 
-    void on_headQuartersButton_clicked();
 
-    void on_nexsusButton_clicked();
+
+    void on_nexus_Button_clicked();
 
 private:
     Ui::buildingDialog *ui;

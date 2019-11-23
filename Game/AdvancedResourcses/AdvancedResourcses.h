@@ -6,8 +6,11 @@ namespace Whiskas {
 
 enum AdvancedResources{
     NONE=1,
-    PLACEHOLDER_RESOURCE_FIRST=2,
-    PLACEHOLDER_RESOURCE_SECOND=3,
+    IRON=2,
+    WOOD=3,
+    CRYSTAL=4,
+    LIFEWATER=5
+
 };
 
 using AdvancedResourceMap= std::map<AdvancedResources, int>;

@@ -4,18 +4,22 @@
 #include "AdvancedResourcses.h"
 namespace Whiskas {
 const AdvancedResourceMap MINION_COST={
-    {PLACEHOLDER_RESOURCE_FIRST, 2},
-    {PLACEHOLDER_RESOURCE_SECOND, 2}
+    {IRON, 2},
+    {WOOD, 2}
     };
 
 const AdvancedResourceMap PLAYER_ITEMS={
-    {PLACEHOLDER_RESOURCE_FIRST, 10},
-    {PLACEHOLDER_RESOURCE_SECOND,10}
+    {IRON, 10},
+    {WOOD,10},
+    {CRYSTAL,10},
+    {LIFEWATER,10}
     };
 
-const AdvancedResourceMap TEST_BUILDING_PRODUCE={
-    {PLACEHOLDER_RESOURCE_FIRST, 5},
-    {PLACEHOLDER_RESOURCE_SECOND, 10}
+const AdvancedResourceMap NEXUS_PRODUCE={
+    {IRON, 5},
+    {WOOD, 5},
+    {CRYSTAL,3},
+    {LIFEWATER,1}
 };
 
 

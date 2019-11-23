@@ -6,6 +6,7 @@ startdialog::startdialog(QWidget *parent) :
     ui(new Ui::startdialog)
 {
     ui->setupUi(this);
+    connect(&SizeDialog_, SIGNAL(Msize(int)), this, SLOT(setXY(int)));
 }
 
 startdialog::~startdialog()
@@ -13,6 +14,12 @@ startdialog::~startdialog()
     delete ui;
 
 
+}
+
+void startdialog::setXY(int xy)
+{
+    x_=xy;
+    y_=xy;
 }
 
 
@@ -27,7 +34,7 @@ void startdialog::on_startButton_clicked()
 
 void startdialog::on_mapSizeButton_clicked()
 {
-
+ SizeDialog_.exec();
 }
 
 void startdialog::on_QuitButton_clicked()

@@ -2,7 +2,7 @@
 #define STARTDIALOG_H
 
 #include <QDialog>
-
+#include "dialogs/sizedialog.h"
 
 namespace Ui {
 class startdialog;
@@ -15,6 +15,8 @@ class startdialog : public QDialog
 public:
     explicit startdialog(QWidget *parent = nullptr);
     ~startdialog();
+public slots:
+    void setXY(int xy);
 signals:
     void size(int, int);
 private slots:
@@ -31,6 +33,8 @@ private:
     Ui::startdialog *ui;
     int x_=10;
     int y_=10;
+    SizeDialog SizeDialog_;
+
 };
 
 #endif // STARTDIALOG_H

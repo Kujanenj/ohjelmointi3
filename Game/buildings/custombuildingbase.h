@@ -24,7 +24,7 @@ public:
             const std::shared_ptr<Course::PlayerBase>& owner,
             const int& tilespaces = 1,
             const Course::ResourceMap& buildcost = {},
-            const AdvancedResourceMap production = TEST_BUILDING_PRODUCE,
+           const AdvancedResourceMap production = {},
             int health=3,
             int attack=0
             );
