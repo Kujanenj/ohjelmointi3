@@ -18,6 +18,6 @@ buildingDialog::~buildingDialog()
 
 void buildingDialog::on_nexus_Button_clicked()
 {
-    emit buildingType("nexsus");
+    emit buildingType("Nexus");
     accept();
 }

@@ -16,6 +16,9 @@
 
 namespace Whiskas {
 
+const std::map<std::string, std::vector<std::string>> buildingAvailability={
+    {"Nexus",{"Forest"}}
+};
 /*!
  * \brief makeWorldGenerator
  * Initializes a worldgenerator class, and genereates a random map.
@@ -40,7 +43,8 @@ void selectBuildingTypef(std::string type, std::shared_ptr<gameEventHandler> han
 
 
 
-
+bool checkBuildingAvailability(std::shared_ptr<Course::TileBase> targetTile,
+                               std::string type);
 
 }
 #endif // FUNCTIONS_H

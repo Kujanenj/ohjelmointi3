@@ -30,7 +30,7 @@ void selectBuildingTypef(std::string type,
 {
 
 
-    if(type=="nexsus"){
+    if(type=="Nexus" && checkBuildingAvailability(handler->getActiveTile(),"Nexus")){
         manager->spawnBuilding<Nexus>(handler,manager,player);
     }
 }
@@ -58,6 +58,20 @@ bool gameManager::spawnBuilding(std::shared_ptr<gameEventHandler> handler,
 
     }
 
+}
+
+bool checkBuildingAvailability(std::shared_ptr<Course::TileBase> targetTile, std::string type)
+{
+
+ //HANDLER FOR STD OUT OF RANGE?
+    for(auto it: buildingAvailability.at(type)){
+        if(it==targetTile->getType()){
+            qDebug()<<"Legit placement for "<<QString::fromStdString(type);
+            return true;
+        }
+    }
+     qDebug()<<"UNLegit placement for "<<QString::fromStdString(type);
+    return false;
 }
 
 
