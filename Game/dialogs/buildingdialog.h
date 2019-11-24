@@ -24,6 +24,8 @@ private slots:
 
     void on_nexus_Button_clicked();
 
+    void on_MeleeAltarButton_clicked();
+
 private:
     Ui::buildingDialog *ui;
     QGraphicsScene* scene;

@@ -29,7 +29,9 @@ void Turn::swapTurn()
         playerInTurn_->setPlayerItems(mergeAdvancedMaps(playerInTurn_->getItems(),
                                                         it->getAdvancedProduction()));
     }}
-
+    for(auto it:manager_->getBuildingVector()){
+        it->doSpecialAction();
+    }
     //swawp active player
     if(playerInTurn_==manager_->getPlayerPair().first){
         playerInTurn_=manager_->getPlayerPair().second;

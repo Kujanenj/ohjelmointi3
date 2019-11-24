@@ -28,4 +28,9 @@ AdvancedResourceMap CustomBuildingBase::getAdvancedProduction()
     return production_;
 }
 
+void CustomBuildingBase::doSpecialAction()
+{
+    qDebug()<<"Special action";
+}
+
 }

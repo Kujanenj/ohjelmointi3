@@ -8,6 +8,7 @@
 
 #include "attackable.h"
 #include "AdvancedResourcses/AdvancedResourceMaps.h"
+
 namespace Whiskas {
 
 class gameEventHandler;
@@ -31,6 +32,7 @@ public:
 
 
    virtual AdvancedResourceMap getAdvancedProduction();
+   virtual void doSpecialAction() override;
 protected:
    AdvancedResourceMap production_;
 };

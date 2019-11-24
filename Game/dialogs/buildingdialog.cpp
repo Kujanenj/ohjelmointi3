@@ -21,3 +21,9 @@ void buildingDialog::on_nexus_Button_clicked()
     emit buildingType("Nexus");
     accept();
 }
+
+void buildingDialog::on_MeleeAltarButton_clicked()
+{
+    emit buildingType("Melee");
+    accept();
+}

@@ -13,11 +13,13 @@
 #include "handlerandmanager/gamemanager.h"
 #include "buildings/headquarters.h"
 #include "buildings/nexus.h"
+#include "buildings/meleealtar.h"
 
 namespace Whiskas {
 
 const std::map<std::string, std::vector<std::string>> buildingAvailability={
-    {"Nexus",{"Forest"}}
+    {"Nexus",{"Forest"}},
+    {{"Melee"},{"Forest"}}
 };
 /*!
  * \brief makeWorldGenerator

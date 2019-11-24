@@ -9,7 +9,9 @@ CONFIG += c++14
 SOURCES += \
     AdvancedResourcses/AdvancedResourcses.cpp \
     attackable.cpp \
+    buildings/AltarBase.cpp \
     buildings/custombuildingbase.cpp \
+    buildings/meleealtar.cpp \
     buildings/test_building.cpp \
     dialogs/buildingdialog.cpp \
     buildings/nexus.cpp \
@@ -35,7 +37,9 @@ HEADERS += \
     AdvancedResourcses/AdvancedResourceMaps.h \
     AdvancedResourcses/AdvancedResourcses.h \
     attackable.h \
+    buildings/AltarBase.h \
     buildings/custombuildingbase.h \
+    buildings/meleealtar.h \
     buildings/test_building.h \
     dialogs/buildingdialog.h \
     buildings/nexus.h \

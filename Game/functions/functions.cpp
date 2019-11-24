@@ -33,6 +33,9 @@ void selectBuildingTypef(std::string type,
     if(type=="Nexus" && checkBuildingAvailability(handler->getActiveTile(),"Nexus")){
         manager->spawnBuilding<Nexus>(handler,manager,player);
     }
+    if(type=="Melee" && checkBuildingAvailability(handler->getActiveTile(),"Melee")){
+        manager->spawnBuilding<MeleeAltar>(handler,manager,player);
+    }
 }
 
 
