@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>289</width>
-    <height>269</height>
+    <width>430</width>
+    <height>382</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,21 +16,54 @@
   <widget class="QWidget" name="gridLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>-1</x>
-     <y>9</y>
-     <width>291</width>
-     <height>261</height>
+     <x>0</x>
+     <y>10</y>
+     <width>431</width>
+     <height>371</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout">
-    <item row="0" column="0">
-     <widget class="QPushButton" name="nexus_Button">
+    <item row="0" column="1">
+     <widget class="QLabel" name="label_2">
+      <property name="maximumSize">
+       <size>
+        <width>100</width>
+        <height>75</height>
+       </size>
+      </property>
       <property name="text">
-       <string>Nexus</string>
+       <string>Special Buildings</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QLabel" name="label">
+      <property name="maximumSize">
+       <size>
+        <width>50</width>
+        <height>75</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>Production Buildings</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QPushButton" name="pushButton_2">
+      <property name="text">
+       <string>PushButton</string>
       </property>
      </widget>
     </item>
     <item row="1" column="0">
+     <widget class="QPushButton" name="pushButton_3">
+      <property name="text">
+       <string>PushButton</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
      <widget class="QPushButton" name="pushButton">
       <property name="text">
        <string>PushButton</string>
@@ -44,10 +77,17 @@
       </property>
      </widget>
     </item>
-    <item row="0" column="1">
-     <widget class="QPushButton" name="pushButton_3">
+    <item row="2" column="1">
+     <widget class="QPushButton" name="RangedAltarButton">
       <property name="text">
-       <string>PushButton</string>
+       <string>RangedAltar</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QPushButton" name="MageAltarButton">
+      <property name="text">
+       <string>MageAltar</string>
       </property>
      </widget>
     </item>

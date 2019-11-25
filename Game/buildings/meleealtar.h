@@ -14,8 +14,9 @@ public:
                const int& tilespaces = 1,
                const Course::ResourceMap& buildcost = Course::ConstResourceMaps::OUTPOST_BUILD_COST,
                const AdvancedResourceMap production ={});
-public:
+
     void upgradeMinion() override;
+    std::string getType() const override;
 };
 }
 #endif // MELEEALTAR_H

@@ -17,6 +17,6 @@ RangedChampion::RangedChampion(const std::shared_ptr<Course::iGameEventHandler>&
 
 std::string RangedChampion::getType() const
 {
- return "rangedchamp";
+ return "Ranged";
 }
 }

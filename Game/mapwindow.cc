@@ -37,6 +37,7 @@ MapWindow::MapWindow(QWidget *parent,
    //IT WORKS
     generateLCDList();
 
+
 }
 
 MapWindow::~MapWindow()
@@ -112,16 +113,17 @@ void MapWindow::initMap(int x, int y)
     }
     m_GEHandler->setActiveTile(m_GManager->getTile(0));
 
-    selectBuilding("Nexus");
+    on_confirmButton_clicked();
 
     m_GEHandler->setActiveTile(m_GManager->getTile((x*x)-1));
     m_GEHandler->getTurn()->setInTurn(playerPair.second);
-    selectBuilding("Nexus");
+    on_confirmButton_clicked();
+
 
 
 }
-void MapWindow::selectBuilding(std::string buildingType){ // TODO
-    selectBuildingTypef(buildingType,m_GEHandler,m_GManager,m_GEHandler->getTurn()->getInTurn());
+void MapWindow::selectBuilding(std::string buildingType){
+    buildingToBeBuilt_=buildingType;
 }
 
 void MapWindow::removeItem(std::shared_ptr<Course::GameObject> obj)
@@ -205,7 +207,7 @@ void MapWindow::on_enemyMinions_clicked()
 {
     qDebug()<<" ";
     qDebug()<<"spawn enemy minion click";
-    m_GManager->spawnMinion(m_GEHandler, m_GManager, m_GEHandler->getTurn()->getInTurn(), m_GEHandler->getActiveTile(),"ranged");
+    m_GManager->spawnMinion(m_GEHandler, m_GManager, m_GEHandler->getTurn()->getInTurn(), m_GEHandler->getActiveTile(),"Ranged");
     m_ui->graphicsView->viewport()->update();
 }
 
@@ -213,6 +215,9 @@ void MapWindow::on_endTurnButton_clicked()
 {
     m_GEHandler->endTurn(m_GManager, m_GEHandler);
     updateDisplays();
+    m_ui->activePlayerLabel->setText(QString::fromStdString(m_GEHandler->getTurn()->getInTurn()->getName()));
+    m_ui->turnLCD->display(m_GEHandler->getTurn()->getTurnCounter());
+
 }
 
 void MapWindow::on_champButton_clicked()
@@ -223,4 +228,9 @@ void MapWindow::on_champButton_clicked()
 void MapWindow::on_mageButton_clicked()
 {
     m_GManager->spawnMinion(m_GEHandler, m_GManager, m_GEHandler->getTurn()->getInTurn(), m_GEHandler->getActiveTile(), "mage");
+}
+
+void MapWindow::on_confirmButton_clicked()
+{
+    selectBuildingTypef(buildingToBeBuilt_,m_GEHandler,m_GManager,m_GEHandler->getTurn()->getInTurn());
 }

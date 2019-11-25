@@ -111,7 +111,7 @@ void gameManager::spawnMinion(std::shared_ptr<gameEventHandler> handler,
                                                     manager,
                                                     owner);
     }
-    if(type=="ranged"){
+    if(type=="Ranged"){
         testMinion=std::make_shared<RangedChampion>(handler,
                                                     manager,
                                                     owner);
@@ -239,29 +239,27 @@ bool gameManager::checkForEnemies(std::shared_ptr<Minion> minionTomove,
 std::shared_ptr<Attackable> gameManager::selectAttackTarget(
         std::shared_ptr<Course::TileBase> targetTile)
 {
+     qDebug()<<"getting the target!"<<"loop all attackble ID,s";
 
-
-        qDebug()<<"getting the target!"<<"loop all attackble ID,s";
-        for(auto it:allattackables_){
-            qDebug()<<it->getBoundID()<<"bound id of all objects loop";
-            if(targetTile->getWorkerCount()!=0){
-                qDebug()<<"Target tile contains workers of some sort";
-            if(it->getBoundID()==targetTile->getWorkers().at(0)->ID){
-
-                return it;
-
-            }}
-            if(targetTile->getBuildingCount()!=0){
-                qDebug()<<"not a minon";
-                qDebug()<<targetTile->getBuildings().at(0)->ID<<"building id";
-                if(it->getBoundID()==targetTile->getBuildings().at(0)->ID){
-
-                    qDebug()<<"building";
-                    return it;
-            }
-          }
+    if(targetTile->getWorkerCount()!=0){
+         qDebug()<<"Target tile contains workers of some sort";
+        for(auto it:allminions_){
+            if(it==targetTile->getWorkers().at(0)){
+                 qDebug()<<"Returning minion";
+                    return std::move(it);
+        }
         }
 
+    }
+    else{
+        qDebug()<<"not a minon";
+        for(auto it : allbuildings_){
+            if(it->ID==targetTile->getBuildings().at(0)->ID){
+                qDebug()<<"building";
+                return std::move(it);
+            }
+        }
+    }
     qDebug()<<"returning nullptr, not good";
     return nullptr;
 }
@@ -412,6 +410,8 @@ std::shared_ptr<Course::TileBase> gameManager::getNexusLocation(std::shared_ptr<
 void gameManager::winGame(std::shared_ptr<LeaguePlayer> winner)
 {
     qDebug()<<"WINNER"<<QString::fromStdString(winner->getName());
+
+
 }
 
 } // NAMESPACE OVER HERE

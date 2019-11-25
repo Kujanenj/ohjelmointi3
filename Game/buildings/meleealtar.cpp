@@ -16,6 +16,7 @@ MeleeAltar::MeleeAltar(const std::shared_ptr<gameEventHandler>& eventhandler,
 void MeleeAltar::upgradeMinion()
 {
  for(auto it: manager_->getMinionVector()){
+     if(currentLocationTile()->getWorkerCount()!=0){
      if(it==currentLocationTile()->getWorkers().at(0) && it->getType()=="Minion"){
          manager_->destroyObject(it);
          manager_->spawnMinion(handler_,
@@ -24,7 +25,12 @@ void MeleeAltar::upgradeMinion()
                                currentLocationTile(),
                                "champ");
          return;
-     }
+     }}
  }
+}
+
+std::string MeleeAltar::getType() const
+{
+    return "Melee Altar";
 }
 }

@@ -22,14 +22,18 @@ private slots:
 
 
 
-    void on_nexus_Button_clicked();
+
 
     void on_MeleeAltarButton_clicked();
+
+    void on_RangedAltarButton_clicked();
+
+    void on_MageAltarButton_clicked();
 
 private:
     Ui::buildingDialog *ui;
     QGraphicsScene* scene;
-    enum buildingtypes{farm, headquarters};
+
 };
 
 #endif // BUILDINGDIALOG_H

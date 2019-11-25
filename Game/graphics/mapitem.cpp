@@ -11,6 +11,7 @@ std::map<std::string, QImage> SimpleMapItem::c_mapicons = {};
 SimpleMapItem::SimpleMapItem(const std::shared_ptr<Course::GameObject> &obj, int size ):
     m_gameobject(obj), m_scenelocation(m_gameobject->getCoordinatePtr()->asQpoint()), m_size(size)
 {
+
     addNewColor(m_gameobject->getType());
 }
 
@@ -46,6 +47,7 @@ void SimpleMapItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *opt
 
 const std::shared_ptr<Course::GameObject> &SimpleMapItem::getBoundObject()
 {
+
     return m_gameobject;
 }
 

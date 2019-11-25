@@ -32,5 +32,6 @@ std::string Whiskas::AltarBase::getType() const
 
 void Whiskas::AltarBase::doSpecialAction()
 {
+    getType();
     upgradeMinion();
 }
