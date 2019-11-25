@@ -35,7 +35,7 @@ MapWindow::MapWindow(QWidget *parent,
 
    // testSoundPlayer->play();
    //IT WORKS
-
+    generateLCDList();
 }
 
 MapWindow::~MapWindow()
@@ -141,7 +141,30 @@ void MapWindow::mousePressEvent(QMouseEvent *event){
 
 void MapWindow::updateDisplays()
 {
-    //TODO;
+    int LCDNumber=0;
+    for (auto const& item : m_GManager->getPlayerPair().first->getItems())
+    {
+        lcdDisplays_.at(LCDNumber)->display(item.second);
+        ++LCDNumber;
+    }
+    for (auto const& item : m_GManager->getPlayerPair().second->getItems())
+    {
+        lcdDisplays_.at(LCDNumber)->display(item.second);
+        ++LCDNumber;
+    }
+
+}
+
+void MapWindow::generateLCDList()
+{
+   lcdDisplays_.push_back(m_ui->blueIronLCD);
+   lcdDisplays_.push_back(m_ui->blueWoodLCD);
+   lcdDisplays_.push_back(m_ui->blueCrystalLCD);
+   lcdDisplays_.push_back(m_ui->blueLifeWaterLCD);
+   lcdDisplays_.push_back(m_ui->purpleIronLCD);
+   lcdDisplays_.push_back(m_ui->purpleWoodLCD);
+   lcdDisplays_.push_back(m_ui->purpleCrystalLCD);
+   lcdDisplays_.push_back(m_ui->purpleLifeWaterLCD);
 }
 
 
@@ -181,6 +204,7 @@ void MapWindow::on_enemyMinions_clicked()
 void MapWindow::on_endTurnButton_clicked()
 {
     m_GEHandler->endTurn(m_GManager, m_GEHandler);
+    updateDisplays();
 }
 
 void MapWindow::on_champButton_clicked()

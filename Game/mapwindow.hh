@@ -8,7 +8,7 @@
 #include <QMouseEvent>
 #include <QGraphicsSceneMouseEvent>
 #include <QDebug>
-
+#include <QLCDNumber>
 #include <QMediaPlayer>
 #include <QMediaPlaylist>
 
@@ -61,6 +61,7 @@ public:
                             );
 
     void updateDisplays();
+    void generateLCDList();
 
 public slots:
     /*!
@@ -107,6 +108,7 @@ private:
     QMediaPlayer* testSoundPlayer; //TEST MEDIA PLAYER
     QMediaPlaylist* testPlayList; //test playlist
     buildingDialog buildingdialog;
+    QList<QLCDNumber*> lcdDisplays_;
 };
 
 #endif // MapWINDOW_HH

@@ -9,10 +9,10 @@ const AdvancedResourceMap MINION_COST={
     };
 
 const AdvancedResourceMap PLAYER_ITEMS={
-    {IRON, 10},
-    {WOOD,10},
-    {CRYSTAL,10},
-    {LIFEWATER,10}
+    {IRON, 1},
+    {WOOD,2},
+    {CRYSTAL,3},
+    {LIFEWATER,4}
     };
 
 const AdvancedResourceMap NEXUS_PRODUCE={
