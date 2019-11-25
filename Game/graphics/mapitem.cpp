@@ -22,7 +22,14 @@ QRectF SimpleMapItem::boundingRect() const
 void SimpleMapItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
     Q_UNUSED( option ); Q_UNUSED( widget );
-    painter->setBrush(QBrush(c_mapcolors.at(m_gameobject->getType())));
+    if ( c_mapicons.find(m_gameobject->getType()) == c_mapicons.end() ){
+        painter->setBrush(QBrush(c_mapcolors.at(m_gameobject->getType())));
+        painter->drawRect(boundingRect());
+    } else {
+        QRectF source(0.0, 0.0, 500.0, 500.0);
+        painter->drawImage(boundingRect(), c_mapicons.at(m_gameobject->getType()), source);
+    }
+    /*painter->setBrush(QBrush(c_mapcolors.at(m_gameobject->getType())));
     if ( m_gameobject->getType() == "Forest" ){
         QRectF source(0.0, 0.0, 500.0, 500.0);
         painter->drawImage(boundingRect(), c_mapicons.at(m_gameobject->getType()), source);
@@ -34,7 +41,7 @@ void SimpleMapItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *opt
         qDebug()<<"will draw minion now";
         painter->drawImage(boundingRect(), c_mapicons.at(m_gameobject->getType()), source);
     } else {
-    painter->drawRect(boundingRect()); }
+    painter->drawRect(boundingRect()); }*/
 }
 
 const std::shared_ptr<Course::GameObject> &SimpleMapItem::getBoundObject()
@@ -81,12 +88,22 @@ void SimpleMapItem::addNewColor(std::string type)
             QImage nexus_pic = QImage(":/images/graphics/nexus_purple.png");
             c_mapicons.insert({type, nexus_pic});
         } else if (type == "Minion") {
-            QImage minion_pic = QImage(":/images/graphics/minion.png");
+            QImage minion_pic = QImage(":/images/graphics/minion_blue.png");
             c_mapicons.insert({type, minion_pic});
         } else if (type == "MeleeChampion") {
             std::size_t hash = std::hash<std::string>{}(type);
             c_mapcolors.insert({type, QColor((hash & 0xFF0000) >> 16, (hash & 0x00FF00 ) >> 8, (hash & 0x0000FF))});
+        } else if (type == "Mountain") {
+            QImage mountain_pic = QImage(":/images/graphics/mountain.png");
+            c_mapicons.insert({type, mountain_pic});
+        } else if (type == "Spring") {
+            QImage spring_pic = QImage(":/images/graphics/spring.png");
+            c_mapicons.insert({type, spring_pic});
+        } else if (type == "Jungle") {
+            QImage jungle_pic = QImage(":/images/graphics/jungle.png");
+            c_mapicons.insert({type, jungle_pic});
         }
+
 
     }
 }

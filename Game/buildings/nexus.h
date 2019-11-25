@@ -32,22 +32,9 @@ public:
 
             );
 
-    /**
-     * @brief Default destructor.
-     */
     virtual ~Nexus() = default;
-
-    /**
-     * @copydoc GameObject::getType()
-     */
     virtual std::string getType() const override;
     virtual void onBuildAction() override;
-
-    /**
-     * @brief getProduction
-     * @return
-     * @post Exception guarantee: Basic
-     */
     virtual Course::ResourceMap getProduction() override;
 
 }; // class Nexus

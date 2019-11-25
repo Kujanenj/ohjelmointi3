@@ -1,8 +1,14 @@
 <RCC>
-    <qresource lang="XML" prefix="/images">
+    <qresource prefix="/images" lang="XML">
         <file>graphics/forest_pic.png</file>
         <file>graphics/pi.png</file>
         <file>graphics/nexus_purple.png</file>
+        <file>graphics/jungle.png</file>
+        <file>graphics/minion_blue.png</file>
+        <file>graphics/mountain.png</file>
+        <file>graphics/nexus_blue.png</file>
+        <file>graphics/spring.png</file>
+        <file>graphics/minion_purple.png</file>
         <file>graphics/minion.png</file>
     </qresource>
     <qresource prefix="/sounds">

@@ -5,6 +5,10 @@
 
 #include "tiles/forest.h"
 #include "tiles/grassland.h"
+#include "tiles/mountain.h"
+#include "tiles/jungle.h"
+#include "tiles/spring.h"
+
 #include "core/coordinate.h"
 #include "core/worldgenerator.h"
 
