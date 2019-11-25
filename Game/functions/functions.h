@@ -22,7 +22,7 @@
 namespace Whiskas {
 
 const std::map<std::string, std::vector<std::string>> buildingAvailability={
-    {"Nexus",{"Forest"}},
+    {"Nexus",{"Forest","Jungle","Mountain","Spring"}},
     {{"Melee"},{"Forest"}}
 };
 /*!

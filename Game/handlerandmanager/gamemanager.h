@@ -99,6 +99,7 @@ public:
     void destroyObject(std::shared_ptr<Attackable> minionToDestroy);
     std::shared_ptr<Course::TileBase> getNexusLocation(std::shared_ptr<LeaguePlayer> owner);
 
+
 private:
     std::vector<std::shared_ptr<Course::TileBase> > alltiles_;
     //Contains a pointer too all building in all tiles. This keeps the weak ptrs in tilebase

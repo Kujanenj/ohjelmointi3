@@ -119,6 +119,11 @@ std::shared_ptr<Course::TileBase> gameEventHandler::getActiveTile(){
 
 }
 
+void gameEventHandler::setActiveTile(std::shared_ptr<Course::TileBase> activeTile)
+{
+    activeTile_=activeTile;
+}
+
 std::shared_ptr<Minion> gameEventHandler::getActiveMinion()
 {
     return activeMinion_;

@@ -47,4 +47,9 @@ int Turn::getTurnCounter()
 {
     return turnCounter_;
 }
+
+void Turn::setInTurn(std::shared_ptr<LeaguePlayer> ToBeInTurn)
+{
+    playerInTurn_=ToBeInTurn;
+}
 }

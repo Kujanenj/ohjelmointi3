@@ -36,6 +36,7 @@ MapWindow::MapWindow(QWidget *parent,
    // testSoundPlayer->play();
    //IT WORKS
     generateLCDList();
+
 }
 
 MapWindow::~MapWindow()
@@ -109,11 +110,18 @@ void MapWindow::initMap(int x, int y)
 
         drawItem(it);
     }
+    m_GEHandler->setActiveTile(m_GManager->getTile(0));
+
+    selectBuilding("Nexus");
+
+    m_GEHandler->setActiveTile(m_GManager->getTile((x*x)-1));
+    m_GEHandler->getTurn()->setInTurn(playerPair.second);
+    selectBuilding("Nexus");
 
 
 }
 void MapWindow::selectBuilding(std::string buildingType){ // TODO
-    selectBuildingTypef(buildingType,m_GEHandler,m_GManager,m_GManager->getPlayerPair().first);
+    selectBuildingTypef(buildingType,m_GEHandler,m_GManager,m_GEHandler->getTurn()->getInTurn());
 }
 
 void MapWindow::removeItem(std::shared_ptr<Course::GameObject> obj)
