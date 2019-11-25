@@ -95,10 +95,7 @@ FORMS += \
     mapwindow.ui \
     dialogs/startdialog.ui
 
-DISTFILES += \
-    ../../pi.png \
-    graphics/forest_pic.png \
-    graphics/pi.png
+
 
 RESOURCES += \
     res.qrc
