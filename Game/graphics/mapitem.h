@@ -8,6 +8,7 @@
 #include <map>
 
 #include "core/gameobject.h"
+#include "core/playerbase.h"
 
 
 namespace Whiskas {
@@ -85,6 +86,7 @@ private:
 
     static std::map<std::string, QColor> c_mapcolors;
     static std::map<std::string, QImage> c_mapicons;
+    static std::map<std::string, std::map<std::string, QImage>> c_objecticons;
     static void addNewColor(std::string type);
 };
 }

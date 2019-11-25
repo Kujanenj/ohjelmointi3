@@ -11,7 +11,7 @@ Nexus::Nexus(
         const std::shared_ptr<gameManager>& objectmanager,
         const std::shared_ptr<Course::PlayerBase>& owner,
         const int& tilespaces,
-        const Course::ResourceMap& buildcost,
+        const  AdvancedResourceMap buildcost,
         const AdvancedResourceMap production,
         int health,
         int attack
@@ -33,26 +33,5 @@ std::string Nexus::getType() const
     return "Nexus";
 }
 
-void Nexus::onBuildAction()
-{
-    std::vector< std::shared_ptr<Course::TileBase> > neighbours =
-            lockObjectManager()->getTiles(getCoordinatePtr()->neighbours(1));
-
-    for(auto it = neighbours.begin(); it != neighbours.end(); ++it)
-    {
-        // If the Tile doesn't have owner, set it's owner to buildings owner.
-        if( not (*it)->getOwner() )
-        {
-            (*it)->setOwner(getOwner());
-        }
-    }
-}
-
-Course::ResourceMap Nexus::getProduction()
-{
-    // Outpost has only negative production effect.
-    // Ze hold markerz, zey do nothing.
-    return PRODUCTION_EFFECT;
-}
 
 } // namespace Whiskas
