@@ -7,6 +7,10 @@ startdialog::startdialog(QWidget *parent) :
 {
     ui->setupUi(this);
     connect(&SizeDialog_, SIGNAL(Msize(int)), this, SLOT(setXY(int)));
+    QPixmap pic(":images/graphics/minion_blue.png");
+    ui->pictureLabel->setScaledContents(true);
+    ui->pictureLabel->setPixmap(pic);
+    setWindowTitle("Bronze adventures");
 }
 
 startdialog::~startdialog()

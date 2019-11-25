@@ -2,6 +2,7 @@
 #define STARTDIALOG_H
 
 #include <QDialog>
+#include <QPixmap>
 #include "dialogs/sizedialog.h"
 
 namespace Ui {
