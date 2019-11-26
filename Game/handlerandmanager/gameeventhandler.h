@@ -17,11 +17,14 @@ namespace Whiskas {
 class Turn;
 class Minion;
 class gameManager;
+/**
+ * @brief The gameEventHandler class Handles events the game can have. Most notably, the mouse presses.
+ */
 class gameEventHandler : public Course::iGameEventHandler
 {
 public:
     /**
-     * @brief gameEventHandler Handles events the game can have. Most notably, the mouse presses.
+     * @brief Constructor
      * @param turn For easier accsess to the turn class
      */
     gameEventHandler(std::shared_ptr<Turn> turn);

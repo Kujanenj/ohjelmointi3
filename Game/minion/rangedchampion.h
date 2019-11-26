@@ -4,7 +4,9 @@
 #include "minion.h"
 namespace Whiskas {
 
-
+/**
+ * @brief The RangedChampion class Has a ranged attack and higher movement
+ */
 class RangedChampion : public Minion
 {
 public:

@@ -4,7 +4,9 @@
 #include "minion.h"
 namespace Whiskas {
 
-
+/**
+ * @brief The MagicChampion class Subminion, has a higher dmg and an area attack
+ */
 class MagicChampion : public Minion
 {
 public:

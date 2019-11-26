@@ -19,13 +19,16 @@ class Attackable;
 //class MeleeChampion;
 //class Minion;
 class gameEventHandler;
+/**
+ * @brief The gameManager class is a class that manages the game logic.
+     * It has access to allmost all the classes included in this game.
+ */
 class gameManager : public Course::iObjectManager
 
 {
 public:
     /**
-     * @brief gameManager is a class that manages the game logic.
-     * It has access to allmost all the classes included in this game.
+     * @brief gameManager Constructor
      * @param m_gamescene for easier access to graphics
      */
     explicit gameManager(std::shared_ptr<GameScene>& m_gamescene);
