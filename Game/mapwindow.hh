@@ -94,6 +94,8 @@ private slots:
 
     void on_mageButton_clicked();
 
+    void on_confirmButton_clicked();
+
 private:
 
     Ui::MapWindow* m_ui;
@@ -109,6 +111,7 @@ private:
     QMediaPlaylist* testPlayList; //test playlist
     buildingDialog buildingdialog;
     QList<QLCDNumber*> lcdDisplays_;
+    std::string buildingToBeBuilt_="Nexus";
 };
 
 #endif // MapWINDOW_HH

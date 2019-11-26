@@ -16,14 +16,22 @@ buildingDialog::~buildingDialog()
 
 
 
-void buildingDialog::on_nexus_Button_clicked()
-{
-    emit buildingType("Nexus");
-    accept();
-}
+
 
 void buildingDialog::on_MeleeAltarButton_clicked()
 {
     emit buildingType("Melee");
+    accept();
+}
+
+void buildingDialog::on_RangedAltarButton_clicked()
+{
+    emit buildingType("Ranged");
+    accept();
+}
+
+void buildingDialog::on_MageAltarButton_clicked()
+{
+    emit buildingType("Mage");
     accept();
 }

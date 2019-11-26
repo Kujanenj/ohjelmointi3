@@ -29,7 +29,7 @@ void Turn::swapTurn()
         playerInTurn_->setPlayerItems(mergeAdvancedMaps(playerInTurn_->getItems(),
                                                         it->getAdvancedProduction()));
     }}
-    for(auto it:manager_->getBuildingVector()){
+    for(auto it:manager_->getBuildingVector()){ //UPGRADE MINONS
         it->doSpecialAction();
     }
     //swawp active player
@@ -46,5 +46,10 @@ void Turn::swapTurn()
 int Turn::getTurnCounter()
 {
     return turnCounter_;
+}
+
+void Turn::setInTurn(std::shared_ptr<LeaguePlayer> ToBeInTurn)
+{
+    playerInTurn_=ToBeInTurn;
 }
 }

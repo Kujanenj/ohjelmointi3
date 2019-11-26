@@ -119,6 +119,11 @@ std::shared_ptr<Course::TileBase> gameEventHandler::getActiveTile(){
 
 }
 
+void gameEventHandler::setActiveTile(std::shared_ptr<Course::TileBase> activeTile)
+{
+    activeTile_=activeTile;
+}
+
 std::shared_ptr<Minion> gameEventHandler::getActiveMinion()
 {
     return activeMinion_;
@@ -134,14 +139,14 @@ void gameEventHandler::endTurn(std::shared_ptr<gameManager> manager, std::shared
 
  turn_->swapTurn();
  qDebug()<<turn_->getTurnCounter()<<"TURN COUNTER";
- if(turn_->getTurnCounter()==2||turn_->getTurnCounter() % 5==0){
+ if(turn_->getTurnCounter()==2||turn_->getTurnCounter() % 10==0){
      std::shared_ptr<Course::TileBase> nexsusLoc;
      nexsusLoc=manager->getNexusLocation(manager->getPlayerPair().first);
-     if(nexsusLoc!=nullptr){
+     if(nexsusLoc!=nullptr && nexsusLoc->getWorkerCount()==0){
         manager->spawnMinion(handler,manager,manager->getPlayerPair().first,nexsusLoc,"minion");
      }
      nexsusLoc=manager->getNexusLocation(manager->getPlayerPair().second);
-     if(nexsusLoc!=nullptr){
+     if(nexsusLoc!=nullptr && nexsusLoc->getWorkerCount()==0){
         manager->spawnMinion(handler,manager,manager->getPlayerPair().second,nexsusLoc,"minion");
      }
  }

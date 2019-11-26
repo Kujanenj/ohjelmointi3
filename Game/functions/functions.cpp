@@ -1,6 +1,7 @@
 #include "functions.h"
 
-#include "buildings/farm.h"
+#include "buildings/magealtar.h"
+#include "buildings/rangedaltar.h"
 #include <vector>
 #include <QDebug>
 
@@ -38,6 +39,12 @@ void selectBuildingTypef(std::string type,
     }
     if(type=="Melee" && checkBuildingAvailability(handler->getActiveTile(),"Melee")){
         manager->spawnBuilding<MeleeAltar>(handler,manager,player);
+    }
+    if(type=="Ranged" && checkBuildingAvailability(handler->getActiveTile(),"Ranged")){
+        manager->spawnBuilding<RangedAltar>(handler,manager,player);
+    }
+    if(type=="Mage" && checkBuildingAvailability(handler->getActiveTile(),"Mage")){
+        manager->spawnBuilding<MageAltar>(handler,manager,player);
     }
 }
 

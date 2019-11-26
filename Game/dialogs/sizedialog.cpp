@@ -6,6 +6,7 @@ SizeDialog::SizeDialog(QWidget *parent) :
     ui(new Ui::SizeDialog)
 {
     ui->setupUi(this);
+
 }
 
 SizeDialog::~SizeDialog()
