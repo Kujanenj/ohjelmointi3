@@ -8,6 +8,10 @@ namespace Ui {
 class buildingDialog;
 }
 
+/**
+ * @brief The buildingDialog class is a dialog for selecting the building to be
+ * built
+ */
 class buildingDialog : public QDialog
 {
     Q_OBJECT
@@ -17,6 +21,9 @@ public:
     ~buildingDialog();
 
 signals:
+    /**
+     * @brief buildingType send the buildingtype to MainWindow
+     */
     void buildingType(std::string);
 private slots:
 

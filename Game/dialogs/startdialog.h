@@ -8,7 +8,9 @@
 namespace Ui {
 class startdialog;
 }
-
+/**
+ * @brief The startdialog class Selector dialog for the game start.
+ */
 class startdialog : public QDialog
 {
     Q_OBJECT
@@ -23,12 +25,18 @@ signals:
 
 private slots:
 
-
+    /*!
+     * \brief on_startButton_clicked starts the game
+     */
 
     void on_startButton_clicked();
-
+    /*!
+     * \brief on_mapSizeButton_clicked Opens a new dialog for selecting mapsize
+     */
     void on_mapSizeButton_clicked();
-
+    /*!
+     * \brief on_QuitButton_clicked Quits the game
+     */
     void on_QuitButton_clicked();
 
 private:
