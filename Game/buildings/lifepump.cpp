@@ -1,13 +1,14 @@
-#include "nexus.h"
+#include "lifepump.h"
+
 
 namespace Whiskas {
 
-Nexus::Nexus(
+Lifepump::Lifepump(
         const std::shared_ptr<gameEventHandler>& eventhandler,
         const std::shared_ptr<gameManager>& objectmanager,
         const std::shared_ptr<Course::PlayerBase>& owner,
         const int& tilespaces,
-        const  AdvancedResourceMap buildcost,
+        const AdvancedResourceMap buildcost,
         const AdvancedResourceMap production,
         int health,
         int attack
@@ -20,14 +21,13 @@ Nexus::Nexus(
                  production,
                  health,
                  attack)
-
 {
 }
 
-std::string Nexus::getType() const
+std::string Lifepump::getType() const
 {
-    return "Nexus";
+    return "Lifepump";
 }
-
 
 } // namespace Whiskas
+

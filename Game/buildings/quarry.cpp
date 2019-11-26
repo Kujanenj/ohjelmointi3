@@ -1,13 +1,13 @@
-#include "nexus.h"
+#include "quarry.h"
 
 namespace Whiskas {
 
-Nexus::Nexus(
+Quarry::Quarry(
         const std::shared_ptr<gameEventHandler>& eventhandler,
         const std::shared_ptr<gameManager>& objectmanager,
         const std::shared_ptr<Course::PlayerBase>& owner,
         const int& tilespaces,
-        const  AdvancedResourceMap buildcost,
+        const AdvancedResourceMap buildcost,
         const AdvancedResourceMap production,
         int health,
         int attack
@@ -24,10 +24,9 @@ Nexus::Nexus(
 {
 }
 
-std::string Nexus::getType() const
+std::string Quarry::getType() const
 {
-    return "Nexus";
+    return "Quarry";
 }
-
 
 } // namespace Whiskas

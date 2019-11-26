@@ -1,5 +1,5 @@
-#ifndef NEXUS_H
-#define NEXUS_H
+#ifndef QUARRY_H
+#define QUARRY_H
 
 #include "buildings/custombuildingbase.h"
 #include "core/resourcemaps.h"
@@ -7,13 +7,13 @@
 namespace Whiskas {
 
 
-class Nexus : public CustomBuildingBase
+class Quarry : public CustomBuildingBase
 
 {
 public:
-    Nexus() = delete;
+    Quarry() = delete;
 
-    explicit Nexus(
+    explicit Quarry(
             const std::shared_ptr<gameEventHandler>& eventhandler,
             const std::shared_ptr<gameManager>& objectmanager,
             const std::shared_ptr<Course::PlayerBase>& owner,
@@ -25,7 +25,7 @@ public:
 
             );
 
-    virtual ~Nexus() = default;
+    virtual ~Quarry() = default;
     virtual std::string getType() const override;
 
 }; // class Nexus
@@ -33,4 +33,5 @@ public:
 } // namespace Whiskas
 
 
-#endif // NEXUS_H
+
+#endif // QUARRY_H

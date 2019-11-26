@@ -12,7 +12,7 @@ public:
                const std::shared_ptr<gameManager>& objectmanager,
                const std::shared_ptr<Course::PlayerBase>& owner,
                const int& tilespaces = 1,
-               const Course::ResourceMap& buildcost = Course::ConstResourceMaps::OUTPOST_BUILD_COST,
+               const AdvancedResourceMap buildcost = {},
                const AdvancedResourceMap production ={});
 
     void upgradeMinion() override;

@@ -6,7 +6,7 @@ MageAltar::MageAltar(const std::shared_ptr<gameEventHandler>& eventhandler,
                      const std::shared_ptr<gameManager>& objectmanager,
                      const std::shared_ptr<Course::PlayerBase>& owner,
                      const int& tilespaces,
-                     const Course::ResourceMap& buildcost,
+                     const AdvancedResourceMap buildcost,
                      const AdvancedResourceMap production):
   AltarBase(eventhandler,objectmanager,owner)
 {

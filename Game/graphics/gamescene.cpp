@@ -17,7 +17,7 @@ GameScene::GameScene(QWidget* parent,
     m_mapBoundRect(nullptr),
     m_width(10),
     m_height(10),
-    m_scale(50)
+    m_scale(80)
 {
     setSize(width, height);
     setScale(scale);
@@ -123,7 +123,7 @@ bool GameScene::event(QEvent *event)
     }
     /*lastObjectID=-1;*/
 
-    return false;
+    return QGraphicsScene::event(event);
 }
 
 int GameScene::getLastID(){

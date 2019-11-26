@@ -2,6 +2,10 @@
 
 #include "buildings/magealtar.h"
 #include "buildings/rangedaltar.h"
+#include "buildings/quarry.h"
+#include "buildings/sawmill.h"
+#include "buildings/lifepump.h"
+
 #include <vector>
 #include <QDebug>
 #include <time.h>
@@ -48,6 +52,15 @@ void selectBuildingTypef(std::string type,
     if(type=="Mage" && checkBuildingAvailability(handler->getActiveTile(),"Mage")){
         manager->spawnBuilding<MageAltar>(handler,manager,player);
     }
+    if(type=="Quarry" && checkBuildingAvailability(handler->getActiveTile(),"Quarry")){
+        manager->spawnBuilding<Quarry>(handler,manager,player);
+    }
+    if(type=="Sawmill" && checkBuildingAvailability(handler->getActiveTile(),"Sawmill")){
+        manager->spawnBuilding<Sawmill>(handler,manager,player);
+    }
+    if(type=="Lifepump" && checkBuildingAvailability(handler->getActiveTile(),"Lifepump")){
+        manager->spawnBuilding<Lifepump>(handler,manager,player);
+    }
 }
 
 
@@ -67,7 +80,6 @@ bool gameManager::spawnBuilding(std::shared_ptr<gameEventHandler> handler,
         qDebug() << QString::fromStdString(testBuilding->getType());
         handler->getActiveTile()->addBuilding(testBuilding);
         manager->addBuilding(testBuilding);
-
         manager_gamescene->drawItem(testBuilding);
         return true;
 

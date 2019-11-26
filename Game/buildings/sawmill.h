@@ -1,19 +1,18 @@
-#ifndef NEXUS_H
-#define NEXUS_H
+#ifndef SAWMILL_H
+#define SAWMILL_H
 
 #include "buildings/custombuildingbase.h"
 #include "core/resourcemaps.h"
 
 namespace Whiskas {
 
-
-class Nexus : public CustomBuildingBase
+class Sawmill : public CustomBuildingBase
 
 {
 public:
-    Nexus() = delete;
+    Sawmill() = delete;
 
-    explicit Nexus(
+    explicit Sawmill(
             const std::shared_ptr<gameEventHandler>& eventhandler,
             const std::shared_ptr<gameManager>& objectmanager,
             const std::shared_ptr<Course::PlayerBase>& owner,
@@ -25,7 +24,7 @@ public:
 
             );
 
-    virtual ~Nexus() = default;
+    virtual ~Sawmill() = default;
     virtual std::string getType() const override;
 
 }; // class Nexus
@@ -33,4 +32,4 @@ public:
 } // namespace Whiskas
 
 
-#endif // NEXUS_H
+#endif // SAWMILL_H

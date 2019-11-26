@@ -1,5 +1,5 @@
-#ifndef NEXUS_H
-#define NEXUS_H
+#ifndef LIFEPUMP_H
+#define LIFEPUMP_H
 
 #include "buildings/custombuildingbase.h"
 #include "core/resourcemaps.h"
@@ -7,13 +7,13 @@
 namespace Whiskas {
 
 
-class Nexus : public CustomBuildingBase
+class Lifepump : public CustomBuildingBase
 
 {
 public:
-    Nexus() = delete;
+    Lifepump() = delete;
 
-    explicit Nexus(
+    explicit Lifepump(
             const std::shared_ptr<gameEventHandler>& eventhandler,
             const std::shared_ptr<gameManager>& objectmanager,
             const std::shared_ptr<Course::PlayerBase>& owner,
@@ -25,12 +25,11 @@ public:
 
             );
 
-    virtual ~Nexus() = default;
+    virtual ~Lifepump() = default;
     virtual std::string getType() const override;
 
-}; // class Nexus
+}; // class Lifepump
 
 } // namespace Whiskas
 
-
-#endif // NEXUS_H
+#endif // LIFEPUMP_H

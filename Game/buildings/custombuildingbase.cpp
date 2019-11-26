@@ -9,7 +9,7 @@ CustomBuildingBase::CustomBuildingBase(
         const std::shared_ptr<gameManager>& objectmanager,
         const std::shared_ptr<Course::PlayerBase>& owner,
         const int& tilespaces,
-        const Course::ResourceMap& buildcost,
+        const AdvancedResourceMap buildcost,
         const AdvancedResourceMap production,
         int health,
         int attack
@@ -19,13 +19,20 @@ CustomBuildingBase::CustomBuildingBase(
                  owner,
                  tilespaces),
     Attackable(health, attack,0, ID),
-    production_(production)
+    production_(production),
+    buildcost_(buildcost)
 {
 }
 
 AdvancedResourceMap CustomBuildingBase::getAdvancedProduction()
 {
     return production_;
+}
+
+
+AdvancedResourceMap CustomBuildingBase::getAdvancedCost()
+{
+    return buildcost_;
 }
 
 void CustomBuildingBase::doSpecialAction()
