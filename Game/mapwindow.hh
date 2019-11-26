@@ -75,6 +75,7 @@ public slots:
      */
     void initMap(int x, int y);
     void selectBuilding(std::string); //TODO
+    void closeWindow();
 
 private slots:
     //just a test to add a test farm
@@ -113,6 +114,7 @@ private:
     buildingDialog buildingdialog;
     QList<QLCDNumber*> lcdDisplays_;
     std::string buildingToBeBuilt_="Nexus";
+
 };
 
 #endif // MapWINDOW_HH

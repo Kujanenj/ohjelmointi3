@@ -20,6 +20,7 @@ public slots:
     void setXY(int xy);
 signals:
     void size(int, int);
+
 private slots:
 
 

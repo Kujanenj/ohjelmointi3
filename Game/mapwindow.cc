@@ -3,7 +3,8 @@
 
 #include "graphics/mapitem.h"
 #include "functions/functions.h"
-
+#include <QTimer>
+#include "dialogs/enddialog.h"
 #include <math.h>
 std::map<std::string,std::string> BuildingDescriptions{
     {"Lifepump","LifePumpDescript"},
@@ -27,6 +28,7 @@ MapWindow::MapWindow(QWidget *parent,
     m_ui->graphicsView->setScene(dynamic_cast<QGraphicsScene*>(sgs_rawptr));
     startdialog dialog;
     connect(&dialog,         SIGNAL(size(int, int)),   this,SLOT(initMap(int,int)));
+    connect(&dialog,         SIGNAL(rejected()),this,SLOT(closeWindow()));
     connect(&buildingdialog, SIGNAL(buildingType(std::string)),this,SLOT(selectBuilding(std::string)));
 
 
@@ -43,6 +45,9 @@ MapWindow::MapWindow(QWidget *parent,
    //IT WORKS
     generateLCDList();
     dialog.exec();
+
+
+
 
 
 
@@ -136,6 +141,12 @@ void MapWindow::initMap(int x, int y)
 void MapWindow::selectBuilding(std::string buildingType){
     buildingToBeBuilt_=buildingType;
     m_ui->DescriptionLabelRight->setText(QString::fromStdString(BuildingDescriptions.at(buildingType)));
+
+}
+
+void MapWindow::closeWindow()
+{
+    QTimer::singleShot(0, this, SLOT(close()));
 }
 
 void MapWindow::removeItem(std::shared_ptr<Course::GameObject> obj)
@@ -161,7 +172,14 @@ void MapWindow::mousePressEvent(QMouseEvent *event){
   else{
       m_ui->DescriptionLabel->clear();
   }
+  if(m_GManager->getWinner()!=nullptr){
 
+      endDialog endLog;
+      std::string endText{"Game over, "+m_GManager->getWinner()->getName()+" has \n destroyed the enemy Nexus"};
+      endLog.setEndText(endText);
+      endLog.exec();
+      closeWindow();
+  }
 }
 
 void MapWindow::updateDisplays()
@@ -232,6 +250,7 @@ void MapWindow::on_endTurnButton_clicked()
     updateDisplays();
     m_ui->activePlayerLabel->setText(QString::fromStdString(m_GEHandler->getTurn()->getInTurn()->getName()+" is the player in turn"));
     m_ui->turnLCD->display(m_GEHandler->getTurn()->getTurnCounter());
+
 
 }
 

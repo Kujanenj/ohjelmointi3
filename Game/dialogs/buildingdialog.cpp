@@ -7,6 +7,7 @@ buildingDialog::buildingDialog(QWidget *parent) :
     ui(new Ui::buildingDialog)
 {
     ui->setupUi(this);
+    setWindowTitle("Buildings");
 }
 
 buildingDialog::~buildingDialog()

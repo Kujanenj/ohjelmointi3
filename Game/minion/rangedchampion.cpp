@@ -12,7 +12,7 @@ RangedChampion::RangedChampion(const std::shared_ptr<Course::iGameEventHandler>&
                  Minion(handler,manager,owner,movement, health, attack, attacks)
 
 {
-
+setDescription("Ranged","RANGED");
 }
 
 std::string RangedChampion::getType() const

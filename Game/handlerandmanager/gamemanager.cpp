@@ -389,11 +389,11 @@ void gameManager::destroyObject(std::shared_ptr<Attackable> objectToDestroy)
          }
          if(tempBuildingToRemove->getType()=="Nexus"){
           if(tempBuildingToRemove->getOwner()==players_.first){
-              winGame(players_.second);
+              winner_=(players_.second);
 
           }
           else{
-              winGame(players_.first);
+              winner_=(players_.first);
           }
          }
      }
@@ -412,11 +412,11 @@ std::shared_ptr<Course::TileBase> gameManager::getNexusLocation(std::shared_ptr<
     return nullptr;
 }
 
-void gameManager::winGame(std::shared_ptr<LeaguePlayer> winner)
+std::shared_ptr<LeaguePlayer> gameManager::getWinner()
 {
-    qDebug()<<"WINNER"<<QString::fromStdString(winner->getName());
-
-
+    return winner_;
 }
+
+
 
 } // NAMESPACE OVER HERE

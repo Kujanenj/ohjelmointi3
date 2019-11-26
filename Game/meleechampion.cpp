@@ -13,6 +13,7 @@ MeleeChampion::MeleeChampion(const std::shared_ptr<Course::iGameEventHandler>& h
 {
     movement_=movement;
     qDebug()<<"champion says hi";
+    setDescription("MeleeChampion","MELEE");
 
 }
 

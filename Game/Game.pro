@@ -19,6 +19,7 @@ SOURCES += \
     buildings/sawmill.cpp \
     dialogs/buildingdialog.cpp \
     buildings/nexus.cpp \
+    dialogs/enddialog.cpp \
     dialogs/sizedialog.cpp \
     functions/functions.cpp \
     graphics/mapitem.cpp \
@@ -54,6 +55,7 @@ HEADERS += \
     buildings/sawmill.h \
     dialogs/buildingdialog.h \
     buildings/nexus.h \
+    dialogs/enddialog.h \
     dialogs/sizedialog.h \
     functions/functions.h \
     graphics/mapitem.h \
@@ -99,6 +101,7 @@ else:unix: PRE_TARGETDEPS += \
 
 FORMS += \
     dialogs/buildingdialog.ui \
+    dialogs/enddialog.ui \
     dialogs/sizedialog.ui \
     mapwindow.ui \
     dialogs/startdialog.ui

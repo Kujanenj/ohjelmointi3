@@ -43,5 +43,7 @@ void startdialog::on_mapSizeButton_clicked()
 
 void startdialog::on_QuitButton_clicked()
 {
+    reject();
+    emit rejected();
 
 }
