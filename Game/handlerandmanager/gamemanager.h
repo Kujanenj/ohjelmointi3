@@ -27,6 +27,7 @@ public:
 
 
     void addTiles(const std::vector<std::shared_ptr<Course::TileBase> > &tiles) override;
+    void addTile(std::shared_ptr<Course::TileBase> tile);
     std::shared_ptr<Course::TileBase> getTile(const Course::ObjectId &id) override;
 
     std::shared_ptr<Course::TileBase> getTile(const Course::Coordinate &coordinate) override;

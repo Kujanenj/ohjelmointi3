@@ -19,6 +19,7 @@
 #include "buildings/nexus.h"
 #include "buildings/meleealtar.h"
 
+
 namespace Whiskas {
 
 const std::map<std::string, std::vector<std::string>> buildingAvailability={
@@ -54,6 +55,13 @@ void selectBuildingTypef(std::string type, std::shared_ptr<gameEventHandler> han
 bool checkBuildingAvailability(std::shared_ptr<Course::TileBase> targetTile,
                                std::string type);
 
+void makeAdvancedWGenerator(int mapsize,
+                                std::shared_ptr<gameEventHandler> handler,
+                                std::shared_ptr<gameManager> manager);
+template<typename TileType>
+void makeAdvancedWorld(Course::Coordinate loc,
+                       std::shared_ptr<gameEventHandler> handler,
+                       std::shared_ptr<gameManager> manager);
 }
 #endif // FUNCTIONS_H
 

@@ -17,6 +17,11 @@ void gameManager::addTiles(const std::vector<std::shared_ptr<Course::TileBase> >
     alltiles_=tiles;
 }
 
+void gameManager::addTile(std::shared_ptr<Course::TileBase> tile)
+{
+    alltiles_.push_back(tile);
+}
+
 std::shared_ptr<Course::TileBase> gameManager::getTile(const Course::ObjectId &id)
 {
     for(auto it :alltiles_){

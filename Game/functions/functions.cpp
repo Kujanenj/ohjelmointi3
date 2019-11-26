@@ -4,8 +4,10 @@
 #include "buildings/rangedaltar.h"
 #include <vector>
 #include <QDebug>
+#include <time.h>
 
 #include "handlerandmanager/gamemanager.h"
+
 
 namespace Whiskas {
 
@@ -15,7 +17,7 @@ void makeWorldGenerator(int mapsize_x, int mapsize_y, int seed,
 
     Course::WorldGenerator& wgenerator=Course::WorldGenerator::getInstance();
     wgenerator.addConstructor<Course::Forest>(10);
-    //wgenerator.addConstructor<Course::Grassland>(10);
+
     wgenerator.addConstructor<Mountain>(7);
     wgenerator.addConstructor<Spring>(7);
     wgenerator.addConstructor<Jungle>(10);
@@ -84,7 +86,67 @@ bool checkBuildingAvailability(std::shared_ptr<Course::TileBase> targetTile, std
         }
     }
      qDebug()<<"UNLegit placement for "<<QString::fromStdString(type);
-    return false;
+     return false;
+}
+
+void makeAdvancedWGenerator(int mapsize,
+                                std::shared_ptr<gameEventHandler> handler,
+                                std::shared_ptr<gameManager> manager)
+
+{
+
+   int ran;
+   srand (time(NULL));
+    for(int x = 0; x< mapsize; x++){
+
+
+        for(int y=0; y<mapsize; y++){
+            ran=rand()%4;
+            Course::Coordinate loc=Course::Coordinate(x,y);
+            qDebug()<<"Building coord"<<x<<y;
+            if(x!=0 && y!=0){
+            for(auto it :loc.neighbours()){
+                if(it.x()<=x &&it.y()<=y){
+                    qDebug()<<"Checking coor"<<it.x()<<it.y();
+                 if(manager->getTile(it)->getType()=="Forest"){
+                     ran+=1;
+                     break;
+                 }
+                 if(manager->getTile(it)->getType()=="Spring"){
+                     ran-=1;
+                 }
+                }
+            }}
+
+            if(ran<=0){
+              makeAdvancedWorld<Jungle>(loc,handler,manager);
+            }
+            if(ran==1){
+                makeAdvancedWorld<Mountain>(loc,handler,manager);
+            }
+            if(ran==2){
+                makeAdvancedWorld<Spring>(loc,handler,manager);
+            }
+            if(ran>=3){
+                makeAdvancedWorld<Course::Forest>(loc,handler,manager);
+            }
+
+        }
+    }
+
+}
+
+template<typename TileType>
+void makeAdvancedWorld(Course::Coordinate loc,
+                       std::shared_ptr<gameEventHandler> handler,
+                       std::shared_ptr<gameManager> manager)
+{
+    std::shared_ptr<Course::TileBase> testTile=std::make_shared<TileType>(loc,
+                                                                          handler,
+                                                                          manager);
+    qDebug()<<"FOR THE LOVE OF GOD SEE THIS"<<QString::fromStdString(testTile->getType());
+    manager->addTile(testTile);
+
 }
 
 

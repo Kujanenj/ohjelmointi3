@@ -102,9 +102,9 @@ void MapWindow::initMap(int x, int y)
 
     setGEHandler(ghandler); //TEST
 
+    makeAdvancedWGenerator(x,m_GEHandler,m_GManager);
 
-
-    makeWorldGenerator(x,y,10,ghandler,gmanager);
+   // makeWorldGenerator(x,y,10,ghandler,gmanager);
 
 
     for(auto it:m_GManager->getTileVector()){
@@ -118,6 +118,8 @@ void MapWindow::initMap(int x, int y)
     m_GEHandler->setActiveTile(m_GManager->getTile((x*x)-1));
     m_GEHandler->getTurn()->setInTurn(playerPair.second);
     on_confirmButton_clicked();
+
+
 
 
 

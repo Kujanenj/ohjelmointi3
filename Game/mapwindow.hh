@@ -63,6 +63,7 @@ public:
     void updateDisplays();
     void generateLCDList();
 
+
 public slots:
     /*!
      * \brief initMap
