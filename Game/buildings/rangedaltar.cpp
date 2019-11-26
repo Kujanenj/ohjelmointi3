@@ -10,11 +10,12 @@ RangedAltar::RangedAltar(const std::shared_ptr<gameEventHandler>& eventhandler,
                          const AdvancedResourceMap production):
       AltarBase(eventhandler,objectmanager,owner)
 {
-
+cooldown_=15;
 }
 
 void RangedAltar::upgradeMinion()
 {
+    if(cooldown_==0){
     qDebug()<<"Upgrading ranged minion";
      for(auto it: manager_->getMinionVector()){
 
@@ -33,7 +34,8 @@ void RangedAltar::upgradeMinion()
          }
 
          }
-     }
+     }}
+    cooldown_-=1;
      qDebug()<<"Nothing to upgrade on ranged altar";
 
 }

@@ -12,7 +12,14 @@ RangedChampion::RangedChampion(const std::shared_ptr<Course::iGameEventHandler>&
                  Minion(handler,manager,owner,movement, health, attack, attacks)
 
 {
-setDescription("Ranged","RANGED");
+setDescription("Ranged","A ranged archer.\n"
+                        "Can attack from range.\n"
+                        "Since its ranged.\n"
+                        "What did you expect?\n"
+                        "1 damage\n"
+                        "3 attacks\n"
+                        "3 health\n"
+                        "3 movement/range");
 }
 
 std::string RangedChampion::getType() const

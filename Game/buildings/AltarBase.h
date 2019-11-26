@@ -18,10 +18,12 @@ public:
     virtual std::string getType()const override;
     virtual void upgradeMinion()=0;
     virtual void doSpecialAction() override;
+
 protected:
     std::shared_ptr<gameManager>manager_;
     std::shared_ptr<gameEventHandler>handler_;
     std::shared_ptr<Course::PlayerBase>owner_;
+
 };
 }
 #endif // AltarBase_H

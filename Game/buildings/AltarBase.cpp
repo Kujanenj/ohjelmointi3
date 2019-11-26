@@ -35,3 +35,4 @@ void Whiskas::AltarBase::doSpecialAction()
     getType();
     upgradeMinion();
 }
+

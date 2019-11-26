@@ -7,10 +7,33 @@
 #include "dialogs/enddialog.h"
 #include <math.h>
 std::map<std::string,std::string> BuildingDescriptions{
-    {"Lifepump","LifePumpDescript"},
-    {"Mage","Mage Altar descript"},
-    {"Melee", "melee descipt"},
-    {"Ranged", "ranged descript"},
+    {"Lifepump","A building that produces \n"
+        "Life Water. Can be construted on \n"
+        "a spring tile.\n"
+        "Build cost:\n"
+        "_____\n"
+        "Produces\n"
+        "_______"},
+    {"Mage","Transforms a minion\n"
+        "into a mage, if a minion\n"
+        "ends its turn on this building.\n"
+        "Cost:"
+        "______\n"
+        "Has a cooldowwn of 20 turns\n"},
+    {"Melee", "Transforms a minion\n"
+        "into a melee champion, if a \n"
+        "minion ends its turn on this\n"
+        "building.\n"
+        "Cost:\n"
+        "___\n"
+        "Has a cooldown of 10 turns"},
+    {"Ranged", "Transforms a minion\n"
+        "into a Ranged champion, if a \n"
+        "minion ends its turn on this\n"
+        "building.\n"
+        "Cost:\n"
+        "___\n"
+        "Has a cooldown of 15 turns"},
     {"Quarry", "quarry descript"},
     {"Sawmill","Saw descript"}
 };
@@ -164,18 +187,33 @@ void MapWindow::mousePressEvent(QMouseEvent *event){
   qDebug()<<"updating mwindow view";
   m_ui->graphicsView->viewport()->update();
   if(m_GEHandler->getActiveMinion()!=nullptr){
-      m_ui->DescriptionLabel->setText(QString::fromStdString(m_GEHandler->getActiveMinion()->getDescription(m_GEHandler->getActiveMinion()->getType())));
+      m_ui->DescriptionLabel->setText(QString::fromStdString(m_GEHandler->getActiveMinion()->
+                                                             getDescription(m_GEHandler->
+                                                                            getActiveMinion()->
+                                                                            getType())));
   }
   else if(m_GEHandler->getActiveTile()!=nullptr){
-      m_ui->DescriptionLabel->setText(QString::fromStdString(m_GEHandler->getActiveTile()->getDescription(m_GEHandler->getActiveTile()->getType())));
+      m_ui->DescriptionLabel->setText(QString::fromStdString(m_GEHandler->getActiveTile()->
+                                                             getDescription(m_GEHandler->
+                                                                            getActiveTile()->
+                                                                            getType())));
+      if(m_GEHandler->getActiveTile()->getBuildingCount()!=0){
+          m_ui->DescriptionLabelRight->setText(QString::fromStdString(BuildingDescriptions.at(m_GEHandler->
+                                                                                              getActiveTile()->
+                                                                                              getBuildings().at(0)->
+                                                                                              getType())));
+
+      }
   }
+
   else{
       m_ui->DescriptionLabel->clear();
   }
   if(m_GManager->getWinner()!=nullptr){
 
       endDialog endLog;
-      std::string endText{"Game over, "+m_GManager->getWinner()->getName()+" has \n destroyed the enemy Nexus"};
+      std::string endText{"Game over, "+m_GManager->getWinner()->getName()+
+                  " has \n destroyed the enemy Nexus"};
       endLog.setEndText(endText);
       endLog.exec();
       closeWindow();
@@ -226,7 +264,9 @@ void MapWindow::on_minionbutton_clicked()
     qDebug()<<"spawn minion click";
     qDebug()<<" ";
 
-    m_GManager->spawnMinion(m_GEHandler, m_GManager, m_GEHandler->getTurn()->getInTurn(), m_GEHandler->getActiveTile(), "minion");
+    m_GManager->spawnMinion(m_GEHandler, m_GManager, m_GEHandler->getTurn()->getInTurn(),
+                            m_GEHandler->getActiveTile(), "minion");
+
     m_ui->graphicsView->viewport()->update();
 }
 
@@ -240,7 +280,9 @@ void MapWindow::on_enemyMinions_clicked()
 {
     qDebug()<<" ";
     qDebug()<<"spawn enemy minion click";
-    m_GManager->spawnMinion(m_GEHandler, m_GManager, m_GEHandler->getTurn()->getInTurn(), m_GEHandler->getActiveTile(),"Ranged");
+    m_GManager->spawnMinion(m_GEHandler, m_GManager, m_GEHandler->getTurn()->getInTurn(),
+                            m_GEHandler->getActiveTile(),"Ranged");
+
     m_ui->graphicsView->viewport()->update();
 }
 
@@ -248,7 +290,9 @@ void MapWindow::on_endTurnButton_clicked()
 {
     m_GEHandler->endTurn(m_GManager, m_GEHandler);
     updateDisplays();
-    m_ui->activePlayerLabel->setText(QString::fromStdString(m_GEHandler->getTurn()->getInTurn()->getName()+" is the player in turn"));
+    m_ui->activePlayerLabel->setText(QString::fromStdString(m_GEHandler->getTurn()->
+                                                            getInTurn()->getName()+
+                                                            " is the player in turn"));
     m_ui->turnLCD->display(m_GEHandler->getTurn()->getTurnCounter());
 
 
@@ -256,16 +300,19 @@ void MapWindow::on_endTurnButton_clicked()
 
 void MapWindow::on_champButton_clicked()
 {
-     m_GManager->spawnMinion(m_GEHandler, m_GManager, m_GEHandler->getTurn()->getInTurn(), m_GEHandler->getActiveTile(), "champ");
+     m_GManager->spawnMinion(m_GEHandler, m_GManager, m_GEHandler->getTurn()->getInTurn(),
+                             m_GEHandler->getActiveTile(), "champ");
 }
 
 void MapWindow::on_mageButton_clicked()
 {
-    m_GManager->spawnMinion(m_GEHandler, m_GManager, m_GEHandler->getTurn()->getInTurn(), m_GEHandler->getActiveTile(), "mage");
+    m_GManager->spawnMinion(m_GEHandler, m_GManager, m_GEHandler->getTurn()->getInTurn(),
+                            m_GEHandler->getActiveTile(), "mage");
 }
 
 void MapWindow::on_confirmButton_clicked()
 {
-    selectBuildingTypef(buildingToBeBuilt_,m_GEHandler,m_GManager,m_GEHandler->getTurn()->getInTurn());
+    selectBuildingTypef(buildingToBeBuilt_,m_GEHandler,m_GManager,m_GEHandler->
+                        getTurn()->getInTurn());
     m_ui->DescriptionLabelRight->clear();
 }

@@ -40,4 +40,9 @@ void CustomBuildingBase::doSpecialAction()
     qDebug()<<"Special action";
 }
 
+int CustomBuildingBase::getCooldown()
+{
+    return cooldown_;
+}
+
 }

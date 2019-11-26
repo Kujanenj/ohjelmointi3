@@ -15,7 +15,15 @@ Minion::Minion(const std::shared_ptr<Course::iGameEventHandler>& handler,
     Attackable(health,attack,attacks, ID)
 {
 
-    setDescription("Minion", "Default Minion Description");
+    setDescription("Minion", "A basic fuksi/minion \n"
+                             "Buildings can only be constructed\n"
+                             "on top of minions.\n"
+                             "Can be upgraded using altars\n"
+                             "3 Health\n"
+                             "1 Damage\n"
+                             "1 Attack\n"
+                             "1 Range/movement\n"
+                             "has less than 300 fuksipoints");
     testCost_=cost;
 
     qDebug()<<"minion got made";

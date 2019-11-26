@@ -35,9 +35,11 @@ public:
    virtual AdvancedResourceMap getAdvancedCost();
 
    virtual void doSpecialAction() override;
+   virtual int getCooldown() final;
 protected:
    AdvancedResourceMap production_;
    AdvancedResourceMap buildcost_;
+   int cooldown_=-1;
 };
 
 }
