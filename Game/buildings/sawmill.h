@@ -17,8 +17,8 @@ public:
             const std::shared_ptr<gameManager>& objectmanager,
             const std::shared_ptr<Course::PlayerBase>& owner,
             const int& tilespaces = 1,
-            const AdvancedResourceMap buildcost = NEXUS_PRODUCE,
-            const AdvancedResourceMap production = NEXUS_PRODUCE,
+            const AdvancedResourceMap buildcost = SAWMILL_COST,
+            const AdvancedResourceMap production = SAWMILL_PRODUCE,
             int health =5,
             int attack = 0
 
@@ -27,7 +27,7 @@ public:
     virtual ~Sawmill() = default;
     virtual std::string getType() const override;
 
-}; // class Nexus
+}; // class Sawmill
 
 } // namespace Whiskas
 

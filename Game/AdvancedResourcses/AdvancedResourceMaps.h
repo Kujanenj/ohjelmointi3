@@ -20,7 +20,68 @@ const AdvancedResourceMap NEXUS_PRODUCE={
     {LIFEWATER,1}
 };
 
+const AdvancedResourceMap SAWMILL_COST={
+    {IRON, 5},
+    {WOOD, 5},
+    {CRYSTAL,3},
+    {LIFEWATER,1}
+};
 
+const AdvancedResourceMap LIFEPUMP_COST={
+    {IRON, 5},
+    {WOOD, 5},
+    {CRYSTAL,3},
+    {LIFEWATER,1}
+};
+
+const AdvancedResourceMap QUARRY_COST={
+    {IRON, 5},
+    {WOOD, 5},
+    {CRYSTAL,3},
+    {LIFEWATER,1}
+};
+
+const AdvancedResourceMap SAWMILL_PRODUCE={
+    {IRON, 5},
+    {WOOD, 5},
+    {CRYSTAL,3},
+    {LIFEWATER,1}
+};
+
+const AdvancedResourceMap LIFEPUMP_PRODUCE={
+    {IRON, 5},
+    {WOOD, 5},
+    {CRYSTAL,3},
+    {LIFEWATER,1}
+};
+
+const AdvancedResourceMap QUARRY_PRODUCE={
+    {IRON, 5},
+    {WOOD, 5},
+    {CRYSTAL,3},
+    {LIFEWATER,1}
+};
+
+const AdvancedResourceMap MELEEALTAR_COST={
+    {IRON, 5},
+    {WOOD, 5},
+    {CRYSTAL,3},
+    {LIFEWATER,1}
+};
+
+const AdvancedResourceMap MAGEALTAR_COST={
+    {IRON, 5},
+    {WOOD, 5},
+    {CRYSTAL,3},
+    {LIFEWATER,1}
+};
+
+const AdvancedResourceMap RANGEDALTAR_COST={
+    {IRON, 5},
+    {WOOD, 5},
+    {CRYSTAL,3},
+    {LIFEWATER,1}
+};
 
 }
 

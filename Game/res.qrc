@@ -17,6 +17,12 @@
         <file>graphics/lifepump_purple.png</file>
         <file>graphics/sawmill_blue.png</file>
         <file>graphics/sawmill_purple.png</file>
+        <file>graphics/magealtar_blue.png</file>
+        <file>graphics/magealtar_purple.png</file>
+        <file>graphics/meleealtar_blue.png</file>
+        <file>graphics/meleealtar_purple.png</file>
+        <file>graphics/rangedaltar_blue.png</file>
+        <file>graphics/rangedaltar_purple.png</file>
     </qresource>
     <qresource prefix="/sounds">
         <file>sounds/testSound.mp3</file>

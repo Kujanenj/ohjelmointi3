@@ -1,8 +1,8 @@
-#include "jungle.h"
+#include "desert.h"
 
 namespace Whiskas {
 
-Jungle::Jungle(const Course::Coordinate& location,
+Desert::Desert(const Course::Coordinate& location,
                const std::shared_ptr<Course::iGameEventHandler>& eventhandler,
                const std::shared_ptr<Course::iObjectManager>& objectmanager,
                const unsigned int& max_build,
@@ -15,15 +15,15 @@ Jungle::Jungle(const Course::Coordinate& location,
              max_work,
              production)
 {
-    setDescription("Jungle","Default Jungle descripton");
+    setDescription("Desert","Default Desert descripton");
 }
 
-std::string Jungle::getType() const
+std::string Desert::getType() const
 {
-    return "Jungle";
+    return "Desert";
 }
 
-void Jungle::addBuilding(const std::shared_ptr<Course::BuildingBase>& building)
+void Desert::addBuilding(const std::shared_ptr<Course::BuildingBase>& building)
 {
     TileBase::addBuilding(building);
     building->addHoldMarkers(1);

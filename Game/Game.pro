@@ -34,6 +34,7 @@ SOURCES += \
     minion/minion.cpp \
     dialogs/startdialog.cpp \
     minion/rangedchampion.cpp \
+    tiles/desert.cpp \
     tiles/jungle.cpp \
     tiles/mountain.cpp \
     tiles/spring.cpp \
@@ -69,6 +70,7 @@ HEADERS += \
     minion/minion.h \
     dialogs/startdialog.h \
     minion/rangedchampion.h \
+    tiles/desert.h \
     tiles/jungle.h \
     tiles/mountain.h \
     tiles/spring.h \

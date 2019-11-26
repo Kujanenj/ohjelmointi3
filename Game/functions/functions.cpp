@@ -125,7 +125,7 @@ void makeAdvancedWGenerator(int mapsize,
                 makeAdvancedWorld<Spring>(loc,handler,manager);
             }
             if(ran>=3){
-                makeAdvancedWorld<Course::Forest>(loc,handler,manager);
+                makeAdvancedWorld<Desert>(loc,handler,manager);
             }
 
         }
