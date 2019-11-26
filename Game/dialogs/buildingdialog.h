@@ -8,6 +8,10 @@ namespace Ui {
 class buildingDialog;
 }
 
+/**
+ * @brief The buildingDialog class is a dialog for selecting the building to be
+ * built
+ */
 class buildingDialog : public QDialog
 {
     Q_OBJECT
@@ -17,18 +21,29 @@ public:
     ~buildingDialog();
 
 signals:
+    /**
+     * @brief buildingType send the buildingtype to MainWindow
+     */
     void buildingType(std::string);
 private slots:
-    void on_farmButton_clicked();
 
-    void on_headQuartersButton_clicked();
 
-    void on_nexsusButton_clicked();
+    void on_MeleeAltarButton_clicked();
+
+    void on_RangedAltarButton_clicked();
+
+    void on_MageAltarButton_clicked();
+
+    void on_Quarry_clicked();
+
+    void on_Sawmill_clicked();
+
+    void on_Lifepump_clicked();
 
 private:
     Ui::buildingDialog *ui;
     QGraphicsScene* scene;
-    enum buildingtypes{farm, headquarters};
+
 };
 
 #endif // BUILDINGDIALOG_H

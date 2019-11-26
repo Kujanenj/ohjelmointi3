@@ -7,40 +7,71 @@ QT += core gui widgets \
 CONFIG += c++14
 
 SOURCES += \
+    AdvancedResourcses/AdvancedResourcses.cpp \
     attackable.cpp \
+    buildings/AltarBase.cpp \
     buildings/custombuildingbase.cpp \
-    buildings/test_building.cpp \
+    buildings/lifepump.cpp \
+    buildings/quarry.cpp \
+    buildings/magealtar.cpp \
+    buildings/meleealtar.cpp \
+    buildings/rangedaltar.cpp \
+    buildings/sawmill.cpp \
     dialogs/buildingdialog.cpp \
     buildings/nexus.cpp \
+    dialogs/enddialog.cpp \
+    dialogs/sizedialog.cpp \
     functions/functions.cpp \
     graphics/mapitem.cpp \
     handlerandmanager/gameeventhandler.cpp \
     handlerandmanager/gamemanager.cpp \
     graphics/gamescene.cpp \
+    leagueplayer.cpp \
     main.cpp \
     mapwindow.cc \
     meleechampion.cpp \
+    minion/magicchampion.cpp \
     minion/minion.cpp \
     dialogs/startdialog.cpp \
+    minion/rangedchampion.cpp \
+    tiles/jungle.cpp \
+    tiles/mountain.cpp \
+    tiles/spring.cpp \
     turn.cpp \
     unit.cpp
 
 
 HEADERS += \
+    AdvancedResourcses/AdvancedResourceMaps.h \
+    AdvancedResourcses/AdvancedResourcses.h \
     attackable.h \
+    buildings/AltarBase.h \
     buildings/custombuildingbase.h \
-    buildings/test_building.h \
+    buildings/lifepump.h \
+    buildings/quarry.h \
+    buildings/magealtar.h \
+    buildings/meleealtar.h \
+    buildings/rangedaltar.h \
+    buildings/sawmill.h \
     dialogs/buildingdialog.h \
     buildings/nexus.h \
+    dialogs/enddialog.h \
+    dialogs/sizedialog.h \
     functions/functions.h \
     graphics/mapitem.h \
     handlerandmanager/gameeventhandler.h \
     handlerandmanager/gamemanager.h \
     graphics/gamescene.h \
+    leagueplayer.h \
     mapwindow.hh \
     meleechampion.h \
+    minion/magicchampion.h \
     minion/minion.h \
     dialogs/startdialog.h \
+    minion/rangedchampion.h \
+    tiles/jungle.h \
+    tiles/mountain.h \
+    tiles/spring.h \
     turn.h \
     unit.h
 
@@ -70,13 +101,12 @@ else:unix: PRE_TARGETDEPS += \
 
 FORMS += \
     dialogs/buildingdialog.ui \
+    dialogs/enddialog.ui \
+    dialogs/sizedialog.ui \
     mapwindow.ui \
     dialogs/startdialog.ui
 
-DISTFILES += \
-    ../../pi.png \
-    graphics/forest_pic.png \
-    graphics/pi.png
+
 
 RESOURCES += \
     res.qrc

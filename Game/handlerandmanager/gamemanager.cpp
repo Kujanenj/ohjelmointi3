@@ -17,6 +17,11 @@ void gameManager::addTiles(const std::vector<std::shared_ptr<Course::TileBase> >
     alltiles_=tiles;
 }
 
+void gameManager::addTile(std::shared_ptr<Course::TileBase> tile)
+{
+    alltiles_.push_back(tile);
+}
+
 std::shared_ptr<Course::TileBase> gameManager::getTile(const Course::ObjectId &id)
 {
     for(auto it :alltiles_){
@@ -40,11 +45,12 @@ std::shared_ptr<Course::TileBase> gameManager::getTile(const Course::Coordinate 
     return nullptr;
 }
 
-std::vector<std::shared_ptr<Course::TileBase> > gameManager::getTiles(const std::vector<Course::Coordinate> &coordinates)
+std::vector<std::shared_ptr<Course::TileBase> > gameManager::getTiles(const std::vector<Course::Coordinate>
+                                                                      &coordinates)
 {
     return alltiles_;
 }
-std::vector<std::shared_ptr<Course::TileBase> > gameManager::returntilevector(){
+std::vector<std::shared_ptr<Course::TileBase> > gameManager::getTileVector(){
     return alltiles_;
 }
 
@@ -52,46 +58,75 @@ std::vector<std::shared_ptr<Minion> > gameManager::getMinionVector()
 {
     return allminions_;
 }
-
-std::pair<std::shared_ptr<Course::PlayerBase>, std::shared_ptr<Course::PlayerBase> > gameManager::getPlayerPair()
+std::vector<std::shared_ptr<CustomBuildingBase>> gameManager::getBuildingVector(){
+    return allbuildings_;
+}
+std::pair<std::shared_ptr<Whiskas::LeaguePlayer>, std::shared_ptr<Whiskas::LeaguePlayer> > gameManager::getPlayerPair()
 {
     return players_;
 }
 
-bool gameManager::addBuilding(std::shared_ptr<CustomBuildingBase> &Building)
+void gameManager::addBuilding(std::shared_ptr<CustomBuildingBase> &Building)
 {
     allbuildings_.push_back(Building);
     qDebug()<<allbuildings_.size()<<"allbuildings.size";
     allattackables_.push_back(Building);
 
-    return true;
+    return;
 }
 
-bool gameManager::addPlayer(std::pair<
-                            std::shared_ptr<Course::PlayerBase>,
-                            std::shared_ptr<Course::PlayerBase>> &players)
+void gameManager::addPlayer(std::pair<
+                            std::shared_ptr<Whiskas::LeaguePlayer>,
+                            std::shared_ptr<Whiskas::LeaguePlayer>> &players)
 {
     qDebug()<<"Check this";
      qDebug()<<QString::fromStdString(players.first->getName());
     players_=players;
-    return true;
+    return;
 }
 
-bool gameManager::addMinion(std::shared_ptr<Minion> &minion)
+void gameManager::addMinion(std::shared_ptr<Minion> minion)
 {
     allminions_.push_back(minion);
      allattackables_.push_back(minion);
-    return true;
+    return;
 }
 
-void gameManager::spawnMinion(std::shared_ptr<gameEventHandler> handler,
-                                                 std::shared_ptr<gameManager> manager,
+bool gameManager::spawnMinion(std::shared_ptr<gameEventHandler> handler,
+                                                 std::shared_ptr<Course::iObjectManager> manager,
                                                  std::shared_ptr<Course::PlayerBase> owner,
-                                                 std::shared_ptr<Course::TileBase> location)
+                                                 std::shared_ptr<Course::TileBase> location,
+                                                 std::string type)
 {
-    std::shared_ptr<Minion> testMinion = std::make_shared<Minion>(handler,
-                                                                  manager,
-                                                                  owner);
+
+    if(location!=nullptr){
+    std::shared_ptr<Minion> testMinion=nullptr;
+    if(type=="minion"){
+        if(handler->subtractPlayerResources(handler->getTurn()->getInTurn(),MINION_COST)==false){
+            qDebug()<<"you did not have enough moneys";
+            return false;
+        }
+        testMinion=std::make_shared<Minion>(handler,
+                                            manager,
+                                            owner);
+    }
+    if(type=="champ"){
+
+
+        testMinion = std::make_shared<MeleeChampion>(handler,
+                                                    manager,
+                                                    owner);
+    }
+    if(type=="Ranged"){
+        testMinion=std::make_shared<RangedChampion>(handler,
+                                                    manager,
+                                                    owner);
+    }
+    if(type=="mage"){
+        testMinion=std::make_shared<MagicChampion>(handler,
+                                                   manager,
+                                                   owner);
+    }
     testMinion->setLocationTile(location);
     location->addWorker(testMinion);
     qDebug()<<"adding minion to gamemanager vector";
@@ -103,9 +138,12 @@ void gameManager::spawnMinion(std::shared_ptr<gameEventHandler> handler,
 
     manager_gamescene->drawItem(testMinion);
     manager_gamescene->update();
+    return true;
+    }
 
 
 
+    return false;
 
 }
 
@@ -130,10 +168,20 @@ void gameManager::move(std::shared_ptr<Minion> minionToMove, std::shared_ptr<Cou
                     return;
                 }
                 qDebug()<<"trying to attack in move command";
+                if(minionToMove->getAttacked()==true){
+                    qDebug()<<"UNIT HAS ATTACKED MAX NUMBER OF TIMES THIS TURN, GET THE HELL OUT!";
+                    return;
+                }
+                if(minionToMove->getType()=="mage"){
+                    attackMultiple(minionToMove,targetTile);
+                }
+                else{
                 attack(minionToMove,selectAttackTarget(targetTile));
+                }
+
                 qDebug()<<"we attacked";
                 minionToMove->setAttacked(true);
-                minionToMove->setMoved(true);
+
                 return;
             }
             if(minionToMove->getMoved()==true){
@@ -161,21 +209,21 @@ void gameManager::move(std::shared_ptr<Minion> minionToMove, std::shared_ptr<Cou
     }
 }
 
-void gameManager::attack(std::shared_ptr<Minion> minionToMove,
-                         std::shared_ptr<Attackable> toAttack)
+void gameManager::attack(std::shared_ptr<Minion> minionToAttack,
+                         std::shared_ptr<Attackable> target)
 {
 
-    if(toAttack==nullptr){
+    if(target==nullptr){
         qDebug()<<"Target was nullptr, we shant attack nothing";
         return;
     }
     qDebug()<<"commencing attack";
-    qDebug()<<minionToMove->getAttack()<<"attack value";
-    qDebug()<<toAttack->getHealth()<<"health value";
-    if(toAttack->modifyHealth(-minionToMove->getAttack())){
+    qDebug()<<minionToAttack->getAttack()<<"attack value";
+    qDebug()<<target->getHealth()<<"health value";
+    if(target->modifyHealth(-minionToAttack->getAttack())){
 
 
-        destroyObject(toAttack);
+        destroyObject(target);
     }
 
 }
@@ -204,31 +252,66 @@ bool gameManager::checkForEnemies(std::shared_ptr<Minion> minionTomove,
 std::shared_ptr<Attackable> gameManager::selectAttackTarget(
         std::shared_ptr<Course::TileBase> targetTile)
 {
+     qDebug()<<"getting the target!"<<"loop all attackble ID,s";
 
-
-        qDebug()<<"getting the target!"<<"loop all attackble ID,s";
-        for(auto it:allattackables_){
-            qDebug()<<it->getBoundID()<<"bound id of all objects loop";
-            if(targetTile->getWorkerCount()!=0){
-                qDebug()<<"Target tile contains workers of some sort";
-            if(it->getBoundID()==targetTile->getWorkers().at(0)->ID){
-
-                return it;
-
-            }}
-            if(targetTile->getBuildingCount()!=0){
-                qDebug()<<"not a minon";
-                qDebug()<<targetTile->getBuildings().at(0)->ID<<"building id";
-                if(it->getBoundID()==targetTile->getBuildings().at(0)->ID){
-
-                    qDebug()<<"building";
-                    return it;
-            }
-          }
+    if(targetTile->getWorkerCount()!=0){
+         qDebug()<<"Target tile contains workers of some sort";
+        for(auto it:allminions_){
+            if(it==targetTile->getWorkers().at(0)){
+                 qDebug()<<"Returning minion";
+                    return std::move(it);
+        }
         }
 
+    }
+    else{
+        qDebug()<<"not a minon";
+        for(auto it : allbuildings_){
+            if(it->ID==targetTile->getBuildings().at(0)->ID){
+                qDebug()<<"building";
+                return std::move(it);
+            }
+        }
+    }
     qDebug()<<"returning nullptr, not good";
     return nullptr;
+}
+
+void gameManager::attackMultiple(std::shared_ptr<Minion> minionToAttack, std::shared_ptr<Course::TileBase> targetTile)
+{
+    Course::Coordinate targetCoord = targetTile->getCoordinate();
+    qDebug()<<"Target coord"<<targetCoord.x()<<targetCoord.y();
+    std::vector<Course::Coordinate>neigbours=targetCoord.neighbours();
+    std::shared_ptr<Attackable> targetAttackable=nullptr;
+    int outer=0;
+    int inner=0;
+    for(auto it:neigbours){
+        outer+=1;
+        inner=0;
+        qDebug()<<"looping neighbours";
+        if(getTile(it)!=nullptr){
+            qDebug()<<"OUTER"<<outer;
+            qDebug()<<"current target tile coord"<<getTile(it)->getCoordinate().x()<<getTile(it)->getCoordinate().y();
+            for(auto it_target:allminions_){
+
+                inner+=1;
+                qDebug()<<inner<<"INNER";
+                if(it_target->currentLocationTile()==getTile(it)){
+                    if(it_target==minionToAttack){
+                        qDebug()<<"DONT ATTACK YOURSELF YOU FOOL";
+                        break;
+                    }
+                    qDebug()<<"MULTIPLE ATTACK!";
+                    attack(minionToAttack,it_target);
+                    qDebug()<<"MULTIPLE ATTACK done";
+                    break;
+
+                }
+            }
+        }
+
+
+    }
 }
 
 void gameManager::destroyObject(std::shared_ptr<Attackable> objectToDestroy)
@@ -299,6 +382,7 @@ void gameManager::destroyObject(std::shared_ptr<Attackable> objectToDestroy)
          manager_gamescene->removeItem(tempBuildingToRemove);
         qDebug()<<"removing building from tile";
          tempBuildingToRemove->currentLocationTile()->removeBuilding(tempBuildingToRemove);
+
          qDebug()<<allbuildings_.size()<<"building vector size before removal";
 
             for(auto it : allbuildings_){
@@ -311,9 +395,36 @@ void gameManager::destroyObject(std::shared_ptr<Attackable> objectToDestroy)
          for(auto it : allbuildings_){
              qDebug()<<it->ID<<"building ID´s afther destruction";
          }
+         if(tempBuildingToRemove->getType()=="Nexus"){
+          if(tempBuildingToRemove->getOwner()==players_.first){
+              winner_=(players_.second);
+
+          }
+          else{
+              winner_=(players_.first);
+          }
+         }
      }
      qDebug()<<"================== ";
      qDebug()<<"================== ";
 }
+
+std::shared_ptr<Course::TileBase> gameManager::getNexusLocation(std::shared_ptr<LeaguePlayer> owner)
+{
+    for(auto it : allbuildings_){
+        if(it->getType()=="Nexus" && it->getOwner()==owner){
+            qDebug()<<"nexsus loc found";
+            return it->currentLocationTile();
+        }
+    }
+    return nullptr;
+}
+
+std::shared_ptr<LeaguePlayer> gameManager::getWinner()
+{
+    return winner_;
+}
+
+
 
 } // NAMESPACE OVER HERE

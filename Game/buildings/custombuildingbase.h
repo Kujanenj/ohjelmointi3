@@ -7,6 +7,7 @@
 #include "handlerandmanager/gamemanager.h"
 
 #include "attackable.h"
+#include "AdvancedResourcses/AdvancedResourceMaps.h"
 
 namespace Whiskas {
 
@@ -23,11 +24,22 @@ public:
             const std::shared_ptr<gameManager>& objectmanager,
             const std::shared_ptr<Course::PlayerBase>& owner,
             const int& tilespaces = 1,
-            const Course::ResourceMap& buildcost = {},
-            const Course::ResourceMap& production = {},
+            const AdvancedResourceMap buildcost = {},
+           const AdvancedResourceMap production = {},
             int health=3,
             int attack=0
             );
+
+
+   virtual AdvancedResourceMap getAdvancedProduction();
+   virtual AdvancedResourceMap getAdvancedCost();
+
+   virtual void doSpecialAction() override;
+   virtual int getCooldown() final;
+protected:
+   AdvancedResourceMap production_;
+   AdvancedResourceMap buildcost_;
+   int cooldown_=-1;
 };
 
 }

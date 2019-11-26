@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>430</width>
+    <height>382</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,39 +17,79 @@
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>0</y>
-     <width>401</width>
-     <height>301</height>
+     <y>10</y>
+     <width>431</width>
+     <height>371</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="1">
+     <widget class="QLabel" name="label_2">
+      <property name="maximumSize">
+       <size>
+        <width>100</width>
+        <height>75</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>Special Buildings</string>
+      </property>
+     </widget>
+    </item>
     <item row="0" column="0">
-     <layout class="QGridLayout" name="gridLayout_3"/>
+     <widget class="QLabel" name="label">
+      <property name="maximumSize">
+       <size>
+        <width>50</width>
+        <height>75</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>Production Buildings</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QPushButton" name="Lifepump">
+      <property name="text">
+       <string>Lifepump</string>
+      </property>
+     </widget>
     </item>
     <item row="1" column="0">
-     <layout class="QGridLayout" name="gridLayout_2">
-      <item row="0" column="0">
-       <widget class="QPushButton" name="farmButton">
-        <property name="text">
-         <string>Farm</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="1">
-       <widget class="QPushButton" name="headQuartersButton">
-        <property name="text">
-         <string>Headquarters</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="0">
-       <widget class="QPushButton" name="nexsusButton">
-        <property name="text">
-         <string>nexsus</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
+     <widget class="QPushButton" name="Quarry">
+      <property name="text">
+       <string>Quarry</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QPushButton" name="Sawmill">
+      <property name="text">
+       <string>Sawmill</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QPushButton" name="MeleeAltarButton">
+      <property name="text">
+       <string>MeleeAltar</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QPushButton" name="RangedAltarButton">
+      <property name="text">
+       <string>RangedAltar</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QPushButton" name="MageAltarButton">
+      <property name="text">
+       <string>MageAltar</string>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>

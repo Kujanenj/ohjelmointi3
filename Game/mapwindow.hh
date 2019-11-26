@@ -8,7 +8,7 @@
 #include <QMouseEvent>
 #include <QGraphicsSceneMouseEvent>
 #include <QDebug>
-
+#include <QLCDNumber>
 #include <QMediaPlayer>
 #include <QMediaPlaylist>
 
@@ -60,6 +60,8 @@ public:
                             std::shared_ptr<Course::PlayerBase> owner
                             );
 
+    void updateDisplays();
+    void generateLCDList();
 
 
 public slots:
@@ -73,6 +75,7 @@ public slots:
      */
     void initMap(int x, int y);
     void selectBuilding(std::string); //TODO
+    void closeWindow();
 
 private slots:
     //just a test to add a test farm
@@ -89,6 +92,12 @@ private slots:
 
     void on_endTurnButton_clicked();
 
+    void on_champButton_clicked();
+
+    void on_mageButton_clicked();
+
+    void on_confirmButton_clicked();
+
 private:
 
     Ui::MapWindow* m_ui;
@@ -103,6 +112,9 @@ private:
     QMediaPlayer* testSoundPlayer; //TEST MEDIA PLAYER
     QMediaPlaylist* testPlayList; //test playlist
     buildingDialog buildingdialog;
+    QList<QLCDNumber*> lcdDisplays_;
+    std::string buildingToBeBuilt_="Nexus";
+
 };
 
 #endif // MapWINDOW_HH

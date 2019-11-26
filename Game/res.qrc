@@ -3,7 +3,20 @@
         <file>graphics/forest_pic.png</file>
         <file>graphics/pi.png</file>
         <file>graphics/nexus_purple.png</file>
+        <file>graphics/jungle.png</file>
+        <file>graphics/minion_blue.png</file>
+        <file>graphics/mountain.png</file>
+        <file>graphics/nexus_blue.png</file>
+        <file>graphics/spring.png</file>
+        <file>graphics/minion_purple.png</file>
         <file>graphics/minion.png</file>
+        <file>graphics/mountain.svg</file>
+        <file>graphics/quarry_blue.png</file>
+        <file>graphics/quarry_purple.png</file>
+        <file>graphics/lifepump_blue.png</file>
+        <file>graphics/lifepump_purple.png</file>
+        <file>graphics/sawmill_blue.png</file>
+        <file>graphics/sawmill_purple.png</file>
     </qresource>
     <qresource prefix="/sounds">
         <file>sounds/testSound.mp3</file>

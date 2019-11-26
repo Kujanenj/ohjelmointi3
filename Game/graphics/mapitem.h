@@ -1,5 +1,5 @@
-#ifndef SIMPLEMAPITEM_HH
-#define SIMPLEMAPITEM_HH
+#ifndef MapItem_HH
+#define MapItem_HH
 
 #include <QGraphicsItem>
 #include <QPainter>
@@ -8,15 +8,16 @@
 #include <map>
 
 #include "core/gameobject.h"
+#include "core/playerbase.h"
 
 
 namespace Whiskas {
 
 /**
- * @brief The SimpleMapItem class is a custom QGraphicsItem that
+ * @brief The MapItem class is a custom QGraphicsItem that
  * acts as a single GameObject's graphical element.
  */
-class SimpleMapItem : public QGraphicsItem
+class MapItem : public QGraphicsItem
 {
 public:
     /**
@@ -25,7 +26,7 @@ public:
      * @param size of the created item in pixels.
      * @pre obj must have a valid Coordinate.
      */
-    SimpleMapItem(const std::shared_ptr<Course::GameObject> &obj, int size);
+    MapItem(const std::shared_ptr<Course::GameObject> &obj, int size);
 
     /**
      * @brief boundingRect
@@ -85,7 +86,8 @@ private:
 
     static std::map<std::string, QColor> c_mapcolors;
     static std::map<std::string, QImage> c_mapicons;
+    static std::map<std::string, std::map<std::string, QImage>> c_objecticons;
     static void addNewColor(std::string type);
 };
 }
-#endif // SIMPLEMAPITEM_HH
+#endif // MapItem_HH

@@ -1,11 +1,13 @@
 #include "buildingdialog.h"
 #include "ui_buildingdialog.h"
+#include <QDebug>
 
 buildingDialog::buildingDialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::buildingDialog)
 {
     ui->setupUi(this);
+    setWindowTitle("Buildings");
 }
 
 buildingDialog::~buildingDialog()
@@ -13,20 +15,43 @@ buildingDialog::~buildingDialog()
     delete ui;
 }
 
-void buildingDialog::on_farmButton_clicked()
+
+
+
+
+
+void buildingDialog::on_MeleeAltarButton_clicked()
 {
-    emit buildingType("farm");
+    emit buildingType("Melee");
     accept();
 }
 
-void buildingDialog::on_headQuartersButton_clicked()
+void buildingDialog::on_RangedAltarButton_clicked()
 {
-   emit buildingType("headquarters");
+    emit buildingType("Ranged");
     accept();
 }
 
-void buildingDialog::on_nexsusButton_clicked()
+void buildingDialog::on_MageAltarButton_clicked()
 {
-    emit buildingType("nexsus");
+    emit buildingType("Mage");
+    accept();
+}
+
+void buildingDialog::on_Quarry_clicked()
+{
+    emit buildingType("Quarry");
+    accept();
+}
+
+void buildingDialog::on_Sawmill_clicked()
+{
+    emit buildingType("Sawmill");
+    accept();
+}
+
+void buildingDialog::on_Lifepump_clicked()
+{
+    emit buildingType("Lifepump");
     accept();
 }

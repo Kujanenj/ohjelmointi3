@@ -13,8 +13,32 @@ bool gameEventHandler::modifyResources(std::shared_ptr<Course::PlayerBase> playe
     return true;
 }
 
+
+
 bool gameEventHandler::modifyResource(std::shared_ptr<Course::PlayerBase> player, Course::BasicResource resource, int amount)
 {
+    return true;
+}
+
+bool gameEventHandler::subtractPlayerResources(std::shared_ptr<LeaguePlayer> player,AdvancedResourceMap costs)
+{
+    AdvancedResourceMap TempMap=player->getItems();
+    for(auto it=costs.begin(); it!= costs.end(); it++){
+        auto ToModify=TempMap.find(it->first);
+        if(ToModify!=TempMap.end()){
+            if(ToModify->second<it->second){
+                qDebug()<<"Not enough dough";
+                return false;
+            }
+            ToModify->second-=it->second;
+        }
+        else{
+            qDebug()<<"Required resource nto found";
+            return false;
+        }
+
+    }
+    player->setPlayerItems(TempMap);
     return true;
 }
 
@@ -67,6 +91,9 @@ void gameEventHandler::handleLeftClick(std::shared_ptr<GameScene> scene, std::sh
 
             }
         }
+        else{
+            activeMinion_=nullptr;
+        }
         qDebug()<< "================";
 
 
@@ -95,9 +122,37 @@ std::shared_ptr<Course::TileBase> gameEventHandler::getActiveTile(){
 
 }
 
-void gameEventHandler::endTurn()
+void gameEventHandler::setActiveTile(std::shared_ptr<Course::TileBase> activeTile)
 {
+    activeTile_=activeTile;
+}
+
+std::shared_ptr<Minion> gameEventHandler::getActiveMinion()
+{
+    return activeMinion_;
+}
+
+std::shared_ptr<Turn> gameEventHandler::getTurn()
+{
+    return turn_;
+}
+
+void gameEventHandler::endTurn(std::shared_ptr<gameManager> manager, std::shared_ptr<gameEventHandler> handler)
+{
+
  turn_->swapTurn();
+ qDebug()<<turn_->getTurnCounter()<<"TURN COUNTER";
+ if(turn_->getTurnCounter()==1||turn_->getTurnCounter() % 10==0){
+     std::shared_ptr<Course::TileBase> nexsusLoc;
+     nexsusLoc=manager->getNexusLocation(manager->getPlayerPair().first);
+     if(nexsusLoc!=nullptr && nexsusLoc->getWorkerCount()==0){
+        manager->spawnMinion(handler,manager,manager->getPlayerPair().first,nexsusLoc,"minion");
+     }
+     nexsusLoc=manager->getNexusLocation(manager->getPlayerPair().second);
+     if(nexsusLoc!=nullptr && nexsusLoc->getWorkerCount()==0){
+        manager->spawnMinion(handler,manager,manager->getPlayerPair().second,nexsusLoc,"minion");
+     }
+ }
  activeMinion_=nullptr;
 }
 
