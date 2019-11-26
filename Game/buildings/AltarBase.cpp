@@ -22,7 +22,7 @@ AltarBase::AltarBase(const std::shared_ptr<gameEventHandler>& eventhandler,
                                  handler_(eventhandler),
                                  owner_(owner)
 {
-
+cooldown_=0;
 }
 }
 std::string Whiskas::AltarBase::getType() const

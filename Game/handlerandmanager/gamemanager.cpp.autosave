@@ -45,7 +45,8 @@ std::shared_ptr<Course::TileBase> gameManager::getTile(const Course::Coordinate 
     return nullptr;
 }
 
-std::vector<std::shared_ptr<Course::TileBase> > gameManager::getTiles(const std::vector<Course::Coordinate> &coordinates)
+std::vector<std::shared_ptr<Course::TileBase> > gameManager::getTiles(const std::vector<Course::Coordinate>
+                                                                      &coordinates)
 {
     return alltiles_;
 }
