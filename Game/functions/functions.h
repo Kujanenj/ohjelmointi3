@@ -25,7 +25,10 @@ const std::map<std::string, std::vector<std::string>> buildingAvailability={
     {"Nexus",{"Forest","Jungle","Mountain","Spring"}},
     {{"Melee"},{"Forest"}},
     {{"Ranged"},{"Forest"}},
-    {{"Mage"},{"Forest"}}
+    {{"Mage"},{"Forest"}},
+    {{"Quarry"},{"Mountain"}},
+    {{"Sawmill"},{"Jungle"}},
+    {{"Lifepump"},{"Spring"}}
 };
 /*!
  * \brief makeWorldGenerator

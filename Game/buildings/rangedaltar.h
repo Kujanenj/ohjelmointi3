@@ -4,7 +4,7 @@
 #include "AltarBase.h"
 namespace Whiskas {
 
-class RangedAltar :public AltarBase
+class RangedAltar : public AltarBase
 {
 public:
     RangedAltar(const std::shared_ptr<gameEventHandler>& eventhandler,

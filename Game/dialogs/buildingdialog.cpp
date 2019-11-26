@@ -1,5 +1,6 @@
 #include "buildingdialog.h"
 #include "ui_buildingdialog.h"
+#include <QDebug>
 
 buildingDialog::buildingDialog(QWidget *parent) :
     QDialog(parent),
@@ -39,5 +40,17 @@ void buildingDialog::on_MageAltarButton_clicked()
 void buildingDialog::on_Quarry_clicked()
 {
     emit buildingType("Quarry");
+    accept();
+}
+
+void buildingDialog::on_Sawmill_clicked()
+{
+    emit buildingType("Sawmill");
+    accept();
+}
+
+void buildingDialog::on_Lifepump_clicked()
+{
+    emit buildingType("Lifepump");
     accept();
 }

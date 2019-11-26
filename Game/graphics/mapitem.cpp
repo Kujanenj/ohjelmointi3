@@ -108,12 +108,25 @@ void SimpleMapItem::addNewColor(std::string type)
         } else if (type == "Quarry") {
             QImage blue_quarry_pic = QImage(":/images/graphics/quarry_blue.png");
             QImage purple_quarry_pic = QImage(":/images/graphics/quarry_purple.png");
-
             std::map<std::string, QImage> owner_pic_pair =  {{"Blue", blue_quarry_pic},
                                                         {"Purple", purple_quarry_pic}};
             c_objecticons.insert({type, owner_pic_pair});
 
-        }/*else if (type == "MeleeChampion") {
+        } else if (type == "Lifepump") {
+            QImage blue_lp_pic = QImage(":/images/graphics/lifepump_blue.png");
+            QImage purple_lp_pic = QImage(":/images/graphics/lifepump_purple.png");
+            std::map<std::string, QImage> owner_pic_pair =  {{"Blue", blue_lp_pic},
+                                                        {"Purple", purple_lp_pic}};
+            c_objecticons.insert({type, owner_pic_pair});
+
+        } else if (type == "Sawmill") {
+            QImage blue_sawmill_pic = QImage(":/images/graphics/sawmill_blue.png");
+            QImage purple_sawmill_pic = QImage(":/images/graphics/sawmill_purple.png");
+            std::map<std::string, QImage> owner_pic_pair =  {{"Blue", blue_sawmill_pic},
+                                                        {"Purple", purple_sawmill_pic}};
+            c_objecticons.insert({type, owner_pic_pair});
+
+        } /*else if (type == "MeleeChampion") {
             std::size_t hash = std::hash<std::string>{}(type);
             c_mapcolors.insert({type, QColor((hash & 0xFF0000) >> 16, (hash & 0x00FF00 ) >> 8, (hash & 0x0000FF))});
         }*/ else if (type == "Mountain") {

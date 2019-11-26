@@ -50,9 +50,9 @@
      </widget>
     </item>
     <item row="3" column="0">
-     <widget class="QPushButton" name="pushButton_2">
+     <widget class="QPushButton" name="Lifepump">
       <property name="text">
-       <string>PushButton</string>
+       <string>Lifepump</string>
       </property>
      </widget>
     </item>
@@ -64,9 +64,9 @@
      </widget>
     </item>
     <item row="2" column="0">
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="Sawmill">
       <property name="text">
-       <string>PushButton</string>
+       <string>Sawmill</string>
       </property>
      </widget>
     </item>

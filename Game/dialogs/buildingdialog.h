@@ -29,6 +29,10 @@ private slots:
 
     void on_Quarry_clicked();
 
+    void on_Sawmill_clicked();
+
+    void on_Lifepump_clicked();
+
 private:
     Ui::buildingDialog *ui;
     QGraphicsScene* scene;
