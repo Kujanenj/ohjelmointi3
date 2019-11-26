@@ -1,19 +1,18 @@
-#ifndef LIFEPUMP_H
-#define LIFEPUMP_H
+#ifndef SAWMILL_H
+#define SAWMILL_H
 
 #include "buildings/custombuildingbase.h"
 #include "core/resourcemaps.h"
 
 namespace Whiskas {
 
-
-class Lifepump : public CustomBuildingBase
+class Sawmill : public CustomBuildingBase
 
 {
 public:
-    Lifepump() = delete;
+    Sawmill() = delete;
 
-    explicit Lifepump(
+    explicit Sawmill(
             const std::shared_ptr<gameEventHandler>& eventhandler,
             const std::shared_ptr<gameManager>& objectmanager,
             const std::shared_ptr<Course::PlayerBase>& owner,
@@ -25,11 +24,12 @@ public:
 
             );
 
-    virtual ~Lifepump() = default;
+    virtual ~Sawmill() = default;
     virtual std::string getType() const override;
 
-}; // class Lifepump
+}; // class Nexus
 
 } // namespace Whiskas
 
-#endif // LIFEPUMP_H
+
+#endif // SAWMILL_H

@@ -11,13 +11,12 @@ SOURCES += \
     attackable.cpp \
     buildings/AltarBase.cpp \
     buildings/custombuildingbase.cpp \
-
     buildings/lifepump.cpp \
     buildings/quarry.cpp \
     buildings/magealtar.cpp \
     buildings/meleealtar.cpp \
     buildings/rangedaltar.cpp \
-    buildings/test_building.cpp \
+    buildings/sawmill.cpp \
     dialogs/buildingdialog.cpp \
     buildings/nexus.cpp \
     dialogs/sizedialog.cpp \
@@ -52,6 +51,7 @@ HEADERS += \
     buildings/magealtar.h \
     buildings/meleealtar.h \
     buildings/rangedaltar.h \
+    buildings/sawmill.h \
     dialogs/buildingdialog.h \
     buildings/nexus.h \
     dialogs/sizedialog.h \

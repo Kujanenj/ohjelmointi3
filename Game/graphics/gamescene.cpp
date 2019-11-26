@@ -123,7 +123,7 @@ bool GameScene::event(QEvent *event)
     }
     /*lastObjectID=-1;*/
 
-    return false;
+    return QGraphicsScene::event(event);
 }
 
 int GameScene::getLastID(){

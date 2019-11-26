@@ -21,14 +21,13 @@ signals:
 private slots:
 
 
-
-
-
     void on_MeleeAltarButton_clicked();
 
     void on_RangedAltarButton_clicked();
 
     void on_MageAltarButton_clicked();
+
+    void on_Quarry_clicked();
 
 private:
     Ui::buildingDialog *ui;

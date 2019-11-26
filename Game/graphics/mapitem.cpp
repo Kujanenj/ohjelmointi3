@@ -11,7 +11,6 @@ std::map<std::string, std::map<std::string, QImage>> SimpleMapItem::c_objecticon
 SimpleMapItem::SimpleMapItem(const std::shared_ptr<Course::GameObject> &obj, int size ):
     m_gameobject(obj), m_scenelocation(m_gameobject->getCoordinatePtr()->asQpoint()), m_size(size)
 {
-
     addNewColor(m_gameobject->getType());
 }
 
@@ -53,7 +52,6 @@ void SimpleMapItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *opt
 
 const std::shared_ptr<Course::GameObject> &SimpleMapItem::getBoundObject()
 {
-
     return m_gameobject;
 }
 
@@ -107,7 +105,15 @@ void SimpleMapItem::addNewColor(std::string type)
                                                         {"Purple", purple_minion_pic}};
             c_objecticons.insert({type, owner_pic_pair});
 
-        } /*else if (type == "MeleeChampion") {
+        } else if (type == "Quarry") {
+            QImage blue_quarry_pic = QImage(":/images/graphics/quarry_blue.png");
+            QImage purple_quarry_pic = QImage(":/images/graphics/quarry_purple.png");
+
+            std::map<std::string, QImage> owner_pic_pair =  {{"Blue", blue_quarry_pic},
+                                                        {"Purple", purple_quarry_pic}};
+            c_objecticons.insert({type, owner_pic_pair});
+
+        }/*else if (type == "MeleeChampion") {
             std::size_t hash = std::hash<std::string>{}(type);
             c_mapcolors.insert({type, QColor((hash & 0xFF0000) >> 16, (hash & 0x00FF00 ) >> 8, (hash & 0x0000FF))});
         }*/ else if (type == "Mountain") {

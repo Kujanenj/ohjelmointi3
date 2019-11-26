@@ -1,11 +1,5 @@
 #include "quarry.h"
 
-#include "nexus.h"
-#include "handlerandmanager/gameeventhandler.h"
-#include "handlerandmanager/gamemanager.h"
-
-
-
 namespace Whiskas {
 
 Quarry::Quarry(
@@ -13,7 +7,7 @@ Quarry::Quarry(
         const std::shared_ptr<gameManager>& objectmanager,
         const std::shared_ptr<Course::PlayerBase>& owner,
         const int& tilespaces,
-        const  AdvancedResourceMap buildcost,
+        const AdvancedResourceMap buildcost,
         const AdvancedResourceMap production,
         int health,
         int attack
