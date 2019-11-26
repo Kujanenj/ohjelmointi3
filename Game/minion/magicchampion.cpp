@@ -11,7 +11,7 @@ MagicChampion::MagicChampion(const std::shared_ptr<Course::iGameEventHandler>& h
                              int attacks):
               Minion(handler,manager,owner,movement, health, attack, attacks)
 {
-
+    setDescription("mage","Mage descript");
 }
 
 std::string MagicChampion::getType() const

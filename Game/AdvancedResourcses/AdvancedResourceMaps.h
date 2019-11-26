@@ -4,8 +4,6 @@
 #include "AdvancedResourcses.h"
 namespace Whiskas {
 const AdvancedResourceMap MINION_COST={
-    {IRON, 2},
-    {WOOD, 2}
     };
 
 const AdvancedResourceMap PLAYER_ITEMS={

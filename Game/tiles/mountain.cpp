@@ -16,6 +16,7 @@ Mountain::Mountain(const Course::Coordinate& location,
              max_work,
              production)
 {
+    setDescription("Mountain","Default Mountain Description");
 }
 
 std::string Mountain::getType() const

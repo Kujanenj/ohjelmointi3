@@ -15,7 +15,7 @@ Minion::Minion(const std::shared_ptr<Course::iGameEventHandler>& handler,
     Attackable(health,attack,attacks, ID)
 {
 
-    setDescription("minion", "Default Minion Description");
+    setDescription("Minion", "Default Minion Description");
     testCost_=cost;
 
     qDebug()<<"minion got made";

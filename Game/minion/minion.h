@@ -30,7 +30,7 @@ public:
            int health=3,
            int attack=1,
            int numberOfattacks=1,
-           const AdvancedResourceMap cost=MINION_COST);
+           const AdvancedResourceMap cost={});
 
     void doSpecialAction() override;
     virtual ~Minion() = default;

@@ -16,6 +16,7 @@ Spring::Spring(const Course::Coordinate& location,
              max_work,
              production)
 {
+    setDescription("Spring", "Default Spring Description");
 }
 
 std::string Spring::getType() const

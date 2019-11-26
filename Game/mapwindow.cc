@@ -5,7 +5,14 @@
 #include "functions/functions.h"
 
 #include <math.h>
-
+std::map<std::string,std::string> BuildingDescriptions{
+    {"Lifepump","LifePumpDescript"},
+    {"Mage","Mage Altar descript"},
+    {"Melee", "melee descipt"},
+    {"Ranged", "ranged descript"},
+    {"Quarry", "quarry descript"},
+    {"Sawmill","Saw descript"}
+};
 MapWindow::MapWindow(QWidget *parent,
                      std::shared_ptr<Whiskas::gameEventHandler> handler):
     QMainWindow(parent),
@@ -21,7 +28,6 @@ MapWindow::MapWindow(QWidget *parent,
     startdialog dialog;
     connect(&dialog,         SIGNAL(size(int, int)),   this,SLOT(initMap(int,int)));
     connect(&buildingdialog, SIGNAL(buildingType(std::string)),this,SLOT(selectBuilding(std::string)));
-    dialog.exec();
 
 
     //TEST SOUND EFFECT
@@ -36,6 +42,8 @@ MapWindow::MapWindow(QWidget *parent,
    // testSoundPlayer->play();
    //IT WORKS
     generateLCDList();
+    dialog.exec();
+
 
 
 }
@@ -118,6 +126,7 @@ void MapWindow::initMap(int x, int y)
     m_GEHandler->setActiveTile(m_GManager->getTile((x*x)-1));
     m_GEHandler->getTurn()->setInTurn(playerPair.second);
     on_confirmButton_clicked();
+    on_endTurnButton_clicked();
 
 
 
@@ -126,6 +135,7 @@ void MapWindow::initMap(int x, int y)
 }
 void MapWindow::selectBuilding(std::string buildingType){
     buildingToBeBuilt_=buildingType;
+    m_ui->DescriptionLabelRight->setText(QString::fromStdString(BuildingDescriptions.at(buildingType)));
 }
 
 void MapWindow::removeItem(std::shared_ptr<Course::GameObject> obj)
@@ -143,7 +153,10 @@ void MapWindow::mousePressEvent(QMouseEvent *event){
   qDebug()<<"updating mwindow view";
   m_ui->graphicsView->viewport()->update();
   if(m_GEHandler->getActiveMinion()!=nullptr){
-      m_ui->DescriptionLabel->setText(QString::fromStdString(m_GEHandler->getActiveMinion()->getDescription("minion")));
+      m_ui->DescriptionLabel->setText(QString::fromStdString(m_GEHandler->getActiveMinion()->getDescription(m_GEHandler->getActiveMinion()->getType())));
+  }
+  else if(m_GEHandler->getActiveTile()!=nullptr){
+      m_ui->DescriptionLabel->setText(QString::fromStdString(m_GEHandler->getActiveTile()->getDescription(m_GEHandler->getActiveTile()->getType())));
   }
   else{
       m_ui->DescriptionLabel->clear();
@@ -217,7 +230,7 @@ void MapWindow::on_endTurnButton_clicked()
 {
     m_GEHandler->endTurn(m_GManager, m_GEHandler);
     updateDisplays();
-    m_ui->activePlayerLabel->setText(QString::fromStdString(m_GEHandler->getTurn()->getInTurn()->getName()));
+    m_ui->activePlayerLabel->setText(QString::fromStdString(m_GEHandler->getTurn()->getInTurn()->getName()+" is the player in turn"));
     m_ui->turnLCD->display(m_GEHandler->getTurn()->getTurnCounter());
 
 }
@@ -235,4 +248,5 @@ void MapWindow::on_mageButton_clicked()
 void MapWindow::on_confirmButton_clicked()
 {
     selectBuildingTypef(buildingToBeBuilt_,m_GEHandler,m_GManager,m_GEHandler->getTurn()->getInTurn());
+    m_ui->DescriptionLabelRight->clear();
 }

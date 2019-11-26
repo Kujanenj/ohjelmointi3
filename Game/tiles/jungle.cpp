@@ -18,6 +18,7 @@ Jungle::Jungle(const Course::Coordinate& location,
              max_work,
              production)
 {
+    setDescription("Jungle","Default Jungle descripton");
 }
 
 std::string Jungle::getType() const

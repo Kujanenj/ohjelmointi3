@@ -15,21 +15,6 @@
 
 namespace Whiskas {
 
-void makeWorldGenerator(int mapsize_x, int mapsize_y, int seed,
-                        std::shared_ptr<gameEventHandler> handler,
-                        std::shared_ptr<gameManager> manager){
-
-    Course::WorldGenerator& wgenerator=Course::WorldGenerator::getInstance();
-    wgenerator.addConstructor<Course::Forest>(10);
-
-    wgenerator.addConstructor<Mountain>(7);
-    wgenerator.addConstructor<Spring>(7);
-    wgenerator.addConstructor<Jungle>(10);
-    wgenerator.generateMap(mapsize_x,mapsize_y,seed,manager,handler);
-
-}
-
-
 
 
 

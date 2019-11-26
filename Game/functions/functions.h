@@ -31,19 +31,7 @@ const std::map<std::string, std::vector<std::string>> buildingAvailability={
     {{"Sawmill"},{"Jungle"}},
     {{"Lifepump"},{"Spring"}}
 };
-/*!
- * \brief makeWorldGenerator
- * Initializes a worldgenerator class, and genereates a random map.
- * \param mapsize_x
- * \param mapsize_y
- * \param seed
- * \param handler
- * \param manager
- *  manager recieves a vector of all map tiles
- */
-void makeWorldGenerator(int mapsize_x, int mapsize_y, int seed,
-                        std::shared_ptr<gameEventHandler> handler,
-                        std::shared_ptr<gameManager> manager);
+
 
 
 

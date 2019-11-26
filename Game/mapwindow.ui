@@ -276,7 +276,7 @@
           <item row="2" column="0">
            <widget class="QLabel" name="DescriptionLabel">
             <property name="text">
-             <string>TextLabel</string>
+             <string/>
             </property>
            </widget>
           </item>
@@ -289,12 +289,19 @@
              </size>
             </property>
             <property name="text">
-             <string>TextLabel</string>
+             <string>Purple is the player in turn</string>
             </property>
            </widget>
           </item>
           <item row="1" column="1">
            <widget class="QLCDNumber" name="turnLCD"/>
+          </item>
+          <item row="2" column="1">
+           <widget class="QLabel" name="DescriptionLabelRight">
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
           </item>
          </layout>
         </item>
