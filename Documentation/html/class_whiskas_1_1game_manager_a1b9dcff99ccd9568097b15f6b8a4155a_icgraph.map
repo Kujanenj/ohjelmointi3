@@ -1,0 +1,5 @@
+<map id="Whiskas::gameManager::attack" name="Whiskas::gameManager::attack">
+<area shape="rect" id="node1" title="attack Select minion tries to deal its damage to target attackable. If target hp goes to 0,..." alt="" coords="427,35,589,76"/>
+<area shape="rect" id="node2" href="$class_whiskas_1_1game_manager.html#a4ef1302ea9e72f457523d783ecf67393" title="attackMultiple Used by the mage minion to attack in an area. Attacks all minions in a radius of 1." alt="" coords="216,5,379,47"/>
+<area shape="rect" id="node3" href="$class_whiskas_1_1game_manager.html#a277f444329152046ad2368d8c1628fa8" title="move Tries to move a minion to the target tile. Checks for movement range, collision and possible ene..." alt="" coords="5,35,168,76"/>
+</map>

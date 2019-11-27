@@ -1,0 +1,452 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML><HEAD></HEAD><BODY>
+<OBJECT type="text/site properties">
+<param name="FrameName" value="right">
+</OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Classes"><param name="Local" value="annotated.html"><param name="ImageNumber" value="1"></OBJECT>
+  <UL>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="Class List"><param name="Local" value="annotated.html"><param name="ImageNumber" value="1"></OBJECT>
+    <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="Whiskas"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="AltarBase"><param name="Local" value="class_whiskas_1_1_altar_base.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="AltarBase"><param name="Local" value="class_whiskas_1_1_altar_base.html#a87c1a480b2bf8874deed617a46d72c62"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="doSpecialAction"><param name="Local" value="class_whiskas_1_1_altar_base.html#a8f38b81f754be8fdb0da6db80eb44330"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="getType"><param name="Local" value="class_whiskas_1_1_altar_base.html#a05f6ebf96bc7fbd226206c4e46f606d3"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="upgradeMinion"><param name="Local" value="class_whiskas_1_1_altar_base.html#a2ba42e067c122dba859e9237a6101895"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="handler_"><param name="Local" value="class_whiskas_1_1_altar_base.html#a074bac524a4439706a798c35a0551dfe"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="manager_"><param name="Local" value="class_whiskas_1_1_altar_base.html#a16d5155a9d716fe4544cbdc639b84822"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="owner_"><param name="Local" value="class_whiskas_1_1_altar_base.html#a0adc0c8e39ea2fb1aa13d67f99742c91"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Attackable"><param name="Local" value="class_whiskas_1_1_attackable.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="Attackable"><param name="Local" value="class_whiskas_1_1_attackable.html#a0be947a3df8190c76704c602640f2865"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="~Attackable"><param name="Local" value="class_whiskas_1_1_attackable.html#a65acf5dc55da3416d23762a974ff9dd4"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="getAttack"><param name="Local" value="class_whiskas_1_1_attackable.html#a4f2ccbeea4488fa14368a4052ae01539"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="getAttacked"><param name="Local" value="class_whiskas_1_1_attackable.html#ad1e571b4e5d897f7fb39cb9e9cc028f4"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="getBoundID"><param name="Local" value="class_whiskas_1_1_attackable.html#a9bbebec47fc87e6f2a245deb72791b6d"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="getHealth"><param name="Local" value="class_whiskas_1_1_attackable.html#a85a144603529a19fb16fa3dc83f1d32b"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="modifyAttack"><param name="Local" value="class_whiskas_1_1_attackable.html#a45470bf18e4ddf53620d0ca378b7f79f"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="modifyHealth"><param name="Local" value="class_whiskas_1_1_attackable.html#a4f98d89c56fc8873259b83ee8d608186"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="setAttacked"><param name="Local" value="class_whiskas_1_1_attackable.html#a7c07ab8eb34795351efe03fe5db18218"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="attackValue_"><param name="Local" value="class_whiskas_1_1_attackable.html#a47ee97f669d31d86e63d51d1d1870635"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="boundID_"><param name="Local" value="class_whiskas_1_1_attackable.html#a09d63bcc11422c22fad0670b0cc54c3b"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="HasAttacked_"><param name="Local" value="class_whiskas_1_1_attackable.html#a2eaf6bc30b240fc8e293848db2551265"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="healthValue_"><param name="Local" value="class_whiskas_1_1_attackable.html#a9369a561519e4542ca72176e1bcc6cb4"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="numberOfAttacks_"><param name="Local" value="class_whiskas_1_1_attackable.html#acab34fabf25075d262d1bbfdabc2431d"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="numberOfAttacksDone_"><param name="Local" value="class_whiskas_1_1_attackable.html#a31630a201276eded619ca5731da1343a"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="CustomBuildingBase"><param name="Local" value="class_whiskas_1_1_custom_building_base.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="CustomBuildingBase"><param name="Local" value="class_whiskas_1_1_custom_building_base.html#a12c091b33a32f7c54014f32677588286"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="CustomBuildingBase"><param name="Local" value="class_whiskas_1_1_custom_building_base.html#ad02dccee2b746888b16a5d8e29e04043"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="doSpecialAction"><param name="Local" value="class_whiskas_1_1_custom_building_base.html#a72cacc968a43d782dd29203caa0ac88b"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="getAdvancedCost"><param name="Local" value="class_whiskas_1_1_custom_building_base.html#aeaa43ddb314ae95f161258f93ea0d4bf"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="getAdvancedProduction"><param name="Local" value="class_whiskas_1_1_custom_building_base.html#aa62ead22772ce3c66d76fd92d7c3ed82"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="getCooldown"><param name="Local" value="class_whiskas_1_1_custom_building_base.html#a868f71df56f570657cb354042e24eb40"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="buildcost_"><param name="Local" value="class_whiskas_1_1_custom_building_base.html#a0f4580a1d6ab340a0e39cb059c1c5608"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="cooldown_"><param name="Local" value="class_whiskas_1_1_custom_building_base.html#a6c3e7073581365236cd3b1420b592f48"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="production_"><param name="Local" value="class_whiskas_1_1_custom_building_base.html#a124be9a9565e22183069e4bb93257364"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="gameEventHandler"><param name="Local" value="class_whiskas_1_1game_event_handler.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="gameEventHandler"><param name="Local" value="class_whiskas_1_1game_event_handler.html#ad9a37a28a488a1c87b196dff4a93ff79"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="endTurn"><param name="Local" value="class_whiskas_1_1game_event_handler.html#af0d436e57a77c17a3dcc6aa7533fa2b1"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="getActiveMinion"><param name="Local" value="class_whiskas_1_1game_event_handler.html#ab4ea0b7b225b7b58a1414616f58a3f00"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="getActiveTile"><param name="Local" value="class_whiskas_1_1game_event_handler.html#a4ed30ceb6f4e6b2da8b951ae148a4d83"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="getTurn"><param name="Local" value="class_whiskas_1_1game_event_handler.html#aaa0c2d38c126c9b9bb99248be7c0bfa7"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="handleLeftClick"><param name="Local" value="class_whiskas_1_1game_event_handler.html#aa35f1d6ab8b40b5fe43f7499a38e5064"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="handleMwindowClick"><param name="Local" value="class_whiskas_1_1game_event_handler.html#a850ed77572fbedc06682dec96dab6c25"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="handleRightClick"><param name="Local" value="class_whiskas_1_1game_event_handler.html#a3123d8631c629bbe6651393e0ec05939"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="modifyResource"><param name="Local" value="class_whiskas_1_1game_event_handler.html#a8de5c13fb6aa883bc00e28bdbea99614"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="modifyResources"><param name="Local" value="class_whiskas_1_1game_event_handler.html#a4126026ea5e945aa12d90e49d1cae24a"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="setActiveTile"><param name="Local" value="class_whiskas_1_1game_event_handler.html#ab64ba88f3f511e1ea3ae30a4cf2d950c"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="subtractPlayerResources"><param name="Local" value="class_whiskas_1_1game_event_handler.html#ac35e01962beca59d5bf32fe555e286b8"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="gameManager"><param name="Local" value="class_whiskas_1_1game_manager.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="gameManager"><param name="Local" value="class_whiskas_1_1game_manager.html#aaf828a2f858f73c46b5dd74ad66b6727"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="addBuilding"><param name="Local" value="class_whiskas_1_1game_manager.html#a3b4b3507c6c8c140ad2e030b837bf00f"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="addMinion"><param name="Local" value="class_whiskas_1_1game_manager.html#ac09d5cfed992b56c95f74dfd8fe4d2af"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="addPlayer"><param name="Local" value="class_whiskas_1_1game_manager.html#a5f1bfaabb891547a9b7d0007f75abfd6"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="addTile"><param name="Local" value="class_whiskas_1_1game_manager.html#a56470822a897516009b6e13111f56bb0"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="addTiles"><param name="Local" value="class_whiskas_1_1game_manager.html#a060c1d38fe67d7c4d64e8ccf4de86fdb"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="attack"><param name="Local" value="class_whiskas_1_1game_manager.html#a1b9dcff99ccd9568097b15f6b8a4155a"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="attackMultiple"><param name="Local" value="class_whiskas_1_1game_manager.html#a4ef1302ea9e72f457523d783ecf67393"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="checkForEnemies"><param name="Local" value="class_whiskas_1_1game_manager.html#a6f8541eb7f5e191b8b5ae9face1093b2"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="destroyObject"><param name="Local" value="class_whiskas_1_1game_manager.html#a666d12bd199371bf19f0b06fca0fffff"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="getBuildingVector"><param name="Local" value="class_whiskas_1_1game_manager.html#ab2d60edb3f3f457a9010e7d1fc615ea7"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="getMinionVector"><param name="Local" value="class_whiskas_1_1game_manager.html#aef2c33072d9d2852405e786533dd3dab"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="getNexusLocation"><param name="Local" value="class_whiskas_1_1game_manager.html#a4b94eb6adf3677552150aad969cd21f8"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="getPlayerPair"><param name="Local" value="class_whiskas_1_1game_manager.html#a7f8e68ec9b56e25e2fc5a7db298eabe0"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="getTile"><param name="Local" value="class_whiskas_1_1game_manager.html#a8023ac602d426fd252b14391d8f1df4a"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="getTile"><param name="Local" value="class_whiskas_1_1game_manager.html#aa4f7dfbe973e3aff00d4d5372099b167"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="getTiles"><param name="Local" value="class_whiskas_1_1game_manager.html#a7e66a9ac18a940d2541e422c83a45094"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="getTileVector"><param name="Local" value="class_whiskas_1_1game_manager.html#a29c4d9858f17873fdd2e47887f4020a5"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="getWinner"><param name="Local" value="class_whiskas_1_1game_manager.html#a7146d831bd08c25a0e212199313aca5e"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="move"><param name="Local" value="class_whiskas_1_1game_manager.html#a277f444329152046ad2368d8c1628fa8"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="selectAttackTarget"><param name="Local" value="class_whiskas_1_1game_manager.html#ab8c7c4750689159cf749a2c92cd20d99"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="spawnBuilding"><param name="Local" value="class_whiskas_1_1game_manager.html#a545ae3f1d332b523d7e8dd88d38c71cf"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="spawnMinion"><param name="Local" value="class_whiskas_1_1game_manager.html#a069513154389bb0469405623704d4606"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="GameScene"><param name="Local" value="class_whiskas_1_1_game_scene.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="GameScene"><param name="Local" value="class_whiskas_1_1_game_scene.html#a3664e5b2a9b1af8534eadd21252474dc"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="~GameScene"><param name="Local" value="class_whiskas_1_1_game_scene.html#a3c353b857c7d425c8f3ac21a625cc44e"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="drawItem"><param name="Local" value="class_whiskas_1_1_game_scene.html#aa81e84da289ccdbe2c9fc6133615587a"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="event"><param name="Local" value="class_whiskas_1_1_game_scene.html#af3b9e8fa012b90ae1262ff09875d8b5c"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="getLastCoordinate"><param name="Local" value="class_whiskas_1_1_game_scene.html#a3a8f3937c7587d2bc7b6f05a0c68d1e6"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="getLastID"><param name="Local" value="class_whiskas_1_1_game_scene.html#a367c5e746dee5bd15116e8c3129d3c4d"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="getScale"><param name="Local" value="class_whiskas_1_1_game_scene.html#a17a09d2bc0fa6df3a0f63f794a301758"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="getSize"><param name="Local" value="class_whiskas_1_1_game_scene.html#aac165d8309951d78fcd9cecf112c863c"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="removeItem"><param name="Local" value="class_whiskas_1_1_game_scene.html#a91c23788d6c7e93231eee9d03c9f5892"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="resize"><param name="Local" value="class_whiskas_1_1_game_scene.html#a660e40fa2b00e58d01d040ac24ee065f"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="setScale"><param name="Local" value="class_whiskas_1_1_game_scene.html#abea4c22b69b609a7de579e3f3a869f61"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="setSize"><param name="Local" value="class_whiskas_1_1_game_scene.html#a8f702fc009be53cc007df9d9e4f9bddf"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="updateItem"><param name="Local" value="class_whiskas_1_1_game_scene.html#a394295f4b2f9390457915319ef31de15"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Jungle"><param name="Local" value="class_whiskas_1_1_jungle.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="Jungle"><param name="Local" value="class_whiskas_1_1_jungle.html#ac82aaf12d1e676db01bcef62e3712292"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="Jungle"><param name="Local" value="class_whiskas_1_1_jungle.html#a2b24ffdf2b759b9df759083aca7ca642"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="~Jungle"><param name="Local" value="class_whiskas_1_1_jungle.html#ab282e9d23fac3c9c76b22c54db41844d"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="addBuilding"><param name="Local" value="class_whiskas_1_1_jungle.html#a7ea3d566239bec771b8e7544e777e7be"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="getType"><param name="Local" value="class_whiskas_1_1_jungle.html#aff6086f0240cfe8cb8e34b73300a8e49"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="LeaguePlayer"><param name="Local" value="class_whiskas_1_1_league_player.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="LeaguePlayer"><param name="Local" value="class_whiskas_1_1_league_player.html#a556275d216955b7b5878abfc751ec819"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="getItems"><param name="Local" value="class_whiskas_1_1_league_player.html#a18819efd73b3b3406d2a495651a4df17"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="setPlayerItems"><param name="Local" value="class_whiskas_1_1_league_player.html#a13348bd79fa37f8e6ff616c5d661975b"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Lifepump"><param name="Local" value="class_whiskas_1_1_lifepump.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="Lifepump"><param name="Local" value="class_whiskas_1_1_lifepump.html#af1f5215036dca8230955209dc7b5856a"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="Lifepump"><param name="Local" value="class_whiskas_1_1_lifepump.html#a8d3964293ef31ff8b28e173d7bdfe52f"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="~Lifepump"><param name="Local" value="class_whiskas_1_1_lifepump.html#abfdd3a19dfd59956eebc44678f21ca0f"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="getType"><param name="Local" value="class_whiskas_1_1_lifepump.html#a48189a31d9e98668bebacc7bfa3a11da"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="MageAltar"><param name="Local" value="class_whiskas_1_1_mage_altar.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="MageAltar"><param name="Local" value="class_whiskas_1_1_mage_altar.html#a68d0640954bc80eec7382d6a69e778d9"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="getType"><param name="Local" value="class_whiskas_1_1_mage_altar.html#ade1e4bc1732f39ef14afdcdf46e53c8f"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="upgradeMinion"><param name="Local" value="class_whiskas_1_1_mage_altar.html#a5021d4c1e7fb76a72edc46244d64972a"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="MagicChampion"><param name="Local" value="class_whiskas_1_1_magic_champion.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="MagicChampion"><param name="Local" value="class_whiskas_1_1_magic_champion.html#ad120ae52ca19013720391aea55014626"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="MagicChampion"><param name="Local" value="class_whiskas_1_1_magic_champion.html#a4290e2c35a58d48534861e74c6205fee"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="getType"><param name="Local" value="class_whiskas_1_1_magic_champion.html#a900703d55cd333ddeb8a55700371728e"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="MapItem"><param name="Local" value="class_whiskas_1_1_map_item.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="MapItem"><param name="Local" value="class_whiskas_1_1_map_item.html#ab1b065db6e850a7a7cb5e7737726c482"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="boundingRect"><param name="Local" value="class_whiskas_1_1_map_item.html#a8ed1f50b3d3a99b55e31e4a8079c37a5"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="getBoundObject"><param name="Local" value="class_whiskas_1_1_map_item.html#a0e9d94b222fd7ecdd84313f8ee6bac29"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="getSize"><param name="Local" value="class_whiskas_1_1_map_item.html#ae08520c07a4f0ad0837923596a0eb9c6"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="isSameObj"><param name="Local" value="class_whiskas_1_1_map_item.html#a96a6d3f04539102609d17cfe7ebd6390"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="paint"><param name="Local" value="class_whiskas_1_1_map_item.html#a1946a4612e8b4de42e9d6f5ce0d081c4"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="setSize"><param name="Local" value="class_whiskas_1_1_map_item.html#a8018fdb39c2e9799f1c3feff7d28f81f"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="updateLoc"><param name="Local" value="class_whiskas_1_1_map_item.html#a69d2030443d01b542169fa72bf8817ac"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="MeleeAltar"><param name="Local" value="class_whiskas_1_1_melee_altar.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="MeleeAltar"><param name="Local" value="class_whiskas_1_1_melee_altar.html#a440d67f0688a6b7a3d654eb2bd4fcc31"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="getType"><param name="Local" value="class_whiskas_1_1_melee_altar.html#afc4873570af0b479c141f554bc81c65f"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="upgradeMinion"><param name="Local" value="class_whiskas_1_1_melee_altar.html#abe77483ba15889717e9ad98927cd6a81"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="MeleeChampion"><param name="Local" value="class_whiskas_1_1_melee_champion.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="MeleeChampion"><param name="Local" value="class_whiskas_1_1_melee_champion.html#a892b893388046de57ff8f838a36371c7"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="MeleeChampion"><param name="Local" value="class_whiskas_1_1_melee_champion.html#a452e4d17d193a338a22c1ea7a2027f8a"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="getType"><param name="Local" value="class_whiskas_1_1_melee_champion.html#a1ace4acc7465eee47630945ca1816a97"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="modifyHealth"><param name="Local" value="class_whiskas_1_1_melee_champion.html#ad3f9407a7f91f48093af653cc490dee7"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Minion"><param name="Local" value="class_whiskas_1_1_minion.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="Minion"><param name="Local" value="class_whiskas_1_1_minion.html#a0a2a9e45fcef3cee9695996c00edf8eb"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="Minion"><param name="Local" value="class_whiskas_1_1_minion.html#a50eba08fda6ed5625162fecec46b7b84"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="~Minion"><param name="Local" value="class_whiskas_1_1_minion.html#a5b6151e61989c54e4449705acb0727c2"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="doSpecialAction"><param name="Local" value="class_whiskas_1_1_minion.html#a7d57789f60c624ffdffb166047c43bb7"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="getType"><param name="Local" value="class_whiskas_1_1_minion.html#a0fcdf6b0ca257692675bd31967504870"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="modifyHealth"><param name="Local" value="class_whiskas_1_1_minion.html#a9884939775333b0846ab61ef554dbd43"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="manager_"><param name="Local" value="class_whiskas_1_1_minion.html#a2ffd1c3baf680a03e979db499a3ab593"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="testCost_"><param name="Local" value="class_whiskas_1_1_minion.html#aed251405428f88956a23154f87f43b94"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Mountain"><param name="Local" value="class_whiskas_1_1_mountain.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="Mountain"><param name="Local" value="class_whiskas_1_1_mountain.html#a0985fcedf73c3aa11b01ff046b45d3bc"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="Mountain"><param name="Local" value="class_whiskas_1_1_mountain.html#ac8a6ff5a8c7ab2560364dcd5741b46ba"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="~Mountain"><param name="Local" value="class_whiskas_1_1_mountain.html#aefab363fa0b7003cea8e8c72b3ed2a59"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="addBuilding"><param name="Local" value="class_whiskas_1_1_mountain.html#aa3e42991168e8805e8a174ceedbc9820"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="getType"><param name="Local" value="class_whiskas_1_1_mountain.html#a1c1f92e56e5b00ae6f718cbdf11af507"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Nexus"><param name="Local" value="class_whiskas_1_1_nexus.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="Nexus"><param name="Local" value="class_whiskas_1_1_nexus.html#a45ff8bb60db7bd6bce0346e66783e1ef"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="Nexus"><param name="Local" value="class_whiskas_1_1_nexus.html#a43fbaf6faba75e0d2a7bcd1a57d54a1c"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="~Nexus"><param name="Local" value="class_whiskas_1_1_nexus.html#ac66b2bcebf2c03b44b09b40cf7dbf1c3"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="getType"><param name="Local" value="class_whiskas_1_1_nexus.html#a16a37285baefa6cfbd56d4f1216aab6e"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Quarry"><param name="Local" value="class_whiskas_1_1_quarry.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="Quarry"><param name="Local" value="class_whiskas_1_1_quarry.html#a640bf69aca44372d4ef91e8a0e28fcb7"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="Quarry"><param name="Local" value="class_whiskas_1_1_quarry.html#a180cec3d0d1a6ef152e402be4b6e96f7"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="~Quarry"><param name="Local" value="class_whiskas_1_1_quarry.html#a0efa698157bbd7d71ac3ac78a0406c42"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="getType"><param name="Local" value="class_whiskas_1_1_quarry.html#a4de3de98d74aa62e92d7ecc589e3e156"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="RangedAltar"><param name="Local" value="class_whiskas_1_1_ranged_altar.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="RangedAltar"><param name="Local" value="class_whiskas_1_1_ranged_altar.html#a969e981e2fef9e3aba9912e2cba35cbf"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="getType"><param name="Local" value="class_whiskas_1_1_ranged_altar.html#aed9ee0962071f99a0439a33a47706e6c"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="upgradeMinion"><param name="Local" value="class_whiskas_1_1_ranged_altar.html#a183878784855ab3702cb193d80f5046b"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="RangedChampion"><param name="Local" value="class_whiskas_1_1_ranged_champion.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="RangedChampion"><param name="Local" value="class_whiskas_1_1_ranged_champion.html#ae5103d9714eabca1532589f001d5625f"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="RangedChampion"><param name="Local" value="class_whiskas_1_1_ranged_champion.html#ad07ca4ae7324417f138a4c193f2b4905"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="getType"><param name="Local" value="class_whiskas_1_1_ranged_champion.html#a649d0d2316e575cf9a1e1bc49ee6c5ab"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Sawmill"><param name="Local" value="class_whiskas_1_1_sawmill.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="Sawmill"><param name="Local" value="class_whiskas_1_1_sawmill.html#a6a9fb1b9564f79fec173769ed73b4bea"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="Sawmill"><param name="Local" value="class_whiskas_1_1_sawmill.html#aa4c81abf7586620b50db45455a8606d0"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="~Sawmill"><param name="Local" value="class_whiskas_1_1_sawmill.html#aa63bcdd02056a78bc0ecefea06d15bf2"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="getType"><param name="Local" value="class_whiskas_1_1_sawmill.html#a6339f44d46ac6dbdf2b9fefaeac32892"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Spring"><param name="Local" value="class_whiskas_1_1_spring.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="Spring"><param name="Local" value="class_whiskas_1_1_spring.html#a75898da8a5878cfcedb91cc90784e593"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="Spring"><param name="Local" value="class_whiskas_1_1_spring.html#ad81eca6c8bc9d5c81c789d6c08c6bad4"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="~Spring"><param name="Local" value="class_whiskas_1_1_spring.html#a33f30e2f08d7be717ea816fb686058b4"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="addBuilding"><param name="Local" value="class_whiskas_1_1_spring.html#a52fd4d1e6d52c303c687c281f1e39be3"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="getType"><param name="Local" value="class_whiskas_1_1_spring.html#ae6dc67e4de0b346382db8e5f1032ae88"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Turn"><param name="Local" value="class_whiskas_1_1_turn.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="Turn"><param name="Local" value="class_whiskas_1_1_turn.html#a57031f5baf040053a241a1973f6916bd"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="getInTurn"><param name="Local" value="class_whiskas_1_1_turn.html#a344e4cfc4ee92c58272918dc0a7c8129"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="getTurnCounter"><param name="Local" value="class_whiskas_1_1_turn.html#a1c4ea13408b10e281735670e4ea64c0f"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="setInTurn"><param name="Local" value="class_whiskas_1_1_turn.html#aa04d3224c7a68435a3bb7143732f9e85"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="swapTurn"><param name="Local" value="class_whiskas_1_1_turn.html#aceb5899c6470802bc20b778120cd24a4"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Unit"><param name="Local" value="class_whiskas_1_1_unit.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="Unit"><param name="Local" value="class_whiskas_1_1_unit.html#a30a37ec7cc5373ed36636a8f6b168559"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="getMoved"><param name="Local" value="class_whiskas_1_1_unit.html#ab918cdbea16031764f496ba8f3678cae"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="getMoveValue"><param name="Local" value="class_whiskas_1_1_unit.html#a3d9899ff35ed776b4fad1a80d074fbeb"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="setMoved"><param name="Local" value="class_whiskas_1_1_unit.html#a752f49c743f198419165b680378e861d"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="hasMoved_"><param name="Local" value="class_whiskas_1_1_unit.html#a7093da58e770464ae45decf4220f5435"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="movement_"><param name="Local" value="class_whiskas_1_1_unit.html#a740d8cd5332d229c1d7fd58699fdd79c"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="buildingDialog"><param name="Local" value="classbuilding_dialog.html"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="buildingDialog"><param name="Local" value="classbuilding_dialog.html#a355eb0efc7cdbd9a83d6706a25053c19"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="~buildingDialog"><param name="Local" value="classbuilding_dialog.html#a00c9383bdfb6ca094e4bb5248b11d879"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="buildingType"><param name="Local" value="classbuilding_dialog.html#a3f0a5d60c7e45aae2da61bdbf12aad02"><param name="ImageNumber" value="11"></OBJECT>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="endDialog"><param name="Local" value="classend_dialog.html"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="endDialog"><param name="Local" value="classend_dialog.html#a41c7f76d0e2c485dd0ce6d9ea53d3119"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="~endDialog"><param name="Local" value="classend_dialog.html#a2b843446d29fa9d81feb3f366177f4f3"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="setEndText"><param name="Local" value="classend_dialog.html#a09507bbfc268df9ffc27a2b38d760d1f"><param name="ImageNumber" value="11"></OBJECT>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="MapWindow"><param name="Local" value="class_map_window.html"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="MapWindow"><param name="Local" value="class_map_window.html#a50a529d5c2f5d52838f1c963e85c5a4b"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="~MapWindow"><param name="Local" value="class_map_window.html#a12edf2fb9ac7a6ebf501c0da8aa327dc"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="closeWindow"><param name="Local" value="class_map_window.html#a4c84664864528e7392c3a510ffb784e5"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="drawItem"><param name="Local" value="class_map_window.html#a673ec26f170e21616c75f7f485b4d546"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="generateLCDList"><param name="Local" value="class_map_window.html#a125520f6e86f1928bd1ff55552c44ec0"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="initMap"><param name="Local" value="class_map_window.html#af01f770fe7900d3c944262abf4a26c18"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="mousePressEvent"><param name="Local" value="class_map_window.html#ae74403400eae1bfc259a7b693e26c079"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="openBuildingDialog"><param name="Local" value="class_map_window.html#ac1d62b9846adc9d7bda7cc0286448d82"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="removeItem"><param name="Local" value="class_map_window.html#a88384cf195d4cec6e4779d2f6b83b675"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="resize"><param name="Local" value="class_map_window.html#a9eebe13b89eacd419ed5c250a9fc1d2e"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="selectBuilding"><param name="Local" value="class_map_window.html#a2bdf0d824fc5da3387a930b3a75271ae"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="setGEHandler"><param name="Local" value="class_map_window.html#a943ca18ac3e03a833c7dbb833941161d"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="setGManager"><param name="Local" value="class_map_window.html#afda9dfb683eebbbe7490356a39cf762a"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="setScale"><param name="Local" value="class_map_window.html#a9d5c988b6ac8dced6aa128df160be6cc"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="setSize"><param name="Local" value="class_map_window.html#a7b5fcf2d1ba7c211faabdfd3c81cc5b5"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="updateDisplays"><param name="Local" value="class_map_window.html#a61e9679a532d0685c33751568b4f822a"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="updateItem"><param name="Local" value="class_map_window.html#a40b4e18c08d80bafcf006fafe16d75c2"><param name="ImageNumber" value="11"></OBJECT>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="SizeDialog"><param name="Local" value="class_size_dialog.html"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="SizeDialog"><param name="Local" value="class_size_dialog.html#adcdfe002fe2f4346d691b5de8c056292"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="~SizeDialog"><param name="Local" value="class_size_dialog.html#a0bf2c31e96037542ae19b85941894367"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Msize"><param name="Local" value="class_size_dialog.html#a00172268e86c819e656478e7aaecab00"><param name="ImageNumber" value="11"></OBJECT>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="startdialog"><param name="Local" value="classstartdialog.html"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="startdialog"><param name="Local" value="classstartdialog.html#ad843dfd11715d5eece067aada0f85044"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="~startdialog"><param name="Local" value="classstartdialog.html#a2ec887598d81c72b92253dcbef4c2b83"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="setXY"><param name="Local" value="classstartdialog.html#ae53b6755820ff1a73d93d7354f3dc28b"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="size"><param name="Local" value="classstartdialog.html#af1e999861958d8cab663b9ea8bf1fde0"><param name="ImageNumber" value="11"></OBJECT>
+      </UL>
+    </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="Class Index"><param name="Local" value="classes.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="Class Hierarchy"><param name="Local" value="hierarchy.html"><param name="ImageNumber" value="1"></OBJECT>
+    <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="Whiskas::Attackable"><param name="Local" value="class_whiskas_1_1_attackable.html"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Whiskas::CustomBuildingBase"><param name="Local" value="class_whiskas_1_1_custom_building_base.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="Whiskas::AltarBase"><param name="Local" value="class_whiskas_1_1_altar_base.html"><param name="ImageNumber" value="1"></OBJECT>
+          <UL>
+          <LI><OBJECT type="text/sitemap"><param name="Name" value="Whiskas::MageAltar"><param name="Local" value="class_whiskas_1_1_mage_altar.html"><param name="ImageNumber" value="11"></OBJECT>
+          <LI><OBJECT type="text/sitemap"><param name="Name" value="Whiskas::MeleeAltar"><param name="Local" value="class_whiskas_1_1_melee_altar.html"><param name="ImageNumber" value="11"></OBJECT>
+          <LI><OBJECT type="text/sitemap"><param name="Name" value="Whiskas::RangedAltar"><param name="Local" value="class_whiskas_1_1_ranged_altar.html"><param name="ImageNumber" value="11"></OBJECT>
+          </UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="Whiskas::Lifepump"><param name="Local" value="class_whiskas_1_1_lifepump.html"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="Whiskas::Nexus"><param name="Local" value="class_whiskas_1_1_nexus.html"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="Whiskas::Quarry"><param name="Local" value="class_whiskas_1_1_quarry.html"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="Whiskas::Sawmill"><param name="Local" value="class_whiskas_1_1_sawmill.html"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Whiskas::Minion"><param name="Local" value="class_whiskas_1_1_minion.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="Whiskas::MagicChampion"><param name="Local" value="class_whiskas_1_1_magic_champion.html"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="Whiskas::MeleeChampion"><param name="Local" value="class_whiskas_1_1_melee_champion.html"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="Whiskas::RangedChampion"><param name="Local" value="class_whiskas_1_1_ranged_champion.html"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="BuildingBase"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Whiskas::CustomBuildingBase"><param name="Local" value="class_whiskas_1_1_custom_building_base.html"><param name="ImageNumber" value="11"></OBJECT>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="iGameEventHandler"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Whiskas::gameEventHandler"><param name="Local" value="class_whiskas_1_1game_event_handler.html"><param name="ImageNumber" value="11"></OBJECT>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="iObjectManager"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Whiskas::gameManager"><param name="Local" value="class_whiskas_1_1game_manager.html"><param name="ImageNumber" value="11"></OBJECT>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="PlayerBase"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Whiskas::LeaguePlayer"><param name="Local" value="class_whiskas_1_1_league_player.html"><param name="ImageNumber" value="11"></OBJECT>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="QDialog"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="buildingDialog"><param name="Local" value="classbuilding_dialog.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="endDialog"><param name="Local" value="classend_dialog.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="SizeDialog"><param name="Local" value="class_size_dialog.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="startdialog"><param name="Local" value="classstartdialog.html"><param name="ImageNumber" value="11"></OBJECT>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="QGraphicsItem"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Whiskas::MapItem"><param name="Local" value="class_whiskas_1_1_map_item.html"><param name="ImageNumber" value="11"></OBJECT>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="QGraphicsScene"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Whiskas::GameScene"><param name="Local" value="class_whiskas_1_1_game_scene.html"><param name="ImageNumber" value="11"></OBJECT>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="QMainWindow"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="MapWindow"><param name="Local" value="class_map_window.html"><param name="ImageNumber" value="11"></OBJECT>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="TileBase"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Whiskas::Jungle"><param name="Local" value="class_whiskas_1_1_jungle.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Whiskas::Mountain"><param name="Local" value="class_whiskas_1_1_mountain.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Whiskas::Spring"><param name="Local" value="class_whiskas_1_1_spring.html"><param name="ImageNumber" value="11"></OBJECT>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="Whiskas::Turn"><param name="Local" value="class_whiskas_1_1_turn.html"><param name="ImageNumber" value="11"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="Whiskas::Unit"><param name="Local" value="class_whiskas_1_1_unit.html"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Whiskas::Minion"><param name="Local" value="class_whiskas_1_1_minion.html"><param name="ImageNumber" value="11"></OBJECT>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="WorkerBase"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Whiskas::Minion"><param name="Local" value="class_whiskas_1_1_minion.html"><param name="ImageNumber" value="11"></OBJECT>
+      </UL>
+    </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="Class Members"><param name="Local" value="functions.html"><param name="ImageNumber" value="1"></OBJECT>
+    <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="All"><param name="Local" value="functions.html"><param name="ImageNumber" value="11"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="Functions"><param name="Local" value="functions_func.html"><param name="ImageNumber" value="11"></OBJECT>
+    </UL>
+  </UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Files"><param name="Local" value="files.html"><param name="ImageNumber" value="1"></OBJECT>
+  <UL>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="File List"><param name="Local" value="files.html"><param name="ImageNumber" value="1"></OBJECT>
+    <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="E:"><param name="Local" value="dir_885cc87fac2d91e269af0a5a959fa5f6.html"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Gitin repo"><param name="Local" value="dir_0f730b841472430c2c5b41f1285f821f.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="ohjelmointi 3"><param name="Local" value="dir_438d9269a3ec9fffef41223fd4a5787a.html"><param name="ImageNumber" value="1"></OBJECT>
+          <UL>
+          <LI><OBJECT type="text/sitemap"><param name="Name" value="whiskas"><param name="Local" value="dir_fb678642a1b94144a4b2ba98c964fb1d.html"><param name="ImageNumber" value="1"></OBJECT>
+            <UL>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="Game"><param name="Local" value="dir_4e75de6ffc7b5e8c184a87822d97dac6.html"><param name="ImageNumber" value="1"></OBJECT>
+              <UL>
+              <LI><OBJECT type="text/sitemap"><param name="Name" value="AdvancedResourcses"><param name="Local" value="dir_98da301d663832e6e770741c5f29c862.html"><param name="ImageNumber" value="1"></OBJECT>
+                <UL>
+                <LI><OBJECT type="text/sitemap"><param name="Name" value="AdvancedResourceMaps.h"><param name="Local" value="_advanced_resource_maps_8h_source.html"><param name="ImageNumber" value="11"></OBJECT>
+                <LI><OBJECT type="text/sitemap"><param name="Name" value="AdvancedResourcses.h"><param name="Local" value="_advanced_resourcses_8h_source.html"><param name="ImageNumber" value="11"></OBJECT>
+                </UL>
+              <LI><OBJECT type="text/sitemap"><param name="Name" value="buildings"><param name="Local" value="dir_87fc63a8533f8652d9e5ed3b3e58f616.html"><param name="ImageNumber" value="1"></OBJECT>
+                <UL>
+                <LI><OBJECT type="text/sitemap"><param name="Name" value="AltarBase.h"><param name="Local" value="_altar_base_8h_source.html"><param name="ImageNumber" value="11"></OBJECT>
+                <LI><OBJECT type="text/sitemap"><param name="Name" value="custombuildingbase.h"><param name="Local" value="custombuildingbase_8h_source.html"><param name="ImageNumber" value="11"></OBJECT>
+                <LI><OBJECT type="text/sitemap"><param name="Name" value="lifepump.h"><param name="Local" value="lifepump_8h_source.html"><param name="ImageNumber" value="11"></OBJECT>
+                <LI><OBJECT type="text/sitemap"><param name="Name" value="magealtar.h"><param name="Local" value="magealtar_8h_source.html"><param name="ImageNumber" value="11"></OBJECT>
+                <LI><OBJECT type="text/sitemap"><param name="Name" value="meleealtar.h"><param name="Local" value="meleealtar_8h_source.html"><param name="ImageNumber" value="11"></OBJECT>
+                <LI><OBJECT type="text/sitemap"><param name="Name" value="nexus.h"><param name="Local" value="nexus_8h_source.html"><param name="ImageNumber" value="11"></OBJECT>
+                <LI><OBJECT type="text/sitemap"><param name="Name" value="quarry.h"><param name="Local" value="quarry_8h_source.html"><param name="ImageNumber" value="11"></OBJECT>
+                <LI><OBJECT type="text/sitemap"><param name="Name" value="rangedaltar.h"><param name="Local" value="rangedaltar_8h_source.html"><param name="ImageNumber" value="11"></OBJECT>
+                <LI><OBJECT type="text/sitemap"><param name="Name" value="sawmill.h"><param name="Local" value="sawmill_8h_source.html"><param name="ImageNumber" value="11"></OBJECT>
+                </UL>
+              <LI><OBJECT type="text/sitemap"><param name="Name" value="dialogs"><param name="Local" value="dir_e94b7983a4af73f4ecfcfbd5dd5e1005.html"><param name="ImageNumber" value="1"></OBJECT>
+                <UL>
+                <LI><OBJECT type="text/sitemap"><param name="Name" value="buildingdialog.h"><param name="Local" value="buildingdialog_8h_source.html"><param name="ImageNumber" value="11"></OBJECT>
+                <LI><OBJECT type="text/sitemap"><param name="Name" value="enddialog.h"><param name="Local" value="enddialog_8h_source.html"><param name="ImageNumber" value="11"></OBJECT>
+                <LI><OBJECT type="text/sitemap"><param name="Name" value="sizedialog.h"><param name="Local" value="sizedialog_8h_source.html"><param name="ImageNumber" value="11"></OBJECT>
+                <LI><OBJECT type="text/sitemap"><param name="Name" value="startdialog.h"><param name="Local" value="startdialog_8h_source.html"><param name="ImageNumber" value="11"></OBJECT>
+                </UL>
+              <LI><OBJECT type="text/sitemap"><param name="Name" value="functions"><param name="Local" value="dir_e0cb3937ce8f7d79a68a3680fc184b9b.html"><param name="ImageNumber" value="1"></OBJECT>
+                <UL>
+                <LI><OBJECT type="text/sitemap"><param name="Name" value="functions.h"><param name="Local" value="functions_8h_source.html"><param name="ImageNumber" value="11"></OBJECT>
+                </UL>
+              <LI><OBJECT type="text/sitemap"><param name="Name" value="graphics"><param name="Local" value="dir_40f74afa19d9eedff8664c5f28fc399f.html"><param name="ImageNumber" value="1"></OBJECT>
+                <UL>
+                <LI><OBJECT type="text/sitemap"><param name="Name" value="gamescene.h"><param name="Local" value="gamescene_8h_source.html"><param name="ImageNumber" value="11"></OBJECT>
+                <LI><OBJECT type="text/sitemap"><param name="Name" value="mapitem.h"><param name="Local" value="mapitem_8h_source.html"><param name="ImageNumber" value="11"></OBJECT>
+                </UL>
+              <LI><OBJECT type="text/sitemap"><param name="Name" value="handlerandmanager"><param name="Local" value="dir_d48182167016ce5ed6dae1f71cf6598b.html"><param name="ImageNumber" value="1"></OBJECT>
+                <UL>
+                <LI><OBJECT type="text/sitemap"><param name="Name" value="gameeventhandler.h"><param name="Local" value="gameeventhandler_8h_source.html"><param name="ImageNumber" value="11"></OBJECT>
+                <LI><OBJECT type="text/sitemap"><param name="Name" value="gamemanager.h"><param name="Local" value="gamemanager_8h_source.html"><param name="ImageNumber" value="11"></OBJECT>
+                </UL>
+              <LI><OBJECT type="text/sitemap"><param name="Name" value="minion"><param name="Local" value="dir_6ee247cf54087c9f63ac357fd1cd3a37.html"><param name="ImageNumber" value="1"></OBJECT>
+                <UL>
+                <LI><OBJECT type="text/sitemap"><param name="Name" value="magicchampion.h"><param name="Local" value="magicchampion_8h_source.html"><param name="ImageNumber" value="11"></OBJECT>
+                <LI><OBJECT type="text/sitemap"><param name="Name" value="minion.h"><param name="Local" value="minion_8h_source.html"><param name="ImageNumber" value="11"></OBJECT>
+                <LI><OBJECT type="text/sitemap"><param name="Name" value="rangedchampion.h"><param name="Local" value="rangedchampion_8h_source.html"><param name="ImageNumber" value="11"></OBJECT>
+                </UL>
+              <LI><OBJECT type="text/sitemap"><param name="Name" value="tiles"><param name="Local" value="dir_809abc0fc3ad1e19354bb6d61f318afe.html"><param name="ImageNumber" value="1"></OBJECT>
+                <UL>
+                <LI><OBJECT type="text/sitemap"><param name="Name" value="jungle.h"><param name="Local" value="jungle_8h_source.html"><param name="ImageNumber" value="11"></OBJECT>
+                <LI><OBJECT type="text/sitemap"><param name="Name" value="mountain.h"><param name="Local" value="mountain_8h_source.html"><param name="ImageNumber" value="11"></OBJECT>
+                <LI><OBJECT type="text/sitemap"><param name="Name" value="spring.h"><param name="Local" value="spring_8h_source.html"><param name="ImageNumber" value="11"></OBJECT>
+                </UL>
+              <LI><OBJECT type="text/sitemap"><param name="Name" value="attackable.h"><param name="Local" value="attackable_8h_source.html"><param name="ImageNumber" value="11"></OBJECT>
+              <LI><OBJECT type="text/sitemap"><param name="Name" value="leagueplayer.h"><param name="Local" value="leagueplayer_8h_source.html"><param name="ImageNumber" value="11"></OBJECT>
+              <LI><OBJECT type="text/sitemap"><param name="Name" value="mapwindow.hh"><param name="Local" value="mapwindow_8hh_source.html"><param name="ImageNumber" value="11"></OBJECT>
+              <LI><OBJECT type="text/sitemap"><param name="Name" value="meleechampion.h"><param name="Local" value="meleechampion_8h_source.html"><param name="ImageNumber" value="11"></OBJECT>
+              <LI><OBJECT type="text/sitemap"><param name="Name" value="turn.h"><param name="Local" value="turn_8h_source.html"><param name="ImageNumber" value="11"></OBJECT>
+              <LI><OBJECT type="text/sitemap"><param name="Name" value="unit.h"><param name="Local" value="unit_8h_source.html"><param name="ImageNumber" value="11"></OBJECT>
+              </UL>
+            </UL>
+          </UL>
+        </UL>
+      </UL>
+    </UL>
+  </UL>
+</UL>
+</BODY>
+</HTML>

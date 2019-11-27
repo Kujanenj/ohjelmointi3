@@ -1,0 +1,4 @@
+<map id="Whiskas::gameManager::checkForEnemies" name="Whiskas::gameManager::checkForEnemies">
+<area shape="rect" id="node1" title="checkForEnemies Check if target tile contains minions or buildings of the other player" alt="" coords="216,5,379,47"/>
+<area shape="rect" id="node2" href="$class_whiskas_1_1game_manager.html#a277f444329152046ad2368d8c1628fa8" title="move Tries to move a minion to the target tile. Checks for movement range, collision and possible ene..." alt="" coords="5,5,168,47"/>
+</map>

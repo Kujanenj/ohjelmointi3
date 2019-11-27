@@ -1,0 +1,5 @@
+<map id="Whiskas::CustomBuildingBase" name="Whiskas::CustomBuildingBase">
+<area shape="rect" id="node1" title=" " alt="" coords="61,80,264,107"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,5,152,32"/>
+<area shape="rect" id="node3" href="$class_whiskas_1_1_attackable.html" title="The Attackable class contains information regarding attacking and dealing damage." alt="" coords="177,5,319,32"/>
+</map>

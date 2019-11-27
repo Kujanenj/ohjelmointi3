@@ -1,0 +1,6 @@
+<map id="Whiskas::gameManager::attackMultiple" name="Whiskas::gameManager::attackMultiple">
+<area shape="rect" id="node1" title="attackMultiple Used by the mage minion to attack in an area. Attacks all minions in a radius of 1." alt="" coords="5,39,168,80"/>
+<area shape="rect" id="node2" href="$class_whiskas_1_1game_manager.html#a1b9dcff99ccd9568097b15f6b8a4155a" title="attack Select minion tries to deal its damage to target attackable. If target hp goes to 0,..." alt="" coords="216,5,379,47"/>
+<area shape="rect" id="node4" href="$class_whiskas_1_1game_manager.html#aa4f7dfbe973e3aff00d4d5372099b167" title="Return a tile matching the object ID." alt="" coords="216,71,379,112"/>
+<area shape="rect" id="node3" href="$class_whiskas_1_1game_manager.html#a666d12bd199371bf19f0b06fca0fffff" title="destroyObject Takes an attackable object, and removes it from all databases. (Gamemanager vectors,..." alt="" coords="427,5,589,47"/>
+</map>
