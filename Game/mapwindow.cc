@@ -28,8 +28,9 @@ std::map<std::string,std::string> BuildingDescriptions{
         "___\n"
         "Has a cooldown of 10 turns"},
     {"Ranged Altar", "Transforms a minion\n"
-        "into a Ranged champion, if a \n"
-        "minion ends its turn on this\n"
+        "into a Ranged champion\n"
+        " if a minion ends\n"
+        " its turn on this"
         "building.\n"
         "Cost:\n"
         "___\n"

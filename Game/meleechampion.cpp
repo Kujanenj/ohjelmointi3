@@ -13,8 +13,11 @@ MeleeChampion::MeleeChampion(const std::shared_ptr<Course::iGameEventHandler>& h
 {
     movement_=movement;
     qDebug()<<"champion says hi";
-    setDescription("MeleeChampion","A fiersome warrior from the heart\n"
-                                   " of Hervanta. Not shy\n to get physical. This is your frontline unit. \n"
+    setDescription("MeleeChampion","A fiersome warrior from\n"
+                                   " the heart of Hervanta.\n"
+                                   " Not shy to get physical.\n"
+                                   " This is your\n"
+                                   " frontline unit. \n"
                                    "* Deals 2 damage per attack\n"
                                    "* 5 Health\n"
                                    "* Range/movement 1\n"
