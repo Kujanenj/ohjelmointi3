@@ -1,0 +1,6 @@
+<map id="Whiskas::GameScene::GameScene" name="Whiskas::GameScene::GameScene">
+<area shape="rect" id="node1" title="Constructor for the class." alt="" coords="5,39,159,80"/>
+<area shape="rect" id="node2" href="$class_whiskas_1_1_game_scene.html#abea4c22b69b609a7de579e3f3a869f61" title="set the tile size, aka scale of the map and calls resize(). Function behaviour after objects has been..." alt="" coords="207,5,360,47"/>
+<area shape="rect" id="node4" href="$class_whiskas_1_1_game_scene.html#a8f702fc009be53cc007df9d9e4f9bddf" title="Sets the map size and calls resize()." alt="" coords="207,71,360,112"/>
+<area shape="rect" id="node3" href="$class_whiskas_1_1_game_scene.html#a660e40fa2b00e58d01d040ac24ee065f" title="resize recalculates the bounding rectangle" alt="" coords="408,39,561,80"/>
+</map>

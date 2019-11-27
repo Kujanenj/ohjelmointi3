@@ -1,0 +1,13 @@
+<map id="Whiskas::CustomBuildingBase" name="Whiskas::CustomBuildingBase">
+<area shape="rect" id="node1" title=" " alt="" coords="450,80,653,107"/>
+<area shape="rect" id="node4" href="$class_whiskas_1_1_altar_base.html" title=" " alt="" coords="171,155,310,181"/>
+<area shape="rect" id="node8" href="$class_whiskas_1_1_lifepump.html" title=" " alt="" coords="334,155,467,181"/>
+<area shape="rect" id="node9" href="$class_whiskas_1_1_nexus.html" title=" " alt="" coords="492,155,611,181"/>
+<area shape="rect" id="node10" href="$class_whiskas_1_1_quarry.html" title=" " alt="" coords="635,155,755,181"/>
+<area shape="rect" id="node11" href="$class_whiskas_1_1_sawmill.html" title=" " alt="" coords="780,155,907,181"/>
+<area shape="rect" id="node2" title=" " alt="" coords="394,5,541,32"/>
+<area shape="rect" id="node3" href="$class_whiskas_1_1_attackable.html" title="The Attackable class contains information regarding attacking and dealing damage." alt="" coords="565,5,708,32"/>
+<area shape="rect" id="node5" href="$class_whiskas_1_1_mage_altar.html" title=" " alt="" coords="5,229,145,256"/>
+<area shape="rect" id="node6" href="$class_whiskas_1_1_melee_altar.html" title=" " alt="" coords="169,229,312,256"/>
+<area shape="rect" id="node7" href="$class_whiskas_1_1_ranged_altar.html" title=" " alt="" coords="337,229,489,256"/>
+</map>

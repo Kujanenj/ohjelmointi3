@@ -1,0 +1,4 @@
+<map id="Whiskas::MapItem" name="Whiskas::MapItem">
+<area shape="rect" id="node1" title="The MapItem class is a custom QGraphicsItem that acts as a single GameObject&#39;s graphical element." alt="" coords="5,80,136,107"/>
+<area shape="rect" id="node2" title=" " alt="" coords="16,5,125,32"/>
+</map>

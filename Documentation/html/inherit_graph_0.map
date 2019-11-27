@@ -1,0 +1,7 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" title=" " alt="" coords="5,81,73,108"/>
+<area shape="rect" id="node2" href="$classbuilding_dialog.html" title="The buildingDialog class is a dialog for selecting the building to be built." alt="" coords="121,5,224,32"/>
+<area shape="rect" id="node3" href="$classend_dialog.html" title="The endDialog class Shows the end message." alt="" coords="133,56,212,83"/>
+<area shape="rect" id="node4" href="$class_size_dialog.html" title="The SizeDialog class Sets the mapSize." alt="" coords="131,107,215,133"/>
+<area shape="rect" id="node5" href="$classstartdialog.html" title="The startdialog class Selector dialog for the game start." alt="" coords="131,157,214,184"/>
+</map>
