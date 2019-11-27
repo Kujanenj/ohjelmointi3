@@ -36,7 +36,8 @@ std::map<std::string,std::string> BuildingDescriptions{
         "___\n"
         "Has a cooldown of 15 turns"},
     {"Quarry", "quarry descript"},
-    {"Sawmill","Saw descript"}
+    {"Sawmill","Saw descript"},
+    {"Nexus", "Nexus"}
 };
 MapWindow::MapWindow(QWidget *parent,
                      std::shared_ptr<Whiskas::gameEventHandler> handler):
@@ -99,20 +100,9 @@ void MapWindow::setSize(int width, int height)
    m_gamescene->setSize(width, height);
 }
 
-void MapWindow::setScale(int scale)
-{
-    m_gamescene->setScale(scale);
-}
 
-void MapWindow::resize()
-{
-    m_gamescene->resize();
-}
 
-void MapWindow::updateItem(std::shared_ptr<Course::GameObject> obj)
-{
-    m_gamescene->updateItem(obj);
-}
+
 
 void MapWindow::initMap(int x, int y)
 {
@@ -161,6 +151,7 @@ void MapWindow::initMap(int x, int y)
 
 
 
+
 }
 void MapWindow::selectBuilding(std::string buildingType){
     buildingToBeBuilt_=buildingType;
@@ -173,10 +164,6 @@ void MapWindow::closeWindow()
     QTimer::singleShot(0, this, SLOT(close()));
 }
 
-void MapWindow::removeItem(std::shared_ptr<Course::GameObject> obj)
-{
-    m_gamescene->removeItem(obj);
-}
 
 void MapWindow::drawItem( std::shared_ptr<Course::GameObject> obj)
 {
@@ -194,6 +181,11 @@ void MapWindow::mousePressEvent(QMouseEvent *event){
                                                                             getType())));
   }
   else if(m_GEHandler->getActiveTile()!=nullptr){
+      qDebug()<<"DESCRIPTION LABEL ACTIVE TILL NOT NULL";
+      qDebug()<<QString::fromStdString(m_GEHandler->getActiveTile()->
+                                       getDescription(m_GEHandler->
+                                                      getActiveTile()->
+                                                      getType()));
       m_ui->DescriptionLabel->setText(QString::fromStdString(m_GEHandler->getActiveTile()->
                                                              getDescription(m_GEHandler->
                                                                             getActiveTile()->

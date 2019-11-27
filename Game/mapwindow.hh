@@ -30,7 +30,9 @@ namespace Ui {
 class MapWindow;
 }
 
-
+/**
+ * @brief The MapWindow class Manages the UI interface
+ */
 class MapWindow : public QMainWindow
 {
     Q_OBJECT
@@ -41,50 +43,81 @@ public:
 
                        );
     ~MapWindow();
-
+    /**
+     * @brief setGEHandler sets the current Game Handler
+     * @param nHandler the new game handler
+     */
     void setGEHandler(std::shared_ptr<Whiskas::gameEventHandler> nHandler);
+    /**
+     * @brief setGManager sets the curretn game manager
+     * @param manager the new game manager
+     */
     void setGManager(std::shared_ptr<Whiskas::gameManager> manager);
-
+    /**
+     * @brief setSize sets the game size
+     * @param width in tiles
+     * @param height int tiles
+     */
     void setSize(int width, int height);
-    void setScale(int scale);
-    void resize();
+    /**
+     * @brief drawItem draws a new item to the map
+     * @param obj to be drawn
+     */
 
     void drawItem( std::shared_ptr<Course::GameObject> obj);
-    void removeItem( std::shared_ptr<Course::GameObject> obj);
-    void updateItem( std::shared_ptr<Course::GameObject> obj);
+    /**
+     * @brief mousePressEvent calls event handler to manage the click
+     * and updates the description labels
+     * @param event the click event
+     */
 
     virtual void mousePressEvent(QMouseEvent *event );
-
+    /**
+     * @brief openBuildingDialog opens a dialog to select the building to be
+     * built
+     * @param manager ObjectManager that recieves the building
+     * @param handler buildings handler
+     * @param owner player that owns the building
+     */
     void openBuildingDialog(std::shared_ptr<Whiskas::gameManager> manager,
                             std::shared_ptr<Whiskas::gameEventHandler> handler,
                             std::shared_ptr<Course::PlayerBase> owner
                             );
-
+    /**
+     * @brief updateDisplays updates resource icons
+     */
     void updateDisplays();
+    /**
+     * @brief generateLCDList makes a vector of the lcd widgets
+     */
     void generateLCDList();
 
 
 public slots:
     /*!
      * \brief initMap
-     * Generates the world, accoring to the size of x,y.
-     *  (ADD MORE PARATMETRES LATER ON?!=!=!!?!!?)
-     *
+     * Generates the world, accoring to the size of x,y
      * \param x
      * \param y
      */
     void initMap(int x, int y);
-    void selectBuilding(std::string); //TODO
+    /**
+     * @brief selectBuilding updates the type of building to be built
+     */
+    void selectBuilding(std::string);
+    /**
+     * @brief Closes the mainwidow
+     */
     void closeWindow();
 
 private slots:
-    //just a test to add a test farm
+    //REMOVE most of these
     void on_addButton_clicked();
 
 
 
     void on_minionbutton_clicked();
-
+    //NOT THIS
     void on_MusicButton_clicked();
 
 
@@ -95,7 +128,7 @@ private slots:
     void on_champButton_clicked();
 
     void on_mageButton_clicked();
-
+    //NOT THis
     void on_confirmButton_clicked();
 
 private:
