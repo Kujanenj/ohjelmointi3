@@ -23,9 +23,9 @@ namespace Whiskas {
 // Map containing types of tiles a building can be built on
 const std::map<std::string, std::vector<std::string>> buildingAvailability={
     {"Nexus",{"Desert","Jungle","Mountain","Spring"}},
-    {{"Melee"},{"Jungle"}},
-    {{"Ranged"},{"Jungle"}},
-    {{"Mage"},{"Jungle"}},
+    {{"Melee Altar"},{"Jungle"}},
+    {{"Ranged Altar"},{"Jungle"}},
+    {{"Mage Altar"},{"Jungle"}},
     {{"Quarry"},{"Mountain"}},
     {{"Sawmill"},{"Jungle"}},
     {{"Lifepump"},{"Spring"}}

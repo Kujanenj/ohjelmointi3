@@ -28,13 +28,13 @@ void selectBuildingTypef(std::string type,
     if(type=="Nexus" && checkBuildingAvailability(handler->getActiveTile(),"Nexus")){
         manager->spawnBuilding<Nexus>(handler,manager,player);
     }
-    if(type=="Melee" && checkBuildingAvailability(handler->getActiveTile(),"Melee")){
+    if(type=="Melee Altar" && checkBuildingAvailability(handler->getActiveTile(),"Melee Altar")){
         manager->spawnBuilding<MeleeAltar>(handler,manager,player);
     }
-    if(type=="Ranged" && checkBuildingAvailability(handler->getActiveTile(),"Ranged")){
+    if(type=="Ranged Altar" && checkBuildingAvailability(handler->getActiveTile(),"Ranged Altar")){
         manager->spawnBuilding<RangedAltar>(handler,manager,player);
     }
-    if(type=="Mage" && checkBuildingAvailability(handler->getActiveTile(),"Mage")){
+    if(type=="Mage Altar" && checkBuildingAvailability(handler->getActiveTile(),"Mage Altar")){
         manager->spawnBuilding<MageAltar>(handler,manager,player);
     }
     if(type=="Quarry" && checkBuildingAvailability(handler->getActiveTile(),"Quarry")){

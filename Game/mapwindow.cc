@@ -14,20 +14,20 @@ std::map<std::string,std::string> BuildingDescriptions{
         "_____\n"
         "Produces\n"
         "_______"},
-    {"Mage","Transforms a minion\n"
+    {"Mage Altar","Transforms a minion\n"
         "into a mage, if a minion\n"
         "ends its turn on this building.\n"
         "Cost:"
         "______\n"
         "Has a cooldowwn of 20 turns\n"},
-    {"Melee", "Transforms a minion\n"
+    {"Melee Altar", "Transforms a minion\n"
         "into a melee champion, if a \n"
         "minion ends its turn on this\n"
         "building.\n"
         "Cost:\n"
         "___\n"
         "Has a cooldown of 10 turns"},
-    {"Ranged", "Transforms a minion\n"
+    {"Ranged Altar", "Transforms a minion\n"
         "into a Ranged champion, if a \n"
         "minion ends its turn on this\n"
         "building.\n"

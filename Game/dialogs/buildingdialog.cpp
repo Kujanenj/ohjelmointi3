@@ -22,25 +22,25 @@ buildingDialog::~buildingDialog()
 
 void buildingDialog::on_MeleeAltarButton_clicked()
 {
-    emit buildingType("Melee");
+    emit buildingType("Melee Altar");
     accept();
 }
 
 void buildingDialog::on_RangedAltarButton_clicked()
 {
-    emit buildingType("Ranged");
+    emit buildingType("Ranged Altar");
     accept();
 }
 
 void buildingDialog::on_MageAltarButton_clicked()
 {
-    emit buildingType("Mage");
+    emit buildingType("Mage Altar");
     accept();
 }
 
 void buildingDialog::on_Quarry_clicked()
 {
-    emit buildingType("Quarry");
+    emit buildingType("Quarry Altar");
     accept();
 }
 
