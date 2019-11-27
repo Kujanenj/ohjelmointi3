@@ -34,7 +34,7 @@ public:
            const std::shared_ptr<Course::iObjectManager>& objectmanager,
            const unsigned int& max_build = 2,
            const unsigned int& max_work = 3,
-           const Course::ResourceMap& production = Course::ConstResourceMaps::FOREST_BP);
+           const Course::ResourceMap& production = {});
 
     virtual ~Jungle() = default;
 

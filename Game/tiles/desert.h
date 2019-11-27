@@ -1,10 +1,9 @@
-#ifndef SPRING_H
-#define SPRING_H
+#ifndef DESERT_H
+#define DESERT_H
 
 #include "tiles/tilebase.h"
 #include "handlerandmanager/gameeventhandler.h"
 #include "handlerandmanager/gamemanager.h"
-
 
 namespace Whiskas {
 
@@ -23,28 +22,28 @@ namespace Whiskas {
  *
  * Tile supports 2 buildings.
  */
-class Spring : public Course::TileBase
+class Desert : public Course::TileBase
 {
 public:
-    Spring() = delete;
+    Desert() = delete;
 
 
-    explicit Spring(const Course::Coordinate& location,
+    explicit Desert(const Course::Coordinate& location,
            const std::shared_ptr<Course::iGameEventHandler>& eventhandler,
            const std::shared_ptr<Course::iObjectManager>& objectmanager,
            const unsigned int& max_build = 2,
            const unsigned int& max_work = 3,
-                    const Course::ResourceMap& production = {});
+           const Course::ResourceMap& production = {});
 
-    virtual ~Spring() = default;
+    virtual ~Desert() = default;
 
     virtual std::string getType() const override;
 
     void addBuilding(const std::shared_ptr<Course::BuildingBase>& building) override;
 
-}; // class Spring
+}; // class Jungle
 
 } // namespace Whiskas
 
 
-#endif // SPRING_H
+#endif // DESERT_H

@@ -3,8 +3,7 @@
 
 #include "core/gameobject.h"
 
-#include "tiles/forest.h"
-#include "tiles/grassland.h"
+#include "tiles/desert.h"
 #include "tiles/mountain.h"
 #include "tiles/jungle.h"
 #include "tiles/spring.h"
@@ -23,10 +22,10 @@
 namespace Whiskas {
 // Map containing types of tiles a building can be built on
 const std::map<std::string, std::vector<std::string>> buildingAvailability={
-    {"Nexus",{"Forest","Jungle","Mountain","Spring"}},
-    {{"Melee"},{"Forest"}},
-    {{"Ranged"},{"Forest"}},
-    {{"Mage"},{"Forest"}},
+    {"Nexus",{"Desert","Jungle","Mountain","Spring"}},
+    {{"Melee"},{"Jungle"}},
+    {{"Ranged"},{"Jungle"}},
+    {{"Mage"},{"Jungle"}},
     {{"Quarry"},{"Mountain"}},
     {{"Sawmill"},{"Jungle"}},
     {{"Lifepump"},{"Spring"}}

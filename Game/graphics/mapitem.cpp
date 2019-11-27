@@ -72,57 +72,71 @@ void MapItem::addNewColor(std::string type)
     if ( c_mapicons.find(type) == c_mapicons.end()
          && c_objecticons.find(type) == c_objecticons.end() ){
         std::size_t hash = std::hash<std::string>{}(type);
-        if (type == "Forest") {
-            QImage forest_pic = QImage(":/images/graphics/pi.png");
-            c_mapicons.insert({type, forest_pic});
+        if (type == "Desert") {
+            QImage desert_pic = QImage(":/images/graphics/pi.png");
+            c_mapicons.insert({type, desert_pic});
         } else if (type == "Nexus") {
-            QImage blue_nexus_pic = QImage(":/images/graphics/nexus_blue.png");
-            QImage purple_nexus_pic = QImage(":/images/graphics/nexus_purple.png");
+            QImage blue_nexus = QImage(":/images/graphics/nexus_blue.png");
+            QImage purple_nexus = QImage(":/images/graphics/nexus_purple.png");
 
-            std::map<std::string, QImage> owner_pic_pair =  {{"Blue", blue_nexus_pic},
-                                                        {"Purple", purple_nexus_pic}};
+            std::map<std::string, QImage> owner_pic_pair =  {{"Blue", blue_nexus},
+                                                        {"Purple", purple_nexus}};
             c_objecticons.insert({type, owner_pic_pair});
         } else if (type == "Minion") {
-            QImage blue_minion_pic = QImage(":/images/graphics/minion_blue.png");
-            QImage purple_minion_pic = QImage(":/images/graphics/minion_purple.png");
+            QImage blue_minion = QImage(":/images/graphics/minion_blue.png");
+            QImage purple_minion = QImage(":/images/graphics/minion_purple.png");
 
-            std::map<std::string, QImage> owner_pic_pair =  {{"Blue", blue_minion_pic},
-                                                        {"Purple", purple_minion_pic}};
+            std::map<std::string, QImage> owner_pic_pair =  {{"Blue", blue_minion},
+                                                        {"Purple", purple_minion}};
             c_objecticons.insert({type, owner_pic_pair});
 
         } else if (type == "Quarry") {
-            QImage blue_quarry_pic = QImage(":/images/graphics/quarry_blue.png");
-            QImage purple_quarry_pic = QImage(":/images/graphics/quarry_purple.png");
-            std::map<std::string, QImage> owner_pic_pair =  {{"Blue", blue_quarry_pic},
-                                                        {"Purple", purple_quarry_pic}};
+            QImage blue_quarry = QImage(":/images/graphics/quarry_blue.png");
+            QImage purple_quarry = QImage(":/images/graphics/quarry_purple.png");
+            std::map<std::string, QImage> owner_pic_pair =  {{"Blue", blue_quarry},
+                                                        {"Purple", purple_quarry}};
             c_objecticons.insert({type, owner_pic_pair});
 
         } else if (type == "Lifepump") {
-            QImage blue_lp_pic = QImage(":/images/graphics/lifepump_blue.png");
-            QImage purple_lp_pic = QImage(":/images/graphics/lifepump_purple.png");
-            std::map<std::string, QImage> owner_pic_pair =  {{"Blue", blue_lp_pic},
-                                                        {"Purple", purple_lp_pic}};
+            QImage blue_lifepump = QImage(":/images/graphics/lifepump_blue.png");
+            QImage purple_lifepump = QImage(":/images/graphics/lifepump_purple.png");
+            std::map<std::string, QImage> owner_pic_pair =  {{"Blue", blue_lifepump},
+                                                        {"Purple", purple_lifepump}};
             c_objecticons.insert({type, owner_pic_pair});
 
         } else if (type == "Sawmill") {
-            QImage blue_sawmill_pic = QImage(":/images/graphics/sawmill_blue.png");
-            QImage purple_sawmill_pic = QImage(":/images/graphics/sawmill_purple.png");
-            std::map<std::string, QImage> owner_pic_pair =  {{"Blue", blue_sawmill_pic},
-                                                        {"Purple", purple_sawmill_pic}};
+            QImage blue_sawmill = QImage(":/images/graphics/sawmill_blue.png");
+            QImage purple_sawmill = QImage(":/images/graphics/sawmill_purple.png");
+            std::map<std::string, QImage> owner_pic_pair =  {{"Blue", blue_sawmill},
+                                                        {"Purple", purple_sawmill}};
             c_objecticons.insert({type, owner_pic_pair});
-
-        } /*else if (type == "MeleeChampion") {
-            std::size_t hash = std::hash<std::string>{}(type);
-            c_mapcolors.insert({type, QColor((hash & 0xFF0000) >> 16, (hash & 0x00FF00 ) >> 8, (hash & 0x0000FF))});
-        }*/ else if (type == "Mountain") {
-            QImage mountain_pic = QImage(":/images/graphics/mountain.png");
-            c_mapicons.insert({type, mountain_pic});
+        } else if (type == "Mountain") {
+            QImage mountain = QImage(":/images/graphics/mountain.png");
+            c_mapicons.insert({type, mountain});
         } else if (type == "Spring") {
-            QImage spring_pic = QImage(":/images/graphics/spring.png");
-            c_mapicons.insert({type, spring_pic});
+            QImage spring = QImage(":/images/graphics/spring.png");
+            c_mapicons.insert({type, spring});
         } else if (type == "Jungle") {
-            QImage jungle_pic = QImage(":/images/graphics/jungle.png");
-            c_mapicons.insert({type, jungle_pic});
+            QImage jungle = QImage(":/images/graphics/jungle.png");
+            c_mapicons.insert({type, jungle});
+        } else if (type == "Melee Altar") {
+            QImage blue_altar = QImage(":/images/graphics/meleealtar_blue.png");
+            QImage purple_altar = QImage(":/images/graphics/meleealtar_purple.png");
+            std::map<std::string, QImage> owner_pic_pair =  {{"Blue", blue_altar},
+                                                        {"Purple", purple_altar}};
+            c_objecticons.insert({type, owner_pic_pair});
+        } else if (type == "Mage Altar") {
+            QImage blue_altar = QImage(":/images/graphics/magealtar_blue.png");
+            QImage purple_altar = QImage(":/images/graphics/magealtar_purple.png");
+            std::map<std::string, QImage> owner_pic_pair =  {{"Blue", blue_altar},
+                                                        {"Purple", purple_altar}};
+            c_objecticons.insert({type, owner_pic_pair});
+        } else if (type == "Ranged Altar") {
+            QImage blue_altar = QImage(":/images/graphics/rangedaltar_blue.png");
+            QImage purple_altar = QImage(":/images/graphics/rangedaltar_purple.png");
+            std::map<std::string, QImage> owner_pic_pair =  {{"Blue", blue_altar},
+                                                        {"Purple", purple_altar}};
+            c_objecticons.insert({type, owner_pic_pair});
         } else {
             QImage nexus_pic = QImage(":/images/graphics/nexus_blue.png");
             c_mapicons.insert({type, nexus_pic});
