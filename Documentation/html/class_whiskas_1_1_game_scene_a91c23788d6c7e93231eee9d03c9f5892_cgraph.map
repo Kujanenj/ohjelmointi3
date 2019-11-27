@@ -1,0 +1,5 @@
+<map id="Whiskas::GameScene::removeItem" name="Whiskas::GameScene::removeItem">
+<area shape="rect" id="node1" title="tries to remove drawn object at the location obj points to. If there&#39;s multiple objects,..." alt="" coords="5,35,159,76"/>
+<area shape="rect" id="node2" href="$class_whiskas_1_1_map_item.html#a0e9d94b222fd7ecdd84313f8ee6bac29" title="getBoundObject" alt="" coords="211,5,405,47"/>
+<area shape="rect" id="node3" href="$class_whiskas_1_1_map_item.html#a96a6d3f04539102609d17cfe7ebd6390" title="checks if this instance has obj as bound obj." alt="" coords="207,71,409,98"/>
+</map>

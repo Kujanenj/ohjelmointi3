@@ -46,6 +46,7 @@ bool Attackable::modifyHealth(int hModifier)
     return false;
 }
 
+
 void Attackable::setAttacked(bool hasAttacked)
 {
     qDebug()<<"trying to set attack with boolean"<<hasAttacked;
@@ -61,6 +62,7 @@ void Attackable::setAttacked(bool hasAttacked)
         HasAttacked_=true;
     }
     qDebug()<<"nubmer of attacks done is now"<<numberOfAttacksDone_;
+
 }
 
 }

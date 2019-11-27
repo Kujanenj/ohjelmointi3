@@ -1,0 +1,6 @@
+<map id="Whiskas::GameScene::updateItem" name="Whiskas::GameScene::updateItem">
+<area shape="rect" id="node1" title="updates the position of obj." alt="" coords="5,23,159,65"/>
+<area shape="rect" id="node2" href="$class_whiskas_1_1_map_item.html#a96a6d3f04539102609d17cfe7ebd6390" title="checks if this instance has obj as bound obj." alt="" coords="207,5,409,32"/>
+<area shape="rect" id="node3" href="$class_whiskas_1_1_map_item.html#a69d2030443d01b542169fa72bf8817ac" title="updateLoc moves the item if the position has changed." alt="" coords="209,56,407,83"/>
+<area shape="rect" id="node4" href="$class_whiskas_1_1_map_item.html#a8ed1f50b3d3a99b55e31e4a8079c37a5" title="boundingRect" alt="" coords="457,56,676,83"/>
+</map>

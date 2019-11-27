@@ -10,12 +10,12 @@ MageAltar::MageAltar(const std::shared_ptr<gameEventHandler>& eventhandler,
                      const AdvancedResourceMap production):
   AltarBase(eventhandler,objectmanager,owner)
 {
-cooldown_=20;
+
 }
 
 void MageAltar::upgradeMinion()
 {
-    if(cooldown_==0){
+    if(cooldown_<=0){
 
 
          for(auto it: manager_->getMinionVector()){

@@ -14,28 +14,30 @@ std::map<std::string,std::string> BuildingDescriptions{
         "_____\n"
         "Produces\n"
         "_______"},
-    {"Mage","Transforms a minion\n"
+    {"Mage Altar","Transforms a minion\n"
         "into a mage, if a minion\n"
         "ends its turn on this building.\n"
         "Cost:"
         "______\n"
         "Has a cooldowwn of 20 turns\n"},
-    {"Melee", "Transforms a minion\n"
+    {"Melee Altar", "Transforms a minion\n"
         "into a melee champion, if a \n"
         "minion ends its turn on this\n"
         "building.\n"
         "Cost:\n"
         "___\n"
         "Has a cooldown of 10 turns"},
-    {"Ranged", "Transforms a minion\n"
-        "into a Ranged champion, if a \n"
-        "minion ends its turn on this\n"
+    {"Ranged Altar", "Transforms a minion\n"
+        "into a Ranged champion\n"
+        " if a minion ends\n"
+        " its turn on this"
         "building.\n"
         "Cost:\n"
         "___\n"
         "Has a cooldown of 15 turns"},
     {"Quarry", "quarry descript"},
-    {"Sawmill","Saw descript"}
+    {"Sawmill","Saw descript"},
+    {"Nexus", "Nexus"}
 };
 MapWindow::MapWindow(QWidget *parent,
                      std::shared_ptr<Whiskas::gameEventHandler> handler):
@@ -98,20 +100,9 @@ void MapWindow::setSize(int width, int height)
    m_gamescene->setSize(width, height);
 }
 
-void MapWindow::setScale(int scale)
-{
-    m_gamescene->setScale(scale);
-}
 
-void MapWindow::resize()
-{
-    m_gamescene->resize();
-}
 
-void MapWindow::updateItem(std::shared_ptr<Course::GameObject> obj)
-{
-    m_gamescene->updateItem(obj);
-}
+
 
 void MapWindow::initMap(int x, int y)
 {
@@ -160,10 +151,12 @@ void MapWindow::initMap(int x, int y)
 
 
 
+
 }
 void MapWindow::selectBuilding(std::string buildingType){
     buildingToBeBuilt_=buildingType;
     m_ui->DescriptionLabelRight->setText(QString::fromStdString(BuildingDescriptions.at(buildingType)));
+    m_ui->confirmButton->setEnabled(true);
 
 }
 
@@ -172,10 +165,6 @@ void MapWindow::closeWindow()
     QTimer::singleShot(0, this, SLOT(close()));
 }
 
-void MapWindow::removeItem(std::shared_ptr<Course::GameObject> obj)
-{
-    m_gamescene->removeItem(obj);
-}
 
 void MapWindow::drawItem( std::shared_ptr<Course::GameObject> obj)
 {
@@ -193,6 +182,11 @@ void MapWindow::mousePressEvent(QMouseEvent *event){
                                                                             getType())));
   }
   else if(m_GEHandler->getActiveTile()!=nullptr){
+      qDebug()<<"DESCRIPTION LABEL ACTIVE TILL NOT NULL";
+      qDebug()<<QString::fromStdString(m_GEHandler->getActiveTile()->
+                                       getDescription(m_GEHandler->
+                                                      getActiveTile()->
+                                                      getType()));
       m_ui->DescriptionLabel->setText(QString::fromStdString(m_GEHandler->getActiveTile()->
                                                              getDescription(m_GEHandler->
                                                                             getActiveTile()->
@@ -315,4 +309,5 @@ void MapWindow::on_confirmButton_clicked()
     selectBuildingTypef(buildingToBeBuilt_,m_GEHandler,m_GManager,m_GEHandler->
                         getTurn()->getInTurn());
     m_ui->DescriptionLabelRight->clear();
+    m_ui->confirmButton->setEnabled(false);
 }

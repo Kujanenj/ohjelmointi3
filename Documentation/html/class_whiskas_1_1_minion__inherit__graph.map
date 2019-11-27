@@ -1,0 +1,9 @@
+<map id="Whiskas::Minion" name="Whiskas::Minion">
+<area shape="rect" id="node1" title="The Minion class is a subtype of worker It can be upgraded to champions using altars Is attackable an..." alt="" coords="232,80,351,107"/>
+<area shape="rect" id="node5" href="$class_whiskas_1_1_magic_champion.html" title="The MagicChampion class Subminion, has a higher dmg and an area attack." alt="" coords="5,155,180,181"/>
+<area shape="rect" id="node6" href="$class_whiskas_1_1_melee_champion.html" title="The MeleeChampion class is a minion subtype. Has a melee attack of higher dmg and better defenses." alt="" coords="204,155,379,181"/>
+<area shape="rect" id="node7" href="$class_whiskas_1_1_ranged_champion.html" title="The RangedChampion class Has a ranged attack and higher movement." alt="" coords="403,155,585,181"/>
+<area shape="rect" id="node2" title=" " alt="" coords="72,5,215,32"/>
+<area shape="rect" id="node3" href="$class_whiskas_1_1_unit.html" title="The Unit class handles the move values." alt="" coords="239,5,343,32"/>
+<area shape="rect" id="node4" href="$class_whiskas_1_1_attackable.html" title="The Attackable class contains information regarding attacking and dealing damage." alt="" coords="368,5,511,32"/>
+</map>

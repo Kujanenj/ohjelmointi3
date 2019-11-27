@@ -18,6 +18,7 @@ void Turn::swapTurn()
     for(auto it:manager_->getMinionVector()){
         it->setMoved(false);
 
+
         it->setAttacked(false);
     }
 

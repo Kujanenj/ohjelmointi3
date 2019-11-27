@@ -6,7 +6,9 @@
 namespace Ui {
 class SizeDialog;
 }
-
+/**
+ * @brief The SizeDialog class Sets the mapSize
+ */
 class SizeDialog : public QDialog
 {
     Q_OBJECT

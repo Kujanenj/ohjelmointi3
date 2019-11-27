@@ -45,7 +45,8 @@ std::shared_ptr<Course::TileBase> gameManager::getTile(const Course::Coordinate 
     return nullptr;
 }
 
-std::vector<std::shared_ptr<Course::TileBase> > gameManager::getTiles(const std::vector<Course::Coordinate> &coordinates)
+std::vector<std::shared_ptr<Course::TileBase> > gameManager::getTiles(const std::vector<Course::Coordinate>
+                                                                      &coordinates)
 {
     return alltiles_;
 }
@@ -65,45 +66,45 @@ std::pair<std::shared_ptr<Whiskas::LeaguePlayer>, std::shared_ptr<Whiskas::Leagu
     return players_;
 }
 
-bool gameManager::addBuilding(std::shared_ptr<CustomBuildingBase> &Building)
+void gameManager::addBuilding(std::shared_ptr<CustomBuildingBase> &Building)
 {
     allbuildings_.push_back(Building);
     qDebug()<<allbuildings_.size()<<"allbuildings.size";
     allattackables_.push_back(Building);
 
-    return true;
+    return;
 }
 
-bool gameManager::addPlayer(std::pair<
+void gameManager::addPlayer(std::pair<
                             std::shared_ptr<Whiskas::LeaguePlayer>,
                             std::shared_ptr<Whiskas::LeaguePlayer>> &players)
 {
     qDebug()<<"Check this";
      qDebug()<<QString::fromStdString(players.first->getName());
     players_=players;
-    return true;
+    return;
 }
 
-bool gameManager::addMinion(std::shared_ptr<Minion> minion)
+void gameManager::addMinion(std::shared_ptr<Minion> minion)
 {
     allminions_.push_back(minion);
      allattackables_.push_back(minion);
-    return true;
+    return;
 }
 
-void gameManager::spawnMinion(std::shared_ptr<gameEventHandler> handler,
+bool gameManager::spawnMinion(std::shared_ptr<gameEventHandler> handler,
                                                  std::shared_ptr<Course::iObjectManager> manager,
                                                  std::shared_ptr<Course::PlayerBase> owner,
                                                  std::shared_ptr<Course::TileBase> location,
                                                  std::string type)
 {
 
-
+    if(location!=nullptr){
     std::shared_ptr<Minion> testMinion=nullptr;
     if(type=="minion"){
         if(handler->subtractPlayerResources(handler->getTurn()->getInTurn(),MINION_COST)==false){
             qDebug()<<"you did not have enough moneys";
-            return;
+            return false;
         }
         testMinion=std::make_shared<Minion>(handler,
                                             manager,
@@ -137,10 +138,12 @@ void gameManager::spawnMinion(std::shared_ptr<gameEventHandler> handler,
 
     manager_gamescene->drawItem(testMinion);
     manager_gamescene->update();
-    testMinion->getCosts();
+    return true;
+    }
 
 
 
+    return false;
 
 }
 
@@ -160,6 +163,10 @@ void gameManager::move(std::shared_ptr<Minion> minionToMove, std::shared_ptr<Cou
        qDebug()<<abs(deltaC.x())+abs(deltaC.y())<<"Distance to move";
        if(abs(deltaC.x())+abs(deltaC.y())<=minionToMove->getMoveValue()){
             if(checkForEnemies(minionToMove,targetTile)){
+                if(minionToMove->getAttacked()){
+                    qDebug()<<"has attacked";
+                    return;
+                }
                 qDebug()<<"trying to attack in move command";
                 if(minionToMove->getAttacked()==true){
                     qDebug()<<"UNIT HAS ATTACKED MAX NUMBER OF TIMES THIS TURN, GET THE HELL OUT!";
@@ -174,19 +181,20 @@ void gameManager::move(std::shared_ptr<Minion> minionToMove, std::shared_ptr<Cou
 
                 qDebug()<<"we attacked";
                 minionToMove->setAttacked(true);
+
                 return;
             }
             if(minionToMove->getMoved()==true){
                 qDebug()<<"UNIT HAS MOVED THIS TURN, GET THE HELL OUT!";
                 return;
             }
-
             minionToMove->currentLocationTile()->removeWorker(minionToMove);
             minionToMove->setLocationTile(targetTile);
             minionToMove->currentLocationTile()->addWorker(minionToMove);
             manager_gamescene->updateItem(minionToMove);
             qDebug()<<"WE MOVED";
             minionToMove->setMoved(true);
+            minionToMove->setAttacked(true);
 
            }
 

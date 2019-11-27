@@ -1,0 +1,4 @@
+<map id="Whiskas::MapItem::getBoundObject" name="Whiskas::MapItem::getBoundObject">
+<area shape="rect" id="node1" title="getBoundObject" alt="" coords="207,5,401,47"/>
+<area shape="rect" id="node2" href="$class_whiskas_1_1_game_scene.html#a91c23788d6c7e93231eee9d03c9f5892" title="tries to remove drawn object at the location obj points to. If there&#39;s multiple objects,..." alt="" coords="5,5,159,47"/>
+</map>

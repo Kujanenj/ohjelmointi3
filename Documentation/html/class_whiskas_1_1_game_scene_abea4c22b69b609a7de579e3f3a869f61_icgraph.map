@@ -1,0 +1,4 @@
+<map id="Whiskas::GameScene::setScale" name="Whiskas::GameScene::setScale">
+<area shape="rect" id="node1" title="set the tile size, aka scale of the map and calls resize(). Function behaviour after objects has been..." alt="" coords="207,5,360,47"/>
+<area shape="rect" id="node2" href="$class_whiskas_1_1_game_scene.html#a3664e5b2a9b1af8534eadd21252474dc" title="Constructor for the class." alt="" coords="5,5,159,47"/>
+</map>

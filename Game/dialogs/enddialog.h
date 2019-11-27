@@ -6,7 +6,9 @@
 namespace Ui {
 class endDialog;
 }
-
+/**
+ * @brief The endDialog class Shows the end message
+ */
 class endDialog : public QDialog
 {
     Q_OBJECT
