@@ -28,17 +28,17 @@ const AdvancedResourceMap SAWMILL_COST={
 };
 
 const AdvancedResourceMap LIFEPUMP_COST={
-    {IRON, 5},
-    {WOOD, 5},
-    {CRYSTAL,3},
-    {LIFEWATER,1}
+    {IRON, 15},
+    {WOOD, 15},
+    {CRYSTAL,0},
+    {LIFEWATER,0}
 };
 
 const AdvancedResourceMap QUARRY_COST={
-    {IRON, 5},
-    {WOOD, 5},
-    {CRYSTAL,3},
-    {LIFEWATER,1}
+    {IRON, 10},
+    {WOOD, 10},
+    {CRYSTAL,0},
+    {LIFEWATER,0}
 };
 
 const AdvancedResourceMap SAWMILL_PRODUCE={

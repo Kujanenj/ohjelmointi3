@@ -156,6 +156,7 @@ void MapWindow::initMap(int x, int y)
 void MapWindow::selectBuilding(std::string buildingType){
     buildingToBeBuilt_=buildingType;
     m_ui->DescriptionLabelRight->setText(QString::fromStdString(BuildingDescriptions.at(buildingType)));
+    m_ui->confirmButton->setEnabled(true);
 
 }
 
@@ -308,4 +309,5 @@ void MapWindow::on_confirmButton_clicked()
     selectBuildingTypef(buildingToBeBuilt_,m_GEHandler,m_GManager,m_GEHandler->
                         getTurn()->getInTurn());
     m_ui->DescriptionLabelRight->clear();
+    m_ui->confirmButton->setEnabled(false);
 }

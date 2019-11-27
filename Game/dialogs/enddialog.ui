@@ -27,7 +27,7 @@
      <widget class="QPushButton" name="okButton">
       <property name="maximumSize">
        <size>
-        <width>50</width>
+        <width>100000</width>
         <height>16777215</height>
        </size>
       </property>
