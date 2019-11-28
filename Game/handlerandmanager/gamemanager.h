@@ -137,7 +137,7 @@ public:
      */
     bool spawnBuilding(std::shared_ptr<gameEventHandler> handler,
                        std::shared_ptr<gameManager> manager,
-                       std::shared_ptr<Course::PlayerBase> player);
+                       std::shared_ptr<LeaguePlayer> player);
     /**
      * @brief move Tries to move a minion to the target tile. Checks for movement range,
      * collision and possible enemies. If enemies are found, tries to attack them.

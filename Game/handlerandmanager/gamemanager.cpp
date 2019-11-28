@@ -102,10 +102,7 @@ bool gameManager::spawnMinion(std::shared_ptr<gameEventHandler> handler,
     if(location!=nullptr){
     std::shared_ptr<Minion> testMinion=nullptr;
     if(type=="minion"){
-        if(handler->subtractPlayerResources(handler->getTurn()->getInTurn(),MINION_COST)==false){
-            qDebug()<<"you did not have enough moneys";
-            return false;
-        }
+
         testMinion=std::make_shared<Minion>(handler,
                                             manager,
                                             owner);

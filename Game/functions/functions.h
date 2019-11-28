@@ -23,9 +23,9 @@ namespace Whiskas {
 // Map containing types of tiles a building can be built on
 const std::map<std::string, std::vector<std::string>> buildingAvailability={
     {"Nexus",{"Desert","Jungle","Mountain","Spring"}},
-    {{"Melee Altar"},{"Jungle"}},
+    {{"Melee Altar"},{"Desert", "Mountain"}},
     {{"Ranged Altar"},{"Jungle"}},
-    {{"Mage Altar"},{"Jungle"}},
+    {{"Mage Altar"},{"Spring"}},
     {{"Quarry"},{"Mountain"}},
     {{"Sawmill"},{"Jungle"}},
     {{"Lifepump"},{"Spring"}}
@@ -44,7 +44,7 @@ const std::map<std::string, std::vector<std::string>> buildingAvailability={
  */
 void selectBuildingTypef(std::string type, std::shared_ptr<gameEventHandler> handler,
                         std::shared_ptr<gameManager> manager,
-                        std::shared_ptr<Course::PlayerBase> player);
+                        std::shared_ptr<LeaguePlayer> player);
 
 
 /*!
@@ -56,7 +56,8 @@ void selectBuildingTypef(std::string type, std::shared_ptr<gameEventHandler> han
 bool checkBuildingAvailability(std::shared_ptr<Course::TileBase> targetTile,
                                std::string type);
 /*!
- * \brief makeAdvancedWGenerator generates the coordinates for the map
+ * \brief makeAdvancedWGenerator generates the coordinates for the map. If a generated tile
+ * is touching a desert or a spring, it is more likely to be generated as such aswell
  * \param mapsize
  * \param handler gamehandler
  * \param manager gameManager

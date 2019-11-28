@@ -21,7 +21,7 @@ namespace Whiskas {
 void selectBuildingTypef(std::string type,
                         std::shared_ptr<gameEventHandler> handler,
                         std::shared_ptr<gameManager> manager,
-                        std::shared_ptr<Course::PlayerBase> player)
+                        std::shared_ptr<LeaguePlayer> player)
 {
 
 
@@ -53,19 +53,22 @@ template<typename buildingType>
 
 bool gameManager::spawnBuilding(std::shared_ptr<gameEventHandler> handler,
                    std::shared_ptr<gameManager> manager,
-                   std::shared_ptr<Course::PlayerBase> player){
+                   std::shared_ptr<LeaguePlayer> player){
     {
         if(handler->getActiveTile()==nullptr){
             qDebug()<<"error, active tile is a nullptr";
             return false;
         }
         qDebug()<<"Trying to spawn a building pointer in functions";
-        std::shared_ptr<CustomBuildingBase> testBuilding = std::make_shared<buildingType>(handler,manager,player);
+        std::shared_ptr<CustomBuildingBase> Building = std::make_shared<buildingType>(handler,manager,player);
+        if(!(handler->subtractPlayerResources(player,Building->getAdvancedCost()))){
+            return false; // NOT ENOUGH MONEY
 
-        qDebug() << QString::fromStdString(testBuilding->getType());
-        handler->getActiveTile()->addBuilding(testBuilding);
-        manager->addBuilding(testBuilding);
-        manager_gamescene->drawItem(testBuilding);
+        }
+        qDebug() << QString::fromStdString(Building->getType());
+        handler->getActiveTile()->addBuilding(Building);
+        manager->addBuilding(Building);
+        manager_gamescene->drawItem(Building);
         return true;
 
     }
@@ -76,6 +79,9 @@ bool checkBuildingAvailability(std::shared_ptr<Course::TileBase> targetTile, std
 {
 
  //HANDLER FOR STD OUT OF RANGE?
+    if(targetTile->getBuildingCount()!=0){
+        return false;
+    }
     for(auto it: buildingAvailability.at(type)){
         if(it==targetTile->getType()){
             qDebug()<<"Legit placement for "<<QString::fromStdString(type);
@@ -105,12 +111,14 @@ void makeAdvancedWGenerator(int mapsize,
             for(auto it :loc.neighbours()){
                 if(it.x()<=x &&it.y()<=y){
                     qDebug()<<"Checking coor"<<it.x()<<it.y();
-                 if(manager->getTile(it)->getType()=="Forest"){
+                 if(manager->getTile(it)->getType()=="Jungle"){
                      ran+=1;
                      break;
                  }
                  if(manager->getTile(it)->getType()=="Spring"){
                      ran-=1;
+                     break;
+
                  }
                 }
             }}
