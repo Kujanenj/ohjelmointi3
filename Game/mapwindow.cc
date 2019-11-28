@@ -139,8 +139,10 @@ void MapWindow::initMap(int x, int y)
 {
 
     setSize(x,y);
+
+    std::shared_ptr<QTextBrowser> textBrowser(m_ui->textBrowser);
     std::shared_ptr<Whiskas::gameManager> gmanager =
-            std::make_shared<Whiskas::gameManager>(m_gamescene/*, m_ui->textBrowser*/);
+            std::make_shared<Whiskas::gameManager>(m_gamescene, textBrowser);
     std::shared_ptr<Whiskas::LeaguePlayer> firstPlayer = std::make_shared<Whiskas::LeaguePlayer>("Blue");
     std::shared_ptr<Whiskas::LeaguePlayer> secondPlayer = std::make_shared<Whiskas::LeaguePlayer>("Purple");
 

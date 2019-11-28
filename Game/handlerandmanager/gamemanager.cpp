@@ -6,9 +6,9 @@
 
 namespace Whiskas {
 
-gameManager::gameManager(std::shared_ptr<GameScene>& m_gamescene/*, std::shared_ptr<QTextBrowser> textBrowser*/):
+gameManager::gameManager(std::shared_ptr<GameScene>& m_gamescene, std::shared_ptr<QTextBrowser> textBrowser):
     manager_gamescene(m_gamescene)
-    /*,textBrowser(textBrowser)*/
+    ,textBrowser(textBrowser)
 {
  //manager_gamescene = m_gamescene;
  qDebug()<<"TEST TILE MANAGER";
