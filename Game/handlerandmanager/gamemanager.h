@@ -27,6 +27,7 @@ class gameManager : public Course::iObjectManager
 
 {
 public:
+
     /**
      * @brief gameManager Constructor
      * @param m_gamescene for easier access to graphics
