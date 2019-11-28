@@ -87,6 +87,8 @@ void gameEventHandler::handleLeftClick(std::shared_ptr<GameScene> scene, std::sh
 
                     qDebug()<<"active minion type is"<<QString::fromStdString(it->getType())
                            <<"and its owner is"<<QString::fromStdString(it->getOwner()->getName());
+                    message_ = "Active minion type is" + QString::fromStdString(it->getType()) +
+                            " and its owner is " + QString::fromStdString(it->getOwner()->getName());
                 }
 
             }
@@ -113,6 +115,7 @@ void gameEventHandler::handleRightClick(std::shared_ptr<gameManager> manager, st
     }
     else{
         qDebug()<<"Active minion was null ptr or target tile contains a minion";
+        message_ = "Target tile contains a minion";
 
     }
 }
@@ -154,6 +157,11 @@ void gameEventHandler::endTurn(std::shared_ptr<gameManager> manager, std::shared
      }
  }
  activeMinion_=nullptr;
+}
+
+QString gameEventHandler::getMessage()
+{
+    return message_;
 }
 
 

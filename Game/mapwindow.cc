@@ -96,6 +96,8 @@ MapWindow::MapWindow(QWidget *parent,
     connect(&dialog,         SIGNAL(rejected()),this,SLOT(closeWindow()));
     connect(&buildingdialog, SIGNAL(buildingType(std::string)),this,SLOT(selectBuilding(std::string)));
 
+    m_ui->activePlayerLabel->setAlignment(Qt::AlignCenter);
+
 
     //TEST SOUND EFFECT
     testSoundPlayer=new QMediaPlayer();
@@ -110,12 +112,6 @@ MapWindow::MapWindow(QWidget *parent,
    //IT WORKS
     generateLCDList();
     dialog.exec();
-
-
-
-
-
-
 }
 
 MapWindow::~MapWindow()
@@ -134,38 +130,30 @@ void MapWindow::setGManager(std::shared_ptr<Whiskas::gameManager> manager)
     m_GManager=manager;
 }
 
-
 void MapWindow::setSize(int width, int height)
 {
-   m_gamescene->setSize(width, height);
+    m_gamescene->setSize(width, height);
 }
-
-
-
-
 
 void MapWindow::initMap(int x, int y)
 {
 
     setSize(x,y);
-     std::shared_ptr<Whiskas::gameManager> gmanager =  std::make_shared<Whiskas::gameManager>(m_gamescene);
+    std::shared_ptr<Whiskas::gameManager> gmanager =
+            std::make_shared<Whiskas::gameManager>(m_gamescene/*, m_ui->textBrowser*/);
+    std::shared_ptr<Whiskas::LeaguePlayer> firstPlayer = std::make_shared<Whiskas::LeaguePlayer>("Blue");
+    std::shared_ptr<Whiskas::LeaguePlayer> secondPlayer = std::make_shared<Whiskas::LeaguePlayer>("Purple");
 
-     std::shared_ptr<Whiskas::LeaguePlayer> firstPlayer = std::make_shared<Whiskas::LeaguePlayer>("Blue");
-     std::shared_ptr<Whiskas::LeaguePlayer> secondPlayer = std::make_shared<Whiskas::LeaguePlayer>("Purple");
-     qDebug()<<"start of game";
-     firstPlayer->getItems();
+    qDebug()<<"start of game";
+    firstPlayer->getItems();
 
-     std::pair<std::shared_ptr<Whiskas::LeaguePlayer>,
-             std::shared_ptr<Whiskas::LeaguePlayer>> playerPair(firstPlayer,secondPlayer);
-     setGManager(gmanager);
+    std::pair<std::shared_ptr<Whiskas::LeaguePlayer>,
+    std::shared_ptr<Whiskas::LeaguePlayer>> playerPair(firstPlayer,secondPlayer);
+    setGManager(gmanager);
 
-     m_GManager->addPlayer(playerPair);
-     std::shared_ptr<Whiskas::Turn> turn = std::make_shared<Whiskas::Turn>(gmanager);
+    m_GManager->addPlayer(playerPair);
+    std::shared_ptr<Whiskas::Turn> turn = std::make_shared<Whiskas::Turn>(gmanager);
     std::shared_ptr<Whiskas::gameEventHandler> ghandler =  std::make_shared<Whiskas::gameEventHandler>(turn);
-
-
-
-
 
     setGEHandler(ghandler); //TEST
 
@@ -186,25 +174,18 @@ void MapWindow::initMap(int x, int y)
     m_GEHandler->getTurn()->setInTurn(playerPair.second);
     on_confirmButton_clicked();
     on_endTurnButton_clicked();
-
-
-
-
-
-
 }
+
 void MapWindow::selectBuilding(const std::string &buildingType){
     buildingToBeBuilt_=buildingType;
     m_ui->DescriptionLabelRight->setText(QString::fromStdString(BuildingDescriptions.at(buildingType)));
     m_ui->confirmButton->setEnabled(true);
-
 }
 
 void MapWindow::closeWindow()
 {
     QTimer::singleShot(0, this, SLOT(close()));
 }
-
 
 void MapWindow::drawItem( std::shared_ptr<Course::GameObject> obj)
 {
@@ -215,7 +196,13 @@ void MapWindow::mousePressEvent(QMouseEvent *event){
   m_GEHandler->handleMwindowClick(m_gamescene, m_GManager, *event);
   qDebug()<<"updating mwindow view";
   m_ui->graphicsView->viewport()->update();
-  if(m_GEHandler->getActiveMinion()!=nullptr){
+  updateBrowser();
+  if(m_GEHandler->getActiveTile()!=nullptr) {
+     updateDescriptions();
+  } else {
+      m_ui->DescriptionLabel->clear();
+  }
+  /*if(m_GEHandler->getActiveMinion()!=nullptr){
       m_ui->DescriptionLabel->setText(QString::fromStdString(m_GEHandler->getActiveMinion()->
                                                              getDescription(m_GEHandler->
                                                                             getActiveMinion()->
@@ -236,13 +223,14 @@ void MapWindow::mousePressEvent(QMouseEvent *event){
                                                                                               getActiveTile()->
                                                                                               getBuildings().at(0)->
                                                                                               getType())));
-
       }
   }
 
   else{
       m_ui->DescriptionLabel->clear();
-  }
+  }*/
+
+
   if(m_GManager->getWinner()!=nullptr){
 
       endDialog endLog;
@@ -252,6 +240,32 @@ void MapWindow::mousePressEvent(QMouseEvent *event){
       endLog.exec();
       closeWindow();
   }
+}
+
+void MapWindow::updateBrowser() {
+    //m_ui->textBrowser->append(m_GEHandler->getMessage());
+}
+void MapWindow::updateDescriptions()
+{
+    if(m_GEHandler->getActiveMinion()!=nullptr){
+        m_ui->DescriptionLabel->setText(QString::fromStdString(m_GEHandler->getActiveMinion()->
+                                                                 getDescription(m_GEHandler->
+                                                                                getActiveMinion()->
+                                                                                getType())));
+    } else {
+        m_ui->DescriptionLabel->setText(QString::fromStdString(m_GEHandler->getActiveTile()->
+                                                               getDescription(m_GEHandler->
+                                                                              getActiveTile()->
+                                                                              getType())));
+    }
+    if(m_GEHandler->getActiveTile()->getBuildingCount()!=0){
+              m_ui->DescriptionLabelRight->setText(QString::fromStdString(BuildingDescriptions.at(m_GEHandler->
+                                                                                                  getActiveTile()->
+                                                                                                  getBuildings().at(0)->
+                                                                                                  getType())));
+    } else {
+        m_ui->DescriptionLabelRight->clear();
+    }
 }
 
 void MapWindow::updateDisplays()
@@ -283,13 +297,9 @@ void MapWindow::generateLCDList()
 }
 
 
-
 void MapWindow::on_addButton_clicked()
 {
     buildingdialog.show();
-
-
-
 }
 
 
@@ -326,7 +336,12 @@ void MapWindow::on_endTurnButton_clicked()
     updateDisplays();
     m_ui->activePlayerLabel->setText(QString::fromStdString(m_GEHandler->getTurn()->
                                                             getInTurn()->getName()+
-                                                            " is the player in turn"));
+                                                            " is playing"));
+    if (m_GEHandler->getTurn()->getInTurn()->getName() == "Blue") {
+        m_ui->activePlayerLabel->setStyleSheet("QLabel { background-color : #00adef; color : black;}");
+    } else {
+        m_ui->activePlayerLabel->setStyleSheet("QLabel { background-color : magenta; color : black;}");
+}
     m_ui->turnLCD->display(m_GEHandler->getTurn()->getTurnCounter());
 
 

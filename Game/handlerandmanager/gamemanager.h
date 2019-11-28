@@ -1,8 +1,6 @@
 #ifndef TESTTILEMANAGER_H
 #define TESTTILEMANAGER_H
 #include "interfaces/iobjectmanager.h"
-//#include "tiles/forest.h"
-//#include "tiles/grassland.h"
 #include "core/worldgenerator.h"
 #include "buildings/custombuildingbase.h"
 #include "minion/minion.h"
@@ -10,6 +8,8 @@
 #include <vector>
 #include "leagueplayer.h"
 #include "graphics/mapitem.h"
+
+#include <QTextBrowser>
 
 
 namespace Whiskas {
@@ -32,7 +32,7 @@ public:
      * @brief gameManager Constructor
      * @param m_gamescene for easier access to graphics
      */
-    explicit gameManager(std::shared_ptr<GameScene>& m_gamescene);
+    explicit gameManager(std::shared_ptr<GameScene>& m_gamescene/*, std::shared_ptr<QTextBrowser> textBrowser*/);
 
     /*!
      * \brief Copies the tilesvector to managers own private vector
@@ -206,6 +206,7 @@ private:
     std::pair<std::shared_ptr<Whiskas::LeaguePlayer>,std::shared_ptr<Whiskas::LeaguePlayer>> players_;
     std::shared_ptr<GameScene> manager_gamescene; //The game scene
     std::shared_ptr<LeaguePlayer>winner_=nullptr;
+    std::shared_ptr<QTextBrowser> textBrowser = nullptr;
 };
 
 }

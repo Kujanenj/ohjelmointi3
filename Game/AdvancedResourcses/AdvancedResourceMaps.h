@@ -14,10 +14,10 @@ const AdvancedResourceMap PLAYER_ITEMS={
     };
 
 const AdvancedResourceMap NEXUS_PRODUCE={
-    {IRON, 1},
-    {WOOD, 1},
-    {CRYSTAL,1},
-    {LIFEWATER,1}
+    {IRON, 0},
+    {WOOD, 0},
+    {CRYSTAL,0},
+    {LIFEWATER,0}
 };
 
 const AdvancedResourceMap SAWMILL_COST={

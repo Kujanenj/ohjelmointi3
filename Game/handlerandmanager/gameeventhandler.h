@@ -93,10 +93,17 @@ public:
      */
     void endTurn(std::shared_ptr<gameManager> manager, std::shared_ptr<gameEventHandler> handler);
 
+    /**
+     * @brief getMessage Gets the message
+     * @return The message
+     */
+    QString getMessage();
+
 private:
     std::shared_ptr<Course::TileBase> activeTile_ = nullptr;
     std::shared_ptr<Minion> activeMinion_=nullptr;
     std::shared_ptr<Turn> turn_=nullptr;
+    QString message_ = "";
 
 };
 
