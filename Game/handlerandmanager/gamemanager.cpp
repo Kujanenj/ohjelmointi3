@@ -102,10 +102,7 @@ bool gameManager::spawnMinion(std::shared_ptr<gameEventHandler> handler,
     if(location!=nullptr){
     std::shared_ptr<Minion> testMinion=nullptr;
     if(type=="minion"){
-        if(handler->subtractPlayerResources(handler->getTurn()->getInTurn(),MINION_COST)==false){
-            qDebug()<<"you did not have enough moneys";
-            return false;
-        }
+
         testMinion=std::make_shared<Minion>(handler,
                                             manager,
                                             owner);
@@ -135,11 +132,11 @@ bool gameManager::spawnMinion(std::shared_ptr<gameEventHandler> handler,
 
     qDebug()<<"gamemanager minion vector has size of";
     qDebug()<<allminions_.size();
-
+    if(manager_gamescene!=nullptr){
     manager_gamescene->drawItem(testMinion);
     manager_gamescene->update();
     return true;
-    }
+    }}
 
 
 
@@ -191,7 +188,9 @@ void gameManager::move(std::shared_ptr<Minion> minionToMove, std::shared_ptr<Cou
             minionToMove->currentLocationTile()->removeWorker(minionToMove);
             minionToMove->setLocationTile(targetTile);
             minionToMove->currentLocationTile()->addWorker(minionToMove);
+            if(manager_gamescene!=nullptr){
             manager_gamescene->updateItem(minionToMove);
+            }
             qDebug()<<"WE MOVED";
             minionToMove->setMoved(true);
             minionToMove->setAttacked(true);
@@ -358,7 +357,8 @@ void gameManager::destroyObject(std::shared_ptr<Attackable> objectToDestroy)
      }
      if(minionFound){
          qDebug()<<"trying to remove minion from scene";
-         manager_gamescene->removeItem(tempMinionToRemove);
+         if(manager_gamescene!=nullptr){
+         manager_gamescene->removeItem(tempMinionToRemove);}
         qDebug()<<"removing minion from tile";
          tempMinionToRemove->currentLocationTile()->removeWorker(tempMinionToRemove);
          qDebug()<<allminions_.size()<<"allminions size before erease";
@@ -379,7 +379,8 @@ void gameManager::destroyObject(std::shared_ptr<Attackable> objectToDestroy)
 
         if(buildingFound){
          qDebug()<<"trying to remove building from scene";
-         manager_gamescene->removeItem(tempBuildingToRemove);
+         if(manager_gamescene!=nullptr){
+         manager_gamescene->removeItem(tempBuildingToRemove);}
         qDebug()<<"removing building from tile";
          tempBuildingToRemove->currentLocationTile()->removeBuilding(tempBuildingToRemove);
 

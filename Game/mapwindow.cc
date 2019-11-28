@@ -8,36 +8,76 @@
 #include <math.h>
 std::map<std::string,std::string> BuildingDescriptions{
     {"Lifepump","A building that produces \n"
-        "Life Water. Can be construted on \n"
+        "LIFE WWATER. Can be construted on \n"
         "a spring tile.\n"
         "Build cost:\n"
-        "_____\n"
+        "IRON 15\n"
+        "WOOD 15\n"
+        "LIFEWATER 5\n"
         "Produces\n"
-        "_______"},
+        "LIFE WATER 2"},
     {"Mage Altar","Transforms a minion\n"
         "into a mage, if a minion\n"
         "ends its turn on this building.\n"
-        "Cost:"
-        "______\n"
+        "Can be constructed on\n"
+        "Spring Tiles\n"
+        "Cost:\n"
+        "IRON 5\n"
+        "WOOD 5\n"
+        "CRYSTAL 15\n"
+        "LIFEWATER 20\n"
         "Has a cooldowwn of 20 turns\n"},
     {"Melee Altar", "Transforms a minion\n"
         "into a melee champion, if a \n"
         "minion ends its turn on this\n"
-        "building.\n"
+        "building. Can be constructed\n"
+        "on Desert and Mountan tiles\n"
         "Cost:\n"
-        "___\n"
+        "IRON 15\n"
+        "WOOD 5\n"
+        "CRYSTAL 1\n"
+        "LIFEWAWTER 5\n"
         "Has a cooldown of 10 turns"},
     {"Ranged Altar", "Transforms a minion\n"
         "into a Ranged champion\n"
         " if a minion ends\n"
-        " its turn on this"
-        "building.\n"
+        " its turn on this building.\n"
+        "Can be constructed on \n"
+        "Jungle Tiles\n"
         "Cost:\n"
-        "___\n"
+        "IRON 5\n"
+        "WOOD 20\n"
+        "CRYSTAL 4\n"
+        "LIFEWWATER 5\n"
         "Has a cooldown of 15 turns"},
-    {"Quarry", "quarry descript"},
-    {"Sawmill","Saw descript"},
-    {"Nexus", "Nexus"}
+    {"Quarry", "A mine that produces IRON\n"
+        "and CRYSTAL. Can be constructed on\n"
+        "Mountain tiles\n"
+        "Cost:\n"
+        "IRON 5\n"
+        "WOOD 5\n"
+        "CRYSTAL 2\n"
+        "LIFEWATER 2\n"
+        "\nProduction:\n"
+        "IRON 2\n"
+        "CRYSTAL 2"},
+    {"Sawmill","A sawmill that produces WOOD\n"
+        "Can be constructed on \n"
+        "Jungle tiles.\n"
+        "Cost:\n"
+        "IRON 5\n"
+        "WOOD 5\n"
+        "CRYSTAL 1\n"
+        "LIFEWATER 1\n"
+        "\n"
+        "Production:\n"
+        "WOOD 2\n"},
+    {"Nexus", "The Nexus is your base.\n"
+        "If it is destroyed, instantly lose\n"
+        "the game. Nexus produces 1 resource\n"
+        "each at the end of the turn.\n"
+        "It also spawns a minion every 5 turns\n"
+        "if no minion is on the same tile. "}
 };
 MapWindow::MapWindow(QWidget *parent,
                      std::shared_ptr<Whiskas::gameEventHandler> handler):
@@ -134,7 +174,7 @@ void MapWindow::initMap(int x, int y)
    // makeWorldGenerator(x,y,10,ghandler,gmanager);
 
 
-    for(auto it:m_GManager->getTileVector()){
+    for(const auto &it:m_GManager->getTileVector()){
 
         drawItem(it);
     }
@@ -153,7 +193,7 @@ void MapWindow::initMap(int x, int y)
 
 
 }
-void MapWindow::selectBuilding(std::string buildingType){
+void MapWindow::selectBuilding(const std::string &buildingType){
     buildingToBeBuilt_=buildingType;
     m_ui->DescriptionLabelRight->setText(QString::fromStdString(BuildingDescriptions.at(buildingType)));
     m_ui->confirmButton->setEnabled(true);
@@ -310,4 +350,5 @@ void MapWindow::on_confirmButton_clicked()
                         getTurn()->getInTurn());
     m_ui->DescriptionLabelRight->clear();
     m_ui->confirmButton->setEnabled(false);
+    updateDisplays();
 }

@@ -7,7 +7,7 @@
 
 #include "minion/magicchampion.h"
 #include "minion/rangedchampion.h"
-#include "meleechampion.h"
+#include "minion/meleechampion.h"
 #include "turn.h"
 #include <QDebug>
 #include <QMouseEvent>

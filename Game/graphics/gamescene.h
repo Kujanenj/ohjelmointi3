@@ -39,7 +39,7 @@ public:
     GameScene(QWidget* qt_parent = nullptr,
                     int width = 10,
                     int height = 10,
-                    int scale = 75
+                    int scale = 60
             );
 
     /**

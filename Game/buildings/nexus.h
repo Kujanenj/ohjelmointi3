@@ -18,7 +18,7 @@ public:
             const std::shared_ptr<gameManager>& objectmanager,
             const std::shared_ptr<Course::PlayerBase>& owner,
             const int& tilespaces = 1,
-            const AdvancedResourceMap buildcost = NEXUS_PRODUCE,
+            const AdvancedResourceMap buildcost = {},
             const AdvancedResourceMap production = NEXUS_PRODUCE,
             int health =5,
             int attack = 0

@@ -8,7 +8,7 @@ CONFIG += c++14
 
 SOURCES += \
     AdvancedResourcses/AdvancedResourcses.cpp \
-    attackable.cpp \
+    minion/attackable.cpp \
     buildings/AltarBase.cpp \
     buildings/custombuildingbase.cpp \
     buildings/lifepump.cpp \
@@ -30,7 +30,7 @@ SOURCES += \
     leagueplayer.cpp \
     main.cpp \
     mapwindow.cc \
-    meleechampion.cpp \
+    minion/meleechampion.cpp \
     minion/magicchampion.cpp \
     minion/minion.cpp \
     dialogs/startdialog.cpp \
@@ -40,13 +40,13 @@ SOURCES += \
     tiles/mountain.cpp \
     tiles/spring.cpp \
     turn.cpp \
-    unit.cpp
+    minion/unit.cpp
 
 
 HEADERS += \
     AdvancedResourcses/AdvancedResourceMaps.h \
     AdvancedResourcses/AdvancedResourcses.h \
-    attackable.h \
+    minion/attackable.h \
     buildings/AltarBase.h \
     buildings/custombuildingbase.h \
     buildings/lifepump.h \
@@ -67,7 +67,7 @@ HEADERS += \
     graphics/gamescene.h \
     leagueplayer.h \
     mapwindow.hh \
-    meleechampion.h \
+    minion/meleechampion.h \
     minion/magicchampion.h \
     minion/minion.h \
     dialogs/startdialog.h \
@@ -77,7 +77,7 @@ HEADERS += \
     tiles/mountain.h \
     tiles/spring.h \
     turn.h \
-    unit.h
+    minion/unit.h
 
 win32:CONFIG(release, debug|release): LIBS += \
     -L$$OUT_PWD/../Course/CourseLib/release/ -lCourseLib

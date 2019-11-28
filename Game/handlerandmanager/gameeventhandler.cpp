@@ -142,7 +142,7 @@ void gameEventHandler::endTurn(std::shared_ptr<gameManager> manager, std::shared
 
  turn_->swapTurn();
  qDebug()<<turn_->getTurnCounter()<<"TURN COUNTER";
- if(turn_->getTurnCounter()==1||turn_->getTurnCounter() % 10==0){
+ if(turn_->getTurnCounter()==1||turn_->getTurnCounter() % 5==0){
      std::shared_ptr<Course::TileBase> nexsusLoc;
      nexsusLoc=manager->getNexusLocation(manager->getPlayerPair().first);
      if(nexsusLoc!=nullptr && nexsusLoc->getWorkerCount()==0){

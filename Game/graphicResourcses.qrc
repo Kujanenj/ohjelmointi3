@@ -1,6 +1,0 @@
-<RCC>
-    <qresource lang="XML" prefix="/">
-        <file>graphics/forest_pic.png</file>
-        <file>graphics/pi.png</file>
-    </qresource>
-</RCC>
