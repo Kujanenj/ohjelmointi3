@@ -174,7 +174,7 @@ void MapWindow::initMap(int x, int y)
    // makeWorldGenerator(x,y,10,ghandler,gmanager);
 
 
-    for(auto it:m_GManager->getTileVector()){
+    for(const auto &it:m_GManager->getTileVector()){
 
         drawItem(it);
     }
@@ -193,7 +193,7 @@ void MapWindow::initMap(int x, int y)
 
 
 }
-void MapWindow::selectBuilding(std::string buildingType){
+void MapWindow::selectBuilding(const std::string &buildingType){
     buildingToBeBuilt_=buildingType;
     m_ui->DescriptionLabelRight->setText(QString::fromStdString(BuildingDescriptions.at(buildingType)));
     m_ui->confirmButton->setEnabled(true);

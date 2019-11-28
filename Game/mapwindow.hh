@@ -104,7 +104,7 @@ public slots:
     /**
      * @brief selectBuilding updates the type of building to be built
      */
-    void selectBuilding(std::string);
+    void selectBuilding(const std::string &type);
     /**
      * @brief Closes the mainwidow
      */

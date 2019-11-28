@@ -8,8 +8,16 @@ CONFIG -= app_bundle
 TEMPLATE = app
 
 
-SOURCES +=  tst_testmanager.cpp
 
-INCLUDEPATH += \
 
-DEPENDPATH  += \
+
+SOURCES +=  tst_testmanager.cpp \
+
+
+
+INCLUDEPATH += ../../Course/CourseLib/ \
+../../Game/
+
+
+
+
