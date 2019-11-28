@@ -6,7 +6,7 @@
 #include "handlerandmanager/gameeventhandler.h"
 #include "handlerandmanager/gamemanager.h"
 
-#include "attackable.h"
+#include "minion/attackable.h"
 #include "AdvancedResourcses/AdvancedResourceMaps.h"
 
 namespace Whiskas {

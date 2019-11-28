@@ -1,6 +1,6 @@
 #include <QtTest>
 
-#include "handlerandmanager/gamemanager.h"
+
 // add necessary includes here
 
 class testManager : public QObject

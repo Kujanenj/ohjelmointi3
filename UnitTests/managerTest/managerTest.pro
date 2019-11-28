@@ -11,8 +11,5 @@ TEMPLATE = app
 SOURCES +=  tst_testmanager.cpp
 
 INCLUDEPATH += \
- $$PWD/../../Course/CourseLib \
- $$PWD/../../Game/
+
 DEPENDPATH  += \
-    $$PWD/../../Course/CourseLib \
- $$PWD/../../Game/
