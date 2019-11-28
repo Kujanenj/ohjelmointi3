@@ -59,8 +59,19 @@ bool gameManager::spawnBuilding(std::shared_ptr<gameEventHandler> handler,
             qDebug()<<"error, active tile is a nullptr";
             return false;
         }
-        qDebug()<<"Trying to spawn a building pointer in functions";
         std::shared_ptr<CustomBuildingBase> testBuilding = std::make_shared<buildingType>(handler,manager,player);
+        if (testBuilding->getType() != "Nexus") {
+            if(handler->getActiveTile()->getWorkers().size() == 0) {
+                qDebug()<<"error, active tile has no minion";
+                return false;
+            }
+            if(handler->getActiveTile()->getWorkers().at(0)->getOwner() != player) {
+                qDebug()<<"error, minion isn't yours, hands off";
+                return false;
+            }
+        }
+        qDebug()<<"Trying to spawn a building pointer in functions";
+        //std::shared_ptr<CustomBuildingBase> testBuilding = std::make_shared<buildingType>(handler,manager,player);
 
         qDebug() << QString::fromStdString(testBuilding->getType());
         handler->getActiveTile()->addBuilding(testBuilding);

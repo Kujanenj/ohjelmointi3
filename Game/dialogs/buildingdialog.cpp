@@ -40,7 +40,7 @@ void buildingDialog::on_MageAltarButton_clicked()
 
 void buildingDialog::on_Quarry_clicked()
 {
-    emit buildingType("Quarry Altar");
+    emit buildingType("Quarry");
     accept();
 }
 
