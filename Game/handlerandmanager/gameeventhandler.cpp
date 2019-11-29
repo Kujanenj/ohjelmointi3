@@ -64,7 +64,7 @@ void gameEventHandler::handleLeftClick(std::shared_ptr<GameScene> scene, std::sh
 
 
 
-        //activeTile_= manager->getTile(scene->getLastID());
+
         activeTile_ = manager->getTile(*scene->getLastCoordinate());
         qDebug()<< "================";
         qDebug()<< "HANDLING MWINDOW CLICK";
