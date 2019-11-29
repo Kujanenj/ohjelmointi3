@@ -92,6 +92,9 @@ public:
      */
     void generateLCDList();
 
+    void updateDescriptions();
+    void updateBrowser();
+
 
 public slots:
     /*!

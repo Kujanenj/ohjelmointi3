@@ -25,12 +25,17 @@ void MapItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, Q
 
 
     if ( c_objecticons.find(m_gameobject->getType()) == c_objecticons.end() ) {
-        QRectF source(0.0, 0.0, 500.0, 500.0);
-        painter->drawImage(boundingRect(), c_mapicons.at(m_gameobject->getType()), source);
+        QRectF source(0.0, 0.0, 50.0, 50.0);
+        QImage image = c_mapicons.at(m_gameobject->getType())
+                .scaled(50, 50, Qt::IgnoreAspectRatio,Qt::SmoothTransformation);
+        painter->drawImage(boundingRect(), image, source);
     } else {
-        QRectF source(0.0, 0.0, 500.0, 500.0);
+        QRectF source(0.0, 0.0, 50.0, 50.0);
+        QImage image = c_objecticons.at(m_gameobject->getType())
+                .at(m_gameobject->getOwner()->getName())
+                .scaled(50, 50, Qt::IgnoreAspectRatio,Qt::SmoothTransformation);
         painter->drawImage(boundingRect(),
-                           c_objecticons.at(m_gameobject->getType()).at(m_gameobject->getOwner()->getName()), source);
+                           image, source);
     }
 
 }
@@ -133,7 +138,7 @@ void MapItem::addNewColor(std::string type)
             c_objecticons.insert({type, owner_pic_pair});
         } else if (type == "Ranged Altar") {
             QImage blue_altar = QImage(":/images/graphics/rangedaltar_blue.png");
-            QImage purple_altar = QImage(":/images/graphics/rangedaltar_purple.png");
+            QImage purple_altar = QImage(":/images/graphics/rangedaltar_purple_2.png");
             std::map<std::string, QImage> owner_pic_pair =  {{"Blue", blue_altar},
                                                         {"Purple", purple_altar}};
             c_objecticons.insert({type, owner_pic_pair});

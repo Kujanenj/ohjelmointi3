@@ -6,9 +6,11 @@
 
 namespace Whiskas {
 
-gameManager::gameManager(std::shared_ptr<GameScene>& m_gamescene)
+gameManager::gameManager(std::shared_ptr<GameScene>& m_gamescene, std::shared_ptr<QTextBrowser> textBrowser):
+    manager_gamescene(m_gamescene)
+    ,textBrowser(textBrowser)
 {
- manager_gamescene = m_gamescene;
+ //manager_gamescene = m_gamescene;
  qDebug()<<"TEST TILE MANAGER";
 }
 
@@ -183,6 +185,7 @@ void gameManager::move(std::shared_ptr<Minion> minionToMove, std::shared_ptr<Cou
             }
             if(minionToMove->getMoved()==true){
                 qDebug()<<"UNIT HAS MOVED THIS TURN, GET THE HELL OUT!";
+                textBrowser->append("Unit has already moved this turn");
                 return;
             }
             minionToMove->currentLocationTile()->removeWorker(minionToMove);
