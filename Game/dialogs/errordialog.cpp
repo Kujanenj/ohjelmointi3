@@ -13,7 +13,7 @@ ErrorDialog::~ErrorDialog()
     delete ui;
 }
 
-void ErrorDialog::setErrorlabel(std::string message)
+void ErrorDialog::setErrorlabel(const std::string &message)
 {
     ui->Errorlabel->setText(QString::fromStdString(message));
 }

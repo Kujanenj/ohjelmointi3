@@ -24,8 +24,8 @@ public:
 
             );
 
-    virtual ~Sawmill() = default;
-    virtual std::string getType() const override;
+     ~Sawmill() override = default;
+     std::string getType() const override;
 
 }; // class Sawmill
 

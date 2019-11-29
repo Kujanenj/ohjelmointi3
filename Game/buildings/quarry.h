@@ -18,15 +18,15 @@ public:
             const std::shared_ptr<gameManager>& objectmanager,
             const std::shared_ptr<Course::PlayerBase>& owner,
             const int& tilespaces = 1,
-            const AdvancedResourceMap buildcost = QUARRY_COST,
-            const AdvancedResourceMap production = QUARRY_PRODUCE,
+            const AdvancedResourceMap& buildcost = QUARRY_COST,
+            const AdvancedResourceMap& production = QUARRY_PRODUCE,
             int health =5,
             int attack = 0
 
             );
 
-    virtual ~Quarry() = default;
-    virtual std::string getType() const override;
+      ~Quarry() override = default;
+     std::string getType() const override;
 
 }; // class Nexus
 

@@ -2,6 +2,7 @@
 #include "handlerandmanager/gameeventhandler.h"
 #include "buildings/nexus.h"
 #include "buildings/lifepump.h"
+#include "buildings/meleealtar.h"
 // add necessary includes here
 using namespace Whiskas;
 
@@ -44,9 +45,11 @@ private slots:
     void test_subtractAdvanced();
     void test_endTurn();
     void test_Subtract_noMoney();
+    void test_upgradeMinion();
 private:
     std::shared_ptr<GameScene>scene=nullptr;
-    std::shared_ptr<gameManager> manager=std::make_shared<gameManager>(scene);
+    std::shared_ptr<QTextBrowser> textBrowser=nullptr;
+    std::shared_ptr<gameManager> manager=std::make_shared<gameManager>(scene, textBrowser);
     std::shared_ptr<Turn> turn=std::make_shared<Turn>(manager);
     std::shared_ptr<gameEventHandler> handler = std::make_shared<gameEventHandler>(turn);
     std::shared_ptr<LeaguePlayer> player= std::make_shared<LeaguePlayer>("player1");
@@ -115,6 +118,16 @@ void testHandler::test_Subtract_noMoney(){
     player->setPlayerItems(null);
     QCOMPARE(handler->subtractPlayerResources(player,LIFEPUMP_COST),false);
     QCOMPARE(player->getItems(),null);
+}
+void testHandler::test_upgradeMinion(){
+    Course::Coordinate loc=Course::Coordinate(5,5);
+    std::shared_ptr<Course::TileBase>tile=std::make_shared<Course::TileBase>(loc,handler,manager);
+    manager->addTile(tile);
+    handler->setActiveTile(manager->getTileVector().at(2));
+    manager->spawnBuilding<MeleeAltar>(handler,manager,player2);
+    manager->spawnMinion(handler,manager,player2,handler->getActiveTile(),"minion");
+    handler->endTurn(manager,handler);
+    QCOMPARE(manager->getMinionVector().back()->getType(),"MeleeChampion");
 }
 QTEST_APPLESS_MAIN(testHandler)
 

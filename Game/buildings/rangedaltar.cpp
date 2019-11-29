@@ -4,10 +4,7 @@ namespace Whiskas {
 
 RangedAltar::RangedAltar(const std::shared_ptr<gameEventHandler>& eventhandler,
                          const std::shared_ptr<gameManager>& objectmanager,
-                         const std::shared_ptr<Course::PlayerBase>& owner,
-                         const int& tilespaces,
-                         const AdvancedResourceMap buildcost,
-                         const AdvancedResourceMap production):
+                         const std::shared_ptr<Course::PlayerBase>& owner):
       AltarBase(eventhandler,objectmanager,owner)
 {
 cooldown_=0;
@@ -17,7 +14,7 @@ void RangedAltar::upgradeMinion()
 {
     if(cooldown_<=0){
     qDebug()<<"Upgrading ranged minion";
-     for(auto it: manager_->getMinionVector()){
+     for(const auto &it: manager_->getMinionVector()){
 
          if(currentLocationTile()->getWorkerCount()!=0){
              qDebug()<<"MinionVec not 0";

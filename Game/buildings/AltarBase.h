@@ -11,13 +11,13 @@ public:
                        const std::shared_ptr<gameManager>& objectmanager,
                        const std::shared_ptr<Course::PlayerBase>& owner,
                        const int& tilespaces = 1,
-                       const AdvancedResourceMap buildcost = {},
-                       const AdvancedResourceMap production ={},
+                       const AdvancedResourceMap& buildcost = {},
+                       const AdvancedResourceMap& production ={},
                        int health =5,
                        int attack = 0);
-    virtual std::string getType()const override;
+     std::string getType()const override;
     virtual void upgradeMinion()=0;
-    virtual void doSpecialAction() override;
+     void doSpecialAction() override;
 
 protected:
     std::shared_ptr<gameManager>manager_;

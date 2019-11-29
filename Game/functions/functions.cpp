@@ -8,7 +8,7 @@
 
 #include <vector>
 #include <QDebug>
-#include <time.h>
+#include <ctime>
 
 #include "handlerandmanager/gamemanager.h"
 
@@ -18,10 +18,10 @@ namespace Whiskas {
 
 
 
-void selectBuildingTypef(std::string type,
-                        std::shared_ptr<gameEventHandler> handler,
-                        std::shared_ptr<gameManager> manager,
-                        std::shared_ptr<LeaguePlayer> player)
+void selectBuildingTypef(const std::string& type,
+                        const std::shared_ptr<gameEventHandler>& handler,
+                        const std::shared_ptr<gameManager>& manager,
+                        const std::shared_ptr<LeaguePlayer>& player)
 {
 
 
@@ -61,7 +61,7 @@ bool gameManager::spawnBuilding(std::shared_ptr<gameEventHandler> handler,
         }
         std::shared_ptr<CustomBuildingBase> building = std::make_shared<buildingType>(handler,manager,player);
         if (building->getType() != "Nexus") {
-            if(handler->getActiveTile()->getWorkers().size() == 0) {
+            if(handler->getActiveTile()->getWorkers().empty()) {
                 qDebug()<<"error, active tile has no minion";
                 return false;
             }
@@ -85,7 +85,7 @@ bool gameManager::spawnBuilding(std::shared_ptr<gameEventHandler> handler,
 
 }
 
-bool checkBuildingAvailability(std::shared_ptr<Course::TileBase> targetTile, std::string type)
+bool checkBuildingAvailability(const std::shared_ptr<Course::TileBase> &targetTile, const std::string &type)
 {
 
  //HANDLER FOR STD OUT OF RANGE?

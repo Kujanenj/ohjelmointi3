@@ -25,8 +25,8 @@ public:
 
             );
 
-    virtual ~Nexus() = default;
-    virtual std::string getType() const override;
+    ~Nexus() override= default;
+     std::string getType() const override;
 
 }; // class Nexus
 

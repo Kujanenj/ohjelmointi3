@@ -24,8 +24,8 @@ public:
             const std::shared_ptr<gameManager>& objectmanager,
             const std::shared_ptr<Course::PlayerBase>& owner,
             const int& tilespaces = 2,
-            const AdvancedResourceMap buildcost = {},
-           const AdvancedResourceMap production = {},
+            const AdvancedResourceMap& buildcost = {},
+           const AdvancedResourceMap& production = {},
             int health=3,
             int attack=0
             );
@@ -34,7 +34,7 @@ public:
    virtual AdvancedResourceMap getAdvancedProduction();
    virtual AdvancedResourceMap getAdvancedCost();
 
-   virtual void doSpecialAction() override;
+    void doSpecialAction() override;
    virtual int getCooldown() final;
 protected:
    AdvancedResourceMap production_;

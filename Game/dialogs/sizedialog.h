@@ -15,7 +15,7 @@ class SizeDialog : public QDialog
 
 public:
     explicit SizeDialog(QWidget *parent = nullptr);
-    ~SizeDialog();
+    ~SizeDialog()override;
 signals:
     void Msize(int);
 private slots:

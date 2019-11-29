@@ -42,9 +42,9 @@ const std::map<std::string, std::vector<std::string>> buildingAvailability={
  * \param manager Gamemanager
  * \param player  the owner of the new building
  */
-void selectBuildingTypef(std::string type, std::shared_ptr<gameEventHandler> handler,
-                        std::shared_ptr<gameManager> manager,
-                        std::shared_ptr<LeaguePlayer> player);
+void selectBuildingTypef(const std::string& type, const std::shared_ptr<gameEventHandler>& handler,
+                        const std::shared_ptr<gameManager>& manager,
+                        const std::shared_ptr<LeaguePlayer>& player);
 
 
 /*!
@@ -53,8 +53,8 @@ void selectBuildingTypef(std::string type, std::shared_ptr<gameEventHandler> han
  * \param type the type of building to be checked
  * \return true if can be built, false if not
  */
-bool checkBuildingAvailability(std::shared_ptr<Course::TileBase> targetTile,
-                               std::string type);
+bool checkBuildingAvailability(const std::shared_ptr<Course::TileBase> &targetTile,
+                               const std::string &type);
 /*!
  * \brief makeAdvancedWGenerator generates the coordinates for the map. If a generated tile
  * is touching a desert or a spring, it is more likely to be generated as such aswell
