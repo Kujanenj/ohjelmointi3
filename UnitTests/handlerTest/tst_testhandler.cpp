@@ -1,6 +1,7 @@
 #include <QtTest>
 #include "handlerandmanager/gameeventhandler.h"
 #include "buildings/nexus.h"
+#include "buildings/lifepump.h"
 // add necessary includes here
 using namespace Whiskas;
 
@@ -42,6 +43,7 @@ public:
 private slots:
     void test_subtractAdvanced();
     void test_endTurn();
+    void test_Subtract_noMoney();
 private:
     std::shared_ptr<GameScene>scene=nullptr;
     std::shared_ptr<gameManager> manager=std::make_shared<gameManager>(scene);
@@ -103,7 +105,17 @@ void testHandler::test_endTurn(){
     QCOMPARE(manager->getMinionVector().size(),2);
     QCOMPARE(handler->getTurn()->getInTurn(),player2);
 }
-
+void testHandler::test_Subtract_noMoney(){
+    AdvancedResourceMap null={
+        {IRON, 0},
+        {WOOD, 0},
+        {CRYSTAL,0},
+        {LIFEWATER,0}
+    };
+    player->setPlayerItems(null);
+    QCOMPARE(handler->subtractPlayerResources(player,LIFEPUMP_COST),false);
+    QCOMPARE(player->getItems(),null);
+}
 QTEST_APPLESS_MAIN(testHandler)
 
 #include "tst_testhandler.moc"
