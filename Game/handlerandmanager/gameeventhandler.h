@@ -45,26 +45,26 @@ public:
      * @param costs The amount to be reduced
      * @return true if player had enough items, false otherwise.
      */
-    bool subtractPlayerResources(std::shared_ptr<LeaguePlayer> player, AdvancedResourceMap costs);
+    bool subtractPlayerResources(const std::shared_ptr<LeaguePlayer>& player, AdvancedResourceMap costs);
     /**
      * @brief handleMwindowClick checks if the click was right, or left
      * @param scene passed on to other methods
      * @param manager passed on to other methods
      * @param event Right or left Click
      */
-    void handleMwindowClick(std::shared_ptr<GameScene> scene, std::shared_ptr<gameManager> manager, QMouseEvent event);
+    void handleMwindowClick(const std::shared_ptr<GameScene>& scene, const std::shared_ptr<gameManager>& manager, const QMouseEvent& event);
     /**
      * @brief handleLeftClick Handles the left mouse button event, sets active tile and active minion
      * @param scene The game scene
      * @param manager The gameManager
      */
-    void handleLeftClick(std::shared_ptr<GameScene> scene, std::shared_ptr<gameManager> manager);
+    void handleLeftClick(const std::shared_ptr<GameScene>& scene, const std::shared_ptr<gameManager>& manager);
     /**
      * @brief handleRightClick Handles the right mouse button event. Moves minions
      * @param manager The gameManager
      * @param scene The gameScene
      */
-    void handleRightClick(std::shared_ptr<gameManager> manager, std::shared_ptr<GameScene> scene);
+    void handleRightClick(const std::shared_ptr<gameManager>& manager, const std::shared_ptr<GameScene>& scene);
 
     /**
      * @brief getActiveTile Gets the last tile that was clicked
@@ -91,7 +91,7 @@ public:
      * @param manager GameManager
      * @param handler HandlerInstance
      */
-    void endTurn(std::shared_ptr<gameManager> manager, std::shared_ptr<gameEventHandler> handler);
+    void endTurn(const std::shared_ptr<gameManager>& manager, const std::shared_ptr<gameEventHandler>& handler);
 
     /**
      * @brief getMessage Gets the message

@@ -81,7 +81,7 @@ void GameScene::updateItem(std::shared_ptr<Course::GameObject> obj)
         qDebug() << "Nothing to update.";
     } else {
         for ( auto item : items_list ){
-            Whiskas::MapItem* mapItem = static_cast<Whiskas::MapItem*>(item);
+            auto* mapItem = dynamic_cast<Whiskas::MapItem*>(item);
             if (mapItem->isSameObj(obj)){
                 mapItem->updateLoc();
             }
@@ -93,7 +93,7 @@ bool GameScene::event(QEvent *event)
 {
     if(event->type() == QEvent::GraphicsSceneMousePress)
     {
-        QGraphicsSceneMouseEvent* mouse_event =
+        auto* mouse_event =
                 dynamic_cast<QGraphicsSceneMouseEvent*>(event);
 
         if ( sceneRect().contains(mouse_event->scenePos())){
@@ -108,9 +108,9 @@ bool GameScene::event(QEvent *event)
             if ( pressed == m_mapBoundRect ){
                 qDebug() << "Click on map area.";
             }else{
-                lastObjectID=static_cast<Whiskas::MapItem*>(pressed)
+                lastObjectID=dynamic_cast<Whiskas::MapItem*>(pressed)
                         ->getBoundObject()->ID;
-                lastCoordinate = static_cast<Whiskas::MapItem*>(pressed)->getBoundObject()->getCoordinatePtr();
+                lastCoordinate = dynamic_cast<Whiskas::MapItem*>(pressed)->getBoundObject()->getCoordinatePtr();
                 qDebug() << "ObjID: inside scene" <<
                             lastObjectID;
                 //qDebug() << "Coordinate X: " << lastCoordinate->x() << ", Y: " << lastCoordinate->y();
@@ -137,7 +137,7 @@ std::shared_ptr<Course::Coordinate> GameScene::getLastCoordinate()
 
 
 
-void GameScene::removeItem(std::shared_ptr<Course::GameObject> obj)
+void GameScene::removeItem(const std::shared_ptr<Course::GameObject>& obj)
 
 {
     qDebug()<<obj->getCoordinate().x()<<obj->getCoordinate().y();
@@ -148,7 +148,7 @@ void GameScene::removeItem(std::shared_ptr<Course::GameObject> obj)
 
         for (auto test :items()){
             qDebug()<<"super loop";
-            Whiskas::MapItem* mapitem = static_cast<Whiskas::MapItem*>(test);
+            auto* mapitem = dynamic_cast<Whiskas::MapItem*>(test);
             if ( mapitem->isSameObj(obj) ){
                 qDebug()<<"Foundstuff";
                 qDebug()<<QString::fromStdString(mapitem->getBoundObject()->getType())
@@ -162,9 +162,9 @@ void GameScene::removeItem(std::shared_ptr<Course::GameObject> obj)
     }
 }
 
-void GameScene::drawItem( std::shared_ptr<Course::GameObject> obj)
+void GameScene::drawItem( const std::shared_ptr<Course::GameObject>& obj)
 {
-    Whiskas::MapItem* nItem = new Whiskas::MapItem(obj, m_scale);
+    auto* nItem = new Whiskas::MapItem(obj, m_scale);
     qDebug()<<"Added item"<<obj->ID<<QString::fromStdString(obj->getType())<<obj->getCoordinate().asQpoint();
 
     addItem(nItem);

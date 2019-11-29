@@ -4,8 +4,9 @@
 #include "graphics/mapitem.h"
 #include "functions/functions.h"
 #include <QTimer>
+#include <utility>
 #include "dialogs/enddialog.h"
-#include <math.h>
+#include <cmath>
 std::map<std::string,std::string> BuildingDescriptions{
     {"Lifepump","A building that produces \n"
         "LIFE WWATER. Can be construted on \n"
@@ -83,7 +84,7 @@ MapWindow::MapWindow(QWidget *parent,
                      std::shared_ptr<Whiskas::gameEventHandler> handler):
     QMainWindow(parent),
     m_ui(new Ui::MapWindow),
-    m_GEHandler(handler),
+    m_GEHandler(std::move(handler)),
     m_gamescene(new Whiskas::GameScene(this))
 {
     m_ui->setupUi(this);
@@ -122,12 +123,12 @@ MapWindow::~MapWindow()
 void MapWindow::setGEHandler(
         std::shared_ptr<Whiskas::gameEventHandler> nHandler)
 {
-    m_GEHandler = nHandler;
+    m_GEHandler = std::move(nHandler);
 }
 
 void MapWindow::setGManager(std::shared_ptr<Whiskas::gameManager> manager)
 {
-    m_GManager=manager;
+    m_GManager=std::move(manager);
 }
 
 void MapWindow::setSize(int width, int height)
@@ -191,7 +192,7 @@ void MapWindow::closeWindow()
 
 void MapWindow::drawItem( std::shared_ptr<Course::GameObject> obj)
 {
-    m_gamescene->drawItem(obj);
+    m_gamescene->drawItem(std::move(obj));
 }
 
 void MapWindow::mousePressEvent(QMouseEvent *event){

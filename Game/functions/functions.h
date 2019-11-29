@@ -63,8 +63,8 @@ bool checkBuildingAvailability(const std::shared_ptr<Course::TileBase> &targetTi
  * \param manager gameManager
  */
 void makeAdvancedWGenerator(int mapsize,
-                                std::shared_ptr<gameEventHandler> handler,
-                                std::shared_ptr<gameManager> manager);
+                                const std::shared_ptr<gameEventHandler>& handler,
+                                const std::shared_ptr<gameManager>& manager);
 template<typename TileType>
 /*!
  * \brief makeAdvancedWorld spawns the tiles on desired location

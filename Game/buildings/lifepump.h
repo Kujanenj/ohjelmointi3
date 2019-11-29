@@ -25,7 +25,7 @@ public:
 
             );
 
-    virtual ~Lifepump() = default;
+    ~Lifepump() override = default;
      std::string getType() const override;
 
 }; // class Lifepump

@@ -20,17 +20,17 @@ bool gameEventHandler::modifyResource(std::shared_ptr<Course::PlayerBase> player
     return true;
 }
 
-bool gameEventHandler::subtractPlayerResources(std::shared_ptr<LeaguePlayer> player,AdvancedResourceMap costs)
+bool gameEventHandler::subtractPlayerResources(const std::shared_ptr<LeaguePlayer>& player,AdvancedResourceMap costs)
 {
     AdvancedResourceMap TempMap=player->getItems();
-    for(auto it=costs.begin(); it!= costs.end(); it++){
-        auto ToModify=TempMap.find(it->first);
+    for(auto & cost : costs){
+        auto ToModify=TempMap.find(cost.first);
         if(ToModify!=TempMap.end()){
-            if(ToModify->second<it->second){
+            if(ToModify->second<cost.second){
                 qDebug()<<"Not enough dough";
                 return false;
             }
-            ToModify->second-=it->second;
+            ToModify->second-=cost.second;
         }
         else{
             qDebug()<<"Required resource nto found";
@@ -42,7 +42,7 @@ bool gameEventHandler::subtractPlayerResources(std::shared_ptr<LeaguePlayer> pla
     return true;
 }
 
-void gameEventHandler::handleMwindowClick(std::shared_ptr<GameScene> scene, std::shared_ptr<gameManager> manager, QMouseEvent event)
+void gameEventHandler::handleMwindowClick(const std::shared_ptr<GameScene>& scene, const std::shared_ptr<gameManager>& manager, const QMouseEvent& event)
 {
    if(scene->getLastID()!=-1){
     if(event.button()==Qt::LeftButton){
@@ -56,7 +56,7 @@ void gameEventHandler::handleMwindowClick(std::shared_ptr<GameScene> scene, std:
    qDebug()<<"Click outside gameArea";
 }
 
-void gameEventHandler::handleLeftClick(std::shared_ptr<GameScene> scene, std::shared_ptr<gameManager> manager){
+void gameEventHandler::handleLeftClick(const std::shared_ptr<GameScene>& scene, const std::shared_ptr<gameManager>& manager){
     qDebug()<<"";
     qDebug()<<"";
     qDebug()<<"";
@@ -73,15 +73,15 @@ void gameEventHandler::handleLeftClick(std::shared_ptr<GameScene> scene, std::sh
         qDebug()<< "the ID is"<< scene->getLastID();
         qDebug()<< "Amount of minions is"<< activeTile_->getWorkers().size();
         qDebug()<< "Amount of buildings is"<< activeTile_->getBuildings().size();
-        if (activeTile_->getBuildings().size()!=0){
+        if (!activeTile_->getBuildings().empty()){
             qDebug()<< "Building is"
                     << QString::fromStdString(activeTile_->getBuildings().at(0)->getType())
                     << "and the owner is"
                     << QString::fromStdString(activeTile_->getBuildings().at(0)->getOwner()->getName());
         }
 
-        if (activeTile_->getWorkers().size()!=0){
-            for(auto it: manager->getMinionVector()){
+        if (!activeTile_->getWorkers().empty()){
+            for(const auto& it: manager->getMinionVector()){
                 if(activeTile_->getWorkers().front()==it && it->getOwner()==turn_->getInTurn()){
                     activeMinion_=it;
 
@@ -101,7 +101,7 @@ void gameEventHandler::handleLeftClick(std::shared_ptr<GameScene> scene, std::sh
 
 
 }
-void gameEventHandler::handleRightClick(std::shared_ptr<gameManager> manager, std::shared_ptr<GameScene> scene)
+void gameEventHandler::handleRightClick(const std::shared_ptr<gameManager>& manager, const std::shared_ptr<GameScene>& scene)
 {
     std::shared_ptr<Course::TileBase> targetTile=manager->getTile(*scene->getLastCoordinate());
     if(activeMinion_!=nullptr){
@@ -127,7 +127,7 @@ std::shared_ptr<Course::TileBase> gameEventHandler::getActiveTile(){
 
 void gameEventHandler::setActiveTile(std::shared_ptr<Course::TileBase> activeTile)
 {
-    activeTile_=activeTile;
+    activeTile_=std::move(activeTile);
 }
 
 std::shared_ptr<Minion> gameEventHandler::getActiveMinion()
@@ -140,7 +140,7 @@ std::shared_ptr<Turn> gameEventHandler::getTurn()
     return turn_;
 }
 
-void gameEventHandler::endTurn(std::shared_ptr<gameManager> manager, std::shared_ptr<gameEventHandler> handler)
+void gameEventHandler::endTurn(const std::shared_ptr<gameManager>& manager, const std::shared_ptr<gameEventHandler>& handler)
 {
 
  turn_->swapTurn();

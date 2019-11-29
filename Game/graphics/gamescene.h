@@ -45,7 +45,7 @@ public:
     /**
      * @brief Default destructor.
      */
-    ~GameScene() = default;
+    ~GameScene() override = default;
 
     /**
      * @brief Sets the map size and calls resize().
@@ -92,7 +92,7 @@ public:
      * @pre obj must have a valid coordinate property.
      * @post Exception guarantee: None
      */
-    void drawItem( std::shared_ptr<Course::GameObject> obj);
+    void drawItem( const std::shared_ptr<Course::GameObject>& obj);
 
     /**
      * @brief tries to remove drawn object at the location obj points to.
@@ -101,7 +101,7 @@ public:
      * @post Exception guarantee: None
      *
      */
-    void removeItem( std::shared_ptr<Course::GameObject> obj);
+    void removeItem( const std::shared_ptr<Course::GameObject>& obj);
 
     /**
      * @brief updates the position of obj.
@@ -116,7 +116,7 @@ public:
      * @return True: if event was  handled in the handler.
      * False: if the event handling was passed over.
      */
-    virtual bool event(QEvent* event) override;
+    bool event(QEvent* event) override;
 
     int getLastID();
 

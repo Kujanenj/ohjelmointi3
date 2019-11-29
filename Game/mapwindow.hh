@@ -38,11 +38,11 @@ class MapWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit MapWindow(QWidget *parent = 0,
+    explicit MapWindow(QWidget *parent = nullptr,
                        std::shared_ptr<Whiskas::gameEventHandler> GEHandler = {}
 
                        );
-    ~MapWindow();
+    ~MapWindow() override;
     /**
      * @brief setGEHandler sets the current Game Handler
      * @param nHandler the new game handler
@@ -71,7 +71,7 @@ public:
      * @param event the click event
      */
 
-    virtual void mousePressEvent(QMouseEvent *event );
+    void mousePressEvent(QMouseEvent *event ) override;
     /**
      * @brief openBuildingDialog opens a dialog to select the building to be
      * built

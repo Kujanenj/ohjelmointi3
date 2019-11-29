@@ -1,6 +1,7 @@
 #include "mapitem.h"
 
 #include <QDebug>
+#include <utility>
 
 namespace Whiskas {
 
@@ -8,8 +9,8 @@ std::map<std::string, QColor> MapItem::c_mapcolors = {};
 std::map<std::string, QImage> MapItem::c_mapicons = {};
 std::map<std::string, std::map<std::string, QImage>> MapItem::c_objecticons = {};
 
-MapItem::MapItem(const std::shared_ptr<Course::GameObject> &obj, int size ):
-    m_gameobject(obj), m_scenelocation(m_gameobject->getCoordinatePtr()->asQpoint()), m_size(size)
+MapItem::MapItem(std::shared_ptr<Course::GameObject> obj, int size ):
+    m_gameobject(std::move(obj)), m_scenelocation(m_gameobject->getCoordinatePtr()->asQpoint()), m_size(size)
 {
     addNewColor(m_gameobject->getType());
 }
@@ -55,7 +56,7 @@ void MapItem::updateLoc()
     }
 }
 
-bool MapItem::isSameObj(std::shared_ptr<Course::GameObject> obj)
+bool MapItem::isSameObj(const std::shared_ptr<Course::GameObject>& obj)
 {
     return obj == m_gameobject;
 }
@@ -72,11 +73,11 @@ void MapItem::setSize(int size)
     }
 }
 
-void MapItem::addNewColor(std::string type)
+void MapItem::addNewColor(const std::string& type)
 {
     if ( c_mapicons.find(type) == c_mapicons.end()
          && c_objecticons.find(type) == c_objecticons.end() ){
-        std::size_t hash = std::hash<std::string>{}(type);
+
         if (type == "Desert") {
             QImage desert_pic = QImage(":/images/graphics/pi.png");
             c_mapicons.insert({type, desert_pic});

@@ -92,7 +92,7 @@ bool checkBuildingAvailability(const std::shared_ptr<Course::TileBase> &targetTi
     if(targetTile->getBuildingCount()!=0){
         return false;
     }
-    for(auto it: buildingAvailability.at(type)){
+    for(const auto& it: buildingAvailability.at(type)){
         if(it==targetTile->getType()){
             qDebug()<<"Legit placement for "<<QString::fromStdString(type);
             return true;
@@ -103,13 +103,13 @@ bool checkBuildingAvailability(const std::shared_ptr<Course::TileBase> &targetTi
 }
 
 void makeAdvancedWGenerator(int mapsize,
-                                std::shared_ptr<gameEventHandler> handler,
-                                std::shared_ptr<gameManager> manager)
+                                const std::shared_ptr<gameEventHandler>& handler,
+                                const std::shared_ptr<gameManager>& manager)
 
 {
 
    int ran;
-   srand (time(NULL));
+   srand (time(nullptr));
     for(int x = 0; x< mapsize; x++){
 
 
@@ -118,7 +118,7 @@ void makeAdvancedWGenerator(int mapsize,
             Course::Coordinate loc=Course::Coordinate(x,y);
             qDebug()<<"Building coord"<<x<<y;
             if(x!=0 && y!=0){
-            for(auto it :loc.neighbours()){
+            for(const auto& it :loc.neighbours()){
                 if(it.x()<=x &&it.y()<=y){
                     qDebug()<<"Checking coor"<<it.x()<<it.y();
                  if(manager->getTile(it)->getType()=="Jungle"){
