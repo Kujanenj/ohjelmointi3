@@ -34,10 +34,7 @@ std::string MeleeChampion::getType() const
 bool MeleeChampion::modifyHealth(int hModifier)
 {
     healthValue_+=hModifier+1;
-    if(healthValue_<=0){
-        return true;
-    }
-    return false;
+    return healthValue_<=0;
 }
 
 }

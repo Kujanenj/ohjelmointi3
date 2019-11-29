@@ -36,7 +36,7 @@ public:
            const unsigned int& max_work = 3,
                     const Course::ResourceMap& production = {});
 
-    virtual ~Spring() = default;
+    ~Spring() override = default;
 
      std::string getType() const override;
 

@@ -19,7 +19,7 @@ public:
      * @brief Turn Constructor
      * @param manager The gameManager
      */
-    Turn(std::shared_ptr<gameManager> manager);
+    Turn(const std::shared_ptr<gameManager>& manager);
     /**
      * @brief getInTurn Get the current player
      * @return Ptr to current player

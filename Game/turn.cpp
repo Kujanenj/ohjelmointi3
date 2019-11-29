@@ -1,6 +1,8 @@
 #include "turn.h"
+
+#include <utility>
 namespace Whiskas {
-Turn::Turn(std::shared_ptr<gameManager> manager)
+Turn::Turn(const std::shared_ptr<gameManager>& manager)
 {
 playerInTurn_=manager->getPlayerPair().first;
 manager_=manager;
@@ -15,7 +17,7 @@ void Turn::swapTurn()
 {
 
     turnCounter_+=1;
-    for(auto it:manager_->getMinionVector()){
+    for(const auto& it:manager_->getMinionVector()){
         it->setMoved(false);
 
 
@@ -24,13 +26,13 @@ void Turn::swapTurn()
 
 
 
-    for(auto it:manager_->getBuildingVector()){
+    for(const auto& it:manager_->getBuildingVector()){
         qDebug()<<"buildings about to give you shit";
         if(it->getOwner()==playerInTurn_){
         playerInTurn_->setPlayerItems(mergeAdvancedMaps(playerInTurn_->getItems(),
                                                         it->getAdvancedProduction()));
     }}
-    for(auto it:manager_->getBuildingVector()){ //UPGRADE MINONS
+    for(const auto& it:manager_->getBuildingVector()){ //UPGRADE MINONS
         it->doSpecialAction();
     }
     //swawp active player
@@ -51,6 +53,6 @@ int Turn::getTurnCounter()
 
 void Turn::setInTurn(std::shared_ptr<LeaguePlayer> ToBeInTurn)
 {
-    playerInTurn_=ToBeInTurn;
+    playerInTurn_=std::move(ToBeInTurn);
 }
 }
