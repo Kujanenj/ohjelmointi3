@@ -16,7 +16,11 @@ Spring::Spring(const Course::Coordinate& location,
              max_work,
              production)
 {
-    setDescription("Spring", "Default Spring Description");
+    setDescription("Spring", "A spring region.\n"
+                             "What is a spring region?\n"
+                             "No one knows.\n"
+                             "LifePump can be built here.\n"
+                             "Mage altar aswell.");
 }
 
 std::string Spring::getType() const

@@ -3,7 +3,9 @@
 #include "custombuildingbase.h"
 namespace Whiskas {
 
-
+/**
+ * @brief The AltarBase class is the inheritacne class for altar buildings.
+ */
 class AltarBase :public CustomBuildingBase
 {
 public:
@@ -16,7 +18,13 @@ public:
                        int health =5,
                        int attack = 0);
      std::string getType()const override;
+     /**
+     * @brief upgradeMinion upgrades a minion on the tile when called.
+     */
     virtual void upgradeMinion()=0;
+     /**
+      * @brief doSpecialAction calls upgrade minion, since all buildings have this method
+      */
      void doSpecialAction() override;
 
 protected:

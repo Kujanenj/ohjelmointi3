@@ -22,7 +22,7 @@ QRectF MapItem::boundingRect() const
 
 void MapItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
-    Q_UNUSED( option ); Q_UNUSED( widget );
+    Q_UNUSED( option ) Q_UNUSED( widget )
 
 
     if ( c_objecticons.find(m_gameobject->getType()) == c_objecticons.end() ) {

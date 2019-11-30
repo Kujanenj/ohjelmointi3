@@ -145,8 +145,8 @@ private:
 
 
 
-    QMediaPlayer* testSoundPlayer; //TEST MEDIA PLAYER
-    QMediaPlaylist* testPlayList; //test playlist
+    QMediaPlayer* SoundPlayer;
+    QMediaPlaylist* PlayList;
     buildingDialog buildingdialog;
     QList<QLCDNumber*> lcdDisplays_;
     std::string buildingToBeBuilt_="Nexus";

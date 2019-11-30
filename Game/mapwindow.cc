@@ -100,17 +100,17 @@ MapWindow::MapWindow(QWidget *parent,
     m_ui->activePlayerLabel->setAlignment(Qt::AlignCenter);
 
 
-    //TEST SOUND EFFECT
-    testSoundPlayer=new QMediaPlayer();
-    //testSoundPlayer->setMedia(QUrl("qrc:/sounds/sounds/testSound.mp3"));
-    testPlayList = new QMediaPlaylist();
-    testPlayList->addMedia(QUrl("qrc:/sounds/sounds/testSound.mp3"));
-    testPlayList->addMedia(QUrl("qrc:/sounds/sounds/backgroundMusic.mp3"));
-    testPlayList->setPlaybackMode(QMediaPlaylist::Loop);
-    testSoundPlayer->setPlaylist(testPlayList);
+
+    SoundPlayer=new QMediaPlayer();
+
+    PlayList = new QMediaPlaylist();
+    PlayList->addMedia(QUrl("qrc:/sounds/sounds/testSound.mp3"));
+    PlayList->addMedia(QUrl("qrc:/sounds/sounds/backgroundMusic.mp3"));
+    PlayList->setPlaybackMode(QMediaPlaylist::Loop);
+    SoundPlayer->setPlaylist(PlayList);
 
    // testSoundPlayer->play();
-   //IT WORKS
+
     generateLCDList();
     dialog.exec();
 }
@@ -320,7 +320,7 @@ void MapWindow::on_minionbutton_clicked()
 void MapWindow::on_MusicButton_clicked()
 {
 
-    testSoundPlayer->setMuted(!testSoundPlayer->isMuted());
+    SoundPlayer->setMuted(!SoundPlayer->isMuted());
 }
 
 void MapWindow::on_enemyMinions_clicked()

@@ -4,7 +4,9 @@
 namespace Whiskas {
 
 
-
+/**
+ * @brief The MageAltar class is an altar, that upgrades minions to mages.
+ */
 class MageAltar :public AltarBase
 {
 public:
