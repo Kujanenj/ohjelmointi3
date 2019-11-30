@@ -21,7 +21,7 @@ QRectF MapItem::boundingRect() const
 
 void MapItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
-    Q_UNUSED( option ); Q_UNUSED( widget );
+    Q_UNUSED( option ) Q_UNUSED( widget )
 
 
     if ( c_objecticons.find(m_gameobject->getType()) == c_objecticons.end() ) {
@@ -76,7 +76,7 @@ void MapItem::addNewColor(std::string type)
 {
     if ( c_mapicons.find(type) == c_mapicons.end()
          && c_objecticons.find(type) == c_objecticons.end() ){
-        std::size_t hash = std::hash<std::string>{}(type);
+
         if (type == "Desert") {
             QImage desert_pic = QImage(":/images/graphics/pi.png");
             c_mapicons.insert({type, desert_pic});

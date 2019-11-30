@@ -15,7 +15,11 @@ Jungle::Jungle(const Course::Coordinate& location,
              max_work,
              production)
 {
-    setDescription("Jungle","Default Jungle descripton");
+    setDescription("Jungle","A lush jungle."
+                            "A Sawmill can be constructed here,\n"
+                            "no matter what enviromentalist say.\n"
+                            "Ranged Altar can also be constructed here,\n"
+                            "since you know, Wood.");
 }
 
 std::string Jungle::getType() const

@@ -4,7 +4,9 @@
 #include "AltarBase.h"
 namespace Whiskas {
 
-
+/**
+ * @brief The MeleeAltar class is an altar that upgrades minions to melee champs
+ */
 class MeleeAltar :public AltarBase
 {
 public:

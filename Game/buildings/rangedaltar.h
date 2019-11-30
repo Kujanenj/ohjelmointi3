@@ -3,7 +3,9 @@
 
 #include "AltarBase.h"
 namespace Whiskas {
-
+/**
+ * @brief The RangedAltar class is an altar that upgrades minions to ranged units
+ */
 class RangedAltar : public AltarBase
 {
 public:

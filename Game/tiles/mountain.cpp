@@ -16,7 +16,9 @@ Mountain::Mountain(const Course::Coordinate& location,
              max_work,
              production)
 {
-    setDescription("Mountain","Default Mountain Description");
+    setDescription("Mountain","A mountanous region.\n"
+                              "Quarry and melee altar\n"
+                              "can be built here.");
 }
 
 std::string Mountain::getType() const
