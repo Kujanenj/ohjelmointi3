@@ -247,6 +247,7 @@ void MapWindow::mousePressEvent(QMouseEvent *event){
 
 void MapWindow::updateBrowser() {
     //m_ui->textBrowser->append(m_GEHandler->getMessage());
+    m_ui->secondBrowser;
 }
 void MapWindow::updateDescriptions()
 {
