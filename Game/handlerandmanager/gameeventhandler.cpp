@@ -2,10 +2,12 @@
 
 namespace Whiskas {
 
-gameEventHandler::gameEventHandler(std::shared_ptr<Turn> turn)
+gameEventHandler::gameEventHandler(std::shared_ptr<Turn> turn, std::shared_ptr<QTextBrowser> textBrowserRight):
+    turn_(turn),
+    textBrowserRight(textBrowserRight)
 {
 qDebug()<<"new event handler";
-turn_=turn;
+//turn_=turn;
 }
 
 bool gameEventHandler::modifyResources(std::shared_ptr<Course::PlayerBase> player, Course::ResourceMap resources)

@@ -138,9 +138,27 @@ void MapItem::addNewColor(std::string type)
             c_objecticons.insert({type, owner_pic_pair});
         } else if (type == "Ranged Altar") {
             QImage blue_altar = QImage(":/images/graphics/rangedaltar_blue.png");
-            QImage purple_altar = QImage(":/images/graphics/rangedaltar_purple_2.png");
+            QImage purple_altar = QImage(":/images/graphics/rangedaltar_purple.png");
             std::map<std::string, QImage> owner_pic_pair =  {{"Blue", blue_altar},
                                                         {"Purple", purple_altar}};
+            c_objecticons.insert({type, owner_pic_pair});
+        }else if (type == "MeleeChampion") {
+            QImage blue = QImage(":/images/graphics/melee_blue.png");
+            QImage purple = QImage(":/images/graphics/melee_purple.png");
+            std::map<std::string, QImage> owner_pic_pair =  {{"Blue", blue},
+                                                        {"Purple", purple}};
+            c_objecticons.insert({type, owner_pic_pair});
+        } else if (type == "mage") {
+            QImage blue = QImage(":/images/graphics/magea_blue.png");
+            QImage purple = QImage(":/images/graphics/mage_purple.png");
+            std::map<std::string, QImage> owner_pic_pair =  {{"Blue", blue},
+                                                        {"Purple", purple}};
+            c_objecticons.insert({type, owner_pic_pair});
+        } else if (type == "Ranged") {
+            QImage blue = QImage(":/images/graphics/ranged_blue.png");
+            QImage purple = QImage(":/images/graphics/ranged_purple.png");
+            std::map<std::string, QImage> owner_pic_pair =  {{"Blue", blue},
+                                                        {"Purple", purple}};
             c_objecticons.insert({type, owner_pic_pair});
         } else {
             QImage nexus_pic = QImage(":/images/graphics/nexus_blue.png");

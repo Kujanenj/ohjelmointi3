@@ -11,7 +11,9 @@
 #include "turn.h"
 #include <QDebug>
 #include <QMouseEvent>
+#include <QTextBrowser>
 #include "leagueplayer.h"
+
 namespace Whiskas {
 
 class Turn;
@@ -27,7 +29,7 @@ public:
      * @brief Constructor
      * @param turn For easier accsess to the turn class
      */
-    gameEventHandler(std::shared_ptr<Turn> turn);
+    gameEventHandler(std::shared_ptr<Turn> turn, std::shared_ptr<QTextBrowser> textBrowserRight);
     /**
      * @brief modifyResources Does nothing, since the game doesent use Course::resourceMap
      * @param player does nothing
@@ -104,6 +106,7 @@ private:
     std::shared_ptr<Minion> activeMinion_=nullptr;
     std::shared_ptr<Turn> turn_=nullptr;
     QString message_ = "";
+    std::shared_ptr<QTextBrowser> textBrowserRight = nullptr;
 
 };
 

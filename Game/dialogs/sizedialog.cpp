@@ -17,7 +17,7 @@ SizeDialog::~SizeDialog()
 
 void SizeDialog::on_Small_clicked()
 {
-    size_=10;
+    size_=5;
     emit Msize(size_);
     accept();
 }

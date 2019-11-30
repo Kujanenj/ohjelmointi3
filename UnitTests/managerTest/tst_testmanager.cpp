@@ -69,7 +69,7 @@ private:
     std::shared_ptr<QTextBrowser> textBrowser=nullptr;
     std::shared_ptr<gameManager> manager=std::make_shared<gameManager>(scene, textBrowser);
     std::shared_ptr<Turn> turn=std::make_shared<Turn>(manager);
-    std::shared_ptr<gameEventHandler> handler = std::make_shared<gameEventHandler>(turn);
+    std::shared_ptr<gameEventHandler> handler = std::make_shared<gameEventHandler>(turn, textBrowser);
     std::shared_ptr<LeaguePlayer> player= std::make_shared<LeaguePlayer>("player1");
     std::shared_ptr<LeaguePlayer> player2= std::make_shared<LeaguePlayer>("player2");
 
