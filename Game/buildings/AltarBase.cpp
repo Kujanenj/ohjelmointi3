@@ -5,8 +5,8 @@ AltarBase::AltarBase(const std::shared_ptr<gameEventHandler>& eventhandler,
                                        const std::shared_ptr<gameManager>& objectmanager,
                                        const std::shared_ptr<Course::PlayerBase>& owner,
                                        const int& tilespaces,
-                                       const AdvancedResourceMap buildcost,
-                                       const AdvancedResourceMap production,
+                                       const AdvancedResourceMap& buildcost,
+                                       const AdvancedResourceMap& production,
                                        int health,
                                        int attack
                                        ):

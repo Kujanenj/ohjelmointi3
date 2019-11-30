@@ -1,12 +1,13 @@
 #include "leagueplayer.h"
 #include <QDebug>
+#include <utility>
 namespace Whiskas {
 
 
-LeaguePlayer::LeaguePlayer(std::string name,
+LeaguePlayer::LeaguePlayer(const std::string& name,
                            AdvancedResourceMap playerItems):
     Course::PlayerBase(name),
-    playerItems_(playerItems)
+    playerItems_(std::move(playerItems))
 {
     qDebug()<<"league player";
 }
@@ -24,7 +25,7 @@ AdvancedResourceMap LeaguePlayer::getItems()
 void LeaguePlayer::setPlayerItems(AdvancedResourceMap toSet)
 {
     qDebug()<<"setting player"<<QString::fromStdString(getName());
-    playerItems_=toSet;
+    playerItems_=std::move(toSet);
     qDebug()<<"afther set";
     std::map<AdvancedResources, int>::iterator it;
     for(it=playerItems_.begin(); it!=playerItems_.end(); it++){

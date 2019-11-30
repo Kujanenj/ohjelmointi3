@@ -36,21 +36,21 @@ public:
            int health=3,
            int attack=1,
            int numberOfattacks=1,
-           const AdvancedResourceMap cost={});
+           const AdvancedResourceMap& cost={});
     /**
      * @brief doSpecialAction does nothing, nada. Need to declare it for inheritance
      */
     void doSpecialAction() override;
-    virtual ~Minion() = default;
+    ~Minion() override = default;
 
-    virtual std::string getType() const override;
+    std::string getType() const override;
     /**
      * @brief modifyHealth if a minion takes more than 1 dmg from an attack,
      * its instantly slain. Weaklings
      * @param hModifier
      * @return true if dead, false otherwise
      */
-    virtual bool modifyHealth(int hModifier) override;
+    bool modifyHealth(int hModifier) override;
 
 
 

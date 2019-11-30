@@ -171,5 +171,3 @@ void GameScene::drawItem( std::shared_ptr<Course::GameObject> obj)
 }
 
 }
-
-

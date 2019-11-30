@@ -9,7 +9,7 @@ Minion::Minion(const std::shared_ptr<Course::iGameEventHandler>& handler,
                int health,
                int attack,
                int attacks,
-               const AdvancedResourceMap cost):
+               const AdvancedResourceMap& cost):
     Course::WorkerBase(handler, manager, owner),
     Unit(movement),
     Attackable(health,attack,attacks, ID)
@@ -46,10 +46,7 @@ bool Minion::modifyHealth(int hModifier)
         return true;
     }
     healthValue_+=hModifier;
-    if(healthValue_<=0){
-        return true;
-    }
-    return false;
+    return healthValue_<=0;
 }
 
 

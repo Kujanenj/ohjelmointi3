@@ -4,8 +4,9 @@
 #include "graphics/mapitem.h"
 #include "functions/functions.h"
 #include <QTimer>
+#include <utility>
 #include "dialogs/enddialog.h"
-#include <math.h>
+#include <cmath>
 std::map<std::string,std::string> BuildingDescriptions{
     {"Lifepump","A building that produces \n"
         "LIFE WWATER. Can be construted on \n"
@@ -83,7 +84,7 @@ MapWindow::MapWindow(QWidget *parent,
                      std::shared_ptr<Whiskas::gameEventHandler> handler):
     QMainWindow(parent),
     m_ui(new Ui::MapWindow),
-    m_GEHandler(handler),
+    m_GEHandler(std::move(handler)),
     m_gamescene(new Whiskas::GameScene(this))
 {
     m_ui->setupUi(this);
@@ -99,17 +100,17 @@ MapWindow::MapWindow(QWidget *parent,
     m_ui->activePlayerLabel->setAlignment(Qt::AlignCenter);
 
 
-    //TEST SOUND EFFECT
-    testSoundPlayer=new QMediaPlayer();
-    //testSoundPlayer->setMedia(QUrl("qrc:/sounds/sounds/testSound.mp3"));
-    testPlayList = new QMediaPlaylist();
-    testPlayList->addMedia(QUrl("qrc:/sounds/sounds/testSound.mp3"));
-    testPlayList->addMedia(QUrl("qrc:/sounds/sounds/backgroundMusic.mp3"));
-    testPlayList->setPlaybackMode(QMediaPlaylist::Loop);
-    testSoundPlayer->setPlaylist(testPlayList);
+
+    SoundPlayer=new QMediaPlayer();
+
+    PlayList = new QMediaPlaylist();
+    PlayList->addMedia(QUrl("qrc:/sounds/sounds/testSound.mp3"));
+    PlayList->addMedia(QUrl("qrc:/sounds/sounds/backgroundMusic.mp3"));
+    PlayList->setPlaybackMode(QMediaPlaylist::Loop);
+    SoundPlayer->setPlaylist(PlayList);
 
    // testSoundPlayer->play();
-   //IT WORKS
+
     generateLCDList();
     dialog.exec();
 }
@@ -122,12 +123,12 @@ MapWindow::~MapWindow()
 void MapWindow::setGEHandler(
         std::shared_ptr<Whiskas::gameEventHandler> nHandler)
 {
-    m_GEHandler = nHandler;
+    m_GEHandler = std::move(nHandler);
 }
 
 void MapWindow::setGManager(std::shared_ptr<Whiskas::gameManager> manager)
 {
-    m_GManager=manager;
+    m_GManager=std::move(manager);
 }
 
 void MapWindow::setSize(int width, int height)
@@ -194,7 +195,7 @@ void MapWindow::closeWindow()
 
 void MapWindow::drawItem( std::shared_ptr<Course::GameObject> obj)
 {
-    m_gamescene->drawItem(obj);
+    m_gamescene->drawItem(std::move(obj));
 }
 
 void MapWindow::mousePressEvent(QMouseEvent *event){
@@ -249,6 +250,7 @@ void MapWindow::mousePressEvent(QMouseEvent *event){
 
 void MapWindow::updateBrowser() {
     //m_ui->textBrowser->append(m_GEHandler->getMessage());
+    m_ui->secondBrowser;
 }
 void MapWindow::updateDescriptions()
 {
@@ -322,7 +324,7 @@ void MapWindow::on_minionbutton_clicked()
 void MapWindow::on_MusicButton_clicked()
 {
 
-    testSoundPlayer->setMuted(!testSoundPlayer->isMuted());
+    SoundPlayer->setMuted(!SoundPlayer->isMuted());
 }
 
 void MapWindow::on_enemyMinions_clicked()

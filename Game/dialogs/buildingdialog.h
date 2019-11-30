@@ -18,7 +18,7 @@ class buildingDialog : public QDialog
 
 public:
     explicit buildingDialog(QWidget *parent = nullptr);
-    ~buildingDialog();
+    ~buildingDialog() override;
 
 signals:
     /**

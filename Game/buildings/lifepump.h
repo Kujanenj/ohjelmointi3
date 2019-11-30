@@ -18,15 +18,15 @@ public:
             const std::shared_ptr<gameManager>& objectmanager,
             const std::shared_ptr<Course::PlayerBase>& owner,
             const int& tilespaces = 1,
-            const AdvancedResourceMap buildcost = LIFEPUMP_COST,
-            const AdvancedResourceMap production = LIFEPUMP_PRODUCE,
+            const AdvancedResourceMap& buildcost = LIFEPUMP_COST,
+            const AdvancedResourceMap& production = LIFEPUMP_PRODUCE,
             int health =5,
             int attack = 0
 
             );
 
-    virtual ~Lifepump() = default;
-    virtual std::string getType() const override;
+    ~Lifepump() override = default;
+     std::string getType() const override;
 
 }; // class Lifepump
 

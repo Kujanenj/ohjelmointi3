@@ -4,10 +4,7 @@ namespace Whiskas {
 
 MeleeAltar::MeleeAltar(const std::shared_ptr<gameEventHandler>& eventhandler,
                        const std::shared_ptr<gameManager>& objectmanager,
-                       const std::shared_ptr<Course::PlayerBase>& owner,
-                       const int& tilespaces,
-                       const AdvancedResourceMap buildcost,
-                       const AdvancedResourceMap production):
+                       const std::shared_ptr<Course::PlayerBase>& owner):
     AltarBase(eventhandler,objectmanager,owner)
 {
 cooldown_=0;
@@ -17,7 +14,7 @@ void MeleeAltar::upgradeMinion()
 {
     qDebug()<<"Melee altar cd"<<cooldown_;
     if(cooldown_<=0){
- for(auto it: manager_->getMinionVector()){
+ for(const auto &it: manager_->getMinionVector()){
      if(currentLocationTile()->getWorkerCount()!=0){
      if(it==currentLocationTile()->getWorkers().at(0) && it->getType()=="Minion"){
          manager_->destroyObject(it);

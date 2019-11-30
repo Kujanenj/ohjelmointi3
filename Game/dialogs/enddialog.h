@@ -15,8 +15,8 @@ class endDialog : public QDialog
 
 public:
     explicit endDialog(QWidget *parent = nullptr);
-    ~endDialog();
-void setEndText(std::string text);
+    ~endDialog() override;
+void setEndText(const std::string &text);
 private slots:
 void on_okButton_clicked();
 

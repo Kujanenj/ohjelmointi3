@@ -13,8 +13,8 @@ class ErrorDialog : public QDialog
 
 public:
     explicit ErrorDialog(QWidget *parent = nullptr);
-    ~ErrorDialog();
-    void setErrorlabel(std::string message);
+    ~ErrorDialog() override;
+    void setErrorlabel(const std::string &message);
 private:
     Ui::ErrorDialog *ui;
 };

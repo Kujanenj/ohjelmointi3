@@ -17,7 +17,7 @@ class startdialog : public QDialog
 
 public:
     explicit startdialog(QWidget *parent = nullptr);
-    ~startdialog();
+    ~startdialog()override;
 public slots:
     void setXY(int xy);
 signals:

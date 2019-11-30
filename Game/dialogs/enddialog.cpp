@@ -14,7 +14,7 @@ endDialog::~endDialog()
     delete ui;
 }
 
-void endDialog::setEndText(std::string text)
+void endDialog::setEndText(const std::string  &text)
 {
     ui->EndLabel->setText(QString::fromStdString(text));
 }

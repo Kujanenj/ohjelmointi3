@@ -35,7 +35,18 @@
  * the altar will go on cooldown for a set amount of turns. Afther the cooldown has expired, the altar can upgrade  another minion.
  * \subsection Winning
  * To win the game, simply destroy the enemy Nexus to instantly win the game, and be declared master of all bronze players! (So silver)
+ *
+ * \section Work distrubution
+ * Safwaneb was in charge of all things graphical. All pictures, and drawing objects/tiles were his responsibility. Several buildings are also made by Safwaneb.
+ * Jussi was in charge of the game mechanics. Moving and attacking and the minion, champions and altars were his desing.
+ *
+ *
+ * \section Additonal content
+ * * Moving
+ * * Attacking
+ * * Special Altar buildings
  */
+
 int main(int argc, char* argv[])
 {
 

@@ -23,7 +23,7 @@ public:
                   int attack=2,
                   int numberOfAttacks=2);
 
-    virtual std::string getType() const override;
+    std::string getType() const override;
     /**
      * @brief modifyHealth Melee Champion takes 1 less damage from attacks
      * @param hModifier

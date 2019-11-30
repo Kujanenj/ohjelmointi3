@@ -8,7 +8,7 @@
 
 #include <vector>
 #include <QDebug>
-#include <time.h>
+#include <ctime>
 
 #include "handlerandmanager/gamemanager.h"
 
@@ -18,10 +18,10 @@ namespace Whiskas {
 
 
 
-void selectBuildingTypef(std::string type,
-                        std::shared_ptr<gameEventHandler> handler,
-                        std::shared_ptr<gameManager> manager,
-                        std::shared_ptr<LeaguePlayer> player)
+void selectBuildingTypef(const std::string& type,
+                        const std::shared_ptr<gameEventHandler>& handler,
+                        const std::shared_ptr<gameManager>& manager,
+                        const std::shared_ptr<LeaguePlayer>& player)
 {
 
 
@@ -61,7 +61,7 @@ bool gameManager::spawnBuilding(std::shared_ptr<gameEventHandler> handler,
         }
         std::shared_ptr<CustomBuildingBase> building = std::make_shared<buildingType>(handler,manager,player);
         if (building->getType() != "Nexus") {
-            if(handler->getActiveTile()->getWorkers().size() == 0) {
+            if(handler->getActiveTile()->getWorkers().empty()) {
                 qDebug()<<"error, active tile has no minion";
                 return false;
             }
@@ -85,14 +85,14 @@ bool gameManager::spawnBuilding(std::shared_ptr<gameEventHandler> handler,
 
 }
 
-bool checkBuildingAvailability(std::shared_ptr<Course::TileBase> targetTile, std::string type)
+bool checkBuildingAvailability(const std::shared_ptr<Course::TileBase> &targetTile, const std::string &type)
 {
 
  //HANDLER FOR STD OUT OF RANGE?
     if(targetTile->getBuildingCount()!=0){
         return false;
     }
-    for(auto it: buildingAvailability.at(type)){
+    for(const auto& it: buildingAvailability.at(type)){
         if(it==targetTile->getType()){
             qDebug()<<"Legit placement for "<<QString::fromStdString(type);
             return true;
@@ -103,13 +103,13 @@ bool checkBuildingAvailability(std::shared_ptr<Course::TileBase> targetTile, std
 }
 
 void makeAdvancedWGenerator(int mapsize,
-                                std::shared_ptr<gameEventHandler> handler,
-                                std::shared_ptr<gameManager> manager)
+                                const std::shared_ptr<gameEventHandler>& handler,
+                                const std::shared_ptr<gameManager>& manager)
 
 {
 
    int ran;
-   srand (time(NULL));
+   srand (time(nullptr));
     for(int x = 0; x< mapsize; x++){
 
 
@@ -118,7 +118,7 @@ void makeAdvancedWGenerator(int mapsize,
             Course::Coordinate loc=Course::Coordinate(x,y);
             qDebug()<<"Building coord"<<x<<y;
             if(x!=0 && y!=0){
-            for(auto it :loc.neighbours()){
+            for(const auto& it :loc.neighbours()){
                 if(it.x()<=x &&it.y()<=y){
                     qDebug()<<"Checking coor"<<it.x()<<it.y();
                  if(manager->getTile(it)->getType()=="Jungle"){

@@ -44,7 +44,7 @@ public:
      * @brief Adds a single tile to the private tile vector
      * @param tile to be added
      */
-    void addTile(std::shared_ptr<Course::TileBase> tile);
+    void addTile(const std::shared_ptr<Course::TileBase>& tile);
     /**
      * @brief Return a tile matching the object ID
      * @param ID
@@ -108,7 +108,7 @@ public:
      * vector
      * @param Minion to be added
      */
-    void addMinion(std::shared_ptr<Minion> Minion);
+    void addMinion(const std::shared_ptr<Minion>& Minion);
     /**
      * @brief spawnMinion Spawns a new minion to desired tile.
      * @param handler minions own handler
@@ -118,11 +118,11 @@ public:
      * @param type of minion to be spawned(Eg:minion,mage..)
      * @return true if succefull, false otherwise
      */
-    bool spawnMinion(std::shared_ptr<gameEventHandler> handler,
-                                        std::shared_ptr<Course::iObjectManager> manager,
-                                        std::shared_ptr<Course::PlayerBase> owner,
-                                        std::shared_ptr<Course::TileBase> location,
-                                        std::string type);
+    bool spawnMinion(const std::shared_ptr<gameEventHandler>& handler,
+                                        const std::shared_ptr<Course::iObjectManager>& manager,
+                                        const std::shared_ptr<Course::PlayerBase>& owner,
+                                        const std::shared_ptr<Course::TileBase>& location,
+                                        const std::string& type);
 
 
 
@@ -145,8 +145,8 @@ public:
      * @param minionToMove The minion doing the moving
      * @param targetTile Destination
      */
-    void move(std::shared_ptr<Minion> minionToMove,
-              std::shared_ptr<Course::TileBase> targetTile);
+    void move(const std::shared_ptr<Minion>& minionToMove,
+              const std::shared_ptr<Course::TileBase>& targetTile);
 
     /**
      * @brief attack Select minion tries to deal its damage to target attackable.
@@ -154,8 +154,8 @@ public:
      * @param minionToAttack Minion doing the attacking
      * @param toAttack The target
      */
-    void attack(std::shared_ptr<Minion> minionToAttack,
-                std::shared_ptr<Attackable> toAttack);
+    void attack(const std::shared_ptr<Minion>& minionToAttack,
+                const std::shared_ptr<Attackable>& target);
     /**
      * @brief checkForEnemies Check if target tile contains minions or buildings
      * of the other player
@@ -163,33 +163,33 @@ public:
      * @param targetTile Destination
      * @return true if enemies, false if no
      */
-    bool checkForEnemies(std::shared_ptr<Minion>minionTomove,
-                         std::shared_ptr<Course::TileBase>targetTile);
+    bool checkForEnemies(const std::shared_ptr<Minion>&minionTomove,
+                         const std::shared_ptr<Course::TileBase>&targetTile);
     /**
      * @brief selectAttackTarget Returns a attackable ptr for someone to attack. Minions have priority.
      * @param targetTile
      * @return Attcable ptr if succsefull, nullptr if something goes wrong
      */
-    std::shared_ptr<Attackable> selectAttackTarget(std::shared_ptr<Course::TileBase> targetTile);
+    std::shared_ptr<Attackable> selectAttackTarget(const std::shared_ptr<Course::TileBase>& targetTile);
     /**
      * @brief attackMultiple Used by the mage minion to attack in an area. Attacks all minions in a radius of 1.
      * @param minionToAttack Minion doing the attacking
      * @param targetTile
      */
-    void attackMultiple(std::shared_ptr<Minion> minionToAttack, std::shared_ptr<Course::TileBase> targetTile);
+    void attackMultiple(const std::shared_ptr<Minion>& minionToAttack, const std::shared_ptr<Course::TileBase>& targetTile);
     /**
      * @brief destroyObject Takes an attackable object, and removes it from all databases.
      * (Gamemanager vectors, tileWorkers, Tilebuildings, scene_items...)
      * Also checks if the destroyed object is a Nexus. If it is, win the game.
      * @param ObjectToDestroy the object to be destroyed
      */
-    void destroyObject(std::shared_ptr<Attackable> ObjectToDestroy);
+    void destroyObject(const std::shared_ptr<Attackable>& ObjectToDestroy);
     /**
      * @brief getNexusLocation Returns a tile containing the nexus of the desired player
      * @param owner Desired player
      * @return  Tile containing the Nexus
      */
-    std::shared_ptr<Course::TileBase> getNexusLocation(std::shared_ptr<LeaguePlayer> owner);
+    std::shared_ptr<Course::TileBase> getNexusLocation(const std::shared_ptr<LeaguePlayer>& owner);
     /**
      * @brief getWinner Get the winning player
       * @return ptr to the player who won the game

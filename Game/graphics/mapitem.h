@@ -26,7 +26,7 @@ public:
      * @param size of the created item in pixels.
      * @pre obj must have a valid Coordinate.
      */
-    MapItem(const std::shared_ptr<Course::GameObject> &obj, int size);
+    MapItem(std::shared_ptr<Course::GameObject> obj, int size);
 
     /**
      * @brief boundingRect
@@ -44,7 +44,7 @@ public:
      */
     void paint(QPainter *painter,
                const QStyleOptionGraphicsItem *option,
-               QWidget *widget);
+               QWidget *widget) override;
     /**
      * @brief getBoundObject
      * @return the object this item is bound to.
@@ -62,7 +62,7 @@ public:
      * @return True: if obj is pointing to the same object as this item.
      * False otherwise.
      */
-    bool isSameObj(std::shared_ptr<Course::GameObject> obj);
+    bool isSameObj(const std::shared_ptr<Course::GameObject>& obj);
 
     /**
      * @brief getSize
@@ -87,7 +87,7 @@ private:
     static std::map<std::string, QColor> c_mapcolors;
     static std::map<std::string, QImage> c_mapicons;
     static std::map<std::string, std::map<std::string, QImage>> c_objecticons;
-    static void addNewColor(std::string type);
+    static void addNewColor(const std::string& type);
 };
 }
 #endif // MapItem_HH

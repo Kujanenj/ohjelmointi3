@@ -16,7 +16,7 @@ public:
      * @param name
      * @param playerItems Resource the player has at the start of the game
      */
-    LeaguePlayer(std::string name,
+    LeaguePlayer(const std::string& name,
                  AdvancedResourceMap playerItems=PLAYER_ITEMS);
     AdvancedResourceMap getItems();
     /**

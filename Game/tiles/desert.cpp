@@ -15,7 +15,11 @@ Desert::Desert(const Course::Coordinate& location,
              max_work,
              production)
 {
-    setDescription("Desert","Default Desert descripton");
+    setDescription("Desert","Barren wasteland.\n"
+                            "Only a fool would try\n"
+                            " to live here.\n"
+                            "Melee Altar can\n"
+                            "Be constructed here.");
 }
 
 std::string Desert::getType() const
