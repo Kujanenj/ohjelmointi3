@@ -169,8 +169,8 @@ void gameManager::move(const std::shared_ptr<Minion>& minionToMove, const std::s
                     textBrowser->append("This unit has already attacked this turn");
                     return;
                 }
-
-                textBrowser->append(QString(QString::fromStdString(minionToMove->getOwner()->getName()) + " has attacked"));
+                if(textBrowser!=nullptr){
+                textBrowser->append(QString(QString::fromStdString(minionToMove->getOwner()->getName()) + " has attacked"));}
                 if(minionToMove->getType()=="mage"){
                     attackMultiple(minionToMove,targetTile);
                 }
@@ -186,7 +186,8 @@ void gameManager::move(const std::shared_ptr<Minion>& minionToMove, const std::s
                 return;
             }
             if(minionToMove->getMoved()){
-                textBrowser->append("This unit has already moved this turn");
+                if(textBrowser!=nullptr){
+                textBrowser->append("This unit has already moved this turn");}
                 return;
             }
             minionToMove->currentLocationTile()->removeWorker(minionToMove);
@@ -196,7 +197,9 @@ void gameManager::move(const std::shared_ptr<Minion>& minionToMove, const std::s
             manager_gamescene->updateItem(minionToMove);
             }
             qDebug()<<"WE MOVED";
+            if(textBrowser!=nullptr){
             textBrowser->append(QString(QString::fromStdString(minionToMove->getOwner()->getName()) + " has moved a minion"));
+            }
             minionToMove->setMoved(true);
             minionToMove->setAttacked(true);
 
@@ -209,7 +212,8 @@ void gameManager::move(const std::shared_ptr<Minion>& minionToMove, const std::s
 
        }
     else{
-    textBrowser->append("You can't trample your minions");
+        if(textBrowser!=nullptr){
+    textBrowser->append("You can't trample your minions");}
     qDebug()<<"there were minions";
     }
 }
@@ -227,8 +231,9 @@ void gameManager::attack(const std::shared_ptr<Minion>& minionToAttack,
     qDebug()<<target->getHealth()<<"health value";
     if(target->modifyHealth(-minionToAttack->getAttack())){
         destroyObject(target);
+        if(textBrowser!=nullptr){
         textBrowser->append(QString(QString::fromStdString(minionToAttack->getOwner()->getName())
-                                    + " has destroyed their target"));
+                                    + " has destroyed their target"));}
     }
 
 }

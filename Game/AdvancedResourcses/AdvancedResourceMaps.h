@@ -14,17 +14,17 @@ const AdvancedResourceMap PLAYER_ITEMS={
     };
 
 const AdvancedResourceMap NEXUS_PRODUCE={
-    {IRON, 0},
-    {WOOD, 0},
-    {CRYSTAL,0},
-    {LIFEWATER,0}
+    {IRON, 1},
+    {WOOD, 1},
+    {CRYSTAL,1},
+    {LIFEWATER,1}
 };
 
 const AdvancedResourceMap SAWMILL_COST={
     {IRON, 5},
     {WOOD, 5},
-    {CRYSTAL,1},
-    {LIFEWATER,1}
+    {CRYSTAL,4},
+    {LIFEWATER,4}
 };
 
 const AdvancedResourceMap LIFEPUMP_COST={
@@ -43,7 +43,7 @@ const AdvancedResourceMap QUARRY_COST={
 
 const AdvancedResourceMap SAWMILL_PRODUCE={
     {IRON, 0},
-    {WOOD, 2},
+    {WOOD, 1},
     {CRYSTAL,0},
     {LIFEWATER,0}
 };
@@ -52,20 +52,20 @@ const AdvancedResourceMap LIFEPUMP_PRODUCE={
     {IRON, 0},
     {WOOD, 0},
     {CRYSTAL,0},
-    {LIFEWATER,2}
+    {LIFEWATER,1}
 };
 
 const AdvancedResourceMap QUARRY_PRODUCE={
-    {IRON, 2},
+    {IRON, 1},
     {WOOD, 0},
-    {CRYSTAL,2},
+    {CRYSTAL,0},
     {LIFEWATER,0}
 };
 
 const AdvancedResourceMap MELEEALTAR_COST={
     {IRON, 15},
     {WOOD, 5},
-    {CRYSTAL,1},
+    {CRYSTAL,5},
     {LIFEWATER,5}
 };
 

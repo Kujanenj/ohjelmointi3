@@ -67,8 +67,8 @@ public:
     void drawItem( std::shared_ptr<Course::GameObject> obj);
     /**
      * @brief mousePressEvent calls event handler to manage the click
-     * and updates the description labels
-     * @param event the click event
+     * and updates The description labels
+     * @param event The click event
      */
 
     void mousePressEvent(QMouseEvent *event ) override;
@@ -93,7 +93,7 @@ public:
     void generateLCDList();
 
     void updateDescriptions();
-    void updateBrowser();
+
 
 
 public slots:
@@ -114,24 +114,29 @@ public slots:
     void closeWindow();
 
 private slots:
-    //REMOVE most of these
+    /**
+     * @brief on_addButton_clicked opens the building dialog
+     */
     void on_addButton_clicked();
 
 
-
-    void on_minionbutton_clicked();
-    //NOT THIS
+    /**
+     * @brief on_MusicButton_clicked Mute/unmute music
+     */
     void on_MusicButton_clicked();
 
 
-    void on_enemyMinions_clicked();
 
+    /**
+     * @brief on_endTurnButton_clicked  Calls the event handler to end the turn, and updates
+     * some labels
+     */
     void on_endTurnButton_clicked();
+    /**
+     * @brief on_confirmButton_clicked Calls manager to try to spawn the selected building.
+     * is disabled aftherwards
+     */
 
-    void on_champButton_clicked();
-
-    void on_mageButton_clicked();
-    //NOT THis
     void on_confirmButton_clicked();
 
 private:
@@ -149,7 +154,7 @@ private:
     QMediaPlaylist* PlayList;
     buildingDialog buildingdialog;
     QList<QLCDNumber*> lcdDisplays_;
-    std::string buildingToBeBuilt_="Nexus";
+    std::string buildingToBeBuilt_="Nexus"; //Used to spawn the first nexuses
 
 };
 

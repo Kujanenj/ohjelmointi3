@@ -18,6 +18,9 @@ public:
     ~endDialog() override;
 void setEndText(const std::string &text);
 private slots:
+/**
+ * @brief on_okButton_clicked Close the game
+ */
 void on_okButton_clicked();
 
 private:

@@ -31,8 +31,9 @@ public:
     /**
      * @brief gameManager Constructor
      * @param m_gamescene for easier access to graphics
+     * @param browser For easir managment of the textbrowsers
      */
-    explicit gameManager(std::shared_ptr<GameScene>& m_gamescene, std::shared_ptr<QTextBrowser>);
+    explicit gameManager(std::shared_ptr<GameScene>& m_gamescene, std::shared_ptr<QTextBrowser> browser);
 
     /*!
      * \brief Copies the tilesvector to managers own private vector

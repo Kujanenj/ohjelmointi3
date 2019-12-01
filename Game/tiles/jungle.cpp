@@ -16,9 +16,9 @@ Jungle::Jungle(const Course::Coordinate& location,
              production)
 {
     setDescription("Jungle","A lush jungle."
-                            "A Sawmill can be constructed here,\n"
-                            "no matter what enviromentalist say.\n"
-                            "Ranged Altar can also be constructed here,\n"
+                            "A Sawmill can \nbe constructed here, "
+                            "no\nmatter what enviromentalist say.\n"
+                            "Ranged Altar can also be constructed\nhere,"
                             "since you know, Wood.");
 }
 
