@@ -2,4 +2,5 @@ TEMPLATE = subdirs
 
 SUBDIRS += \
     handlerTest \
-    managerTest
+    managerTest \
+    ../Course/UnitTests

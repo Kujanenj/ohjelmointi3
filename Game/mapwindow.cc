@@ -100,7 +100,8 @@ MapWindow::MapWindow(QWidget *parent,
     m_ui->activePlayerLabel->setAlignment(Qt::AlignCenter);
 
 
-
+    //IF YOU WISH TO ENABLE MUSIC:
+    //REMOVE COMMENT MARKERS AND ENABLE MusicButton!!
     /*SoundPlayer=new QMediaPlayer();
 
     PlayList = new QMediaPlaylist();
