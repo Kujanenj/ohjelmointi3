@@ -40,8 +40,6 @@ public:
    */
    virtual AdvancedResourceMap getAdvancedCost();
 
-    void doSpecialAction() override;
-
     /**
     * @brief returns altar's cooldown
     */
