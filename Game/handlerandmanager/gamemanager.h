@@ -14,6 +14,16 @@
 
 namespace Whiskas {
 
+const std::map<std::string, std::vector<std::string>> buildingAvailability={
+    {"Nexus",{"Desert","Jungle","Mountain","Spring"}},
+    {{"Melee Altar"},{"Desert", "Mountain"}},
+    {{"Ranged Altar"},{"Jungle"}},
+    {{"Mage Altar"},{"Spring"}},
+    {{"Quarry"},{"Mountain"}},
+    {{"Sawmill"},{"Jungle"}},
+    {{"Lifepump"},{"Spring"}}
+};
+
 class CustomBuildingBase;
 class Attackable;
 //class MeleeChampion;
@@ -197,6 +207,12 @@ public:
      */
     std::shared_ptr<LeaguePlayer> getWinner();
 
+    /**
+     * @brief getNexusLocation Returns a tile containing the nexus of the desired player
+     * @param owner Desired player
+     * @return  Tile containing the Nexus
+     */
+    bool checkBuildingAvailability(const std::shared_ptr<Course::TileBase> &targetTile, const std::string &type);
 
 private:
     std::vector<std::shared_ptr<Course::TileBase> > alltiles_;

@@ -25,25 +25,25 @@ void selectBuildingTypef(const std::string& type,
 {
 
 
-    if(type=="Nexus" && checkBuildingAvailability(handler->getActiveTile(),"Nexus")){
+    if(type=="Nexus" && manager->checkBuildingAvailability(handler->getActiveTile(),"Nexus")){
         manager->spawnBuilding<Nexus>(handler,manager,player);
     }
-    if(type=="Melee Altar" && checkBuildingAvailability(handler->getActiveTile(),"Melee Altar")){
+    if(type=="Melee Altar" && manager->checkBuildingAvailability(handler->getActiveTile(),"Melee Altar")){
         manager->spawnBuilding<MeleeAltar>(handler,manager,player);
     }
-    if(type=="Ranged Altar" && checkBuildingAvailability(handler->getActiveTile(),"Ranged Altar")){
+    if(type=="Ranged Altar" && manager->checkBuildingAvailability(handler->getActiveTile(),"Ranged Altar")){
         manager->spawnBuilding<RangedAltar>(handler,manager,player);
     }
-    if(type=="Mage Altar" && checkBuildingAvailability(handler->getActiveTile(),"Mage Altar")){
+    if(type=="Mage Altar" && manager->checkBuildingAvailability(handler->getActiveTile(),"Mage Altar")){
         manager->spawnBuilding<MageAltar>(handler,manager,player);
     }
-    if(type=="Quarry" && checkBuildingAvailability(handler->getActiveTile(),"Quarry")){
+    if(type=="Quarry" && manager->checkBuildingAvailability(handler->getActiveTile(),"Quarry")){
         manager->spawnBuilding<Quarry>(handler,manager,player);
     }
-    if(type=="Sawmill" && checkBuildingAvailability(handler->getActiveTile(),"Sawmill")){
+    if(type=="Sawmill" && manager->checkBuildingAvailability(handler->getActiveTile(),"Sawmill")){
         manager->spawnBuilding<Sawmill>(handler,manager,player);
     }
-    if(type=="Lifepump" && checkBuildingAvailability(handler->getActiveTile(),"Lifepump")){
+    if(type=="Lifepump" && manager->checkBuildingAvailability(handler->getActiveTile(),"Lifepump")){
         manager->spawnBuilding<Lifepump>(handler,manager,player);
     }
 }

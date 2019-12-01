@@ -437,6 +437,24 @@ std::shared_ptr<LeaguePlayer> gameManager::getWinner()
     return winner_;
 }
 
+bool gameManager::checkBuildingAvailability(const std::shared_ptr<Course::TileBase> &targetTile, const std::string &type)
+{
+    if(targetTile->getBuildingCount()!=0){
+        textBrowser->append("This tile already contains a building");
+        return false;
+    }
+    for(const auto& it: buildingAvailability.at(type)){
+        if(it==targetTile->getType()){
+            qDebug()<<"Legit placement for "<<QString::fromStdString(type);
+            return true;
+        }
+    }
+    textBrowser->append(QString("You can't build a " + QString::fromStdString(type) + " on a " +
+                                  QString::fromStdString(targetTile->getType())  ));
+     qDebug()<<"UNLegit placement for "<<QString::fromStdString(type);
+     return false;
+}
+
 
 
 } // NAMESPACE OVER HERE
