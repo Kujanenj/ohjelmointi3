@@ -101,7 +101,7 @@ MapWindow::MapWindow(QWidget *parent,
 
 
 
-    SoundPlayer=new QMediaPlayer();
+    /*SoundPlayer=new QMediaPlayer();
 
     PlayList = new QMediaPlaylist();
     PlayList->addMedia(QUrl("qrc:/sounds/sounds/testSound.mp3"));
@@ -110,7 +110,8 @@ MapWindow::MapWindow(QWidget *parent,
     SoundPlayer->setPlaylist(PlayList);
 
     SoundPlayer->play();
-
+    */
+    m_ui->MusicButton->setEnabled(false);
     generateLCDList();
     dialog.exec();
 }

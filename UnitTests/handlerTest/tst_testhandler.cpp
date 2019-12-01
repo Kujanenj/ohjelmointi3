@@ -77,7 +77,7 @@ void testHandler::test_subtractAdvanced()
     };
     player2->setPlayerItems(finite);
     handler->subtractPlayerResources(player2,finite);
-    QCOMPARE(player2->getItems()[IRON],0);
+    QVERIFY(player2->getItems()[IRON]==0);
 
 }
 void testHandler::test_endTurn(){
@@ -105,8 +105,8 @@ void testHandler::test_endTurn(){
 
     handler->getTurn()->setInTurn(player);
     handler->endTurn(manager,handler);
-    QCOMPARE(manager->getMinionVector().size(),2);
-    QCOMPARE(handler->getTurn()->getInTurn(),player2);
+    QVERIFY(manager->getMinionVector().size()==2);
+    QVERIFY(handler->getTurn()->getInTurn()==player2);
 }
 void testHandler::test_Subtract_noMoney(){
     AdvancedResourceMap null={
@@ -116,8 +116,8 @@ void testHandler::test_Subtract_noMoney(){
         {LIFEWATER,0}
     };
     player->setPlayerItems(null);
-    QCOMPARE(handler->subtractPlayerResources(player,LIFEPUMP_COST),false);
-    QCOMPARE(player->getItems(),null);
+    QVERIFY(handler->subtractPlayerResources(player,LIFEPUMP_COST)==false);
+    QVERIFY(player->getItems()==null);
 }
 void testHandler::test_upgradeMinion(){
     Course::Coordinate loc=Course::Coordinate(5,5);
@@ -127,7 +127,7 @@ void testHandler::test_upgradeMinion(){
     manager->spawnBuilding<MeleeAltar>(handler,manager,player2);
     manager->spawnMinion(handler,manager,player2,handler->getActiveTile(),"minion");
     handler->endTurn(manager,handler);
-    QCOMPARE(manager->getMinionVector().back()->getType(),"MeleeChampion");
+    QVERIFY(manager->getMinionVector().back()->getType()=="MeleeChampion");
 }
 QTEST_APPLESS_MAIN(testHandler)
 

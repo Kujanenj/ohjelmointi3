@@ -95,7 +95,7 @@ void testManager::test_addTile()
     Course::Coordinate loc=Course::Coordinate(0,0);
     std::shared_ptr<Course::TileBase>tile=std::make_shared<Course::TileBase>(loc,handler,manager);
     manager->addTile(tile);
-    QCOMPARE(manager->getTileVector().size(),1);
+    QVERIFY(manager->getTileVector().size()==1);
 
 }
 void testManager::test_getTile(){
@@ -103,15 +103,15 @@ void testManager::test_getTile(){
     std::shared_ptr<Course::TileBase>tile=std::make_shared<Course::TileBase>(loc,handler,manager);
     manager->addTile(tile);
     qDebug()<<manager->getTileVector().size();
-    QCOMPARE(tile,manager->getTile(loc));
+    QVERIFY(tile==manager->getTile(loc));
 }
 void testManager::test_spawnMinion(){
     manager->spawnMinion(handler,manager,player,manager->getTileVector().front(),"minion");
-    QCOMPARE(manager->getMinionVector().front()->getType(),"Minion");
+    QVERIFY(manager->getMinionVector().front()->getType()=="Minion");
 }
 void testManager::test_move_basic(){
     manager->move(manager->getMinionVector().front(),manager->getTileVector().at(1));
-    QCOMPARE(manager->getMinionVector().front()->currentLocationTile(),manager->getTileVector().at(1));
+    QVERIFY(manager->getMinionVector().front()->currentLocationTile()==manager->getTileVector().at(1));
 
 }
 void testManager::test_move_TooFar(){
@@ -119,33 +119,33 @@ void testManager::test_move_TooFar(){
     std::shared_ptr<Course::TileBase>tile=std::make_shared<Course::TileBase>(loc,handler,manager);
     manager->getMinionVector().front()->setMoved(false);
     manager->move(manager->getMinionVector().front(),tile);
-     QCOMPARE(manager->getMinionVector().front()->currentLocationTile(),manager->getTileVector().at(1));
+     QVERIFY(manager->getMinionVector().front()->currentLocationTile()==manager->getTileVector().at(1));
 }
 void testManager::test_attack(){
     manager->spawnMinion(handler,manager,player2,manager->getTileVector().front(),"minion");
     manager->attack(manager->getMinionVector().front(),manager->getMinionVector().at(1));
-    QCOMPARE(manager->getMinionVector().at(1)->getHealth(),2);
+    QVERIFY(manager->getMinionVector().at(1)->getHealth()==2);
 }
 void testManager::test_checkForEnemies(){
-    QCOMPARE(manager->checkForEnemies(manager->
+    QVERIFY(manager->checkForEnemies(manager->
                                       getMinionVector().at(0),manager->
-                                      getTileVector().front()),true);
+                                      getTileVector().front())==true);
 
 }
 void testManager::test_move_attack(){
    manager->getMinionVector().at(0)->setAttacked(false);
      manager->move(manager->getMinionVector().at(0),manager->
                    getTileVector().front());
-     QCOMPARE(manager->getMinionVector().at(1)->getHealth(),1);
+     QVERIFY(manager->getMinionVector().at(1)->getHealth()==1);
 }
 void testManager::test_selectAttackTarget_Minion(){
-    QCOMPARE(manager->selectAttackTarget(manager->getTileVector().at(0))->getBoundID(),manager->getMinionVector()
+    QVERIFY(manager->selectAttackTarget(manager->getTileVector().at(0))->getBoundID()==manager->getMinionVector()
              .at(1)->ID);
 }
 void testManager::test_DestroyObject(){
     manager->destroyObject(manager->getMinionVector()
                            .at(1));
-    QCOMPARE(manager->getMinionVector().size(),1);
+    QVERIFY(manager->getMinionVector().size()==1);
 
 }
 void testManager::test_spawnBuilding(){
@@ -158,25 +158,25 @@ void testManager::test_spawnBuilding(){
     player2->setPlayerItems(infinite);
     handler->setActiveTile(manager->getTileVector().front());
     manager->spawnBuilding<Lifepump>(handler,manager,player2);
-    QCOMPARE(manager->getBuildingVector().size(),1);
+    QVERIFY(manager->getBuildingVector().size()==1);
 }
 void testManager::test_selectAttackTarget_Building(){
-    QCOMPARE(manager->selectAttackTarget(manager->getTileVector().at(0))->getBoundID(),manager->getBuildingVector()
+    QVERIFY(manager->selectAttackTarget(manager->getTileVector().at(0))->getBoundID()==manager->getBuildingVector()
                  .at(0)->ID);
 }
 void testManager::test_destroyBuilding(){
     manager->destroyObject(manager->getBuildingVector().front());
-    QCOMPARE(manager->getBuildingVector().size(),0);
+    QVERIFY(manager->getBuildingVector().size()==0);
 }
 void testManager::test_addPlayers(){
     std::pair<std::shared_ptr<LeaguePlayer>, std::shared_ptr<LeaguePlayer>> playerpair(player,player2);
     manager->addPlayer(playerpair);
-    QCOMPARE(manager->getPlayerPair().first->getName(),"player1");
+    QVERIFY(manager->getPlayerPair().first->getName()=="player1");
 }
 void testManager::test_destroyNexus(){
     manager->spawnBuilding<Nexus>(handler,manager,player2);
     manager->destroyObject(manager->getBuildingVector().front());
-    QCOMPARE(manager->getWinner(),manager->getPlayerPair().first);
+    QVERIFY(manager->getWinner()==manager->getPlayerPair().first);
 }
 void testManager::test_attackMultipleFullDamage(){
     for(int x=2;x<5;x++){
@@ -194,7 +194,7 @@ void testManager::test_attackMultipleFullDamage(){
      manager->spawnMinion(handler,manager,player,tile,"mage");
      Course::Coordinate target=Course::Coordinate(3,1);
      manager->attackMultiple(manager->getMinionVector().at(10),manager->getTile(target));
-     QCOMPARE(manager->getMinionVector().size(),3);
+     QVERIFY(manager->getMinionVector().size()==3);
 
 
 }
@@ -213,7 +213,7 @@ void testManager::test_attackMultipleEdge(){
     manager->spawnMinion(handler,manager,player,tile,"mage");
     Course::Coordinate target=Course::Coordinate(11,10);
     manager->attackMultiple(manager->getMinionVector().at(5),manager->getTile(target));
-    QCOMPARE(manager->getMinionVector().size(),5);
+    QVERIFY(manager->getMinionVector().size()==5);
 }
 QTEST_APPLESS_MAIN(testManager)
 

@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1100</width>
+    <width>1150</width>
     <height>736</height>
    </rect>
   </property>
@@ -18,7 +18,7 @@
   </property>
   <property name="maximumSize">
    <size>
-    <width>1100</width>
+    <width>1150</width>
     <height>736</height>
    </size>
   </property>
@@ -271,17 +271,39 @@
       </item>
      </layout>
     </item>
+    <item row="1" column="0">
+     <widget class="QGraphicsView" name="graphicsView">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>600</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>600</width>
+        <height>1000</height>
+       </size>
+      </property>
+     </widget>
+    </item>
     <item row="1" column="1">
      <widget class="QFrame" name="frame">
       <property name="minimumSize">
        <size>
-        <width>400</width>
+        <width>425</width>
         <height>0</height>
        </size>
       </property>
       <property name="maximumSize">
        <size>
-        <width>300</width>
+        <width>500</width>
         <height>16777215</height>
        </size>
       </property>
@@ -294,9 +316,9 @@
       <widget class="QWidget" name="verticalLayoutWidget">
        <property name="geometry">
         <rect>
-         <x>9</x>
+         <x>-1</x>
          <y>9</y>
-         <width>391</width>
+         <width>501</width>
          <height>591</height>
         </rect>
        </property>
@@ -355,9 +377,15 @@
           </item>
           <item row="4" column="0">
            <widget class="QLabel" name="DescriptionLabel">
+            <property name="minimumSize">
+             <size>
+              <width>225</width>
+              <height>0</height>
+             </size>
+            </property>
             <property name="maximumSize">
              <size>
-              <width>200</width>
+              <width>250</width>
               <height>16777215</height>
              </size>
             </property>
@@ -368,9 +396,15 @@
           </item>
           <item row="4" column="1">
            <widget class="QLabel" name="DescriptionLabelRight">
+            <property name="minimumSize">
+             <size>
+              <width>225</width>
+              <height>0</height>
+             </size>
+            </property>
             <property name="maximumSize">
              <size>
-              <width>200</width>
+              <width>250</width>
               <height>16777215</height>
              </size>
             </property>
@@ -434,28 +468,6 @@
       </widget>
      </widget>
     </item>
-    <item row="1" column="0">
-     <widget class="QGraphicsView" name="graphicsView">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>0</width>
-        <height>600</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>600</width>
-        <height>1000</height>
-       </size>
-      </property>
-     </widget>
-    </item>
    </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -463,8 +475,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1100</width>
-     <height>20</height>
+     <width>1150</width>
+     <height>25</height>
     </rect>
    </property>
   </widget>
