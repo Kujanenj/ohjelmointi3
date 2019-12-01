@@ -1,4 +1,0 @@
-<map id="Whiskas::gameManager::spawnMinion" name="Whiskas::gameManager::spawnMinion">
-<area shape="rect" id="node1" title="spawnMinion Spawns a new minion to desired tile." alt="" coords="5,5,168,47"/>
-<area shape="rect" id="node2" href="$class_whiskas_1_1game_manager.html#ac09d5cfed992b56c95f74dfd8fe4d2af" title="addMinion adds a minion ptr to gameManagers own minion vector and attackables vector" alt="" coords="216,5,379,47"/>
-</map>

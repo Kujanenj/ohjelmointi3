@@ -45,6 +45,7 @@
  * * Moving
  * * Attacking
  * * Special Altar buildings
+ * * Music (Currenlty only on Windows)
  */
 
 int main(int argc, char* argv[])

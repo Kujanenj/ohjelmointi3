@@ -1,0 +1,4 @@
+<map id="Course::iObjectManager" name="Course::iObjectManager">
+<area shape="rect" id="node1" title="The iObjectManager class is an interface which the Course&#45;side code uses to interact with the ObjectM..." alt="" coords="5,5,168,32"/>
+<area shape="rect" id="node2" href="$class_whiskas_1_1game_manager.html" title="The gameManager class is a class that manages the game logic. It has access to allmost all the classe..." alt="" coords="5,80,168,107"/>
+</map>

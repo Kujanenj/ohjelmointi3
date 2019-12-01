@@ -1,0 +1,4 @@
+<map id="Course::PlaceableGameObject::getType" name="Course::PlaceableGameObject::getType">
+<area shape="rect" id="node1" title="getType Returns a string describing objects type. This should be overriden in each inherited class...." alt="" coords="255,5,456,47"/>
+<area shape="rect" id="node2" href="$class_course_1_1_placeable_game_object.html#a241f1bdff178b2e0414e57c8a23aa32e" title="Set the PlaceableGameObject&#39;s location." alt="" coords="5,5,207,47"/>
+</map>

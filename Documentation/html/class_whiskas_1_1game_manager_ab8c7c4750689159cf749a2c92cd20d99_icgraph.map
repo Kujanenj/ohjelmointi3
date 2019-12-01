@@ -1,4 +1,0 @@
-<map id="Whiskas::gameManager::selectAttackTarget" name="Whiskas::gameManager::selectAttackTarget">
-<area shape="rect" id="node1" title="selectAttackTarget Returns a attackable ptr for someone to attack. Minions have priority." alt="" coords="216,5,379,47"/>
-<area shape="rect" id="node2" href="$class_whiskas_1_1game_manager.html#a277f444329152046ad2368d8c1628fa8" title="move Tries to move a minion to the target tile. Checks for movement range, collision and possible ene..." alt="" coords="5,5,168,47"/>
-</map>

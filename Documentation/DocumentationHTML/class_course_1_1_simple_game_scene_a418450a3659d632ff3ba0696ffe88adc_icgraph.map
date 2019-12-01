@@ -1,0 +1,4 @@
+<map id="Course::SimpleGameScene::setSize" name="Course::SimpleGameScene::setSize">
+<area shape="rect" id="node1" title="Sets the map size and calls resize()." alt="" coords="236,5,419,47"/>
+<area shape="rect" id="node2" href="$class_course_1_1_simple_game_scene.html#ae65dfd293c3490dcbb71d7a71ddda65b" title="Constructor for the class." alt="" coords="5,5,188,47"/>
+</map>

@@ -1,0 +1,16 @@
+<map id="Course::Coordinate::y" name="Course::Coordinate::y">
+<area shape="rect" id="node1" title="y Return&#39;s the y&#45;value" alt="" coords="608,362,756,389"/>
+<area shape="rect" id="node2" href="$class_whiskas_1_1game_manager.html#a272b8622ec7bcda7f52eb488a31233f9" title="attackMultiple Used by the mage minion to attack in an area. Attacks all minions in a radius of 1." alt="" coords="216,42,379,83"/>
+<area shape="rect" id="node3" href="$class_whiskas_1_1game_manager.html#a84b4f404a650e74d5e263fff69e50a29" title="move Tries to move a minion to the target tile. Checks for movement range, collision and possible ene..." alt="" coords="5,71,168,112"/>
+<area shape="rect" id="node4" href="$class_course_1_1_coordinate.html#a6768a0e3d3f0bf77253c40a5e31b53d7" title="neighbours Returns a Coordinate for each direction. The created vector has the Coordinates in order o..." alt="" coords="427,42,560,83"/>
+<area shape="rect" id="node5" href="$class_course_1_1_coordinate.html#a5929304e9028559c5616dc63a704cac5" title="operator == Checks if a coordinate doesnt&#39; have same x and y values as this" alt="" coords="427,159,560,200"/>
+<area shape="rect" id="node6" href="$class_course_1_1_coordinate.html#a991efed796ab24c328b5487a5d7274b4" title="operator + Sums two coordinates&#39; x and y values together and returns a new Coordinate with the summed..." alt="" coords="427,224,560,266"/>
+<area shape="rect" id="node7" href="$class_course_1_1_coordinate.html#aa9191a6d4f7093572be0a82764ef972f" title="operator += Adds other coordinate&#39;s x and y values to this." alt="" coords="427,290,560,331"/>
+<area shape="rect" id="node8" href="$class_course_1_1_coordinate.html#a129fba3bd1aec84ced0bf39a74dca902" title="operator &#45; Substracts right side coordinate&#39;s x and y values from this x and y values...." alt="" coords="427,355,560,396"/>
+<area shape="rect" id="node9" href="$class_course_1_1_coordinate.html#ab22b7e48298bdf3c493bdf33f750fc37" title="operator &#45;= Substracts other coordinate&#39;s x and y values from this" alt="" coords="427,420,560,462"/>
+<area shape="rect" id="node10" href="$class_course_1_1_coordinate.html#aecbf00ab5641fbd1f5052edf51ca0ba1" title="operator &lt; Checks if this has lower value than other. Decision is based on x&#45;value...." alt="" coords="427,486,560,527"/>
+<area shape="rect" id="node11" href="$class_course_1_1_coordinate.html#a3d564384a0b5e9cf588bddb0f49f22fa" title="operator = Assigns other Coordinate&#39;s x and y values to this." alt="" coords="427,551,560,592"/>
+<area shape="rect" id="node12" href="$class_course_1_1_coordinate.html#a11e310610482156a8deea9733817ffbd" title="operator == Checks if a coordinate has same x and y values as this" alt="" coords="427,616,560,658"/>
+<area shape="rect" id="node13" href="$class_course_1_1_coordinate.html#a8f0abfc7e34b74165d0c587093a956a8" title="operator &lt; Checks if this has higher value than other. Decision is based on x&#45;value...." alt="" coords="427,682,560,723"/>
+<area shape="rect" id="node14" href="$class_course_1_1_coordinate.html#a0308c942bb50d59a216877be0be2599b" title="set_y Sets the y&#45;value" alt="" coords="427,747,560,788"/>
+</map>

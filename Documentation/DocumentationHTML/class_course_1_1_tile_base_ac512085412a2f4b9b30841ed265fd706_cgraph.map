@@ -1,0 +1,5 @@
+<map id="Course::TileBase::addWorker" name="Course::TileBase::addWorker">
+<area shape="rect" id="node1" title="Adds a new Worker&#45;object to this Tile." alt="" coords="5,46,197,73"/>
+<area shape="rect" id="node2" href="$class_course_1_1_tile_base.html#ae3a8601af95ed2e8b29f4c764c939f05" title="Returns the amount of spaces that are being taken from the worker&#45;capacity." alt="" coords="245,5,435,47"/>
+<area shape="rect" id="node3" href="$class_course_1_1_game_object.html#a64b5e759e0aa4a6fdae9a112718a87e6" title="This is the primary method for locking ObjectManager inside different GameObject classes." alt="" coords="268,71,412,112"/>
+</map>

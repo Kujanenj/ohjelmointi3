@@ -1,0 +1,4 @@
+<map id="Course::PlayerBase::getName" name="Course::PlayerBase::getName">
+<area shape="rect" id="node1" title="Returns the Player&#45;object&#39;s name." alt="" coords="213,5,352,47"/>
+<area shape="rect" id="node2" href="$class_whiskas_1_1_league_player.html#a13348bd79fa37f8e6ff616c5d661975b" title="setPlayerItems sets the player items to be equal to the parameter map" alt="" coords="5,5,165,47"/>
+</map>

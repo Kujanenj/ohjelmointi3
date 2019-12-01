@@ -1,0 +1,5 @@
+<map id="Course::Coordinate::operator&#45;" name="Course::Coordinate::operator&#45;">
+<area shape="rect" id="node1" title="operator &#45; Substracts right side coordinate&#39;s x and y values from this x and y values...." alt="" coords="5,23,139,65"/>
+<area shape="rect" id="node2" href="$class_course_1_1_coordinate.html#afeb6f41423c8ed3ed432493bfba4ec59" title="x Return&#39;s the x&#45;value" alt="" coords="187,5,335,32"/>
+<area shape="rect" id="node3" href="$class_course_1_1_coordinate.html#a0319c441f556cf055f302de4e9d0a451" title="y Return&#39;s the y&#45;value" alt="" coords="187,56,335,83"/>
+</map>

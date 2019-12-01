@@ -1,4 +1,0 @@
-<map id="Whiskas::gameEventHandler::handleRightClick" name="Whiskas::gameEventHandler::handleRightClick">
-<area shape="rect" id="node1" title="handleRightClick Handles the right mouse button event. Moves minions" alt="" coords="243,5,432,47"/>
-<area shape="rect" id="node2" href="$class_whiskas_1_1game_event_handler.html#a850ed77572fbedc06682dec96dab6c25" title="handleMwindowClick checks if the click was right, or left" alt="" coords="5,5,195,47"/>
-</map>

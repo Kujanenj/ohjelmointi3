@@ -1,0 +1,4 @@
+<map id="Course::WorkerBase::getResourceFocus" name="Course::WorkerBase::getResourceFocus">
+<area shape="rect" id="node1" title="Returns the currently focused resourcetype." alt="" coords="200,5,343,47"/>
+<area shape="rect" id="node2" href="$class_course_1_1_basic_worker.html#a870cf500ea86d30db583ce64299d9df4" title="Returns Worker&#39;s efficiency at resource production. Worker consumes FOOD and MONEY...." alt="" coords="5,5,152,47"/>
+</map>

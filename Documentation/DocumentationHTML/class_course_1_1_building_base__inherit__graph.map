@@ -1,0 +1,17 @@
+<map id="Course::BuildingBase" name="Course::BuildingBase">
+<area shape="rect" id="node1" title="The BuildingBase class is a base&#45;class for different buildings in the game." alt="" coords="214,155,361,181"/>
+<area shape="rect" id="node4" href="$class_course_1_1_farm.html" title="The Farm class represents a farm&#45;building in the game." alt="" coords="7,229,109,256"/>
+<area shape="rect" id="node5" href="$class_course_1_1_head_quarters.html" title="The HeadQuarters class represents a player&#39;s HeadQuarters&#45;building." alt="" coords="133,229,284,256"/>
+<area shape="rect" id="node6" href="$class_course_1_1_outpost.html" title="The Outpost class represents a player&#39;s Outpost&#45;building." alt="" coords="309,229,426,256"/>
+<area shape="rect" id="node7" href="$class_whiskas_1_1_custom_building_base.html" title=" " alt="" coords="450,229,653,256"/>
+<area shape="rect" id="node2" href="$class_course_1_1_placeable_game_object.html" title="The PlaceableGameObject class represents GameObjects that can be placed on Tile Objects." alt="" coords="187,80,388,107"/>
+<area shape="rect" id="node3" href="$class_course_1_1_game_object.html" title="The GameObject class is base&#45;class that contain&#39;s general information on different Objects in game." alt="" coords="215,5,359,32"/>
+<area shape="rect" id="node8" href="$class_whiskas_1_1_altar_base.html" title="The AltarBase class is the inheritacne class for altar buildings." alt="" coords="171,304,310,331"/>
+<area shape="rect" id="node12" href="$class_whiskas_1_1_lifepump.html" title="The Lifepump class represents a lifepump&#45;building in the game." alt="" coords="334,304,467,331"/>
+<area shape="rect" id="node13" href="$class_whiskas_1_1_nexus.html" title="The Nexus class represents a Nexus&#45;building in the game." alt="" coords="492,304,611,331"/>
+<area shape="rect" id="node14" href="$class_whiskas_1_1_quarry.html" title="The Quarry class represents a quarry&#45;building in the game." alt="" coords="635,304,755,331"/>
+<area shape="rect" id="node15" href="$class_whiskas_1_1_sawmill.html" title="The Sawmill class represents a Sawmill&#45;building in the game." alt="" coords="780,304,907,331"/>
+<area shape="rect" id="node9" href="$class_whiskas_1_1_mage_altar.html" title="The MageAltar class is an altar, that upgrades minions to mages." alt="" coords="5,379,145,405"/>
+<area shape="rect" id="node10" href="$class_whiskas_1_1_melee_altar.html" title="The MeleeAltar class is an altar that upgrades minions to melee champs." alt="" coords="169,379,312,405"/>
+<area shape="rect" id="node11" href="$class_whiskas_1_1_ranged_altar.html" title="The RangedAltar class is an altar that upgrades minions to ranged units." alt="" coords="337,379,489,405"/>
+</map>

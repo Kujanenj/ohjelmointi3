@@ -1,0 +1,16 @@
+<map id="Whiskas::Attackable" name="Whiskas::Attackable">
+<area shape="rect" id="node1" title="The Attackable class contains information regarding attacking and dealing damage." alt="" coords="5,247,148,273"/>
+<area shape="rect" id="node2" href="$class_whiskas_1_1_custom_building_base.html" title=" " alt="" coords="196,183,399,209"/>
+<area shape="rect" id="node11" href="$class_whiskas_1_1_minion.html" title="The Minion class is a subtype of worker It can be upgraded to champions using altars Is attackable an..." alt="" coords="238,335,357,361"/>
+<area shape="rect" id="node3" href="$class_whiskas_1_1_altar_base.html" title="The AltarBase class is the inheritacne class for altar buildings." alt="" coords="469,56,607,83"/>
+<area shape="rect" id="node7" href="$class_whiskas_1_1_lifepump.html" title="The Lifepump class represents a lifepump&#45;building in the game." alt="" coords="471,107,605,133"/>
+<area shape="rect" id="node8" href="$class_whiskas_1_1_nexus.html" title="The Nexus class represents a Nexus&#45;building in the game." alt="" coords="479,157,597,184"/>
+<area shape="rect" id="node9" href="$class_whiskas_1_1_quarry.html" title="The Quarry class represents a quarry&#45;building in the game." alt="" coords="478,208,598,235"/>
+<area shape="rect" id="node10" href="$class_whiskas_1_1_sawmill.html" title="The Sawmill class represents a Sawmill&#45;building in the game." alt="" coords="475,259,601,285"/>
+<area shape="rect" id="node4" href="$class_whiskas_1_1_mage_altar.html" title="The MageAltar class is an altar, that upgrades minions to mages." alt="" coords="683,5,823,32"/>
+<area shape="rect" id="node5" href="$class_whiskas_1_1_melee_altar.html" title="The MeleeAltar class is an altar that upgrades minions to melee champs." alt="" coords="682,56,825,83"/>
+<area shape="rect" id="node6" href="$class_whiskas_1_1_ranged_altar.html" title="The RangedAltar class is an altar that upgrades minions to ranged units." alt="" coords="677,107,829,133"/>
+<area shape="rect" id="node12" href="$class_whiskas_1_1_magic_champion.html" title="The MagicChampion class Subminion, has a higher dmg and an area attack." alt="" coords="451,309,625,336"/>
+<area shape="rect" id="node13" href="$class_whiskas_1_1_melee_champion.html" title="The MeleeChampion class is a minion subtype. Has a melee attack of higher dmg and better defenses." alt="" coords="451,360,625,387"/>
+<area shape="rect" id="node14" href="$class_whiskas_1_1_ranged_champion.html" title="The RangedChampion class Has a ranged attack and higher movement." alt="" coords="447,411,629,437"/>
+</map>

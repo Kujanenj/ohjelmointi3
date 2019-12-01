@@ -1,4 +1,0 @@
-<map id="Whiskas::gameManager::attack" name="Whiskas::gameManager::attack">
-<area shape="rect" id="node1" title="attack Select minion tries to deal its damage to target attackable. If target hp goes to 0,..." alt="" coords="5,5,168,47"/>
-<area shape="rect" id="node2" href="$class_whiskas_1_1game_manager.html#a666d12bd199371bf19f0b06fca0fffff" title="destroyObject Takes an attackable object, and removes it from all databases. (Gamemanager vectors,..." alt="" coords="216,5,379,47"/>
-</map>

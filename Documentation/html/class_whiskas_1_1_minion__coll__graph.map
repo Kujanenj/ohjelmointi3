@@ -1,6 +1,0 @@
-<map id="Whiskas::Minion" name="Whiskas::Minion">
-<area shape="rect" id="node1" title="The Minion class is a subtype of worker It can be upgraded to champions using altars Is attackable an..." alt="" coords="165,80,284,107"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,5,148,32"/>
-<area shape="rect" id="node3" href="$class_whiskas_1_1_unit.html" title="The Unit class handles the move values." alt="" coords="173,5,277,32"/>
-<area shape="rect" id="node4" href="$class_whiskas_1_1_attackable.html" title="The Attackable class contains information regarding attacking and dealing damage." alt="" coords="301,5,444,32"/>
-</map>

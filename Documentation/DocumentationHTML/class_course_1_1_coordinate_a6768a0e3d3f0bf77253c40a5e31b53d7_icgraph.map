@@ -1,0 +1,5 @@
+<map id="Course::Coordinate::neighbours" name="Course::Coordinate::neighbours">
+<area shape="rect" id="node1" title="neighbours Returns a Coordinate for each direction. The created vector has the Coordinates in order o..." alt="" coords="427,5,560,47"/>
+<area shape="rect" id="node2" href="$class_whiskas_1_1game_manager.html#a272b8622ec7bcda7f52eb488a31233f9" title="attackMultiple Used by the mage minion to attack in an area. Attacks all minions in a radius of 1." alt="" coords="216,5,379,47"/>
+<area shape="rect" id="node3" href="$class_whiskas_1_1game_manager.html#a84b4f404a650e74d5e263fff69e50a29" title="move Tries to move a minion to the target tile. Checks for movement range, collision and possible ene..." alt="" coords="5,5,168,47"/>
+</map>

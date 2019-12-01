@@ -1,0 +1,6 @@
+<map id="Whiskas::gameManager::destroyObject" name="Whiskas::gameManager::destroyObject">
+<area shape="rect" id="node1" title="destroyObject Takes an attackable object, and removes it from all databases. (Gamemanager vectors,..." alt="" coords="637,35,800,76"/>
+<area shape="rect" id="node2" href="$class_whiskas_1_1game_manager.html#a8dfdf773d4f3e7024ee7ab6e5f82020a" title="attack Select minion tries to deal its damage to target attackable. If target hp goes to 0,..." alt="" coords="427,35,589,76"/>
+<area shape="rect" id="node3" href="$class_whiskas_1_1game_manager.html#a272b8622ec7bcda7f52eb488a31233f9" title="attackMultiple Used by the mage minion to attack in an area. Attacks all minions in a radius of 1." alt="" coords="216,5,379,47"/>
+<area shape="rect" id="node4" href="$class_whiskas_1_1game_manager.html#a84b4f404a650e74d5e263fff69e50a29" title="move Tries to move a minion to the target tile. Checks for movement range, collision and possible ene..." alt="" coords="5,35,168,76"/>
+</map>

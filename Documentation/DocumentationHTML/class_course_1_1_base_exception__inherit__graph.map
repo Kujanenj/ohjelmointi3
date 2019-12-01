@@ -1,0 +1,9 @@
+<map id="Course::BaseException" name="Course::BaseException">
+<area shape="rect" id="node1" title="The Exception class is a base&#45;class for custom exceptions in project." alt="" coords="272,80,431,107"/>
+<area shape="rect" id="node3" href="$class_course_1_1_illegal_action.html" title="The IllegalAction exception is usually used in cases, where an illegal game action was attempted." alt="" coords="113,155,254,181"/>
+<area shape="rect" id="node6" href="$class_course_1_1_invalid_pointer.html" title="The InvalidPointer exception is usually used in cases, where data can&#39;t be accessed through a pointer..." alt="" coords="278,155,425,181"/>
+<area shape="rect" id="node7" href="$class_course_1_1_key_error.html" title="The KeyError class is an Exception&#45;class for cases where the used key is invalid." alt="" coords="449,155,571,181"/>
+<area shape="rect" id="node2" title=" " alt="" coords="299,5,403,32"/>
+<area shape="rect" id="node4" href="$class_course_1_1_not_enough_space.html" title="The NotEnoughSpace class is an Exception&#45;class for errors where GameObjects are being placed onto Til..." alt="" coords="5,229,177,256"/>
+<area shape="rect" id="node5" href="$class_course_1_1_owner_conflict.html" title="The OwnerConflict class is an Exception&#45;class for errors where an operation is conflicting with a Gam..." alt="" coords="201,229,352,256"/>
+</map>

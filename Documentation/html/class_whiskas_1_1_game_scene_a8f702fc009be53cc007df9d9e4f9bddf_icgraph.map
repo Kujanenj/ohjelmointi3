@@ -1,4 +1,0 @@
-<map id="Whiskas::GameScene::setSize" name="Whiskas::GameScene::setSize">
-<area shape="rect" id="node1" title="Sets the map size and calls resize()." alt="" coords="207,5,360,47"/>
-<area shape="rect" id="node2" href="$class_whiskas_1_1_game_scene.html#a3664e5b2a9b1af8534eadd21252474dc" title="Constructor for the class." alt="" coords="5,5,159,47"/>
-</map>
