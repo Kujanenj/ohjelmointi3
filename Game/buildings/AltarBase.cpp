@@ -19,20 +19,21 @@ AltarBase::AltarBase(const std::shared_ptr<gameEventHandler>& eventhandler,
                                                 health,
                                                 attack),
                                    manager_(objectmanager),
-                                 handler_(eventhandler),
-                                 owner_(owner)
+                                   handler_(eventhandler),
+                                   owner_(owner)
 {
-cooldown_=0;
 }
-}
-std::string Whiskas::AltarBase::getType() const
+
+std::string AltarBase::getType() const
 {
     return "Altar";
 }
 
-void Whiskas::AltarBase::doSpecialAction()
+void AltarBase::doSpecialAction()
 {
     getType();
     upgradeMinion();
 }
 
+
+}

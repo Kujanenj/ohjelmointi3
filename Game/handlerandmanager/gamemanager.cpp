@@ -166,7 +166,7 @@ void gameManager::move(const std::shared_ptr<Minion>& minionToMove, const std::s
                 qDebug()<<"trying to attack in move command";
                 if(minionToMove->getAttacked()){
                     qDebug()<<"UNIT HAS ATTACKED MAX NUMBER OF TIMES THIS TURN, GET THE HELL OUT!";
-                    textBrowser->append("This unit has already attacked this turn");
+                    textBrowser->append("This unit can't attack anymore this turn");
                     return;
                 }
                 if(textBrowser!=nullptr){
@@ -187,7 +187,7 @@ void gameManager::move(const std::shared_ptr<Minion>& minionToMove, const std::s
             }
             if(minionToMove->getMoved()){
                 if(textBrowser!=nullptr){
-                textBrowser->append("This unit has already moved this turn");}
+                textBrowser->append("This unit can't move anymore this turn");}
                 return;
             }
             minionToMove->currentLocationTile()->removeWorker(minionToMove);

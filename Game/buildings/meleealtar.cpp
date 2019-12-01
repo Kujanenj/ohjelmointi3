@@ -7,7 +7,6 @@ MeleeAltar::MeleeAltar(const std::shared_ptr<gameEventHandler>& eventhandler,
                        const std::shared_ptr<Course::PlayerBase>& owner):
     AltarBase(eventhandler,objectmanager,owner)
 {
-cooldown_=0;
 }
 
 void MeleeAltar::upgradeMinion()

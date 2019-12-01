@@ -21,7 +21,7 @@ public:
      /**
      * @brief upgradeMinion upgrades a minion on the tile when called.
      */
-    virtual void upgradeMinion()=0;
+     virtual void upgradeMinion()=0;
      /**
       * @brief doSpecialAction calls upgrade minion, since all buildings have this method
       */

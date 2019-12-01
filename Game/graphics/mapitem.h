@@ -40,7 +40,7 @@ public:
      * @param option
      * @param widget
      * @note The GraphicsView containing the scene this belongs to
-     * usually calls this function.
+     * usually calls this function
      */
     void paint(QPainter *painter,
                const QStyleOptionGraphicsItem *option,
@@ -66,16 +66,12 @@ public:
 
     /**
      * @brief getSize
-     * @return size of the object in pixels.
-     * @post Exception guarantee: No-throw
      */
     int getSize() const;
 
     /**
      * @brief setSize
      * @param size of the object in pixels.
-     * @pre 0 < size <= 500
-     * @post Exception guarantee: No-throw
      */
     void setSize(int size);
 
@@ -87,7 +83,7 @@ private:
     static std::map<std::string, QColor> c_mapcolors;
     static std::map<std::string, QImage> c_mapicons;
     static std::map<std::string, std::map<std::string, QImage>> c_objecticons;
-    static void addNewColor(const std::string& type);
+    static void addNewImage(const std::string& type);
 };
 }
 #endif // MapItem_HH

@@ -207,10 +207,11 @@ public:
      */
     std::shared_ptr<LeaguePlayer> getWinner();
 
-    /**
-     * @brief getNexusLocation Returns a tile containing the nexus of the desired player
-     * @param owner Desired player
-     * @return  Tile containing the Nexus
+    /*!
+     * \brief checkBuildingAvailability checks if building can be built on tile
+     * \param targetTile
+     * \param type the type of building to be checked
+     * \return true if can be built, false if not
      */
     bool checkBuildingAvailability(const std::shared_ptr<Course::TileBase> &targetTile, const std::string &type);
 

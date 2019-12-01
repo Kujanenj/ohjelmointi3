@@ -28,7 +28,7 @@ public:
       ~Quarry() override = default;
      std::string getType() const override;
 
-}; // class Nexus
+}; // class Quarry
 
 } // namespace Whiskas
 

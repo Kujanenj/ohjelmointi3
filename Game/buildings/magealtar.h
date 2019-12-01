@@ -7,7 +7,7 @@ namespace Whiskas {
 /**
  * @brief The MageAltar class is an altar, that upgrades minions to mages.
  */
-class MageAltar :public AltarBase
+class MageAltar : public AltarBase
 {
 public:
     MageAltar(const std::shared_ptr<gameEventHandler>& eventhandler,

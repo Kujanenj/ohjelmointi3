@@ -90,34 +90,15 @@ bool gameManager::spawnBuilding(std::shared_ptr<gameEventHandler> handler,
 
 }
 
-bool checkBuildingAvailability(const std::shared_ptr<Course::TileBase> &targetTile, const std::string &type)
-{
-
- //HANDLER FOR STD OUT OF RANGE?
-    if(targetTile->getBuildingCount()!=0){
-        return false;
-    }
-    for(const auto& it: buildingAvailability.at(type)){
-        if(it==targetTile->getType()){
-            qDebug()<<"Legit placement for "<<QString::fromStdString(type);
-            return true;
-        }
-    }
-     qDebug()<<"UNLegit placement for "<<QString::fromStdString(type);
-     return false;
-}
 
 void makeAdvancedWGenerator(int mapsize,
                                 const std::shared_ptr<gameEventHandler>& handler,
                                 const std::shared_ptr<gameManager>& manager)
 
 {
-
    int ran;
    srand (time(nullptr));
     for(int x = 0; x< mapsize; x++){
-
-
         for(int y=0; y<mapsize; y++){
             ran=rand()%4;
             Course::Coordinate loc=Course::Coordinate(x,y);

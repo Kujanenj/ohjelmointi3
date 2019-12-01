@@ -19,7 +19,6 @@
 #include "handlerandmanager/gameeventhandler.h"
 #include "handlerandmanager/gamemanager.h"
 #include "interfaces/iobjectmanager.h"
-#include "buildings/farm.h"
 #include "core/playerbase.h"
 
 #include "buildings/nexus.h"

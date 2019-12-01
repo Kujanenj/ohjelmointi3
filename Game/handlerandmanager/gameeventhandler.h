@@ -14,6 +14,7 @@
 #include <QTextBrowser>
 #include "leagueplayer.h"
 
+
 namespace Whiskas {
 
 class Turn;
@@ -100,8 +101,6 @@ public:
      * @param handler HandlerInstance
      */
     void endTurn(const std::shared_ptr<gameManager>& manager, const std::shared_ptr<gameEventHandler>& handler);
-
-
 
 private:
     std::shared_ptr<Course::TileBase> activeTile_ = nullptr;

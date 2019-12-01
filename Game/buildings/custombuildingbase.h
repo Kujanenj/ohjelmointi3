@@ -30,12 +30,23 @@ public:
             int attack=0
             );
 
-
+   /**
+    * @brief Returns building's production as AdvancedResourceMap
+    */
    virtual AdvancedResourceMap getAdvancedProduction();
+
+   /**
+   * @brief Returns building's cost as AdvancedResourceMap
+   */
    virtual AdvancedResourceMap getAdvancedCost();
 
     void doSpecialAction() override;
-   virtual int getCooldown() final;
+
+    /**
+    * @brief returns altar's cooldown
+    */
+    virtual int getCooldown();
+
 protected:
    AdvancedResourceMap production_;
    AdvancedResourceMap buildcost_;

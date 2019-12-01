@@ -27,10 +27,11 @@ std::string Jungle::getType() const
     return "Jungle";
 }
 
+/*
 void Jungle::addBuilding(const std::shared_ptr<Course::BuildingBase>& building)
 {
     TileBase::addBuilding(building);
     building->addHoldMarkers(1);
-}
+}*/
 
 } // namespace Whiskas

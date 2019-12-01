@@ -58,26 +58,17 @@ void gameEventHandler::handleMwindowClick(const std::shared_ptr<GameScene>& scen
    qDebug()<<"Click outside gameArea";
 }
 
-void gameEventHandler::handleLeftClick(const std::shared_ptr<GameScene>& scene, const std::shared_ptr<gameManager>& manager){
-    qDebug()<<"";
-    qDebug()<<"";
-    qDebug()<<"";
-    qDebug()<<"handling mwindow click";
-
+void gameEventHandler::handleLeftClick(const std::shared_ptr<GameScene>& scene,
+                                       const std::shared_ptr<gameManager>& manager){
         textBrowserRight->clear();
         activeTile_ = manager->getTile(*scene->getLastCoordinate());
-        qDebug()<< "================";
-        qDebug()<< "HANDLING MWINDOW CLICK";
+
         textBrowserRight->append(QString(
                "Coordinates \n X:" + QString::number(activeTile_->getCoordinatePtr()->x())
               + "  Y: " + QString::number(activeTile_->getCoordinatePtr()->y())));
 
-        qDebug() << "Coordinate X: " << activeTile_->getCoordinatePtr()->x()
-                 << ", Y: " << activeTile_->getCoordinatePtr()->y();
-        qDebug()<< "the ID is"<< scene->getLastID();
-        qDebug()<< "Amount of minions is"<< activeTile_->getWorkers().size();
-        qDebug()<< "Amount of buildings is"<< activeTile_->getBuildings().size();
-
+        // Figuring out the active minion
+        // And printing out clicked minion information
         if (!activeTile_->getWorkers().empty()){
             for(const auto& it: manager->getMinionVector()){
                 if(activeTile_->getWorkers().front()==it){
@@ -90,53 +81,40 @@ void gameEventHandler::handleLeftClick(const std::shared_ptr<GameScene>& scene, 
                     if (it->getOwner()==turn_->getInTurn()) {
                         activeMinion_=it;
                     }
-
-                    qDebug()<<"active minion type is"<<QString::fromStdString(it->getType())
-                           <<"and its owner is"<<QString::fromStdString(it->getOwner()->getName());
-                    message_ = "Active minion type is" + QString::fromStdString(it->getType()) +
-                            " and its owner is " + QString::fromStdString(it->getOwner()->getName());
-
                 }
-
             }
         }
         else{
             activeMinion_=nullptr;
         }
+
+        // Printing out building information
         if (!activeTile_->getBuildings().empty()){
             for(const auto& it: manager->getBuildingVector()){
                 if(activeTile_->getBuildings().front()==it){
                     textBrowserRight->append(QString("\n" +
                            QString::fromStdString(it->getType()) + "\n   HP:"
                            + QString::number(it->getHealth())));
+                    if (it->getType() == "Mage Altar" || it->getType() == "Melee Altar"
+                            || it->getType() == "Ranged Altar"){
+                        int cooldown = it->getCooldown();
+                        if (cooldown < 0) {
+                            cooldown = 0;
+                        }
+                        textBrowserRight->append(QString("\n" +
+                               QString::fromStdString(it->getType()) + "\n   Cooldown:"
+                               + QString::number(cooldown)));
+                    }
                 }
             }
         }
-        if (!activeTile_->getBuildings().empty()){
-            qDebug()<< "Building is"
-                    << QString::fromStdString(activeTile_->getBuildings().at(0)->getType())
-                    << "and the owner is"
-                    << QString::fromStdString(activeTile_->getBuildings().at(0)->getOwner()->getName());
-        }
-        qDebug()<< "================";
-
 }
+
 void gameEventHandler::handleRightClick(const std::shared_ptr<gameManager>& manager, const std::shared_ptr<GameScene>& scene)
 {
     std::shared_ptr<Course::TileBase> targetTile=manager->getTile(*scene->getLastCoordinate());
     if(activeMinion_!=nullptr){
-        qDebug()<<" ";
-        qDebug()<<" ";
-        qDebug()<<" ";
-        qDebug()<<"trying to move";
         manager->move(activeMinion_,targetTile);
-
-
-    }
-    else{
-        qDebug()<<"Active minion was null ptr or target tile contains a minion";
-        message_ = "Target tile contains a minion";
-
     }
 }
 

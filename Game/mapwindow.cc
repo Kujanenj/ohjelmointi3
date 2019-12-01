@@ -78,7 +78,7 @@ std::map<std::string,std::string> BuildingDescriptions{
         "the game. Nexus produces 1 resource\n"
         "each at the end of the turn.\n"
         "It also spawns a minion every 5 turns\n"
-        "if no minion is on the same tile. "}
+        "if no minion is on top of it. "}
 };
 MapWindow::MapWindow(QWidget *parent,
                      std::shared_ptr<Whiskas::gameEventHandler> handler):
@@ -227,11 +227,14 @@ void MapWindow::mousePressEvent(QMouseEvent *event){
 
 void MapWindow::updateDescriptions()
 {
-    if(m_GEHandler->getActiveMinion()!=nullptr){
-        m_ui->DescriptionLabel->setText(QString::fromStdString(m_GEHandler->getActiveMinion()->
-                                                                 getDescription(m_GEHandler->
-                                                                                getActiveMinion()->
-                                                                                getType())));
+    if(m_GEHandler->getActiveTile()->getWorkerCount() != 0){
+        for(const auto& it: m_GManager->getMinionVector()){
+            if(m_GEHandler->getActiveTile()->getWorkers().front()==it){
+                m_ui->DescriptionLabel->setText(
+                            QString::fromStdString(  it->getDescription(it->getType())  )
+                            );
+            }
+        }
     } else {
         m_ui->DescriptionLabel->setText(QString::fromStdString(m_GEHandler->getActiveTile()->
                                                                getDescription(m_GEHandler->

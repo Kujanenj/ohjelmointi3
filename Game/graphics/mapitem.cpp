@@ -12,7 +12,7 @@ std::map<std::string, std::map<std::string, QImage>> MapItem::c_objecticons = {}
 MapItem::MapItem(std::shared_ptr<Course::GameObject> obj, int size ):
     m_gameobject(std::move(obj)), m_scenelocation(m_gameobject->getCoordinatePtr()->asQpoint()), m_size(size)
 {
-    addNewColor(m_gameobject->getType());
+    addNewImage(m_gameobject->getType());
 }
 
 QRectF MapItem::boundingRect() const
@@ -24,7 +24,7 @@ void MapItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, Q
 {
     Q_UNUSED( option ) Q_UNUSED( widget )
 
-
+    // Selection of the proper picture to draw
     if ( c_objecticons.find(m_gameobject->getType()) == c_objecticons.end() ) {
         QRectF source(0.0, 0.0, 50.0, 50.0);
         QImage image = c_mapicons.at(m_gameobject->getType())
@@ -73,7 +73,7 @@ void MapItem::setSize(int size)
     }
 }
 
-void MapItem::addNewColor(const std::string& type)
+void MapItem::addNewImage(const std::string& type)
 {
     if ( c_mapicons.find(type) == c_mapicons.end()
          && c_objecticons.find(type) == c_objecticons.end() ){
