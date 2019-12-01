@@ -1,0 +1,6 @@
+<map id="Course::BasicWorker::tileWorkAction" name="Course::BasicWorker::tileWorkAction">
+<area shape="rect" id="node1" title="Returns Worker&#39;s efficiency at resource production. Worker consumes FOOD and MONEY...." alt="" coords="5,71,152,112"/>
+<area shape="rect" id="node2" href="$class_course_1_1_game_object.html#a3c923e5d874cada8661d37002073c111" title="Returns GameObject&#39;s owner." alt="" coords="200,5,344,47"/>
+<area shape="rect" id="node3" href="$class_course_1_1_worker_base.html#ac73fff2a6c99a353b80ea67425d5d545" title="Returns the currently focused resourcetype." alt="" coords="201,71,343,112"/>
+<area shape="rect" id="node4" href="$class_course_1_1_game_object.html#acca0f382d148f6060a1e9325e3240efc" title="This is the primary method for locking GameEventHandler inside different GameObject&#45;classes." alt="" coords="200,136,344,177"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="Course::IllegalAction" name="Course::IllegalAction">
+<area shape="rect" id="node1" title="The IllegalAction exception is usually used in cases, where an illegal game action was attempted." alt="" coords="113,155,254,181"/>
+<area shape="rect" id="node4" href="$class_course_1_1_not_enough_space.html" title="The NotEnoughSpace class is an Exception&#45;class for errors where GameObjects are being placed onto Til..." alt="" coords="5,229,177,256"/>
+<area shape="rect" id="node5" href="$class_course_1_1_owner_conflict.html" title="The OwnerConflict class is an Exception&#45;class for errors where an operation is conflicting with a Gam..." alt="" coords="201,229,352,256"/>
+<area shape="rect" id="node2" href="$class_course_1_1_base_exception.html" title="The Exception class is a base&#45;class for custom exceptions in project." alt="" coords="104,80,263,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="131,5,235,32"/>
+</map>

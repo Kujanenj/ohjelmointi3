@@ -1,0 +1,32 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$class_whiskas_1_1_attackable.html" title="The Attackable class contains information regarding attacking and dealing damage." alt="" coords="449,208,591,235"/>
+<area shape="rect" id="node2" href="$class_whiskas_1_1_custom_building_base.html" title=" " alt="" coords="641,208,844,235"/>
+<area shape="rect" id="node11" href="$class_whiskas_1_1_minion.html" title="The Minion class is a subtype of worker It can be upgraded to champions using altars Is attackable an..." alt="" coords="683,309,802,336"/>
+<area shape="rect" id="node3" href="$class_whiskas_1_1_altar_base.html" title="The AltarBase class is the inheritacne class for altar buildings." alt="" coords="914,56,1053,83"/>
+<area shape="rect" id="node7" href="$class_whiskas_1_1_lifepump.html" title="The Lifepump class represents a lifepump&#45;building in the game." alt="" coords="917,107,1050,133"/>
+<area shape="rect" id="node8" href="$class_whiskas_1_1_nexus.html" title="The Nexus class represents a Nexus&#45;building in the game." alt="" coords="924,157,1043,184"/>
+<area shape="rect" id="node9" href="$class_whiskas_1_1_quarry.html" title="The Quarry class represents a quarry&#45;building in the game." alt="" coords="923,208,1043,235"/>
+<area shape="rect" id="node10" href="$class_whiskas_1_1_sawmill.html" title="The Sawmill class represents a Sawmill&#45;building in the game." alt="" coords="920,259,1047,285"/>
+<area shape="rect" id="node4" href="$class_whiskas_1_1_mage_altar.html" title="The MageAltar class is an altar, that upgrades minions to mages." alt="" coords="1129,5,1269,32"/>
+<area shape="rect" id="node5" href="$class_whiskas_1_1_melee_altar.html" title="The MeleeAltar class is an altar that upgrades minions to melee champs." alt="" coords="1127,56,1270,83"/>
+<area shape="rect" id="node6" href="$class_whiskas_1_1_ranged_altar.html" title="The RangedAltar class is an altar that upgrades minions to ranged units." alt="" coords="1123,107,1275,133"/>
+<area shape="rect" id="node12" href="$class_whiskas_1_1_magic_champion.html" title="The MagicChampion class Subminion, has a higher dmg and an area attack." alt="" coords="896,309,1071,336"/>
+<area shape="rect" id="node13" href="$class_whiskas_1_1_melee_champion.html" title="The MeleeChampion class is a minion subtype. Has a melee attack of higher dmg and better defenses." alt="" coords="896,360,1071,387"/>
+<area shape="rect" id="node14" href="$class_whiskas_1_1_ranged_champion.html" title="The RangedChampion class Has a ranged attack and higher movement." alt="" coords="892,411,1075,437"/>
+<area shape="rect" id="node15" href="$class_course_1_1_game_object.html" title="The GameObject class is base&#45;class that contain&#39;s general information on different Objects in game." alt="" coords="5,411,149,437"/>
+<area shape="rect" id="node16" href="$class_course_1_1_placeable_game_object.html" title="The PlaceableGameObject class represents GameObjects that can be placed on Tile Objects." alt="" coords="197,335,399,361"/>
+<area shape="rect" id="node23" href="$class_course_1_1_tile_base.html" title="The TileBase class is a base&#45;class for different Tile&#45;objects in the game. &#160;." alt="" coords="237,487,359,513"/>
+<area shape="rect" id="node17" href="$class_course_1_1_building_base.html" title="The BuildingBase class is a base&#45;class for different buildings in the game." alt="" coords="447,157,593,184"/>
+<area shape="rect" id="node21" href="$class_course_1_1_worker_base.html" title="The WorkerBase class is an abstract base&#45;class for Worker&#45;objects." alt="" coords="449,335,591,361"/>
+<area shape="rect" id="node18" href="$class_course_1_1_farm.html" title="The Farm class represents a farm&#45;building in the game." alt="" coords="692,56,793,83"/>
+<area shape="rect" id="node19" href="$class_course_1_1_head_quarters.html" title="The HeadQuarters class represents a player&#39;s HeadQuarters&#45;building." alt="" coords="667,107,818,133"/>
+<area shape="rect" id="node20" href="$class_course_1_1_outpost.html" title="The Outpost class represents a player&#39;s Outpost&#45;building." alt="" coords="684,157,801,184"/>
+<area shape="rect" id="node22" href="$class_course_1_1_basic_worker.html" title="The BasicWorker class represents a &quot;normal worker&quot; in the game." alt="" coords="669,360,816,387"/>
+<area shape="rect" id="node24" href="$class_course_1_1_forest.html" title="The Forest class represents Forest in the gameworld." alt="" coords="466,385,574,412"/>
+<area shape="rect" id="node25" href="$class_course_1_1_grassland.html" title="The Grassland class represents Grassland in the gameworld." alt="" coords="455,436,585,463"/>
+<area shape="rect" id="node26" href="$class_whiskas_1_1_desert.html" title="The Desert class represents the desert in the gameworld. The desert supports melee altars." alt="" coords="461,487,579,513"/>
+<area shape="rect" id="node27" href="$class_whiskas_1_1_jungle.html" title="The Jungle class represents the jungle in the gameworld. The jungle supports ranged altars and sawmil..." alt="" coords="461,537,579,564"/>
+<area shape="rect" id="node28" href="$class_whiskas_1_1_mountain.html" title="The Mountain class represents the mountain in the gameworld. The mountain supports melee altars and q..." alt="" coords="453,588,587,615"/>
+<area shape="rect" id="node29" href="$class_whiskas_1_1_spring.html" title="The Spring class represents the spring in the gameworld. The spring supports mage altars and lifepump..." alt="" coords="461,639,579,665"/>
+<area shape="rect" id="node30" href="$class_whiskas_1_1_unit.html" title="The Unit class handles the move values." alt="" coords="468,284,572,311"/>
+</map>

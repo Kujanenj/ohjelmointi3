@@ -1,0 +1,4 @@
+<map id="Course::GameObject::unsetCoordinate" name="Course::GameObject::unsetCoordinate">
+<area shape="rect" id="node1" title="Removes the coordinate from GameObject." alt="" coords="255,5,399,47"/>
+<area shape="rect" id="node2" href="$class_course_1_1_placeable_game_object.html#a241f1bdff178b2e0414e57c8a23aa32e" title="Set the PlaceableGameObject&#39;s location." alt="" coords="5,5,207,47"/>
+</map>

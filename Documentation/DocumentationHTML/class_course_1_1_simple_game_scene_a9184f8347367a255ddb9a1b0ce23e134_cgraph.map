@@ -1,0 +1,4 @@
+<map id="Course::SimpleGameScene::removeItem" name="Course::SimpleGameScene::removeItem">
+<area shape="rect" id="node1" title="tries to remove drawn object at the location obj points to. If there&#39;s multiple objects,..." alt="" coords="5,5,188,47"/>
+<area shape="rect" id="node2" href="$class_course_1_1_simple_map_item.html#a95cc703e4962903f3a67bee4eb7c7165" title="checks if this instance has obj as bound obj." alt="" coords="236,5,397,47"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="Whiskas::LeaguePlayer::setPlayerItems" name="Whiskas::LeaguePlayer::setPlayerItems">
+<area shape="rect" id="node1" title="setPlayerItems sets the player items to be equal to the parameter map" alt="" coords="5,5,165,47"/>
+<area shape="rect" id="node2" href="$class_course_1_1_player_base.html#ac942dc579051e53d261f60196fd35fee" title="Returns the Player&#45;object&#39;s name." alt="" coords="213,5,352,47"/>
+</map>

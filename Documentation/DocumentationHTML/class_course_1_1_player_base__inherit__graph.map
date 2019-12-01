@@ -1,0 +1,4 @@
+<map id="Course::PlayerBase" name="Course::PlayerBase">
+<area shape="rect" id="node1" title="The PlayerBase class is a base class for classes used to describe a player in game." alt="" coords="16,5,155,32"/>
+<area shape="rect" id="node2" href="$class_whiskas_1_1_league_player.html" title="The LeaguePlayer class The playerClass for this game." alt="" coords="5,80,165,107"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="Course::GameObject::getCoordinatePtr" name="Course::GameObject::getCoordinatePtr">
+<area shape="rect" id="node1" title="Returns a pointer to a copy of GameObject&#39;s coordinate." alt="" coords="221,39,365,80"/>
+<area shape="rect" id="node2" href="$class_course_1_1_head_quarters.html#addf7f7f78486ce17024a639f15f25649" title="Sets neighbouring Tiles&#39; ownership to this building&#39;s ownership in 3 tile&#45;radius, if the Tiles don&#39;t ..." alt="" coords="14,5,165,47"/>
+<area shape="rect" id="node3" href="$class_course_1_1_outpost.html#a81849d7b0b1731051e5f26e9df213d6b" title="Sets neighbouring Tiles&#39; ownership to this building&#39;s ownership in 1 tile&#45;radius, if the Tiles don&#39;t ..." alt="" coords="5,71,173,112"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="Whiskas::LeaguePlayer" name="Whiskas::LeaguePlayer">
+<area shape="rect" id="node1" title="The LeaguePlayer class The playerClass for this game." alt="" coords="5,80,165,107"/>
+<area shape="rect" id="node2" href="$class_course_1_1_player_base.html" title="The PlayerBase class is a base class for classes used to describe a player in game." alt="" coords="16,5,155,32"/>
+</map>

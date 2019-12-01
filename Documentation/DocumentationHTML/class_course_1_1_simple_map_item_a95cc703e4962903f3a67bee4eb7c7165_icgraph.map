@@ -1,0 +1,5 @@
+<map id="Course::SimpleMapItem::isSameObj" name="Course::SimpleMapItem::isSameObj">
+<area shape="rect" id="node1" title="checks if this instance has obj as bound obj." alt="" coords="236,39,397,80"/>
+<area shape="rect" id="node2" href="$class_course_1_1_simple_game_scene.html#a9184f8347367a255ddb9a1b0ce23e134" title="tries to remove drawn object at the location obj points to. If there&#39;s multiple objects,..." alt="" coords="5,5,188,47"/>
+<area shape="rect" id="node3" href="$class_course_1_1_simple_game_scene.html#ae175f970177c7564b6fb63f8869a44e3" title="updates the position of obj." alt="" coords="5,71,188,112"/>
+</map>

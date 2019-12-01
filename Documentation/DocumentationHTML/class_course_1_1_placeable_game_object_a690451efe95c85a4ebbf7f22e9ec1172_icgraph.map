@@ -1,0 +1,6 @@
+<map id="Course::PlaceableGameObject::currentLocationTile" name="Course::PlaceableGameObject::currentLocationTile">
+<area shape="rect" id="node1" title="Returns a shared_ptr to current location&#45;tile." alt="" coords="205,71,407,112"/>
+<area shape="rect" id="node2" href="$class_whiskas_1_1_ranged_altar.html#a183878784855ab3702cb193d80f5046b" title="upgradeMinion upgrades a minion on the tile when called." alt="" coords="5,5,157,47"/>
+<area shape="rect" id="node3" href="$class_whiskas_1_1_mage_altar.html#a5021d4c1e7fb76a72edc46244d64972a" title="upgradeMinion upgrades a minion on the tile when called." alt="" coords="11,71,151,112"/>
+<area shape="rect" id="node4" href="$class_whiskas_1_1_melee_altar.html#abe77483ba15889717e9ad98927cd6a81" title="upgradeMinion upgrades a minion on the tile when called." alt="" coords="10,136,153,177"/>
+</map>

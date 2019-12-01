@@ -1,0 +1,6 @@
+<map id="Course::OwnerConflict" name="Course::OwnerConflict">
+<area shape="rect" id="node1" title="The OwnerConflict class is an Exception&#45;class for errors where an operation is conflicting with a Gam..." alt="" coords="9,229,160,256"/>
+<area shape="rect" id="node2" href="$class_course_1_1_illegal_action.html" title="The IllegalAction exception is usually used in cases, where an illegal game action was attempted." alt="" coords="14,155,155,181"/>
+<area shape="rect" id="node3" href="$class_course_1_1_base_exception.html" title="The Exception class is a base&#45;class for custom exceptions in project." alt="" coords="5,80,164,107"/>
+<area shape="rect" id="node4" title=" " alt="" coords="33,5,137,32"/>
+</map>

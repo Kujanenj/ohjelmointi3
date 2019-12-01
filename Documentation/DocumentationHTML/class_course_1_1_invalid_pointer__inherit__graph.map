@@ -1,0 +1,5 @@
+<map id="Course::InvalidPointer" name="Course::InvalidPointer">
+<area shape="rect" id="node1" title="The InvalidPointer exception is usually used in cases, where data can&#39;t be accessed through a pointer..." alt="" coords="11,155,158,181"/>
+<area shape="rect" id="node2" href="$class_course_1_1_base_exception.html" title="The Exception class is a base&#45;class for custom exceptions in project." alt="" coords="5,80,164,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="33,5,137,32"/>
+</map>

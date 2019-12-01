@@ -1,0 +1,4 @@
+<map id="Course::Coordinate::Coordinate" name="Course::Coordinate::Coordinate">
+<area shape="rect" id="node1" title="Copy&#45;constructor where the new Coordinate is moved." alt="" coords="5,5,139,47"/>
+<area shape="rect" id="node2" href="$class_course_1_1_coordinate.html#aafa8af9f2c02d52783125ec0cb995afc" title="travel Increments the coordinate values to given direction. Optionally can give how many increments a..." alt="" coords="187,5,320,47"/>
+</map>

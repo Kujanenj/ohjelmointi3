@@ -1,0 +1,4 @@
+<map id="Course::iGameEventHandler" name="Course::iGameEventHandler">
+<area shape="rect" id="node1" title="The iGameEventHandler class is an interface which the Course&#45;side code uses to interact with the Game..." alt="" coords="7,5,193,32"/>
+<area shape="rect" id="node2" href="$class_whiskas_1_1game_event_handler.html" title="The gameEventHandler class Handles events the game can have. Most notably, the mouse presses...." alt="" coords="5,80,195,107"/>
+</map>

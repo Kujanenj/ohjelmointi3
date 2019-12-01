@@ -1,0 +1,6 @@
+<map id="Course::Forest::addBuilding" name="Course::Forest::addBuilding">
+<area shape="rect" id="node1" title="Adds a new building&#45;object to the tile. Building in forest adds one hold&#45;marker to the building." alt="" coords="5,46,188,73"/>
+<area shape="rect" id="node2" href="$class_course_1_1_tile_base.html#add69a1e9ec009dedb28ce54c8535370b" title="Adds a new Building&#45;object to the tile." alt="" coords="236,46,432,73"/>
+<area shape="rect" id="node3" href="$class_course_1_1_tile_base.html#a1a2be339a96e122eedcd3d5d8dd7095d" title="Returns the amount of spaces that are being taken from the building&#45;capacity." alt="" coords="480,5,673,47"/>
+<area shape="rect" id="node4" href="$class_course_1_1_game_object.html#a64b5e759e0aa4a6fdae9a112718a87e6" title="This is the primary method for locking ObjectManager inside different GameObject classes." alt="" coords="505,71,649,112"/>
+</map>

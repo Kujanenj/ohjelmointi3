@@ -1,0 +1,5 @@
+<map id="Whiskas::MapItem::isSameObj" name="Whiskas::MapItem::isSameObj">
+<area shape="rect" id="node1" title="checks if this instance has obj as bound obj." alt="" coords="207,46,409,73"/>
+<area shape="rect" id="node2" href="$class_whiskas_1_1_game_scene.html#a91c23788d6c7e93231eee9d03c9f5892" title="tries to remove drawn object at the location obj points to. If there&#39;s multiple objects,..." alt="" coords="5,5,159,47"/>
+<area shape="rect" id="node3" href="$class_whiskas_1_1_game_scene.html#a394295f4b2f9390457915319ef31de15" title="updates the position of obj." alt="" coords="5,71,159,112"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="Whiskas::MapItem::boundingRect" name="Whiskas::MapItem::boundingRect">
+<area shape="rect" id="node1" title="boundingRect" alt="" coords="453,31,672,57"/>
+<area shape="rect" id="node2" href="$class_whiskas_1_1_map_item.html#ac81e4117002fca66850fa3e3aa9c39aa" title="paints the item" alt="" coords="223,5,389,32"/>
+<area shape="rect" id="node3" href="$class_whiskas_1_1_map_item.html#a69d2030443d01b542169fa72bf8817ac" title="updateLoc moves the item if the position has changed." alt="" coords="207,56,405,83"/>
+<area shape="rect" id="node4" href="$class_whiskas_1_1_game_scene.html#a394295f4b2f9390457915319ef31de15" title="updates the position of obj." alt="" coords="5,49,159,90"/>
+</map>
