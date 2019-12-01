@@ -45,6 +45,11 @@
  * * Moving
  * * Attacking
  * * Special Altar buildings
+ * * Handmade Graphics
+ * * Minion units
+ * * Champion units
+ * * Selecting Mapsize
+ * * Information displays
  * * Music (Currenlty only on Windows)
  */
 
