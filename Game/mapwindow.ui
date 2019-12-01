@@ -383,11 +383,7 @@
              </size>
             </property>
             <property name="text">
-<<<<<<< HEAD
              <string>Information feed:</string>
-=======
-             <string/>
->>>>>>> jussi
             </property>
            </widget>
           </item>
