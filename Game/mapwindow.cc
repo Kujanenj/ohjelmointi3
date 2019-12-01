@@ -9,14 +9,14 @@
 #include <cmath>
 std::map<std::string,std::string> BuildingDescriptions{
     {"Lifepump","A building that produces \n"
-        "LIFE WWATER. Can be construted on \n"
+        "LIFE WATER. Can be construted on \n"
         "a spring tile.\n"
         "Build cost:\n"
         "IRON 15\n"
         "WOOD 15\n"
         "LIFEWATER 5\n"
         "Produces\n"
-        "LIFE WATER 2"},
+        "LIFE WATER 1"},
     {"Mage Altar","Transforms a minion\n"
         "into a mage, if a minion\n"
         "ends its turn on this building.\n"
@@ -36,7 +36,7 @@ std::map<std::string,std::string> BuildingDescriptions{
         "Cost:\n"
         "IRON 15\n"
         "WOOD 5\n"
-        "CRYSTAL 1\n"
+        "CRYSTAL 5\n"
         "LIFEWAWTER 5\n"
         "Has a cooldown of 10 turns"},
     {"Ranged Altar", "Transforms a minion\n"
@@ -60,19 +60,19 @@ std::map<std::string,std::string> BuildingDescriptions{
         "CRYSTAL 2\n"
         "LIFEWATER 2\n"
         "\nProduction:\n"
-        "IRON 2\n"
-        "CRYSTAL 2"},
+        "IRON 1\n"
+            },
     {"Sawmill","A sawmill that produces WOOD\n"
         "Can be constructed on \n"
         "Jungle tiles.\n"
         "Cost:\n"
         "IRON 5\n"
         "WOOD 5\n"
-        "CRYSTAL 1\n"
-        "LIFEWATER 1\n"
+        "CRYSTAL 4\n"
+        "LIFEWATER 4\n"
         "\n"
         "Production:\n"
-        "WOOD 2\n"},
+        "WOOD 1\n"},
     {"Nexus", "The Nexus is your base.\n"
         "If it is destroyed, instantly lose\n"
         "the game. Nexus produces 1 resource\n"
@@ -100,8 +100,9 @@ MapWindow::MapWindow(QWidget *parent,
     m_ui->activePlayerLabel->setAlignment(Qt::AlignCenter);
 
 
-
-    SoundPlayer=new QMediaPlayer();
+    //IF YOU WISH TO ENABLE MUSIC:
+    //REMOVE COMMENT MARKERS AND ENABLE MusicButton!!
+    /*SoundPlayer=new QMediaPlayer();
 
     PlayList = new QMediaPlaylist();
     PlayList->addMedia(QUrl("qrc:/sounds/sounds/testSound.mp3"));
@@ -109,8 +110,9 @@ MapWindow::MapWindow(QWidget *parent,
     PlayList->setPlaybackMode(QMediaPlaylist::Loop);
     SoundPlayer->setPlaylist(PlayList);
 
-   // testSoundPlayer->play();
-
+    SoundPlayer->play();
+    */
+    m_ui->MusicButton->setEnabled(false);
     generateLCDList();
     dialog.exec();
 }
@@ -161,11 +163,11 @@ void MapWindow::initMap(int x, int y)
     std::shared_ptr<Whiskas::gameEventHandler> ghandler =
             std::make_shared<Whiskas::gameEventHandler>(turn, textBrowserRight);
 
-    setGEHandler(ghandler); //TEST
+    setGEHandler(ghandler);
 
     makeAdvancedWGenerator(x,m_GEHandler,m_GManager);
 
-   // makeWorldGenerator(x,y,10,ghandler,gmanager);
+
 
 
     for(const auto &it:m_GManager->getTileVector()){
@@ -202,39 +204,13 @@ void MapWindow::mousePressEvent(QMouseEvent *event){
   m_GEHandler->handleMwindowClick(m_gamescene, m_GManager, *event);
   qDebug()<<"updating mwindow view";
   m_ui->graphicsView->viewport()->update();
-  updateBrowser();
+
   if(m_GEHandler->getActiveTile()!=nullptr) {
      updateDescriptions();
   } else {
       m_ui->DescriptionLabel->clear();
   }
-  /*if(m_GEHandler->getActiveMinion()!=nullptr){
-      m_ui->DescriptionLabel->setText(QString::fromStdString(m_GEHandler->getActiveMinion()->
-                                                             getDescription(m_GEHandler->
-                                                                            getActiveMinion()->
-                                                                            getType())));
-  }
-  else if(m_GEHandler->getActiveTile()!=nullptr){
-      qDebug()<<"DESCRIPTION LABEL ACTIVE TILL NOT NULL";
-      qDebug()<<QString::fromStdString(m_GEHandler->getActiveTile()->
-                                       getDescription(m_GEHandler->
-                                                      getActiveTile()->
-                                                      getType()));
-      m_ui->DescriptionLabel->setText(QString::fromStdString(m_GEHandler->getActiveTile()->
-                                                             getDescription(m_GEHandler->
-                                                                            getActiveTile()->
-                                                                            getType())));
-      if(m_GEHandler->getActiveTile()->getBuildingCount()!=0){
-          m_ui->DescriptionLabelRight->setText(QString::fromStdString(BuildingDescriptions.at(m_GEHandler->
-                                                                                              getActiveTile()->
-                                                                                              getBuildings().at(0)->
-                                                                                              getType())));
-      }
-  }
 
-  else{
-      m_ui->DescriptionLabel->clear();
-  }*/
 
 
   if(m_GManager->getWinner()!=nullptr){
@@ -248,10 +224,7 @@ void MapWindow::mousePressEvent(QMouseEvent *event){
   }
 }
 
-void MapWindow::updateBrowser() {
-    //m_ui->textBrowser->append(m_GEHandler->getMessage());
-    //m_ui->secondBrowser;
-}
+
 void MapWindow::updateDescriptions()
 {
     if(m_GEHandler->getActiveMinion()!=nullptr){
@@ -310,16 +283,7 @@ void MapWindow::on_addButton_clicked()
 }
 
 
-void MapWindow::on_minionbutton_clicked()
-{
-    qDebug()<<"spawn minion click";
-    qDebug()<<" ";
 
-    m_GManager->spawnMinion(m_GEHandler, m_GManager, m_GEHandler->getTurn()->getInTurn(),
-                            m_GEHandler->getActiveTile(), "minion");
-
-    m_ui->graphicsView->viewport()->update();
-}
 
 void MapWindow::on_MusicButton_clicked()
 {
@@ -327,15 +291,7 @@ void MapWindow::on_MusicButton_clicked()
     SoundPlayer->setMuted(!SoundPlayer->isMuted());
 }
 
-void MapWindow::on_enemyMinions_clicked()
-{
-    qDebug()<<" ";
-    qDebug()<<"spawn enemy minion click";
-    m_GManager->spawnMinion(m_GEHandler, m_GManager, m_GEHandler->getTurn()->getInTurn(),
-                            m_GEHandler->getActiveTile(),"Ranged");
 
-    m_ui->graphicsView->viewport()->update();
-}
 
 void MapWindow::on_endTurnButton_clicked()
 {
@@ -354,17 +310,8 @@ void MapWindow::on_endTurnButton_clicked()
 
 }
 
-void MapWindow::on_champButton_clicked()
-{
-     m_GManager->spawnMinion(m_GEHandler, m_GManager, m_GEHandler->getTurn()->getInTurn(),
-                             m_GEHandler->getActiveTile(), "champ");
-}
 
-void MapWindow::on_mageButton_clicked()
-{
-    m_GManager->spawnMinion(m_GEHandler, m_GManager, m_GEHandler->getTurn()->getInTurn(),
-                            m_GEHandler->getActiveTile(), "mage");
-}
+
 
 void MapWindow::on_confirmButton_clicked()
 {
@@ -373,4 +320,5 @@ void MapWindow::on_confirmButton_clicked()
     m_ui->DescriptionLabelRight->clear();
     m_ui->confirmButton->setEnabled(false);
     updateDisplays();
+    m_ui->graphicsView->viewport()->update();
 }

@@ -20,7 +20,6 @@ SOURCES += \
     dialogs/buildingdialog.cpp \
     buildings/nexus.cpp \
     dialogs/enddialog.cpp \
-    dialogs/errordialog.cpp \
     dialogs/sizedialog.cpp \
     functions/functions.cpp \
     graphics/mapitem.cpp \
@@ -58,7 +57,6 @@ HEADERS += \
     dialogs/buildingdialog.h \
     buildings/nexus.h \
     dialogs/enddialog.h \
-    dialogs/errordialog.h \
     dialogs/sizedialog.h \
     functions/functions.h \
     graphics/mapitem.h \
@@ -106,7 +104,6 @@ else:unix: PRE_TARGETDEPS += \
 FORMS += \
     dialogs/buildingdialog.ui \
     dialogs/enddialog.ui \
-    dialogs/errordialog.ui \
     dialogs/sizedialog.ui \
     mapwindow.ui \
     dialogs/startdialog.ui

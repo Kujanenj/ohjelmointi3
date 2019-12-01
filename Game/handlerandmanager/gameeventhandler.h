@@ -21,6 +21,9 @@ class Minion;
 class gameManager;
 /**
  * @brief The gameEventHandler class Handles events the game can have. Most notably, the mouse presses.
+ * NOTE: The first few methods that have unused variables are there for the reason that course side
+ * documentation said that those are required by the course side code. We dont use them but we didnt
+ * know if we could remove them.
  */
 class gameEventHandler : public Course::iGameEventHandler
 {
@@ -28,10 +31,13 @@ public:
     /**
      * @brief Constructor
      * @param turn For easier accsess to the turn class
+     * @param textBrowserRight for updating the right textBrowser
      */
     gameEventHandler(std::shared_ptr<Turn> turn, std::shared_ptr<QTextBrowser> textBrowserRight);
     /**
      * @brief modifyResources Does nothing, since the game doesent use Course::resourceMap
+     * //NOTE: It was unclear if these methods could be removed, since Igameeventhandler defines these,
+     * and it *IS" required by the course side.
      * @param player does nothing
      * @param resources does even less of anything
      * @return  true, but what is the point
@@ -95,11 +101,7 @@ public:
      */
     void endTurn(const std::shared_ptr<gameManager>& manager, const std::shared_ptr<gameEventHandler>& handler);
 
-    /**
-     * @brief getMessage Gets the message
-     * @return The message
-     */
-    QString getMessage();
+
 
 private:
     std::shared_ptr<Course::TileBase> activeTile_ = nullptr;

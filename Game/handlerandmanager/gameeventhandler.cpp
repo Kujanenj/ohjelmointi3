@@ -165,7 +165,7 @@ void gameEventHandler::endTurn(const std::shared_ptr<gameManager>& manager, cons
 
  turn_->swapTurn();
  qDebug()<<turn_->getTurnCounter()<<"TURN COUNTER";
- if(turn_->getTurnCounter()==1||turn_->getTurnCounter() % 5==0){
+ if(turn_->getTurnCounter()==1||turn_->getTurnCounter() % 4==0){
      std::shared_ptr<Course::TileBase> nexsusLoc;
      nexsusLoc=manager->getNexusLocation(manager->getPlayerPair().first);
      if(nexsusLoc!=nullptr && nexsusLoc->getWorkerCount()==0){
@@ -179,10 +179,6 @@ void gameEventHandler::endTurn(const std::shared_ptr<gameManager>& manager, cons
  activeMinion_=nullptr;
 }
 
-QString gameEventHandler::getMessage()
-{
-    return message_;
-}
 
 
 }

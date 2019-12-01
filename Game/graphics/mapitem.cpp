@@ -150,7 +150,7 @@ void MapItem::addNewColor(const std::string& type)
                                                         {"Purple", purple}};
             c_objecticons.insert({type, owner_pic_pair});
         } else if (type == "mage") {
-            QImage blue = QImage(":/images/graphics/magea_blue.png");
+            QImage blue = QImage(":/images/graphics/mage_blue.png");
             QImage purple = QImage(":/images/graphics/mage_purple.png");
             std::map<std::string, QImage> owner_pic_pair =  {{"Blue", blue},
                                                         {"Purple", purple}};
