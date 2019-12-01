@@ -9,7 +9,10 @@
 namespace Whiskas {
 
 
-
+/**
+ * @brief The Spring class represents the spring in the gameworld.
+ * The spring supports mage altars and lifepumps
+ */
 class Spring : public Course::TileBase
 {
 public:

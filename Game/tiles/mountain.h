@@ -9,7 +9,10 @@
 namespace Whiskas {
 
 
-
+/**
+ * @brief The Mountain class represents the mountain in the gameworld.
+ * The mountain supports melee altars and quarries
+ */
 class Mountain : public Course::TileBase
 {
 public:

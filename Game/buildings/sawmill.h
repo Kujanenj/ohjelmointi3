@@ -6,8 +6,13 @@
 
 namespace Whiskas {
 
+/**
+ * @brief The Sawmill class represents a Sawmill-building in the game.
+ *
+ * The sawmill produces 1 wood per turn
+ * Can only be built on a jungle
+ */
 class Sawmill : public CustomBuildingBase
-
 {
 public:
     Sawmill() = delete;
@@ -24,6 +29,9 @@ public:
 
             );
 
+    /**
+     * @brief Default destructor.
+     */
      ~Sawmill() override = default;
      std::string getType() const override;
 

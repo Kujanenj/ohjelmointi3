@@ -8,7 +8,10 @@
 namespace Whiskas {
 
 
-
+/**
+ * @brief The Desert class represents the desert in the gameworld.
+ * The desert supports melee altars
+ */
 class Desert : public Course::TileBase
 {
 public:

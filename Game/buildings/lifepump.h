@@ -6,9 +6,13 @@
 
 namespace Whiskas {
 
-
+/**
+ * @brief The Lifepump class represents a lifepump-building in the game.
+ *
+ * The lifepump produces 1 lifewater per turn
+ * Can only be built on a spring
+ */
 class Lifepump : public CustomBuildingBase
-
 {
 public:
     Lifepump() = delete;
@@ -24,7 +28,9 @@ public:
             int attack = 0
 
             );
-
+    /**
+     * @brief Default destructor.
+     */
     ~Lifepump() override = default;
      std::string getType() const override;
 

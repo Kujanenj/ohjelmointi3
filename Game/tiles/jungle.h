@@ -10,18 +10,8 @@ namespace Whiskas {
 
 
 /**
- * @brief The Mountain class represents Mountain in the gameworld.
- *
- * Forest has BasicProduction: \n
- * * Money = 1
- * * Food = 3
- * * Wood = 5
- * * Stone = 1
- * * Ore = 0
- *
- * Building in the forest takes time. So buildings get extra hold-marker.
- *
- * Tile supports 2 buildings.
+ * @brief The Jungle class represents the jungle in the gameworld.
+ * The jungle supports ranged altars and sawmills
  */
 class Jungle : public Course::TileBase
 {

@@ -6,7 +6,12 @@
 
 namespace Whiskas {
 
-
+/**
+ * @brief The Quarry class represents a quarry-building in the game.
+ *
+ * The quarry produces 1 stone per turn
+ * Can only be built on a mountain
+ */
 class Quarry : public CustomBuildingBase
 
 {
@@ -24,8 +29,10 @@ public:
             int attack = 0
 
             );
-
-      ~Quarry() override = default;
+    /**
+     * @brief Default destructor.
+     */
+     ~Quarry() override = default;
      std::string getType() const override;
 
 }; // class Quarry

@@ -6,9 +6,14 @@
 
 namespace Whiskas {
 
-
+/**
+ * @brief The Nexus class represents a Nexus-building in the game.
+ *
+ * The Nexus produces 1 of each resource per turn
+ * The Nexus also spawns a minion at the start of the game
+ * and every 5 turns
+ */
 class Nexus : public CustomBuildingBase
-
 {
 public:
     Nexus() = delete;
@@ -25,6 +30,9 @@ public:
 
             );
 
+    /**
+     * @brief Default destructor.
+     */
     ~Nexus() override= default;
      std::string getType() const override;
 
