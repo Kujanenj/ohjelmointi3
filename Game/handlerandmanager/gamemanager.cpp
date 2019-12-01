@@ -11,8 +11,6 @@ gameManager::gameManager(std::shared_ptr<GameScene>& m_gamescene, std::shared_pt
     manager_gamescene(m_gamescene)
     ,textBrowser(std::move(textBrowser))
 {
- //manager_gamescene = m_gamescene;
- qDebug()<<"TEST TILE MANAGER";
 }
 
 
@@ -132,8 +130,10 @@ bool gameManager::spawnMinion(const std::shared_ptr<gameEventHandler>& handler,
     qDebug()<<"gamemanager minion vector has size of";
     qDebug()<<allminions_.size();
     if(manager_gamescene!=nullptr){
-    manager_gamescene->drawItem(testMinion);
-    manager_gamescene->update();
+        manager_gamescene->drawItem(testMinion);
+        manager_gamescene->update();
+        textBrowser->append(QString(QString::fromStdString(testMinion->getOwner()->getName()) + " minion spawned"));
+
     return true;
     }}
 
@@ -159,15 +159,18 @@ void gameManager::move(const std::shared_ptr<Minion>& minionToMove, const std::s
        qDebug()<<abs(deltaC.x())+abs(deltaC.y())<<"Distance to move";
        if(abs(deltaC.x())+abs(deltaC.y())<=minionToMove->getMoveValue()){
             if(checkForEnemies(minionToMove,targetTile)){
-                if(minionToMove->getAttacked()){
+                /*if(minionToMove->getAttacked()){
                     qDebug()<<"has attacked";
                     return;
-                }
+                }*/
                 qDebug()<<"trying to attack in move command";
                 if(minionToMove->getAttacked()){
                     qDebug()<<"UNIT HAS ATTACKED MAX NUMBER OF TIMES THIS TURN, GET THE HELL OUT!";
+                    textBrowser->append("This unit has already attacked this turn");
                     return;
                 }
+
+                textBrowser->append(QString(QString::fromStdString(minionToMove->getOwner()->getName()) + " has attacked"));
                 if(minionToMove->getType()=="mage"){
                     attackMultiple(minionToMove,targetTile);
                 }
@@ -176,13 +179,14 @@ void gameManager::move(const std::shared_ptr<Minion>& minionToMove, const std::s
                 }
 
                 qDebug()<<"we attacked";
+
+
                 minionToMove->setAttacked(true);
 
                 return;
             }
             if(minionToMove->getMoved()){
-                qDebug()<<"UNIT HAS MOVED THIS TURN, GET THE HELL OUT!";
-                textBrowser->append("Unit has already moved this turn");
+                textBrowser->append("This unit has already moved this turn");
                 return;
             }
             minionToMove->currentLocationTile()->removeWorker(minionToMove);
@@ -192,6 +196,7 @@ void gameManager::move(const std::shared_ptr<Minion>& minionToMove, const std::s
             manager_gamescene->updateItem(minionToMove);
             }
             qDebug()<<"WE MOVED";
+            textBrowser->append(QString(QString::fromStdString(minionToMove->getOwner()->getName()) + " has moved a minion"));
             minionToMove->setMoved(true);
             minionToMove->setAttacked(true);
 
@@ -204,6 +209,7 @@ void gameManager::move(const std::shared_ptr<Minion>& minionToMove, const std::s
 
        }
     else{
+    textBrowser->append("You can't trample your minions");
     qDebug()<<"there were minions";
     }
 }
@@ -220,9 +226,9 @@ void gameManager::attack(const std::shared_ptr<Minion>& minionToAttack,
     qDebug()<<minionToAttack->getAttack()<<"attack value";
     qDebug()<<target->getHealth()<<"health value";
     if(target->modifyHealth(-minionToAttack->getAttack())){
-
-
         destroyObject(target);
+        textBrowser->append(QString(QString::fromStdString(minionToAttack->getOwner()->getName())
+                                    + " has destroyed their target"));
     }
 
 }

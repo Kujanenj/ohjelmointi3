@@ -64,33 +64,38 @@ void gameEventHandler::handleLeftClick(const std::shared_ptr<GameScene>& scene, 
     qDebug()<<"";
     qDebug()<<"handling mwindow click";
 
-
-
-
+        textBrowserRight->clear();
         activeTile_ = manager->getTile(*scene->getLastCoordinate());
         qDebug()<< "================";
         qDebug()<< "HANDLING MWINDOW CLICK";
+        textBrowserRight->append(QString(
+               "Coordinates \n X:" + QString::number(activeTile_->getCoordinatePtr()->x())
+              + "  Y: " + QString::number(activeTile_->getCoordinatePtr()->y())));
+
         qDebug() << "Coordinate X: " << activeTile_->getCoordinatePtr()->x()
                  << ", Y: " << activeTile_->getCoordinatePtr()->y();
         qDebug()<< "the ID is"<< scene->getLastID();
         qDebug()<< "Amount of minions is"<< activeTile_->getWorkers().size();
         qDebug()<< "Amount of buildings is"<< activeTile_->getBuildings().size();
-        if (!activeTile_->getBuildings().empty()){
-            qDebug()<< "Building is"
-                    << QString::fromStdString(activeTile_->getBuildings().at(0)->getType())
-                    << "and the owner is"
-                    << QString::fromStdString(activeTile_->getBuildings().at(0)->getOwner()->getName());
-        }
 
         if (!activeTile_->getWorkers().empty()){
             for(const auto& it: manager->getMinionVector()){
-                if(activeTile_->getWorkers().front()==it && it->getOwner()==turn_->getInTurn()){
-                    activeMinion_=it;
+                if(activeTile_->getWorkers().front()==it){
+
+                    textBrowserRight->append(QString(
+                           "\nMinion \n   HP:"
+                           + QString::number(it->getHealth())
+                          + "\n   Type:" + QString::fromStdString(it->getType())));
+
+                    if (it->getOwner()==turn_->getInTurn()) {
+                        activeMinion_=it;
+                    }
 
                     qDebug()<<"active minion type is"<<QString::fromStdString(it->getType())
                            <<"and its owner is"<<QString::fromStdString(it->getOwner()->getName());
                     message_ = "Active minion type is" + QString::fromStdString(it->getType()) +
                             " and its owner is " + QString::fromStdString(it->getOwner()->getName());
+
                 }
 
             }
@@ -98,9 +103,22 @@ void gameEventHandler::handleLeftClick(const std::shared_ptr<GameScene>& scene, 
         else{
             activeMinion_=nullptr;
         }
+        if (!activeTile_->getBuildings().empty()){
+            for(const auto& it: manager->getBuildingVector()){
+                if(activeTile_->getBuildings().front()==it){
+                    textBrowserRight->append(QString("\n" +
+                           QString::fromStdString(it->getType()) + "\n   HP:"
+                           + QString::number(it->getHealth())));
+                }
+            }
+        }
+        if (!activeTile_->getBuildings().empty()){
+            qDebug()<< "Building is"
+                    << QString::fromStdString(activeTile_->getBuildings().at(0)->getType())
+                    << "and the owner is"
+                    << QString::fromStdString(activeTile_->getBuildings().at(0)->getOwner()->getName());
+        }
         qDebug()<< "================";
-
-
 
 }
 void gameEventHandler::handleRightClick(const std::shared_ptr<gameManager>& manager, const std::shared_ptr<GameScene>& scene)
